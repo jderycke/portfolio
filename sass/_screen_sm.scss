@@ -1,0 +1,44 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import 'variables';
+
+/*! Small screen */
+@media only screen and (min-width: $screen-sm) {
+    /* -- Home --------------------------------------------------------- */	
+	.home {
+        .home-container {
+            vertical-align: bottom;
+        
+            .info {
+                margin-top: 0;
+                margin-bottom: 4rem;
+
+                h1 {
+                    font-size: rem(125);
+                    text-align: left;
+                    float: left;
+                }
+
+                h2 {
+                    font-size: rem(28);
+                    text-align: left;
+                }
+            }
+        }
+    }
+        
+    /* -- Work ------------------------------------------------------ */
+    .work {
+        #filter-list {
+            .title {
+                display: block;
+            }
+        }
+            
+        .spotlight {
+            li {
+                width: 50%;
+            }
+        }
+    }
+}

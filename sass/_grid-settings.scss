@@ -1,0 +1,157 @@
+@import "bourbon/bourbon";
+@import 'neat/neat';
+@import 'neat/neat-helpers';
+@import 'variables';
+
+/* Preserve some sanity */
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+}
+
+.container,.row,
+.column {
+    @include box-sizing(border-box);
+    position: relative;
+    content: "";
+    @include transition(all 0.4s ease);
+}
+
+/* Set up some rules to govern the container */
+.container {
+    @include outer-container;
+    width: 100%;
+    padding-left: rem(10);
+    padding-right: rem(10);
+}
+
+.container,
+.row {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    
+    &:before {
+        display: table;
+        content: "";
+        @include clearfix();
+    }
+    
+    &:after {
+        clear: both;
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+}
+
+.column {
+    position: relative;
+    min-height: 1px;
+    
+    &:first-child,
+    &:last-child {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .pull-left,
+    .pull-right {
+        float: left; 
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .column {
+        &:first-child {
+            padding-left: $gutter; 
+        }
+        &:last-child {
+            padding-right: $gutter;
+        }
+    }
+}
+
+/* Let people nuke the gutters/padding completely in a couple of ways */
+.no-gutters {
+    padding: 0 !important;
+}
+
+.whole,
+.half,           
+.one-third,      
+.two-thirds,     
+.one-quarter,    
+.three-quarters, 
+.one-fifth,      
+.two-fifths,     
+.three-fifths,   
+.four-fifths,    
+.golden-small,   
+.golden-large { @include span-columns(10); }
+
+/* Utility classes */
+.align-center   { text-align: center; }
+.align-left     { text-align: left; }
+.align-right    { text-align: right; }
+.align-justify  { text-align: justify; }
+
+.center-on-mobiles { text-align: center !important; }
+.hide-on-mobiles { display: none !important; }
+
+/* -- Small screen ------------------------------------------------ */
+@media only screen and (min-width: $screen-sm) {
+   
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+        
+    .column {
+        &:first-child {
+            padding-left: $gutter;
+        }
+
+        &:last-child {
+            padding-right: $gutter;
+        }
+        .column {
+            padding-left: 0;
+            padding-right: $gutter;
+
+            &:first-child,
+            &:last-child {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .pull-left { 
+            padding-right: $gutter;
+            padding-left: 0;
+        }
+
+        .pull-right { 
+            float: right; 
+            padding-left: $gutter;
+            padding-right: 0;
+        }
+    }
+        
+    .whole          { @include span-columns(10); }
+    .half           { @include span-columns(5); }
+    .one-third      { @include span-columns(3); }
+    .two-thirds     { @include span-columns(6); }
+    .three-quarters { @include span-columns(6); }
+    .one-quarter    { @include span-columns(3); }
+    .one-fifth      { @include span-columns(2); }
+    .two-fifths     { @include span-columns(4); }
+    .three-fifths   { @include span-columns(6); }
+    .four-fifths    { @include span-columns(8); }
+
+    .golden-small   { @include span-columns(3); }
+    .golden-large   { @include span-columns(7); }
+}

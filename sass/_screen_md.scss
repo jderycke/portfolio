@@ -1,0 +1,77 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import 'variables';
+
+/*! Medium screen */
+@media only screen and (min-width: $screen-md) {
+    blockquote {
+        margin: 10px 10px 20px 0;
+        font-size: rem(22);
+        line-height: 2;
+    }
+
+    header {
+        height: 90px;
+        
+        a.logo {
+            height: 94px;
+            width: 94px;
+            margin: 8px auto 0;
+        }
+    }
+    
+    footer {
+        small {
+            line-height: 350px;
+            padding: 0;
+        }
+    }
+    
+    .sidebar-toggles {
+        top: 10px;
+        right: 10px;
+    }
+
+	.separator-section  {
+		height: 350px;
+	}
+    
+    
+    /* -- About ------------------------------------------------------ */
+    .about {
+        .skills.list {
+            ul {
+                li {
+                    line-height: 1.8;
+                }
+            }
+        }
+        .profile-image {
+            margin: 0 auto 0;
+
+            .image {
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+    
+    /* -- Work ------------------------------------------------------ */
+    .work {   
+        .spotlight {
+            li {
+                width: 20%;
+            }
+        }
+    }
+
+    /* -- Error Page ------------------------------------------------------ */
+    .error {
+        .info {        
+            h1 {
+                font-size: rem(32);
+                margin-top: 0;
+            }
+        }
+    }
+}

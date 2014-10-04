@@ -1,0 +1,33 @@
+@import "bourbon/bourbon";
+@import 'neat/neat';
+@import 'neat/neat-helpers';
+
+$site-color         :   #D13353;
+
+$white              :   #FFFFFF;
+$white-tint1        :   #F6F6F6;
+
+$grey               :   #DDDDDD;
+$grey-tint1         :   #999999;
+
+$black              :   #000000;
+$black-tint1        :   #222222;
+$black-tint2        :   #444444;
+
+$facebook-blue      :   #3B5998;
+$twitter-blue       :   #00ACED;
+$google-red         :   #DD4B39;
+$linkedin-blue      :   #007BB6;
+$flickr-pink        :   #FF0084;
+$rss-orange         :   #FF6600;
+
+/* -- Grid Settings -------------------------------------------- */
+$column             : rem(90);
+$gutter             : rem(15);
+$grid-columns       : 10;
+$max-width          : em(1280);
+
+$screen-xs          : rem(480);
+$screen-sm          : rem(768);
+$screen-md          : rem(996);
+$screen-lg          : rem(1280);
