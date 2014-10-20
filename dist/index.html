@@ -36,7 +36,7 @@
 		<link rel="apple-touch-icon-precomposed" href="img/logo57x57.png" />
 		<link rel="shortcut icon" href="img/logo57x57.png" />
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Play:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Play:400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/site.common.min.css" />
 
 		<!--[if lt IE 9]>
@@ -177,20 +177,20 @@
                                 <cite>Walt Disney</cite>
                             </blockquote>
                             <div class="content">
-                                <dl id="filter-list">
+                                <dl id="filter-list" class="controls">
                                     <dt class="title">Filter</dt>
                                     <dd class="category">
                                         <span class="filter animate" data-filter="all">All</span>
                                     </dd>
                                     <dd class="category">
-                                        <span class="filter animate" data-filter="web">Web</span>
+                                        <span class="filter animate" data-filter=".web">Web</span>
                                     </dd>
                                     <dd class="category">
-                                        <span class="filter animate" data-filter="photo">Photography</span>
+                                        <span class="filter animate" data-filter=".photo">Photography</span>
                                     </dd>
                                 </dl>
-                                <ul id="portfolio" class="spotlight">
-                                    <li class="item {{item.category}} mix_all" style="display: inline-block; opacity: 1;" ng-repeat="item in results | orderBy : predicate">
+                                <ul id="portfolio" class="spotlight" mixItUp>
+                                    <li class="mix {{item.category}}" style="display: inline-block" ng-repeat="item in results | orderBy : predicate">
                                         <a hre="#" ng-href="{{item.url}}" target="_blank" data-ga-category="Portfolio" data-ga-action="Clicked {{item.id}}" data-ga-label="{{item.name}}">
                                             <div ng-style="{'background-image': 'url(img/blank.png)'}" class="image lazy" data-original="{{item.image_url}}"></div>
                                             ng-src="/images/loader-circle-image.gif" data-original="{{ item.image_resized }}"
@@ -223,7 +223,7 @@
                 
             </div>
 
-            <footer id="social" class="page social animate">
+            <div id="social" class="page social animate">
                 <div class="container">
                     <div class="row">
                         <div class="column whole">
@@ -260,24 +260,29 @@
                                 </li>
                                 <li>
                                     <a class="genericon fivehundred" href="http://www.500px.com/jamiederycke/" title="500px">
-                                        500px
+                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="genericon wordpress" href="http://blog.jamiederycke.me.uk/" title="Blog">
+                                        
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="separator-section">
-                    <div class="footer-container">
-                        <small>&copy; 2014 <a href="http://www.jamiederycke.me.uk" title="Jamie De Rycke">Jamie De Rycke</a>. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/">Brackets</a>.</small>
-                    </div>
+            </div>
+            <footer class="separator-section">
+                <div class="footer-container">
+                    <small>&copy; 2014 <a href="http://www.jamiederycke.me.uk" title="Jamie De Rycke">Jamie De Rycke</a>. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/">Brackets</a>.</small>
                 </div>
             </footer>
         </div>
-        <a href="#home" ng-class="{'show': showScrollUp}" du-smooth-scroll du-scrollspy duration="1400" class="genericon scrollup animate" data-ga-category="ScrollTop" data-ga-action="Clicked link" data-ga-label="Top"></a>
+        <a href="#home" ng-class="{'show': showScrollUp}" du-smooth-scroll du-scrollspy duration="800" class="genericon scrollup angle-double-up animate" data-ga-category="ScrollTop" data-ga-action="Clicked link" data-ga-label="Top"></a>
         
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js" data-require="angular.js@1.2.x" data-semver="1.2.26"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js" data-require="angular.js@1.3.x" data-semver="1.3.0"></script>
 		<script type="text/javascript" src="js/thirdparty/angular-scroll.min.js"></script>
         <script type="text/javascript" src="js/thirdparty/jquery.mixitup.min.js"></script>
         <script type="text/javascript" src="js/thirdparty/jquery.lazyload.min.js"></script>

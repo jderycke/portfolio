@@ -24,9 +24,9 @@
     portfolioApp.directive('lazy', function($timeout) {
         return {
             restrict: 'C',
-            link: function (scope, elm) {
+            link: function (scope, element, attrs) {
                 $timeout(function() {
-                    $(elm).lazyload({
+                    angular.element(element).lazyload({
                         effect: 'fadeIn',
                         effectspeed: 500,
                         'skip_invisible': false
@@ -36,6 +36,26 @@
         };
     });
     
+    portfolioApp.directive('mixItUp', function() {
+        return {
+            restrict: 'C',
+            link: function(scope, element, attrs) {
+                angular.element('#portfolio').mixItUp({
+                    animation: {
+                        effects: 'fade',
+                        duration: 450
+                    },
+                    selectors: {
+                        target: 'li'
+                    },
+                    load: {
+                        filter: 'all'
+                    }
+                });
+            }
+        };
+    }); 
+    
 	portfolioApp.controller('PortfolioCtrl', function ($q, $scope, $http, $timeout, $document) {
         $scope.showNavMenu = false;
         $scope.showWaiting = true;
@@ -44,7 +64,7 @@
         $scope.results = [];
         $scope.result = null;
 		
-		/* -- Menu ----------------------------------------------------- */
+		/* -- Menu ---------------------------------------------------------------------- */
         $scope.toggleMenu = function (e) {
             $scope.showNavMenu = !$scope.showNavMenu;
 			e.preventDefault();
@@ -81,7 +101,21 @@
         };
         $timeout(photos, 2500);
         
-        $scope.getPhoto = function(e, item) {
+        angular.element('#portfolio').mixItUp({
+            animation: {
+                effects: 'fade',
+                duration: 450
+            },
+            selectors: {
+                target: 'li'
+            },
+            load: {
+                filter: 'all'
+            }
+        });
+        
+        /* -- Modal --------------------------------------------------------------------- */
+        /*$scope.getPhoto = function(e, item) {
             $scope.showModal = true;
             $scope.result = item;
             e.preventDefault();
@@ -90,12 +124,6 @@
         $scope.closeModal = function(e) {
             $scope.showModal = false;
             $scope.goToPage(e, '#work', 400);
-        };
-
-		/* -- 3rd Party setup --------------------------------------------------------------- */
-        $('#portfolio').mixitup({
-            targetSelector: '.item',
-            transitionSpeed: 450
-		});
+        };*/
 	});
 })();

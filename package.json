@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node modules for running grunt",
   "main": "index.js",
   "scripts": {
     "test": "test"

@@ -4,14 +4,14 @@
 
 /*! Small screen */
 @media only screen and (min-width: $screen-sm) {
-    /* -- Home --------------------------------------------------------- */	
+    /* -- Home --------------------------------------------------------- */
 	.home {
         .home-container {
             vertical-align: bottom;
-        
+
             .info {
                 margin-top: 0;
-                margin-bottom: 4rem;
+                margin-bottom: 6rem;
 
                 h1 {
                     font-size: rem(125);
@@ -26,7 +26,7 @@
             }
         }
     }
-        
+
     /* -- Work ------------------------------------------------------ */
     .work {
         #filter-list {
@@ -34,7 +34,7 @@
                 display: block;
             }
         }
-            
+
         .spotlight {
             li {
                 width: 50%;
