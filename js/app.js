@@ -113,17 +113,5 @@
                 filter: 'all'
             }
         });
-        
-        /* -- Modal --------------------------------------------------------------------- */
-        /*$scope.getPhoto = function(e, item) {
-            $scope.showModal = true;
-            $scope.result = item;
-            e.preventDefault();
-        };
-        
-        $scope.closeModal = function(e) {
-            $scope.showModal = false;
-            $scope.goToPage(e, '#work', 400);
-        };*/
 	});
 })();
