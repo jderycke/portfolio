@@ -1,12 +1,7 @@
-@import "bourbon/bourbon";
-@import 'neat/neat';
-@import 'neat/neat-helpers';
-@import 'variables';
-
 /* Preserve some sanity */
 .wrapper {
     margin: 0 auto 350px;;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -107,8 +102,8 @@
 @media only screen and (min-width: $screen-sm) {
    
     .container {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: rem(10);
+        padding-right: rem(10);
     }
         
     .column {

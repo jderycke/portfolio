@@ -1,9 +1,99 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
-@import 'variables';
-
 /*! Small screen */
 @media only screen and (min-width: $screen-sm) {
+    header[role=banner]  {
+        .logo {
+            height: 114px;
+            width: 114px;
+        }
+        
+        .sidebar-toggles {
+            display: none;
+        }
+        
+        &.pinned {
+            a.logo {
+                height: 94px;
+                width: 94px;
+            }
+            
+            .sidebar {
+                padding-top: 20px;
+                
+                nav {
+                    ul.menu {
+                        li {
+                            text-shadow: none;
+
+                            a {
+                                color: $black-tint1;
+                                
+                                &:hover {
+                                    color: $grey-tint1;
+                                }
+
+                                &.active {
+                                    color: $site-color;
+                                }
+
+                                &.selected {
+                                    cursor: default;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .sidebar {
+        display: block;
+        padding-top: 40px;
+        right: $gutter;
+        left: inherit;
+        background-color: transparent;
+        width: auto;
+        height: auto;
+        z-index: 8;
+        position: relative;
+        float: right;
+    
+        nav {
+            ul.menu {
+                display: block;
+                width: auto;
+
+                li {
+                    text-align: center;
+                    display: inline-block;
+                    text-shadow: 1px 1px 5px $black-tint1;
+                    margin: 0 5px;
+                    
+                    a {
+                        line-height: 1;
+                        font-size: 1.4rem;
+                        width: auto;
+                        
+                        &:hover {
+                            background-color: transparent;
+                            color: $grey-tint1;
+                        }
+
+                        &.active {
+                            cursor: default;
+                            background-color: transparent;
+                            color: $site-color;
+                        }
+
+                        &.selected {
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /* -- Home --------------------------------------------------------- */
 	.home {
         .home-container {
@@ -11,7 +101,7 @@
 
             .info {
                 margin-top: 0;
-                margin-bottom: 6rem;
+                margin-bottom: 5rem;
 
                 h1 {
                     font-size: rem(125);
@@ -20,13 +110,21 @@
                 }
 
                 h2 {
-                    font-size: rem(28);
+                    font-size: rem(22);
                     text-align: left;
                 }
             }
         }
     }
-
+ 
+    /* -- About ------------------------------------------------------ */
+    .about {
+        .genericon {
+            font-size: rem(120);
+            margin: 0 rem(40);
+        }
+    }
+    
     /* -- Work ------------------------------------------------------ */
     .work {
         #filter-list {
@@ -36,8 +134,10 @@
         }
 
         .spotlight {
+            display: block;
+            
             li {
-                width: 50%;
+                width: 33.3%;
             }
         }
     }

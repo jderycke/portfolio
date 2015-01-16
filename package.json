@@ -16,10 +16,12 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.5.1",
+    "grunt-dev-update": "^1.0.1",
     "grunt-jslint": "^1.1.12",
     "grunt-jsonlint": "^1.0.4",
     "grunt-jsonmin": "^0.2.4",
     "jshint": "^2.5.5",
+    "load-grunt-tasks": "^2.0.0",
     "normalize.css": "^3.0.1",
     "package": "^1.0.1",
     "time-grunt": "^1.0.0"

@@ -3,7 +3,7 @@
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="portfolioApp"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,84 +36,79 @@
 		<link rel="apple-touch-icon-precomposed" href="img/logo57x57.png" />
 		<link rel="shortcut icon" href="img/logo57x57.png" />
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Play:700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2:200,300,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/site.common.min.css" />
 
 		<!--[if lt IE 9]>
 		<script src="css/ie.min.css"></script>
-		<script src="js/thirdparty/html5shiv.min.js"></script>
-		<script src="js/thirdparty/html5shiv-printshiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script>
 		<![endif]-->
 	</head>
-	<body class="main" ng-controller="PortfolioCtrl" ng-class="{'is-sidebar-expanded' : showNavMenu, 'has-overlay': showModal}" scroll>
-        <aside class="sidebar animate">
-            <nav>
-                <ul class="menu">
-                    <li>
-                        <a href="#home" ng-click="goToPage($event, '#home')" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Home" du-scrollspy>
-                            <span>Home</span>
-                            <div class="nav_circle"></div>
+	<body class="main" ng-app="portfolioApp">
+        <header class="animate" role="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="column whole">
+                        <a href="#home" title="Jamie De Rycke logo" class="genericon logo animate" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Clicked logo" data-ga-label="Logo">
+                            Jamie De Rycke
                         </a>
-                    </li>
-                    <li>
-                        <a href="#about" ng-click="goToPage($event, '#about')" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="About me" du-scrollspy>
-                            <span>About me</span>
-                            <div class="nav_circle"></div>
-                        </a>
-                    </li>
-                    <li>
-						<a href="#work" ng-click="goToPage($event, '#work')" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Portfolio" du-scrollspy>
-                            <span>Portfolio</span>
-                            <div class="nav_circle"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.jamiederycke.me.uk" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Blog">
-                            <span>Blog</span>
-                            <div class="nav_circle"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#social" ng-click="goToPage($event, '#social')"  data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Social" du-scrollspy>
-                            <span>Social</span>
-                            <div class="nav_circle"></div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <header class="animate" ng-class="{'pinned' : pinHeader}" role="banner">
-            <a href="#home" du-smooth-scroll du-scrollspy duration="1400" class="genericon logo" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Clicked logo" data-ga-label="Logo" >
-                Jamie De Rycke
-            </a>
-            <ul class="sidebar-toggles">
-                <li>
-                    <a href="#" ng-click="toggleMenu($event)" class="sidebar-toggle" data-ga-category="Nav" data-ga-action="Menu Toggle Open/Close" data-ga-label="Menu">
-                        <b class="sidebar-toggle-bar"></b>
-                        <b class="sidebar-toggle-bar"></b>
-                        <b class="sidebar-toggle-bar"></b>
-                        <span class="srt">Toggle Sidebar</span>
-                    </a>
-                </li>
-            </ul>
+                        <ul class="sidebar-toggles animate">
+                            <li>
+                                <a href="#" title="Toggle menu Open/Close" class="sidebar-toggle" data-ga-category="Nav" data-ga-action="Menu Toggle Open/Close" data-ga-label="Menu">
+                                    <b class="sidebar-toggle-bar"></b>
+                                    <b class="sidebar-toggle-bar"></b>
+                                    <b class="sidebar-toggle-bar"></b>
+                                    <span class="srt">Toggle Sidebar</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="sidebar animate">
+                            <nav>
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#home" title="Home" class="active font-effect-wallpaper" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Home">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#about" title="About me" class="font-effect-wallpaper" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="About me">
+                                            <span>About me</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#work" title="Portfolio" class="font-effect-wallpaper" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Portfolio">
+                                            <span>Portfolio</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#blog" title="Blog" class="font-effect-wallpaper" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="Blog">
+                                            <span>Blog</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
 
         <div class="wrapper animate" role="main">
-            <section id="home" class="home page animate separator-section">
+            <section id="home" class="home page animate seperator-section">
                 <div class="home-container">
                     <div class="container">
                         <article class="column whole info">
-                            <h1>
+                            <h1 class="font-effect-wallpaper">
                                 Hi there<em>.</em>
                             </h1>
                             <h2>My name is Jamie, I create things with pixels and code. I occasionally take photographs<em>.</em></h2>
                         </article>
                     </div>
+                    <a href="#about" title="Down to about me" class="scrollDown animate" data-ga-category="Scroll down" data-ga-action="Clicked home down arrow" data-ga-label="Arrow">
+                        <span class="genericon long-arrow down animate"></span>
+                    </a>
                 </div>
-                <button class="btn ease" ng-click="goToPage($event, '#about')" data-ga-category="Nav" data-ga-action="Clicked link" data-ga-label="About me" du-scrollspy>
-                    <span class="arrow animate">↓</span>
-                </button>
             </section>
             
             <section id="about" class="page about animate">
@@ -128,34 +123,27 @@
                             
                             <div class="column golden-small pull-right">
                                 <div class="profile-image">
-                                    <img ng-src="img/blank.png" data-original="img/me.jpg" alt="This is me, looking all moody" class="image lazy" />
-                                    <span class="caption">This is me, looking all moody</span>
+                                    <img src="img/blank.png" data-original="img/me.jpg" alt="This is me, looking all moody" class="image lazy" />
+                                    <span class="caption small-text">This is me, looking all moody</span>
                                 </div>
                             </div>
 
                             <div class="column golden-large pull-left">
-                                <p>Hi, my name is Jamie De Rycke, this is my personal blog and portfolio. I am a multi-skilled web developer with a passion for innovative solutions with over 12 years of experience from North Wales. I have a passion for pixel perfection, clean code, and semantics. I currently work for <a href="http://www.moneysupermarket.com">MoneySuperMarket.com</a> as a web developer.</p>
+                                <p>Hi, my name is Jamie De Rycke, this is my personal blog and portfolio. I am a multi-skilled web developer with a passion for innovative solutions with over 12 years of experience from North Wales. I have a passion for pixel perfection, clean code, and semantics. I currently work for <a href="http://www.moneysupermarket.com" title="Link to MoneySuperMarket website" rel="nofollow">MoneySuperMarket</a> as a web developer.</p>
                                 <p>I'm inspired by clean, minimalistic design. Whether it be digital or physical, I believe design is all about solving problems in the simplest possible manner.</p>
 
-                                <div class="skills list">
-                                    <h3>Skills &amp; Inspirations<em>.</em></h3>
-                                    <ul class="column half pull-left">
-                                        <li>C#</li>
-                                        <li>Javascript / JQuery</li>
-                                        <li>ASP.MVC</li>
-                                        <li>HTML5</li>
-                                        <li>CSS3</li>
-                                        <li>WordPress</li>
-                                    </ul>
-                                    <ul class="column half pull-right">
-                                        <li><a href="http://www.smashingmagazine.com">Smashing Magazine</a></li>
-                                        <li><a href="http://www.netmagazine.com">.Net</a></li>
-                                        <li><a href="http://www.dribbble.com">Dribbble</a></li>
-                                        <li><a href="http://www.siteinspire.com">Site Inspire</a></li>
-                                        <li><a href="http://www.awwwards.com">Awwwards</a></li>
-                                        <li><a href="http://www.500px.com/">500px</a></li>
-                                        <li><a href="http://www.portraitsbyhand.co.uk/">Portraits By Hand</a></li>
-                                    </ul>
+                                <div class="thingy">
+                                    <span class="genericon mobile-phone">
+
+                                    </span>
+
+                                    <span class="genericon tablet">
+
+                                    </span>
+
+                                    <span class="genericon desktop">
+
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -163,24 +151,24 @@
                 </div>
             </section>
 
-            <div class="separator-section">
+            <div class="seperator-section">
                 
             </div>
 
-            <section id="work" class="page work animate" ng-class="{'waiting' : showWaiting}">
+            <section id="work" class="page work animate" ng-controller="PortfolioCtrl" ng-class="{'waiting' : showWaiting}">
                 <div class="container">
                     <div class="row">
                         <div class="column whole">
                             <h2>Portfolio<em>.</em></h2>
                             <blockquote>
-                                If you can dream it, you can do it.
-                                <cite>Walt Disney</cite>
+                                Creativity is contagious, pass it on.
+                                <cite>Albert Enstein</cite>
                             </blockquote>
                             <div class="content">
                                 <dl id="filter-list" class="controls">
                                     <dt class="title">Filter</dt>
                                     <dd class="category">
-                                        <span class="filter animate" data-filter="all">All</span>
+                                        <span class="filter animate active" data-filter="all">All</span>
                                     </dd>
                                     <dd class="category">
                                         <span class="filter animate" data-filter=".web">Web</span>
@@ -190,8 +178,8 @@
                                     </dd>
                                 </dl>
                                 <ul id="portfolio" class="spotlight" mixItUp>
-                                    <li class="mix {{item.category}}" style="display: inline-block" ng-repeat="item in results | orderBy : predicate">
-                                        <a hre="#" ng-href="{{item.url}}" target="_blank" data-ga-category="Portfolio" data-ga-action="Clicked {{item.id}}" data-ga-label="{{item.name}}">
+                                    <li class="mix {{item.category}}" style="display: inline-block" ng-repeat="item in results | orderBy : predicate | limitTo : 9" ng-cloak>
+                                        <a hre="#" ng-href="{{item.url}}" title="{{item.name}}" target="_blank" data-ga-category="Portfolio" data-ga-action="Clicked {{item.id}}" data-ga-label="{{item.name}}">
                                             <div ng-style="{'background-image': 'url(img/blank.png)'}" class="image lazy" data-original="{{item.image_url}}"></div>
                                             ng-src="/images/loader-circle-image.gif" data-original="{{ item.image_resized }}"
                                             <div class="overlay animate">
@@ -219,74 +207,111 @@
                 </div>
             </section>
 
-            <div class="separator-section">
+            <div class="seperator-section">
                 
             </div>
 
-            <div id="social" class="page social animate">
+            <div id="blog" class="page blog animate" ng-controller="BlogFeedCtrl" ng-class="{'waiting' : showWaiting}">
                 <div class="container">
                     <div class="row">
                         <div class="column whole">
-                            <h2>Social<em>.</em></h2>
+                            <h2>Blog<em>.</em></h2>
                             <blockquote>
-                                …You talkin’ to me? Well, I’m the only one here.
-                                <cite>Travis Bickle – Taxi Driver</cite>
+                                You can't be a proper writer without a touch of madness, can you?
+                                <cite>Madeleine – Quills</cite>
                             </blockquote>
-                            <ul class="whole thumbs">
-                                <li>
-                                    <a class="genericon facebook" href="http://www.facebook.com/jamie.derycke" title="Facebook">
+                            
+                            <div class="content">
+                                <article ng-cloak ng-repeat="item in feed.items | orderBy : predicate | limitTo : 3" role="article">
+                                    <a ng-cloak hre="#" ng-href="{{item.link}}" rel="bookmark" title="{{item.title}}">
+                                        <header class="content">
+                                            <h1 class="entry-title">{{item.title}}</h1>
+                                            <time class="entry-time clock" datetime="{{item.publishedDate | date:'MMM d, y'}}" itemprop="datePublished">{{item.publishedDate | date:'MMM d, y'}}</time>
+                                        </header>
+                                        <div class="overlay animate">
+                                            <span class="genericon long-arrow right"></span>
+                                        </div>
+                                    </a>
+                                </article>
+                                <p class="small-text">To see read of my articles, go to <a href="http://blog.jamiederycke.me.uk" title="Blog of a web monkey">Blog</a>.</p>
+                            </div>
+                            <div class="column whole loading-ring-container">
+                                <div class="loading-ring">
+                                    <div class="loading-ring-light">
+                                        <div class="loading-ring-track">
 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon twitter" href="http://www.twitter.com/jderycke" title="Twitter">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon google" href="http://plus.google.com/u/0/113337118368975520999/posts" title="Google+">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon linkedin" href="http://uk.linkedin.com/in/jamiederycke" title="LinkedIn">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon flickr" href="http://www.flickr.com/photos/jamiederycke" title="Flickr">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon fivehundred" href="http://www.500px.com/jamiederycke/" title="500px">
-                                        
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon wordpress" href="http://blog.jamiederycke.me.uk/" title="Blog">
-                                        
-                                    </a>
-                                </li>
-                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="loading-ring-text">loading...</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
+                <a href="#home" class="scrollUp animate" title="Back up to home" data-ga-category="Scroll up" data-ga-action="Clicked footer up arrow" data-ga-label="Arrow">
+                    <span class="genericon long-arrow up animate"></span>
+                </a>
             </div>
-            <footer class="separator-section">
-                <div class="footer-container">
-                    <small>&copy; 2014 <a href="http://www.jamiederycke.me.uk" title="Jamie De Rycke">Jamie De Rycke</a>. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/">Brackets</a>.</small>
+            <footer class="seperator-section" role="contentinfo">
+                <div id="social" class="container footer-container">
+                    <div class="footer-content">
+                        <small class="copyright">&copy; 2015 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/" title="Link to Brackets.io">Brackets</a>.</small>
+                        <ul class="social-thumbs">
+                            <li>
+                                <a class="genericon facebook" href="http://www.facebook.com/jamie.derycke" title="Facebook">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genericon twitter" href="http://www.twitter.com/jderycke" title="Twitter">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genericon google" href="http://plus.google.com/u/0/113337118368975520999/posts" title="Google+">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genericon linkedin" href="http://uk.linkedin.com/in/jamiederycke" title="LinkedIn">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genericon flickr" href="http://www.flickr.com/photos/jamiederycke" title="Flickr">
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genericon fivehundred" href="http://www.500px.com/jamiederycke/" title="500px">
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
         </div>
-        <a href="#home" ng-class="{'show': showScrollUp}" du-smooth-scroll du-scrollspy duration="800" class="genericon scrollup angle-double-up animate" data-ga-category="ScrollTop" data-ga-action="Clicked link" data-ga-label="Top"></a>
-        
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js" data-require="angular.js@1.3.x" data-semver="1.3.0"></script>
-		<script type="text/javascript" src="js/thirdparty/angular-scroll.min.js"></script>
-        <script type="text/javascript" src="js/thirdparty/jquery.mixitup.min.js"></script>
+
+        <!--[if gte IE 9 | !IE ]> -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <![endif]-->
+		<!--[if lt IE 9]> -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <![endif]-->
+		
         <script type="text/javascript" src="js/thirdparty/jquery.lazyload.min.js"></script>
-		<script type="text/javascript" src="js/app.min.js"></script>
+        <script type="text/javascript" src="js/thirdparty/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="js/site.min.js"></script>
+        
+        <!--[if gte IE 9 | !IE ]> -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+        <![endif]-->
+		<!--[if lt IE 9]> -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+        <![endif]-->
+        
+        <script type="text/javascript" src="js/app.min.js"></script>
 		
 		<script type="text/javascript">
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

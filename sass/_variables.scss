@@ -1,22 +1,16 @@
-@import "bourbon/bourbon";
-@import 'neat/neat';
-@import 'neat/neat-helpers';
+$site-color         :   #C01025;
 
-$site-color         :   #D13353;
+$white-tint1        :   #FAFAFA;
 
-$white              :   #FFFFFF;
-$white-tint1        :   #F6F6F6;
+$black              :   #222222;
+$black-tint1        :   #333333;
 
-$grey               :   #DDDDDD;
-$grey-tint1         :   #999999;
-
-$black              :   #000000;
-$black-tint1        :   #222222;
-$black-tint2        :   #444444;
+$grey               :   #F2F2F2;
+$grey-tint1         :   #888888;
 
 $facebook-blue      :   #3B5998;
 $twitter-blue       :   #00ACED;
-$google-red         :   #DB4A37;
+$google-red         :   #D73D32;
 $linkedin-blue      :   #007BB6;
 $flickr-pink        :   #FF0084;
 $rss-orange         :   #FF6600;
@@ -25,11 +19,11 @@ $wordpress-grey     :   #DDDDDD;
 
 /* -- Grid Settings -------------------------------------------- */
 $column             : rem(90);
-$gutter             : rem(15);
+$gutter             : rem(22);
 $grid-columns       : 10;
-$max-width          : em(1280);
+$max-width          : rem(1396);
 
 $screen-xs          : rem(480);
 $screen-sm          : rem(768);
 $screen-md          : rem(996);
-$screen-lg          : rem(1280);
+$screen-lg          : rem(1396);

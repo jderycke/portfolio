@@ -52,6 +52,7 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'dist/js/app.min.js': ['js/app.js'],
+                    'dist/js/site.min.js': ['js/site.js'],
                 }
             }
         },
@@ -82,6 +83,8 @@ module.exports = function(grunt) {
             }
         }
 	});
+    
+    grunt.loadNpmTasks('grunt-dev-update');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');

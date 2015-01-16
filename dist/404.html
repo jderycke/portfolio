@@ -22,13 +22,13 @@
 		<link rel="apple-touch-icon-precomposed" href="img/logo57x57.png" />
 		<link rel="shortcut icon" href="img/logo57x57.png" />
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Play:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2:200,300,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/site.common.min.css" />
 
 		<!--[if lt IE 9]>
 		<script src="css/ie.min.css"></script>
-		<script src="js/thirdparty/html5shiv.min.js"></script>
-		<script src="js/thirdparty/html5shiv-printshiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script>
 		<![endif]-->
 	</head>
 	<body id="error">
@@ -41,7 +41,7 @@
         </header>
         
 		<div class="wrapper">				
-            <div id="error" class="error page separator-section">
+            <div id="error" class="error page seperator-section">
                 <section class="container">
                     <article class="info">
                         <h1>
@@ -55,15 +55,21 @@
         
         <footer>
             <div class="container">
-                <small>&copy; 2014 <a href="http://www.jamiederycke.me.uk" title="Jamie De Rycke">Jamie De Rycke</a>. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/">Brackets</a>.</small>
+                <small>&copy; 2015 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/">Brackets</a>.</small>
             </div>
         </footer>
+
+        <!--[if gte IE 9 | !IE ]> -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <![endif]-->
+		<!--[if lt IE 9]> -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <![endif]-->
 		
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js" data-require="angular.js@1.2.x" data-semver="1.2.26"></script>
-        <script type="text/javascript" src="js/thirdparty/angular-scroll.min.js"></script>
-		<script type="text/javascript" src="js/app.min.js"></script>
-        
+        <script type="text/javascript" src="js/thirdparty/jquery.lazyload.min.js"></script>
+        <script type="text/javascript" src="js/thirdparty/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="js/site.min.js"></script>
+
         <script type="text/javascript">
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

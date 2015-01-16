@@ -8,7 +8,27 @@
             "image_url": "img/gallery/2.jpg?",
             "url": "http://500px.com/photo/64405295/mountain-aummit-(kilimanjaro)-by-jamie-de-rycke",
             "link_text": "View at 500px.com",
-            "tags": ""
+            "tags": "mountain, landscape"
+        },
+        {
+            "id": "3",
+            "name": "Candle face",
+            "description": "https://500px.com/photo/92204703/candle-face-by-jamie-de-rycke",
+            "category": "photo",
+            "image_url": "img/gallery/16.jpg?",
+            "url": "https://500px.com/photo/92204703/candle-face-by-jamie-de-rycke",
+            "link_text": "View at 500px.com",
+            "tags": "abstract, candle, lights"
+        },
+        {
+            "id": "4",
+            "name": "Winter Candle",
+            "description": "Shot of a 3 tipped candle",
+            "category": "photo",
+            "image_url": "img/gallery/17.jpg",
+            "url": "http://500px.com/photo/92204707/winter-candle-by-jamie-de-rycke",
+            "link_text": "View at 500px.com",
+            "tags": "abstract, candle, lights"
         },
         {
             "id": "5",
@@ -21,22 +41,12 @@
             "tags": ""
         },
         {
-            "id": "6",
-            "name": "Dandelion 4",
-            "description": "Macro dandelion shot",
-            "category": "photo",
-            "image_url": "img/gallery/6.jpg?",
-            "url": "http://500px.com/photo/70778271/dandelion-4-by-jamie-de-rycke",
-            "link_text": "View at 500px.com",
-            "tags": ""
-        },
-        {
             "id": "7",
             "name": "Point of Ayr Lighthouse",
             "description": "Point of Ayr Lighthouse, Talacre beach, North Wales",
             "category": "photo",
             "image_url": "img/gallery/9.jpg?",
-            "url": "http://500px.com/photo/76499803/point-of-ayr-lighthouse-by-jamie-de-rycke",
+            "url": "http://500px.com/photo/83165695/point-of-ayr-lighthouse-by-jamie-de-rycke",
             "link_text": "View at 500px.com",
             "tags": ""
         },
@@ -91,7 +101,7 @@
             "tags": "city, architecture, london"
         },
         {
-            "id": "14",
+            "id": "13",
             "name": "St Paul's Cathedral",
             "description": "St Paul's Cathedral from the Millenium Bridge",
             "category": "photo",
@@ -99,6 +109,16 @@
             "url": "http://500px.com/photo/84647931/st-paul's-cathedral-by-jamie-de-rycke",
             "link_text": "View at 500px.com",
             "tags": "bridge, city, london, city, architecture, "
+        },
+        {
+            "id": "14",
+            "name": "Winter Moon",
+            "description": "Winter half moon on a relatively un-cloudy night",
+            "category": "photo",
+            "image_url": "img/gallery/18.jpg",
+            "url": "http://500px.com/photo/89087485/winter-moon-by-jamie-de-rycke",
+            "link_text": "View at 500px.com",
+            "tags": "black and white, half moon, landscape, moon, night photography"
         }
     ]
 }

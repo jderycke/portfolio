@@ -1,26 +1,7 @@
 (function () {
 	'use strict';
-	var portfolioApp = angular.module('portfolioApp', ['duScroll']);
+	var portfolioApp = angular.module('portfolioApp', []);
 
-    portfolioApp.directive('scroll', function ($window) {
-        return function(scope, element, attrs) {
-            var headerHeight = angular.element('header').height();
-            scope.showScrollUp = false;
-            scope.pinHeader = false;
-
-            angular.element($window).bind("scroll", function() {
-                if ($(this).scrollTop() > (headerHeight * 2)) {
-                    scope.showScrollUp = true;
-                    scope.pinHeader = true;
-                } else {
-                    scope.showScrollUp = false;
-                    scope.pinHeader = false;
-                }
-                scope.$apply();
-            });
-        };
-    });
-    
     portfolioApp.directive('lazy', function($timeout) {
         return {
             restrict: 'C',
@@ -36,56 +17,21 @@
         };
     });
     
-    portfolioApp.directive('mixItUp', function() {
-        return {
-            restrict: 'C',
-            link: function(scope, element, attrs) {
-                angular.element('#portfolio').mixItUp({
-                    animation: {
-                        effects: 'fade',
-                        duration: 450
-                    },
-                    selectors: {
-                        target: 'li'
-                    },
-                    load: {
-                        filter: 'all'
-                    }
-                });
-            }
-        };
-    }); 
-    
-	portfolioApp.controller('PortfolioCtrl', function ($q, $scope, $http, $timeout, $document) {
-        $scope.showNavMenu = false;
+	portfolioApp.controller('PortfolioCtrl', function ($scope, $q, $http, $timeout) {
         $scope.showWaiting = true;
-        $scope.showModal = false;
-		$scope.isPinned = false;
         $scope.results = [];
         $scope.result = null;
 		
-		/* -- Menu ---------------------------------------------------------------------- */
-        $scope.toggleMenu = function (e) {
-            $scope.showNavMenu = !$scope.showNavMenu;
-			e.preventDefault();
-		};
-        
-        $scope.goToPage = function (e, id, duration) {
-            angular.element('.menu a').removeClass();
-            $(e.target).parent().addClass('active');
-            $document.scrollToElement(angular.element(id), 0, duration === undefined ? 1400 : duration);
-			e.preventDefault();
-		};
-
 		/* -- Load Photos --------------------------------------------------------------- */
 		$scope.loadPhotos = function () {
 			var deferred = $q.defer();
-			$http.get('./js/data/portfolio.json?v=2')
+			$http.get('./js/data/portfolio.json?v=8')
 			.success(function (data) {
-				 deferred.resolve(data);	
+				 deferred.resolve(data);
 			})
 			.error(function () {
 				deferred.reject();
+                $scope.showWaiting = false;
 			});
 			return deferred.promise;
 		};
@@ -99,7 +45,7 @@
                 }
             );
         };
-        $timeout(photos, 2500);
+        $timeout(photos, 2000);
         
         angular.element('#portfolio').mixItUp({
             animation: {
@@ -114,4 +60,35 @@
             }
         });
 	});
+    
+    portfolioApp.controller('BlogFeedCtrl', function ($scope, $q, $http, $timeout) {
+        $scope.showWaiting = true;
+           
+        $scope.loadFeed = function () {
+			var deferred = $q.defer();
+            var url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=JSON_CALLBACK&q=' + encodeURIComponent('http://blog.jamiederycke.me.uk/feed/');
+            $http.jsonp(url).
+                success(function(data) {
+                    deferred.resolve(data);
+                })
+			.error(function () {
+				deferred.reject();
+                $scope.showWaiting = false;
+			});
+			return deferred.promise;
+        };
+        
+        var feed = function () { 
+            $scope.loadFeed().then(
+                function (data) {
+                    $scope.predicate = 'datePublished';
+                    $scope.feed = {
+                        items: data.responseData.feed.entries
+                    };
+                    $scope.showWaiting = false;
+                }
+            );
+        };
+        $timeout(feed, 1500);
+    });
 })();
