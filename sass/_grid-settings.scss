@@ -1,10 +1,7 @@
 /* Preserve some sanity */
 .wrapper {
-    margin: 0 auto 350px;;
-    position: absolute;
+    margin: 0 auto;
     width: 100%;
-    height: 100%;
-    z-index: 1;
 }
 
 .container,
@@ -14,19 +11,6 @@
     position: relative;
     content: "";
     @include transition(all 0.4s ease);
-}
-
-/* Set up some rules to govern the container */
-.container {
-    @include outer-container;
-    width: 100%;
-    padding-left: rem(10);
-    padding-right: rem(10);
-}
-
-.container,
-.row {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
     
     &:before {
         display: table;
@@ -42,38 +26,75 @@
     }
 }
 
+.container {
+    @include outer-container;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $max-width;
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
+
+.row {
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+}
+
 .column {
     position: relative;
     min-height: 1px;
+    @include flex( 1 1 auto);
     
-    &:first-child,
-    &:last-child {
+    &:first-child {
         padding-left: 0;
         padding-right: 0;
+        
+        @include media($tablet) {
+            padding-left: 0;
+            padding-right: $gutter;
+        }
     }
     
-    .pull-left,
-    .pull-right {
-        float: left; 
+    &:last-child {
+        padding-right: 0;
+        padding-left: 0;
+        
+        @include media($tablet) {
+            padding-left: $gutter;
+            padding-right: 0;
+        }
+    }
+    
+    &.pull-left {
         padding-left: 0;
         padding-right: 0;
-        margin-right: 0;
-        margin-left: 0;
+        
+        @include media($tablet) {
+            padding-left: 0;
+            padding-right: $gutter;
+        }
+    }
+    
+    &.pull-right {
+        padding-right: 0;
+        padding-left: 0;
+        
+        @include media($tablet) {
+            padding-left: $gutter;
+            padding-right: 0;
+        }
     }
     
     .column {
         &:first-child {
-            padding-left: $gutter; 
+            padding-left: 0; 
         }
+        
         &:last-child {
-            padding-right: $gutter;
+            padding-right: 0;
         }
     }
-}
-
-/* Let people nuke the gutters/padding completely in a couple of ways */
-.no-gutters {
-    padding: 0 !important;
 }
 
 .whole,
@@ -87,7 +108,7 @@
 .three-fifths,   
 .four-fifths,    
 .golden-small,   
-.golden-large { @include span-columns(10); }
+.golden-large { @include flex-basis(100%); }
 
 /* Utility classes */
 .align-center   { text-align: center; }
@@ -95,59 +116,32 @@
 .align-right    { text-align: right; }
 .align-justify  { text-align: justify; }
 
-.center-on-mobiles { text-align: center !important; }
+/* Let people nuke the gutters/padding completely in a couple of ways */
+.no-gutters { 
+    padding-right: 0 !important; 
+    padding-left: 0 !important; 
+}
+
 .hide-on-mobiles { display: none !important; }
 
+
 /* -- Small screen ------------------------------------------------ */
-@media only screen and (min-width: $screen-sm) {
-   
-    .container {
-        padding-left: rem(10);
-        padding-right: rem(10);
-    }
-        
-    .column {
-        &:first-child {
-            padding-left: $gutter;
-        }
+@include media($tablet) {
+    .whole          { @include flex-basis(100%); }
+    .half           { @include flex-basis(50%); }
+    .one-third      { @include flex-basis(33.3%); }
+    .two-thirds     { @include flex-basis(66.6%); }
+    .three-quarters { @include flex-basis(75%); }
+    .one-quarter    { @include flex-basis(25%); }
+    .one-fifth      { @include flex-basis(2); }
+    .two-fifths     { @include flex-basis(4); }
+    .three-fifths   { @include flex-basis(6); }
+    .four-fifths    { @include flex-basis(8); }
 
-        &:last-child {
-            padding-right: $gutter;
-        }
-        .column {
-            padding-left: 0;
-            padding-right: $gutter;
-
-            &:first-child,
-            &:last-child {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-
-        .pull-left { 
-            padding-right: $gutter;
-            padding-left: 0;
-        }
-
-        .pull-right { 
-            float: right; 
-            padding-left: $gutter;
-            padding-right: 0;
-        }
-    }
-        
-    .whole          { @include span-columns(10); }
-    .half           { @include span-columns(5); }
-    .one-third      { @include span-columns(3); }
-    .two-thirds     { @include span-columns(6); }
-    .three-quarters { @include span-columns(6); }
-    .one-quarter    { @include span-columns(3); }
-    .one-fifth      { @include span-columns(2); }
-    .two-fifths     { @include span-columns(4); }
-    .three-fifths   { @include span-columns(6); }
-    .four-fifths    { @include span-columns(8); }
-
-    .golden-small   { @include span-columns(3); }
-    .golden-large   { @include span-columns(7); }
+    .golden-small   { @include flex-basis(28.01019%); }
+    .golden-large   { @include flex-basis(69.14722%); }
+    
+    .pull-right     { float: right; }
+    
+    .hide-on-mobiles { display: inherit !important; }
 }

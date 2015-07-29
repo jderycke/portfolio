@@ -1,84 +1,121 @@
 (function () {
 	'use strict';
-	var portfolioApp = angular.module('portfolioApp', []);
+    
+	var app = angular.module('portfolioApp', []);
+    
+    app.directive('scroll', function ($window) {
+        return function(scope, element, attrs) {
+            
+            var sections = angular.element('.page');
+            
+            angular.element($window).bind('scroll', function() {
+                
+                var currentScroll = this.pageYOffset,
+                    currentSection,
+                    id;
+                    
+                angular.forEach(sections, function (section, index) {
+                    var divPosition = angular.element(section).offset().top;
 
-    portfolioApp.directive('lazy', function($timeout) {
-        return {
-            restrict: 'C',
-            link: function (scope, element, attrs) {
-                $timeout(function() {
-                    angular.element(element).lazyload({
-                        effect: 'fadeIn',
-                        effectspeed: 500,
-                        'skip_invisible': false
-                    });
-                }, 0);
-            }
+                    if (divPosition - 1 < currentScroll) {
+                        currentSection = angular.element(section);
+                    }
+
+                    id = angular.element(currentSection).prop('id');
+                    angular.element('a').removeClass('active');
+                    angular.element('[href=#' + id + ']').addClass('active');
+                });
+                scope.$apply();
+            });
         };
     });
     
-	portfolioApp.controller('PortfolioCtrl', function ($scope, $q, $http, $timeout) {
+    app.controller('SiteController', function ($scope, $window, $location) {
+        angular.element('.toggle-nav').on('click', function () {
+            angular.element('body').toggleClass('is-sidebar-expanded');
+            return false;
+        });
+        
+        angular.element('.toggle-back').on('click', function () {
+            $window.history.back();
+            return false;
+        });
+        
+        angular.element('a[href*=#]:not([href=#])').on('click', function () {
+            var target = angular.element(this.hash);
+            target = target.length ? target : $('[id=' + this.hash.slice(1) + ']');
+
+            if (target.length) {
+                angular.element('.active').removeClass('active');
+                angular.element(this).addClass('active');
+
+                angular.element('html, body').animate({scrollTop: target.offset().top}, 1000);
+
+                return false;
+            }
+        });
+        
+        angular.element('[data-ga-category]').on('click', function () {
+            
+            var category = angular.element(this).prop('data-ga-category'),
+                action = angular.element(this).prop('data-ga-action'),
+                label = angular.element(this).prop('data-ga-label');
+            
+            ga('send', '_trackEvent', category, action, label);
+        });
+    });
+    
+	app.controller('PortfolioController', function ($scope, $q, $http, $timeout) {
         $scope.showWaiting = true;
         $scope.results = [];
         $scope.result = null;
 		
 		/* -- Load Photos --------------------------------------------------------------- */
-		$scope.loadPhotos = function () {
+		$scope.loadFeed = function () {
 			var deferred = $q.defer();
-			$http.get('./js/data/portfolio.json?v=8')
-			.success(function (data) {
-				 deferred.resolve(data);
-			})
-			.error(function () {
-				deferred.reject();
-                $scope.showWaiting = false;
-			});
+            
+			$http.get('./js/data/portfolio.js', {headers: {'Content-Type': 'text/plain'}})
+			     .success(function (data) {
+                    deferred.resolve(data);
+                })
+			     .error(function () {
+				    deferred.reject();
+                    $scope.showWaiting = false;
+			    });
 			return deferred.promise;
 		};
-		
-        var photos = function () { 
-            $scope.loadPhotos().then(
+
+        var feed = function () {
+            $scope.loadFeed().then(
                 function (data) {
                     $scope.results = data.items;
-                    $scope.predicate = 'name';
+                    $scope.predicate = 'id';
                     $scope.showWaiting = false;
                 }
             );
         };
-        $timeout(photos, 2000);
-        
-        angular.element('#portfolio').mixItUp({
-            animation: {
-                effects: 'fade',
-                duration: 450
-            },
-            selectors: {
-                target: 'li'
-            },
-            load: {
-                filter: 'all'
-            }
-        });
+        $timeout(feed, 2500);
 	});
     
-    portfolioApp.controller('BlogFeedCtrl', function ($scope, $q, $http, $timeout) {
+    app.controller('BlogFeedController', function ($scope, $q, $http, $timeout) {
         $scope.showWaiting = true;
-           
+        
         $scope.loadFeed = function () {
-			var deferred = $q.defer();
-            var url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=JSON_CALLBACK&q=' + encodeURIComponent('http://blog.jamiederycke.me.uk/feed/');
+			var deferred = $q.defer(),
+                url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=JSON_CALLBACK&q=' + encodeURIComponent('http://blog.jamiederycke.me.uk/feed/');
+            
             $http.jsonp(url).
-                success(function(data) {
+                success(function (data) {
                     deferred.resolve(data);
                 })
-			.error(function () {
-				deferred.reject();
-                $scope.showWaiting = false;
-			});
+			    .error(function () {
+				    deferred.reject();
+                    $scope.showWaiting = false;
+			    });
 			return deferred.promise;
         };
         
-        var feed = function () { 
+        var feed = function () {
             $scope.loadFeed().then(
                 function (data) {
                     $scope.predicate = 'datePublished';
@@ -89,6 +126,6 @@
                 }
             );
         };
-        $timeout(feed, 1500);
+        $timeout(feed, 2500);
     });
 })();
