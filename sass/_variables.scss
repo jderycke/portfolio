@@ -1,4 +1,4 @@
-$site-color         :   #B4D455;
+$site-color         :   #B4DA55;
 
 $white-tint1        :   #FAFAFA;
 
@@ -15,6 +15,7 @@ $linkedin-blue      :   #007BB6;
 $flickr-pink        :   #FF0084;
 $rss-orange         :   #FF6600;
 $pinterest-red      :   #cb2027;
+$fivehundred-grey   :   #b9c1c7;
 $wordpress-grey     :   #DDDDDD;
 
 $navbar-width       :   95px;
@@ -22,10 +23,12 @@ $navbar-width       :   95px;
 /* -- Grid Settings -------------------------------------------- */
 $gutter             : 25px;
 
-$screen-sm          : 768px;
+$screen-xs          : 667px;
+$screen-sm          : 799px;
 $screen-md          : 996px;
-$max-width          : 1250px;
+$screen-lg          : 1250px;
 
 
-$tablet: new-breakpoint(min-width $screen-sm);
+$mobile: new-breakpoint(max-width $screen-xs);
+$tablet: new-breakpoint(min-width $screen-xs);
 $desktop: new-breakpoint(min-width $screen-md);

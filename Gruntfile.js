@@ -1,6 +1,17 @@
 module.exports = function (grunt) {
     'use strict';
-    
+
+    var environmentConfig = {
+        FRONTEND_CONNECT_PORT: process.env.FRONTEND_CONNECT_PORT || 9000,
+        FRONTEND_CONNECT_LIVERELOAD_PORT: process.env.FRONTEND_CONNECT_LIVERELOAD_PORT || 9999,
+        FRONTEND_CONNECT_TEST_PORT: grunt.option('frontend_connect_test_port') || process.env.FRONTEND_CONNECT_TEST_PORT || 7001,
+    }
+
+    grunt.log.subhead('Environment configuration');
+    Object.keys(environmentConfig).forEach(function (settingName) {
+        grunt.log.writeln(grunt.log.table([40, 10], [settingName, '' + environmentConfig[settingName]]));
+    });
+
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
@@ -11,14 +22,14 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     hostname: 'localhost',
-                    port: 9000,
+                    port: environmentConfig.FRONTEND_CONNECT_PORT,
                     base: 'dist',
                     open: true,
-                    livereload: 9000
+                    livereload: environmentConfig.FRONTEND_CONNECT_LIVERELOAD_PORT
                 }
             }
         },
-        
+
         watch: {
             options: {
                 dateFormat: function (time) {
@@ -40,7 +51,7 @@ module.exports = function (grunt) {
                 }
 			},
             scripts: {
-                files: ['js/*.js', 'js/data/*.json'],
+                files: ['js/*.js', 'js/*/*.js', 'js/data/*.json'],
                 tasks: ['jsonlint', 'jsonmin', 'uglify'],
                 options: {
                     spawn: false,
@@ -64,7 +75,7 @@ module.exports = function (grunt) {
                 }
             }
 		},
-        
+
 		sass: {
 			dist: {
 				files: {
@@ -72,7 +83,7 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-        
+
         combine_mq: {
             default_options: {
                 expand: true,
@@ -81,14 +92,14 @@ module.exports = function (grunt) {
                 dest: 'temp'
             }
         },
-        
+
         cssmin: {
             dist: {
                 src: ['css/normalize.css', 'temp/style.css'],
                 dest: 'dist/css/site.common.min.css'
             }
         },
-                
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -104,27 +115,24 @@ module.exports = function (grunt) {
                 'js/*.js'
             ]
         },
-        
+
         uglify: {
             options: {
                 mangle: false
             },
             my_target: {
                 files: {
-                    'dist/js/app.min.js': ['js/app.js'],
-                    'dist/js/site.min.js': ['js/site.js'],
-                    'dist/js/thirdparty/jquery-2.1.4.min.js': ['js/thirdparty/jquery-2.1.4.js'],
-                    'dist/js/thirdparty/angular-1.4.3.min.js': ['js/thirdparty/angular-1.4.3.js']
+                    'dist/js/portfolioApp.min.js': ['js/portfolioApp.js', 'js/services/*.js', 'js/directives/*.js', 'js/controllers/*.js']
                 }
             }
         },
-        
+
         jsonlint: {
             sample: {
                 src: [ 'js/data/portfolio.json' ]
             }
         },
-        
+
         jsonmin: {
             dev: {
                 options: {
@@ -132,22 +140,22 @@ module.exports = function (grunt) {
                     stripComments: true
                 },
                 files: {
-                    'dist/js/data/portfolio.json' : 'js/data/portfolio.json'
+                    'dist/js/data/portfolio.min.json' : 'js/data/portfolio.json'
                 }
             }
         },
-        
+
         imagemin: {
             dist: {
                 files: [{
                     expand: true,
                     cwd: 'img',
-                    src: '**/*.{png,jpg,jpeg,gif}',
+                    src: ['**/*.{png,jpg,jpeg,gif}', '!_Original', '!NotUsed'],
                     dest: 'dist/img/'
                 }]
             }
         },
-        
+
         htmlmin: {
             dist: {
                 options: {
@@ -164,14 +172,22 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        
+
         karma: {
             unit: {
-                configFile: 'karma.conf.js',
-                singleRun: true
+                configFile: 'karma-conf.js',
+                singleRun: true,
+                coverageReporter: {
+                    reporters: [
+                        {type: 'html', dir: 'reports/coverage'},
+                        {type: 'cobertura', dir: 'reports/target/site/cobertura/', file: 'coverage.xml'},
+                        {type: 'lcovonly', dir: 'reports/coverage', subdir: '.', file: 'lcov.dat'},
+                        {type: 'json', dir: 'reports/coverage'}
+                    ]
+                }
             }
         },
-        
+
         coverage: {
             unit: {
                 options: {
@@ -185,9 +201,18 @@ module.exports = function (grunt) {
                     root: 'reports'
                 }
             }
+        },
+
+        livereload: {
+            options: {
+                open: 'http://' + require('os').hostname() + ':' + environmentConfig.FRONTEND_CONNECT_PORT,
+                base: [
+                    '.tmp'
+                ]
+            }
         }
 	});
-    
+
     grunt.loadNpmTasks('grunt-dev-update');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -201,10 +226,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-combine-mq');
     grunt.loadNpmTasks('grunt-karma');
-    
+
     grunt.registerTask('serve', function () {
         grunt.task.run(['connect', 'watch']);
     });
-    
+
     grunt.registerTask('default', ['connect', 'watch']);
 };

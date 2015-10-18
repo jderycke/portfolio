@@ -25,7 +25,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     @include font-feature-settings("liga");
     text-align: justify;
-    overflow-x: hidden;
 }
 
 h1,
@@ -37,6 +36,18 @@ h4 {
     margin: 0;
     font-family: 'Exo 2', Arial, Helvetica, Verdana, sans-serif;
     font-weight: 200;
+
+    &:before {
+        display: table;
+        content: ' ';
+        line-height: 0;
+    }
+
+    &:after {
+        display: table;
+        content: ' ';
+        line-height: 0;
+    }
 }
 
 h1 {
@@ -102,7 +113,7 @@ img {
 figure {
     margin: 0;
     padding: 0;
-    
+
     figcaption {
         color: $white-tint1;
         padding: $gutter;
@@ -128,7 +139,7 @@ blockquote {
         line-height: 1;
         margin-top: $gutter;
         color: $grey-tint1;
-        
+
         &:before {
             content: "\2014 \2009";
         }
@@ -151,6 +162,10 @@ blockquote {
     font-size: rem(14);
 }
 
+.site-wrapper {
+    overflow-y: hidden;
+}
+
 /*----------------------------------------------------------------------------------------------*/
 
 .site-header {
@@ -158,15 +173,15 @@ blockquote {
     height: 75px;
 	position: fixed;
     background-color: $black-tint1;
-	z-index: 4;
+	z-index: 5;
 	top: 0;
     left: 0;
-    
+
     @include media($tablet) {
         width: $navbar-width;
         height: 100vh;
     }
-    
+
     .logo {
         background-color: $site-color;
         background-image: url('../img/logo114x114.png');
@@ -178,11 +193,11 @@ blockquote {
         text-indent: -9999px;
         display: block;
         text-align: center;
-        
+
         &:hover {
             background-color: $grey;
         }
-        
+
         @include media($tablet) {
             width: $navbar-width;
             height: $navbar-width;
@@ -202,11 +217,11 @@ blockquote {
     width: 100%;
     height: 350px;
     z-index: 3;
-    
+
     @include media($tablet) {
         padding-left: $navbar-width;
     }
-    
+
     .footer-container {
         padding-bottom: 0;
         max-width: rem(1280);
@@ -217,7 +232,7 @@ blockquote {
         height: 100%;
         z-index: 1;
 	}
-    
+
     .footer-content {
         z-index: 1;
         display: table-cell;
@@ -235,7 +250,7 @@ blockquote {
         text-transform: uppercase;
         color: $white-tint1;
         padding: 0 0 1rem 0;
-        
+
         &:before {
             content: '';
         }
@@ -247,15 +262,13 @@ blockquote {
 .page {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    height: 100vh;
     display: table;
     background-color: $white-tint1;
     box-sizing: border-box;
     z-index: 3;
-    padding-top: 110px;
-    padding-bottom: 110px;
-    
+    padding-top: 60px;
+    padding-bottom: 60px;
+
     @include media($tablet) {
         padding-left: $navbar-width;
     }
@@ -271,59 +284,31 @@ blockquote {
     background-color: $black;
     display: table;
     z-index: 1;
-    
-    ul {
-        &.menu {
-            display: table-cell;
-            vertical-align: middle;
-            margin-top: 0;
-                        
-            li {
-                display: block;
-                border-top: solid 1px $black-tint1;
-                
-                &:first-of-type {
-                    border-top: none;
-                }
-                
-                .nav-link {
-                    color: $white-tint1;
-                    text-decoration: none;
-                    display: block;
-                    text-transform: uppercase;
-                    font-weight: 800;
-                    font-size: rem(36);
-                    padding: 0 rem(25);
-                    
-                    &:hover {
-                        color: $site-color;
-                        background-color: $black-tint1;
-                    }
 
-                    &.active {
-                        cursor: default;
-                        color: $site-color;
-                    }
-
-                    .srt {
-                        font-family: 'Exo 2', Arial, Helvetica, Verdana, sans-serif;
-                        display: block;
-                        font-size: rem(22);
-                        line-height: 90px;
-                    }
-                }
-            }
-            
-            @include media($tablet) {
-                margin-top: $navbar-width;
-            }
-        }
-    }
-    
     @include media($tablet) {
         left: -300px;
         width: 300px;
         border-left: solid 1px $black-tint1;
+    }
+}
+
+ul {
+    &.menu {
+        display: table-cell;
+        vertical-align: middle;
+        margin-top: 0;
+
+        li {
+            display: inline-block;
+
+            @include media($tablet) {
+                display: block;
+            }
+        }
+
+        @include media($tablet) {
+            margin-top: $navbar-width;
+        }
     }
 }
 
@@ -332,16 +317,18 @@ blockquote {
     position: fixed;
     top: 0;
     right: 0;
-    
+
     @include media($tablet) {
-        right: inherit;    
+        right: inherit;
         left: 0;
+        width: $navbar-width;
     }
 }
 
 .toggle-sidebars {
     display: flex;
     margin: 0;
+    width: 100%;
 
     li {
         display: inline-block;
@@ -350,42 +337,72 @@ blockquote {
     .toggle-nav,
     .toggle-back {
         display: block;
-                
+        width: 75px;
+        height: 75px;
+        color: $white-tint1;
+        text-decoration: none;
+
         &:hover {
             background-color: $site-color;
+            color: $black-tint1;
 
             .toggle-nav-bar {
-                background-color: $black-tint1;
-                
+                background-color: $white-tint1;
+
                 &:before,
                 &:after {
-                    background-color: $black-tint1;
+                    background-color: $white-tint1;
                 }
             }
-            
+
             .back-arrow {
-                color: $black-tint1;
+                color: $white-tint1;
+            }
+        }
+
+        &.active {
+            color: $site-color;
+
+            &:hover {
+                background-color: $black-tint1;
+            }
+        }
+
+        .genericon {
+            font-size: rem(42);
+            width: 75px;
+            height: 75px;
+            line-height: 75px;
+
+            @include media($tablet) {
+                height: $navbar-width;
+                width: $navbar-width;
+                line-height: $navbar-width;
             }
         }
 
         .srt {
             display: none;
+            text-align: center;
+            color: $white-tint1;
+            font-size: rem(14);
+            font-family: 'Exo 2', Arial, Helvetica, Verdana, sans-serif;
         }
-        
+
         .burger-container {
             display: inline-block;
             position: relative;
             margin: 0;
             padding: 0;
             width: 75px;
-            height: 72px;
+            height: 75px;
             font-size: 0;
             text-indent: -9999px;
-            
+
             &:focus {
                 outline: none;
             }
-            
+
             @include media($tablet) {
                 height: $navbar-width;
                 width: $navbar-width;
@@ -400,12 +417,12 @@ blockquote {
             top: 50%;
             height: 6px;
             background-color: $white-tint1;
-            
+
             @include media($tablet) {
                 left: 24px;
                 right: 24px;
             }
-            
+
             &:before,
             &:after {
                 position: absolute;
@@ -416,16 +433,16 @@ blockquote {
                 width: 100%;
                 @include transition(all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1));
             }
-            
+
             &:before {
                 top: -12px;
             }
-            
+
             &:after {
                 top: 12px;
             }
         }
-        
+
         .back-arrow {
             display: block;
             color: $white-tint1;
@@ -435,6 +452,15 @@ blockquote {
             text-indent: 0;
             text-align: center;
         }
+
+        @include media($tablet) {
+            height: $navbar-width;
+            width: $navbar-width;
+        }
+    }
+
+    @include media($tablet) {
+        width: $navbar-width;
     }
 }
 
@@ -446,7 +472,7 @@ blockquote {
     left: 0;
     z-index: -1;
     margin-top: 75px;
-    
+
     @include media($tablet) {
         margin-top: 0;
     }
@@ -466,28 +492,28 @@ blockquote {
             }
         }
     }
-    
+
     .sidebar,
     .blocker {
         @include transform(translate(260px));
-        
+
         @include media($tablet) {
             @include transform(translateX(395px));
         }
     }
-    
+
     .wrapper,
     .home {
         @include transform(translate(260px));
-        
+
         @include media($tablet) {
             @include transform(translateX(300px));
         }
     }
-    
+
     .blocker {
         background: rgba($black, 0.6);
-        z-index: 1600;
+        z-index: 4;
     }
 }
 
@@ -497,8 +523,8 @@ blockquote {
     margin: 0 auto;
     width: 100%;
     height: 200px;
-    border-top: solid 4px $black;
-    border-bottom: solid 4px $black;
+    border-top: solid 1px $black-tint1;
+    border-bottom: solid 1px $black-tint1;
     background-color: $grey;
     background-image: url('../img/bg-md.jpg');
     background-position: center;
@@ -506,13 +532,13 @@ blockquote {
     background-size: cover;
     background-attachment: fixed;
     z-index: 1;
-    
+
     @include media($tablet) {
         height: 350px;
         padding-left: $navbar-width;
         background-image: url('../img/bg-lg.jpg');
     }
-    
+
     &:after {
         content: '';
         position: absolute;
@@ -525,7 +551,7 @@ blockquote {
         background-color: rgba($black, 0.4);
         z-index: 0;
     }
-    
+
     &:before {
         content: '';
         position: absolute;
@@ -538,7 +564,7 @@ blockquote {
         background-image: url('../img/grid.png');
         z-index: 1;
     }
-    
+
     .container {
         z-index: 1;
         display: table;
@@ -549,7 +575,7 @@ blockquote {
         padding-bottom: $gutter;
         position: relative;
         width: 100%;
-        
+
         blockquote {
             display: table-cell;
             vertical-align: middle;
@@ -557,21 +583,21 @@ blockquote {
             border-left: none;
             font-weight: 800;
             text-align: center;
-            
+
             @include media($tablet) {
                 font-size: rem(36);
             }
-            
+
             cite {
                 font-size: rem(14);
                 line-height: 1.2;
                 font-weight: 400;
                 color: $white-tint1;
-                
+
                 @include media($tablet) {
                     font-size: rem(16);
                 }
-                
+
                 &:after {
                     content: "\2014 \2009";
                 }
@@ -588,13 +614,15 @@ blockquote {
     border-top: 0;
     position: relative;
     z-index: 1;
-        
+    min-height: 100vh;
+    height: 100vh;
+
     .home-container {
         display: table-cell;
         vertical-align: middle;
         z-index: 1;
         width: 100%;
-        
+
         @include media($tablet) {
             vertical-align: bottom;
         }
@@ -605,14 +633,14 @@ blockquote {
             left: 0;
             margin-bottom: 5rem;
             margin-left: 0;
-            
+
             h1 {
                 font-weight: 800;
                 padding: 0;
                 text-align: center;
                 font-size: rem(84);
                 line-height: 1;
-                
+
                 @include media($tablet) {
                     font-size: rem(125);
                     text-align: left;
@@ -626,23 +654,22 @@ blockquote {
                 margin-top: $gutter;
                 line-height: 1.4;
                 clear: both;
-                
+
                 @include media($tablet) {
                     font-size: rem(22);
                     text-align: left;
                 }
             }
-        
+
             &.no-gutters {
-                padding-right: $gutter !important; 
-                padding-left: $gutter !important; 
+                padding-right: $gutter !important;
+                padding-left: $gutter !important;
 
                 @include media($tablet) {
-                    padding-right: 0 !important; 
-                    padding-left: 0 !important; 
+                    padding-left: 0 !important;
                 }
             }
-            
+
             @include media($tablet) {
                 left: inherit;
                 margin-left: $gutter;
@@ -657,48 +684,22 @@ blockquote {
     .devices {
         text-align: center;
         padding: 0;
-    
+
         .genericon {
             background-color: transparent;
             color: $grey-tint1;
             border-radius: 50%;
             border: solid 4px $grey-tint1;
-            line-height: rem(62);
-            font-size: rem(34);
-            margin: rem(40) $gutter;
+            font-size: rem(32);
+            margin: rem(40) rem(5);
             cursor: default;
-                        
+
             @include media($tablet) {
-                font-size: rem(34);
-                line-height: 82px;
-                height: 82px;
-                width: 82px;
-                font-size: 2.5rem;
-            }
-        }
-    }
-    
-    .skills-box {
-        color: $black;
-        background-color: $grey;
-        text-align: center;
-        margin: $gutter auto 0;
-        
-        ul {
-            display: block;
-            padding: $gutter;
-            @include columns(4 8em);
-            @include column-rule(2px solid $white-tint1);
-            
-            li {
-                line-height: rem(42);
-                border-bottom: 1px solid $white-tint1;
-                
-                @include media($tablet) {
-                    &:nth-child(4n) {
-                        border-bottom: none;
-                    }
-                }
+                line-height: 85px;
+                height: 92px;
+                width: 92px;
+                font-size: rem(48);
+                margin: rem(40) rem(25);
             }
         }
     }
@@ -715,8 +716,22 @@ blockquote {
             background-image: url('../img/blank.png');
             background-color: $white-tint1;
             background-repeat: no-repeat;
-            background-position: top center;
+            background-position: center center;
             background-size: cover;
+
+            &.web {
+                background-position: center top;
+
+                &:before {
+                    content: "";
+                }
+            }
+
+            &.camera {
+                &:before {
+                    content: "";
+                }
+            }
         }
 
         &:hover {
@@ -732,9 +747,9 @@ blockquote {
 
 /* -- Blog ---------------------------------------------------------------- */
 .blog {
-    .item-link { 
+    .item-link {
         padding: $gutter;
-        
+
         .content {
             display: table;
             width: 100%;
@@ -744,7 +759,7 @@ blockquote {
                 text-align: left;
             }
 
-            .long-arrow {
+            .arrow {
                 color: $site-color;
                 font-size: rem(26);
                 vertical-align: text-bottom;
@@ -815,7 +830,7 @@ ul.social-thumbs {
                 }
             }
 
-            &.google {
+            &.google-plus {
                 &:hover {
                     border-color: $google-red;
                     color: $google-red;
@@ -844,10 +859,10 @@ ul.social-thumbs {
             }
 
             &.fivehundred {
-                font-size: rem(16);
+                font-size: rem(28);
                 &:hover {
-                    background-color: $black-tint1;
-                    color: $white-tint1;
+                    border-color: $fivehundred-grey;
+                    color: $fivehundred-grey;
                 }
             }
 
@@ -858,7 +873,7 @@ ul.social-thumbs {
             }
 
             &.wordpress {
-                font-size: rem(76); 
+                font-size: rem(76);
                 border: none;
 
                 &:hover {
@@ -878,30 +893,30 @@ ul.social-thumbs {
         bottom: 0;
         width: 100%;
         height: 60px;
-        
+
         .copyright {
             padding: 0;
             line-height: 50px;
         }
     }
-    
+
     .error {
         background-image: url('../img/bg-error-md.jpg');
         background-position: top center;
         height: 100vh;
         border-top: 0;
         border-bottom: 0;
-        
+
         @include media($tablet) {
             background-image: url('../img/bg-error-lg.jpg');
         }
     }
-    
+
     .page {
         background-color: transparent;
         padding-left: 0;
     }
-    
+
     .info-box {
         position: fixed;
         bottom: 5rem;
@@ -937,12 +952,12 @@ ul.social-thumbs {
         }
 
         &.no-gutters {
-            padding-right: $gutter !important; 
-            padding-left: $gutter !important; 
+            padding-right: $gutter !important;
+            padding-left: $gutter !important;
 
             @include media($tablet) {
-                padding-right: 0 !important; 
-                padding-left: 0 !important; 
+                padding-right: 0 !important;
+                padding-left: 0 !important;
             }
         }
 
@@ -1003,46 +1018,46 @@ ul.social-thumbs {
     z-index: 2;
     text-decoration: none;
     color: $grey;
-        
+
     @include media($tablet) {
         left: $navbar-width;
         width: calc(100% - 95px);
     }
-    
+
     &.up {
         top: -4px;
     }
-    
+
     &.down {
         position: fixed;
         bottom: 0;
     }
 
-    .long-arrow {
+    .chevron {
         display: inline-block;
         position: relative;
-        font-size: rem(30);
+        font-size: rem(26);
         font-weight: 200;
         line-height: 1;
         height: initial;
-        
+
         &.up {
-            bottom: -8px;
+            bottom: -18px;
         }
-        
+
         &.down {
             top: -8px;
         }
     }
 
     &:hover {
-        background-color: rgba($white-tint1, 0.1);
-        
-        .long-arrow {
+        background-color: $black-tint1;
+
+        .chevron {
             color: $white-tint1;
-            
+
             &.up {
-                bottom: 18px;
+                bottom: 0px;
             }
 
             &.down {
@@ -1074,74 +1089,69 @@ ul.social-thumbs {
         vertical-align: middle;
         line-height: 1.4;
         text-align: center;
-        
+
         .overlay-title {
             font-size: rem(22);
         }
-        
-        .long-arrow {
+
+        .overlay-subtitle {
+            font-size: rem(14);
+            text-transform: uppercase;
+        }
+
+        .genericon {
             margin-top: rem(10);
             color: $white-tint1;
-            font-size: rem(22);
+            font-size: rem(32);
             border: solid 4px $white-tint1;
             border-radius: 50%;
+            height: 82px;
+            width: 82px;
+            line-height: 74px;
         }
     }
 }
 
 /*-- Grid List --------------------------------------------------------------- */
-.main-content {
-    background-color: $grey;
-    min-height: 720px;
-}
-
 .items {
-    display: block;
-    max-width: $max-width;
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(flex-start);
+    max-width: $screen-lg;
     margin: 0 auto;
 
     .item {
-        display: block;
         color: $black-tint1;
         height: 240px;
         background-color: $grey;
         margin: 0 auto;
-        border-bottom: solid 8px $white-tint1;
-        border-left: solid 8px $white-tint1;
-        border-right: solid 8px $white-tint1;
+        border-bottom: solid 10px $white-tint1;
         vertical-align: middle;
+        @include flex-basis(100%);
 
         @include media($tablet) {
-            display: inline-block;
-            width: 50%;
-            border-right: none;
-                
-            &:nth-child(2n) {
-                border-right: solid 8px $white-tint1;
+            @include flex-basis(50%);
+            border-right: solid 10px $white-tint1;
+
+            &:nth-child(3n) {
+                border-right: none;
             }
-            
+
             &:nth-child(9n) {
                 border-bottom: none;
             }
         }
 
         @include media($desktop) {
-            width: 33.3%;
+            @include flex-basis(33.3%);
 
-            &:nth-child(2n) {
-                border-right: none;
-            }
-            
-            &:nth-child(3n) {
-                border-right: solid 8px $white-tint1;
-            }
-            
             &:nth-child(7n),
             &:nth-child(8n) {
                 border-bottom: none;
             }
         }
-        
+
         .item-link {
             display: block;
             width: 100%;
@@ -1180,7 +1190,7 @@ ul.social-thumbs {
     position: relative;
     vertical-align: middle;
     text-align: center;
-    
+
     .light {
         width: 35px;
         height: 35px;

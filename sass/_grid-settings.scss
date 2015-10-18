@@ -11,13 +11,13 @@
     position: relative;
     content: "";
     @include transition(all 0.4s ease);
-    
+
     &:before {
         display: table;
         content: "";
         @include clearfix();
     }
-    
+
     &:after {
         clear: both;
         display: table;
@@ -30,9 +30,9 @@
     @include outer-container;
     margin: 0 auto;
     width: 100%;
-    max-width: $max-width;
-    padding-left: $gutter;
-    padding-right: $gutter;
+    max-width: $screen-lg;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .row {
@@ -45,52 +45,52 @@
     position: relative;
     min-height: 1px;
     @include flex( 1 1 auto);
-    
+
     &:first-child {
         padding-left: 0;
         padding-right: 0;
-        
+
         @include media($tablet) {
             padding-left: 0;
             padding-right: $gutter;
         }
     }
-    
+
     &:last-child {
         padding-right: 0;
         padding-left: 0;
-        
+
         @include media($tablet) {
             padding-left: $gutter;
             padding-right: 0;
         }
     }
-    
+
     &.pull-left {
         padding-left: 0;
         padding-right: 0;
-        
+
         @include media($tablet) {
             padding-left: 0;
             padding-right: $gutter;
         }
     }
-    
+
     &.pull-right {
         padding-right: 0;
         padding-left: 0;
-        
+
         @include media($tablet) {
             padding-left: $gutter;
             padding-right: 0;
         }
     }
-    
+
     .column {
         &:first-child {
-            padding-left: 0; 
+            padding-left: 0;
         }
-        
+
         &:last-child {
             padding-right: 0;
         }
@@ -98,16 +98,16 @@
 }
 
 .whole,
-.half,           
-.one-third,      
-.two-thirds,     
-.one-quarter,    
-.three-quarters, 
-.one-fifth,      
-.two-fifths,     
-.three-fifths,   
-.four-fifths,    
-.golden-small,   
+.half,
+.one-third,
+.two-thirds,
+.one-quarter,
+.three-quarters,
+.one-fifth,
+.two-fifths,
+.three-fifths,
+.four-fifths,
+.golden-small,
 .golden-large { @include flex-basis(100%); }
 
 /* Utility classes */
@@ -117,13 +117,14 @@
 .align-justify  { text-align: justify; }
 
 /* Let people nuke the gutters/padding completely in a couple of ways */
-.no-gutters { 
-    padding-right: 0 !important; 
-    padding-left: 0 !important; 
+.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
 }
 
-.hide-on-mobiles { display: none !important; }
-
+@include media($mobile) {
+    .hide-on-mobiles { display: none !important; }
+}
 
 /* -- Small screen ------------------------------------------------ */
 @include media($tablet) {
@@ -140,8 +141,6 @@
 
     .golden-small   { @include flex-basis(28.01019%); }
     .golden-large   { @include flex-basis(69.14722%); }
-    
+
     .pull-right     { float: right; }
-    
-    .hide-on-mobiles { display: inherit !important; }
 }
