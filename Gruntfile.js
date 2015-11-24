@@ -89,13 +89,13 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: 'css',
                 src: 'style.css',
-                dest: 'temp'
+                dest: '.temp/css'
             }
         },
 
         cssmin: {
             dist: {
-                src: ['css/normalize.css', 'temp/style.css'],
+                src: ['css/normalize.css', '.temp/css/style.css'],
                 dest: 'dist/css/site.common.min.css'
             }
         },
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 
         uglify: {
             options: {
-                mangle: false
+                mangle: true
             },
             my_target: {
                 files: {
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'img',
-                    src: ['**/*.{png,jpg,jpeg,gif}', '!_Original', '!NotUsed'],
+                    src: ['**/*.{png,jpg,jpeg,gif}', '!_Original', '!_NotUsed'],
                     dest: 'dist/img/'
                 }]
             }

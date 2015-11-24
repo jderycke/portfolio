@@ -1,32 +1,33 @@
-$site-color         :   #B4DA55;
+$site-color             :   #B4DA55;
 
-$white-tint1        :   #FAFAFA;
+$white-tint1            :   #FAFAFA;
 
-$black              :   #111111;
-$black-tint1        :   #222222;
+$black                  :   #111111;
+$black-tint1            :   #222222;
 
-$grey               :   #F2F2F2;
-$grey-tint1         :   #888888;
+$grey                   :   #F2F2F2;
+$grey-tint1             :   #888888;
 
-$facebook-blue      :   #3B5998;
-$twitter-blue       :   #00ACED;
-$google-red         :   #D73D32;
-$linkedin-blue      :   #007BB6;
-$flickr-pink        :   #FF0084;
-$rss-orange         :   #FF6600;
-$pinterest-red      :   #cb2027;
-$fivehundred-grey   :   #b9c1c7;
-$wordpress-grey     :   #DDDDDD;
+$facebook-blue          :   #3B5998;
+$twitter-blue           :   #00ACED;
+$google-red             :   #D73D32;
+$linkedin-blue          :   #007BB6;
+$flickr-pink            :   #FF0084;
+$rss-orange             :   #FF6600;
+$pinterest-red          :   #cb2027;
+$fivehundred-grey       :   #b9c1c7;
+$wordpress-grey         :   #DDDDDD;
 
-$navbar-width       :   95px;
+$navbar-mobile-width    :   75px;
+$navbar-width           :   95px;
 
 /* -- Grid Settings -------------------------------------------- */
-$gutter             : 25px;
+$gutter                 : 20px;
 
-$screen-xs          : 667px;
-$screen-sm          : 799px;
-$screen-md          : 996px;
-$screen-lg          : 1250px;
+$screen-xs              : 667px;
+$screen-sm              : 799px;
+$screen-md              : 996px;
+$screen-lg              : 1244px;
 
 
 $mobile: new-breakpoint(max-width $screen-xs);

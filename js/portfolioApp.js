@@ -9,4 +9,4 @@
         'portfolioApp.directives',
 		'portfolioApp.controllers'
     ]);
-})();
+}());

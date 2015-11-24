@@ -39,22 +39,23 @@
 		<meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
 	</head>
     <body id="error" class="main" ng-app="portfolioApp">
-        <div ng-controller="SiteCtrl" class="site-wrapper">
+        <div ng-controller="SiteController" class="site-wrapper">
             <header class="site-header">
-                <a href="/" class="genericon logo animate font-effect-wallpaper" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
+                <a href="/" class="genericon logo animate" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
                     <span class="srt">Jamie De Rycke - Web Developer, North Wales</span>
+					<span class="dot font-effect-wallpaper animate"></span>
                 </a>
 				<nav class="navbar animate">
                     <ul class="toggle-sidebars animate menu">
-						<li>
-							<a href="#" title="Go back to previous page" class="toggle-back animate" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Go back">
-								<span class="genericon chevron left font-effect-wallpaper">
-									<span class="srt">Back to previous page</span>
-                                </span>
+						<li class="item">
+                            <a href="/" ng-click="scrollTo('home', $event)" title="Home" class="link animate" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Home">
+                                <span class="genericon house font-effect-wallpaper"></span>
+								<span class="srt">Home</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
+            </header>
             </header>
             <main class="wrapper animate">
                 <section class="page error seperator-section pad-left-95">
@@ -71,14 +72,13 @@
             <footer class="site-footer animate">
                 <div id="social" class="container footer-container pad-left-95">
                     <div class="footer-content">
-                        <small class="copyright">&copy; 2015 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code using <a href="http://brackets.io/" title="Link to Brackets.io" data-ga-category="Footer links" data-ga-action="Click" data-ga-label="Brackets.io">Brackets</a>.</small>
+                        <small class="copyright">&copy; 2015 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
                     </div>
                 </div>
             </footer>
         </div>
 
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
         <script type="text/javascript" src="js/portfolioApp.min.js"></script>
 
         <script type="text/javascript">

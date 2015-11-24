@@ -7,29 +7,36 @@
  * that they are indeed the person who completed the enquiry they are trying to access.
  */
 
-(function(directives) {
+(function (directives) {
     'use strict';
 
-    directives.directive('blog',
+    directives.directive('blog', ['$timeout', 'blogFeedSrvc',
         function ($timeout, blogFeedSrvc) {
             return {
                 restrict : 'A',
-                link : function($scope, $element, $attrs) {
-					$scope.showBlogWaiting = true;
+                link : function ($scope, $element, $attrs) {
+					$element.addClass('waiting');
 
-			        $timeout(
+			        var timer = $timeout(
 						blogFeedSrvc.loadFeed().then(
 							function (data) {
-								$scope.predicate = 'datePublished';
 								$scope.feed = {
 									items: data.responseData.feed.entries
 								};
-								$scope.showBlogWaiting = false;
+								$element.removeClass('waiting');
 							}
-						)
-					, 3000);
+                        ),
+                        3000
+                    );
+
+                    $scope.$on(
+                        "$destroy",
+                        function(event) {
+                            $timeout.cancel(timer);
+                        }
+                    );
+
                 }
             };
-        }
-    );
-})(angular.module('portfolioApp.directives'));
+        }]);
+}(angular.module('portfolioApp.directives')));

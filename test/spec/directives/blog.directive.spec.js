@@ -1,4 +1,4 @@
-describe('blogSpec', function () {
+describe('Directive: blogSpec', function () {
     'use strict';
 
     beforeEach(module('portfolioApp.directives'));

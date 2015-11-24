@@ -10,26 +10,30 @@
 (function (directives) {
     'use strict';
 
-    directives.directive('blog',
+    directives.directive('blog', ['$timeout', 'portfolioSrvc',
         function ($timeout, portfolioSrvc) {
             return {
                 restrict : 'A',
-                link : function($scope, $element, $attrs) {
-					$scope.showWorkWaiting = true;
+                link : function ($scope, $element, $attrs) {
 					$scope.results = [];
-			        $scope.result = null;
 
-			        $timeout(
+			        var timer = $timeout(
 						portfolioSrvc.loadFeed().then(
 			                function (data) {
 			                    $scope.results = data.items;
-			                    $scope.predicate = 'id';
-			                    $scope.showWorkWaiting = false;
+			                    $element.removeClass('waiting');
 			                }
-			            )
-					, 3000);
+			            ),
+                        3000
+                    );
+
+                    $scope.$on(
+                        "$destroy",
+                        function(event) {
+                            $timeout.cancel(timer);
+                        }
+                    );
                 }
             };
-        }
-    );
-})(angular.module('portfolioApp.directives'));
+        }]);
+}(angular.module('portfolioApp.directives')));
