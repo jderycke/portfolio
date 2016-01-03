@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                 }
             },
             css: {
-				files: 'sass/*.scss',
+				files: ['sass/*.scss', 'sass/*/*.scss'],
 				tasks: ['sass', 'combine_mq', 'cssmin'],
                 options: {
                     livereload: true
@@ -122,6 +122,7 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
+                    'dist/js/thirdparty/vendor.min.js': ['js/thirdparty/jquery-2.1.4.js', 'js/thirdparty/angular-1.5.0.js'],
                     'dist/js/portfolioApp.min.js': ['js/portfolioApp.js', 'js/services/*.js', 'js/directives/*.js', 'js/controllers/*.js']
                 }
             }

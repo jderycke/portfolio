@@ -1,0 +1,64 @@
+.loading-container {
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: none;
+    height: 100%;
+    width: 100%;
+    min-height: 720px;
+}
+
+.waiting {
+    .loading-container {
+        display: table;
+    }
+
+    .main-content {
+        display: none;
+    }
+}
+
+.loading-ring {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+
+    .light {
+        width: 35px;
+        height: 35px;
+        background-color: $site-color;
+        border-radius: 50%;
+        display: inline-block;
+        @include animation(motion 3s $ease-in-out-quart infinite);
+    }
+
+    .text {
+        display: block;
+        text-align: center;
+        margin-top: rem(30);
+        color: $grey-tint1;
+        width: 100%;
+        font-size: rem(14);
+    }
+}
+
+@include keyframes(motion) {
+    0% {
+        @include transform(translateX(0) scale(1));
+    }
+    25% {
+        @include transform(translateX(-100px) scale(0.3));
+    }
+    50% {
+        @include transform(translateX(0) scale(1));
+    }
+    75% {
+        @include transform(translateX(100px) scale(0.3));
+    }
+    100% {
+        @include transform(translateX(0) scale(1));
+    }
+}

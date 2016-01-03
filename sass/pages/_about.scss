@@ -1,0 +1,24 @@
+.about {
+    .devices {
+        text-align: center;
+        padding: 0;
+
+        .genericon {
+            background-color: transparent;
+            color: $grey-tint1;
+            border-radius: 50%;
+            border: solid 4px $grey-tint1;
+            font-size: rem(32);
+            margin: rem(40) rem(5);
+            cursor: default;
+
+            @include media($tablet) {
+                line-height: 85px;
+                height: 92px;
+                width: 92px;
+                font-size: rem(48);
+                margin: rem(40) rem(25);
+            }
+        }
+    }
+}

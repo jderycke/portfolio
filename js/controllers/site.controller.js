@@ -22,6 +22,11 @@
                 $event.preventDefault();
             };
 
+            $scope.toggleMenu = function ($event) {
+                angular.element('body').toggleClass('menuActive');
+                $event.preventDefault();
+            };
+
 	        angular.element(document.querySelectorAll('[data-ga-category]')).on('click', function () {
 	            var category = angular.element(this).attr('data-ga-category'),
 	                action = angular.element(this).attr('data-ga-action'),

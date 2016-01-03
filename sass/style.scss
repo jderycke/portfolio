@@ -4,6 +4,18 @@
 @import "neat/neat";
 @import 'variables';
 
-@import 'grid-settings';
+@import 'layout-grid';
 @import 'fonts';
-@import 'screen_xs';
+@import 'base';
+
+@import 'site-header';
+@import 'site-footer';
+@import 'page-seperator';
+@import 'loading';
+@import 'grid-list';
+
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/work';
+@import 'pages/blog';
+@import 'pages/error';

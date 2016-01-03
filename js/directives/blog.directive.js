@@ -15,27 +15,32 @@
             return {
                 restrict : 'A',
                 link : function ($scope, $element, $attrs) {
-					$element.addClass('waiting');
+                    var timeoutHandle;
+                    $scope.results = [];
+                    $scope.waiting = true;
 
-			        var timer = $timeout(
+                    if (timeoutHandle) {
+                        $timeout.cancel(timeoutHandle);
+                    }
+
+			        timeoutHandle = $timeout(
 						blogFeedSrvc.loadFeed().then(
 							function (data) {
 								$scope.feed = {
 									items: data.responseData.feed.entries
 								};
-								$element.removeClass('waiting');
+                                $scope.waiting = false;
 							}
                         ),
                         3000
                     );
 
-                    $scope.$on(
-                        "$destroy",
-                        function(event) {
-                            $timeout.cancel(timer);
+                    var unbindDestroy = $scope.$on('$destroy', function destroylog() {
+                        if (timeoutHandle) {
+                            $timeout.cancel(timeoutHandle);
                         }
-                    );
-
+                        unbindDestroy();
+                    });
                 }
             };
         }]);

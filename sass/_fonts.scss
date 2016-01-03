@@ -16,90 +16,135 @@
     speak: none;
 }
 
-
-.chevron
-{
-    &.down:before {
-	       content: "\f0a3";
-    }
-    &.left:before {
-    	content: "\f0a4";
-    }
-    &.right:before {
-    	content: "\f078";
-    }
-    &.up:before {
-    	content: "\f0a2";
-    }
-}
-.house:before {
-	content: "\e801";
-}
-.clock:before {
-	content: "\e802";
-}
-.arrow {
-    &.up:before {
-    	content: "\e803";
-    }
-    &.right:before {
-    	content: "\e806";
-    }
-    &.down:before {
-    	content: "\e807";
-    }
-    &.left:before {
-    	content: "\e80c";
-    }
-}
-.google-plus:before {
-	content: "\e808";
-}
-.facebook:before {
-	content: "\e804";
-}
-.twitter:before {
-	content: "\e809";
-}
-.rss-feed:before {
-	content: "\e80a";
-}
-.flickr:before {
-	content: "\e805";
-}
-.linkedin:before {
-	content: "\e80b";
-}
 .fivehundred:before {
-	content: "\e800";
+    content: "\e905";
 }
+
 .laptop:before {
 	content: "\e001";
 }
+
 .desktop:before {
 	content: "\e002";
 }
+
 .tablet:before {
 	content: "\e003";
 }
+
 .phone:before {
 	content: "\e004";
 }
+
 .newspaper:before {
 	content: "\e009";
 }
+
 .camera:before {
 	content: "\e012";
 }
-.envelope:before {
-	content: "\e028";
-}
+
 .tools:before {
 	content: "\e033";
 }
+
 .profile:before {
 	content: "\e040";
 }
+
 .web:before {
 	content: "\e052";
+}
+
+.twitter:before {
+	content: "\f099";
+}
+
+.facebook:before {
+	content: "\f09a";
+}
+
+.feed-rss:before {
+	content: "\f09e";
+}
+
+.google-plus:before {
+	content: "\f0d5";
+}
+
+.envelope:before {
+	content: "\f0e0";
+}
+
+.linkedin:before {
+	content: "\f0e1";
+}
+
+.chevron {
+    &.left:before {
+    	content: "\f104";
+    }
+
+    &.right:before {
+    	content: "\f105";
+    }
+    &.up:before {
+    	content: "\f106";
+    }
+
+    &.down:before {
+    	content: "\f107";
+    }
+}
+
+.html5:before {
+	content: "\f13b";
+}
+
+.skype:before {
+	content: "\f17e";
+}
+
+.wordpress:before {
+	content: "\f19a";
+}
+
+.rebel:before {
+	content: "\f1d0";
+}
+
+.empire:before {
+	content: "\f1d1";
+}
+
+.git:before {
+	content: "\f1d3";
+}
+
+.pinterest-p:before {
+	content: "\f231";
+}
+
+.commenting-o:before {
+	content: "\f27b";
+}
+
+.house:before {
+	content: "\e900";
+}
+
+.clock:before {
+	content: "\e901";
+}
+
+.bubble:before {
+	content: "\e902";
+}
+
+.flickr:before {
+	content: "\e903";
+}
+
+.html-five:before {
+	content: "\e904";
 }

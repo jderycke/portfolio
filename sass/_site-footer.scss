@@ -1,0 +1,132 @@
+.site-footer {
+    position: relative;
+    display: table;
+    background-color: $black;
+    width: 100%;
+    height: 250px;
+
+    .footer-container {
+        padding-bottom: 0;
+        max-width: rem(1280);
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        display: table;
+        height: 100%;
+        z-index: 1;
+	}
+
+    .footer-content {
+        z-index: 1;
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    .copyright {
+        font-size: rem(14);
+        line-height: 2;
+        margin: 0;
+        vertical-align: middle;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white-tint1;
+        padding: 0 0 1rem 0;
+
+        &:before {
+            content: '';
+        }
+    }
+}
+
+/* -- Social ---------------------------------------------------------------- */
+ul.social-thumbs {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    li {
+        margin: 0 $gutter $gutter 0;
+        display: inline-block;
+
+        a.genericon {
+            border: solid 4px $white-tint1;
+            border-radius: 50%;
+            font-size: rem(22);
+            background-color: transparent;
+            color: $white-tint1;
+
+            &:hover {
+                color: $white-tint1;
+            }
+
+            &.facebook {
+                &:hover {
+                    border-color: $facebook-blue;
+                    color: $facebook-blue;
+                }
+            }
+
+            &.twitter {
+                &:hover {
+                    border-color: $twitter-blue;
+                    color: $twitter-blue;
+                }
+            }
+
+            &.google-plus {
+                &:hover {
+                    border-color: $google-red;
+                    color: $google-red;
+                }
+            }
+
+            &.linkedin {
+                &:hover {
+                    border-color: $linkedin-blue;
+                    color: $linkedin-blue;
+                }
+            }
+
+            &.flickr {
+                &:hover {
+                    border-color: $flickr-pink;
+                    color: $flickr-pink;
+                }
+            }
+
+            &.pinterest {
+                &:hover {
+                    border-color: $pinterest-red;
+                    color: $pinterest-red;
+                }
+            }
+
+            &.fivehundred {
+                font-size: rem(28);
+                &:hover {
+                    border-color: $fivehundred-grey;
+                    color: $fivehundred-grey;
+                }
+            }
+
+            &.rss {
+                &:hover {
+                    background-color: $rss-orange;
+                }
+            }
+
+            &.wordpress {
+                font-size: rem(76);
+                border: none;
+
+                &:hover {
+                    background-color: $black-tint1;
+                    color: $wordpress-grey;
+                }
+            }
+        }
+    }
+}

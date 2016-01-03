@@ -1,0 +1,25 @@
+.work {
+    .item-link {
+        .image {
+            background-image: url('../img/blank.png');
+            background-color: $white-tint1;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+            &.web {
+                background-position: center top;
+
+                &:before {
+                    content: "";
+                }
+            }
+
+            &.camera {
+                &:before {
+                    content: "";
+                }
+            }
+        }
+    }
+}

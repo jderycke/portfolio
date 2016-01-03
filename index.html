@@ -14,8 +14,8 @@
 
 		<link rel="canonical" href="http://www.jamiederycke.me.uk/">
 
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Exo+2:300,800">
-		<link rel="stylesheet" type="text/css" href="css/site.common.min.css" />
+		<link rel="stylesheet" media="screen, projection" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300|Exo+2:300,800">
+		<link rel="stylesheet" media="screen, projection" type="text/css" href="css/site.common.min.css" />
 
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/logo114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/logo72x72.png" />
@@ -38,91 +38,71 @@
 	    <meta property="twitter:description" content="YPersonal website and portfolio of Jamie De Rycke.">
 	    <meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
 	</head>
-	<body class="main" ng-app="portfolioApp" scroll>
-        <div ng-controller="SiteController" class="site-wrapper">
-            <header class="site-header">
-                <a href="#home" ng-click="scrollTo('home', $event)"  class="genericon logo animate" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
-                    <span class="srt">Jamie De Rycke - Web Developer, North Wales</span>
-					<span class="dot font-effect-wallpaper animate"></span>
-                </a>
-                <nav class="navbar animate">
-                    <ul class="toggle-sidebars animate menu">
-						<li class="item hide-on-mobiles">
-                            <a href="#home" ng-click="scrollTo('home', $event)" title="Home" class="link animate active" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Home">
-                                <span class="genericon house font-effect-wallpaper"></span>
-								<span class="srt">Home</span>
-                            </a>
-                        </li>
-						<li class="item">
-                            <a href="#about" ng-click="scrollTo('about', $event)"  title="About Me" class="link animate" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to About Me">
-                                <span class="genericon profile"></span>
-								<span class="srt">About Me</span>
-                            </a>
-                        </li>
-						<li class="item">
-                            <a href="#work" ng-click="scrollTo('work', $event)"  title="Work" class="link animate" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Work">
-                                <span class="genericon tools"></span>
-								<span class="srt">Work</span>
-                            </a>
-                        </li>
-						<li class="item">
-                            <a href="#blog" ng-click="scrollTo('blog', $event)"  title="Articles" class="link animate" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Articles">
-                                <span class="genericon newspaper"></span>
-								<span class="srt">Articles</span>
-                            </a>
-						</li>
-                    </ul>
-                </nav>
+	<body class="main" data-ng-app="portfolioApp" scroll="">
+        <div data-ng-controller="SiteController" class="site-wrapper">
+            <header class="site-header animate">
+				<div class="container">
+					<a href="#home" data-ng-click="scrollTo('home', $event)"  class="link genericon logo active" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
+						<span class="srt">Jamie De Rycke - Web Developer, North Wales</span>
+						<span class="dot font-effect-wallpaper animate"></span>
+					</a>
+					<button class="burgerMenu" type="button" role="button" aria-label="Toggle Navigation" data-ng-click="toggleMenu($event)">
+						<span class="lines animate"></span>
+					</button>
+					<div class="slideContent">
+					    <div class="mainMenu">
+							<nav class="navbar">
+			                    <ul class="toggle-sidebars menu">
+									<li class="item">
+			                            <a href="#about" data-ng-click="scrollTo('about', $event)" title="About Me" class="link" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to About Me">
+											<span class="nav-text">About Me</span>
+			                            </a>
+			                        </li>
+									<li class="item">
+			                            <a href="#work" data-ng-click="scrollTo('work', $event)" title="Work" class="link" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Work">
+											<span class="nav-text">Work</span>
+			                            </a>
+			                        </li>
+									<li class="item">
+			                            <a href="#blog" data-ng-click="scrollTo('blog', $event)" title="Articles" class="link" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Articles">
+			                                <span class="nav-text">Articles</span>
+			                            </a>
+									</li>
+			                    </ul>
+			                </nav>
+						</div>
+			        </div>
+				</div>
             </header>
-            <section id="home" class="page home seperator-section animate">
-                <div class="home-container">
-                    <div class="container">
-                        <div class="column whole no-gutters info-box animate">
+            <section id="home" class="page home seperator-section picture">
+				<div class="container">
+                	<div class="home-container">
+						<div class="column whole no-gutters info-box">
                             <h1 class="font-effect-wallpaper">
                                 Hi there<em>.</em>
                             </h1>
                             <p>My name is Jamie, I create things with pixels and code. I occasionally take photographs<em>.</em></p>
-                        </article>
+                        </div>
                     </div>
-                    <a href="#about" ng-click="scrollTo('about', $event)" title="Down to about me" class="scroll down animate" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow">
-                        <span class="genericon chevron down animate"></span>
-                    </a>
                 </div>
+				<a href="#about" data-ng-click="scrollTo('about', $event)" title="Down to about me" class="scroll down" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Down arrow (Home)">
+					<span class="genericon chevron down animate"></span>
+				</a>
             </section>
-            <main class="wrapper animate">
+            <main class="wrapper">
                 <section id="about" class="page about">
                     <div class="container">
                         <div class="row">
-                            <div class="whole no-gutters info-box">
-                                <h2>About me<em>.</em></h2>
-                                <p>Hi, I'm, Jamie, this is my personal blog and portfolio. I am a multi-skilled web developer from North Wales, with a passion for innovative solutions and clean user experiences. I currently work for <a href="http://www.moneysupermarket.com" title="MoneySuperMarket.com website link" data-ga-category="Content links" data-ga-action="Click" data-ga-label="MSM link">MoneySuperMarket.com</a> as a web developer.</p>
-                                <p>I'm inspired by clean, minimalistic design. Whether it be digital or physical, I believe design is all about solving problems in the simplest possible manner. I am fully proficient in HTML, CSS &amp; Javascript and not afraid to learn something new like SASS, Java or AngularJS. I have over 12 years of experience. I have a passion for pixel perfection, clean code, and semantics.</p>
-                                <p>When not making pixelated things I like to take pretty pictures, such as the cloudy sunset in my hero image and a bit of hiking. I recently travelled to Tanazania to climb a small hill called Kilimanjaro (you may have hread of it) and recently to Morrocco's Atlas Mountains</a>.</p>
-                                <p class="small-text">For a full breakdown of my skills and employment history, see my <a href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn profile" target="_blank" data-ga-category="Content links" data-ga-action="Click" data-ga-label="LinkedIn">LinkedIn profile</a>.</p>
-
-                                <div class="devices">
-                                    <span class="genericon phone">
-
-                                    </span>
-
-                                    <span class="genericon tablet">
-
-                                    </span>
-
-									<span class="genericon laptop">
-
-									</span>
-
-                                    <span class="genericon desktop">
-
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+							<div class="two-thirds no-gutters info-box">
+								<h2>About me<em>.</em></h2>
+								<p>Hi, I'm, Jamie, this is my personal blog and portfolio. I am a multi-skilled web developer from North Wales, with a passion for innovative solutions and clean user experiences. I currently work for <a href="http://www.moneysupermarket.com" title="MoneySuperMarket.com website link" data-ga-category="Content links" data-ga-action="Click" data-ga-label="MSM link">MoneySuperMarket.com</a> as a web developer.</p>
+								<p>I'm inspired by clean, minimalistic design. Whether it be digital or physical, I believe design is all about solving problems in the simplest possible manner. I am fully proficient in HTML, CSS &amp; Javascript and not afraid to learn something new like SASS, Java or AngularJS. I have over 12 years of experience. I have a passion for pixel perfection, clean code, and semantics.</p>
+								<p>When not making pixelated things I like to take pretty pictures, such as the cloudy sunset in my hero image and a bit of hiking. I recently travelled to Tanazania to climb a small hill called Kilimanjaro (you may have hread of it) and recently to Morrocco's Atlas Mountains</a>.</p>
+							</div>
+						</div>
                     </div>
                 </section>
-
-                <div class="seperator-section">
+                <div class="seperator-section picture">
                     <div class="container">
                         <blockquote>
                             <span class="font-effect-wallpaper">Sometimes life hits you in the head with a brick.</span>
@@ -131,8 +111,7 @@
                         </blockquote>
                     </div>
                 </div>
-
-                <section id="work" class="page work" class="waiting" work>
+                <section id="work" class="page work" data-ng-class="{'waiting': waiting}" work="">
                     <div class="row">
                         <div class="container">
                             <div class="whole no-gutters">
@@ -141,7 +120,7 @@
 		                            <ul class="items">
 		                                <li class="item" data-ng-repeat="item in results | orderBy : id | limitTo : 9" data-ng-cloak>
 		                                    <a class="item-link" data-ng-href="{{item.url}}" title="{{item.title}}" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" data-ga-label="{{item.title}}">
-		                                        <div data-ng-style="{'background-image': 'url(' + item.image_url + ')'}" class="image animate {{item.category}}"></div>
+		                                        <div data-ng-style="{'background-image': 'url(' + item.image_url + ')'}" class="content image animate {{item.category}}"></div>
 		                                        <article class="overlay animate">
 		                                            <div class="overlay-content">
 		                                                <h2 class="overlay-title" data-ng-bind="item.title">Overlay Title</h2>
@@ -165,8 +144,7 @@
                         </div>
                     </div>
                 </section>
-
-                <div class="seperator-section">
+                <div class="seperator-section picture">
                     <div class="container">
                         <blockquote>
                             <span class="font-effect-wallpaper">Creativity is contagious, pass it on.</span>
@@ -174,20 +152,29 @@
                         </blockquote>
                     </div>
                 </div>
-
-                <section id="blog" class="page blog" class="waiting" blog>
+                <section id="blog" class="page blog" data-ng-class="{'waiting': waiting}" blog="">
                     <div class="row">
                         <div class="container">
                             <div class="whole no-gutters">
                                 <h2>Articles<em>.</em></h2>
 		                        <div class="main-content">
 		                            <div class="items">
-		                                <article class="item" data-ng-repeat="entry in feed.items | orderBy : datePublished | limitTo : 9" data-ng-cloak>
+		                                <article class="item" data-ng-repeat="entry in feed.items | orderBy : datePublished | limitTo : 9" data-ng-cloak itemscope="" itemtype="http://schema.org/Article" role="article">
 		                                    <a class="item-link" data-ng-href="{{entry.link}}" title="{{entry.title}}" data-ga-category="Blog links" data-ga-action="Click" data-ga-label="{{entry.title}}">
-		                                        <header class="content">
-		                                            <h2 class="entry-title animate" data-ng-bind="entry.title">Article Title</h2>
-		                                            <time class="entry-time clock animate" datetime="{{entry.PublishedDate | date:'fullDate'}}" data-ng-bind="entry.publishedDate | date:'fullDate'"></time>
-		                                        </header>
+												<div class="content">
+			                                        <header class="article-header">
+			                                            <time class="entry-time clock animate" datetime="{{entry.PublishedDate | date:'fullDate'}}" data-ng-bind="entry.publishedDate | date:'fullDate'"></time>
+			                                        </header>
+													<div class="article-content">
+														<h2 class="entry-title animate" data-ng-bind="entry.title">Article Title</h2>
+													</div>
+													<footer class="article-footer">
+														<div class="">
+		                                                    See the full post
+		                                                    <span class="genericon chevron right"></span>
+		                                                </div>
+													</footer>
+												</div>
 		                                        <div class="overlay animate">
 		                                            <div class="overlay-content">
 		                                                <h2 class="overlay-title" data-ng-bind="entry.title">Overlay Title</h2>
@@ -211,17 +198,17 @@
                         </div>
                     </div>
                 </section>
-                <div class="seperator-section">
+                <div class="seperator-section picture">
                     <div class="container">
                         <blockquote>
                             <span class="font-effect-wallpaper">It is not our abilities that show what we truly are.</span>
 							<span class="font-effect-wallpaper">It is our choices.</span>
-                            <cite>Albus Dumbledore – Harry Potter and the Chamber of Secrets</cite>
+                            <cite>Albus Dumbledore - Harry Potter and the Chamber of Secrets</cite>
                         </blockquote>
                     </div>
                 </div>
-                <footer class="site-footer animate">
-                    <a href="#home" ng-click="scrollTo('home', $event)" class="scroll up animate" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow">
+                <footer id="footer" class="site-footer">
+                    <a href="#home" data-ng-click="scrollTo('home', $event)" class="scroll up" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
                         <span class="genericon chevron up animate"></span>
                     </a>
                     <div id="social" class="container footer-container">
@@ -265,18 +252,17 @@
             </main>
         </div>
 
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
         <script type="text/javascript" src="js/portfolioApp.min.js"></script>
 
-        <script type="text/javascript">
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-39364857-1', 'auto');
-            ga('send', 'pageview');
-        </script>
+		<!-- Google Analytics -->
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', 'UA-39364857-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script async src='//www.google-analytics.com/analytics.js'></script>
+		<!-- End Google Analytics -->
     </body>
 </html>

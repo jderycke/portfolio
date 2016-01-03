@@ -1,0 +1,45 @@
+.blog {
+    .item-link {
+        padding: $gutter;
+        color: $black-tint1;
+
+        .article-content {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .article-header {
+            position: absolute;
+            top: 20px;
+            color: $grey-tint1;
+        }
+
+        .article-footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: $site-color;
+        }
+
+        .entry-title {
+            font-size: rem(30);
+            text-align: left;
+        }
+
+        .entry-time {
+            &:before {
+                font-family: 'Genericons';
+                display: inline-block;
+                padding: 0 10px 0 0;
+            }
+        }
+
+        .entry-comments {
+            &:before {
+                font-family: 'Genericons';
+                display: inline-block;
+                padding: 0 10px 0 0;
+            }
+        }
+    }
+}

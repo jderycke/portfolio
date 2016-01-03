@@ -1,5 +1,6 @@
 $site-color             :   #B4DA55;
 
+$white                  :   #FFFFFF;
 $white-tint1            :   #FAFAFA;
 
 $black                  :   #111111;
@@ -18,16 +19,15 @@ $pinterest-red          :   #cb2027;
 $fivehundred-grey       :   #b9c1c7;
 $wordpress-grey         :   #DDDDDD;
 
-$navbar-mobile-width    :   75px;
-$navbar-width           :   95px;
+$navbar-height           :   75px;
 
 /* -- Grid Settings -------------------------------------------- */
 $gutter                 : 20px;
 
 $screen-xs              : 667px;
 $screen-sm              : 799px;
-$screen-md              : 996px;
-$screen-lg              : 1244px;
+$screen-md              : 1008px;
+$screen-lg              : 1280px;
 
 
 $mobile: new-breakpoint(max-width $screen-xs);

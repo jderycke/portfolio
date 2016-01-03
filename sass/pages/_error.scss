@@ -1,0 +1,54 @@
+#error {
+    .site-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent;
+        height: 75px;
+    }
+
+    .error {
+        background-image: url('../img/bg-error-md.jpg');
+        background-position: top center;
+        height: 100vh;
+        border-top: 0;
+        border-bottom: 0;
+        display: table;
+
+        @include media($tablet) {
+            background-image: url('../img/bg-error-lg.jpg');
+        }
+
+        .home-container {
+            position: relative;
+            top: 0;
+            margin: 0 auto;
+            display: table-cell;
+            vertical-align: middle;
+            
+            .info-box {
+                text-align: center;
+
+                h1 {
+                    font-weight: 800;
+                    font-size: rem(42);
+                }
+
+                p {
+                    font-weight: 200;
+                    font-size: rem(18);
+                    margin-top: $gutter;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+
+    .page {
+        background-color: transparent;
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 100vh;
+    }
+}
