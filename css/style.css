@@ -540,7 +540,7 @@ blockquote {
   padding-left: 55px; }
   .btn:hover {
     background-color: #90ae44;
-    border-color: #6c8333; }
+    border-color: #6c8233; }
   .btn:before {
     position: absolute;
     font-family: 'Genericons';
@@ -638,6 +638,10 @@ blockquote {
     top: -15px; }
   .lines:after {
     bottom: -15px; }
+  .lines:hover {
+    background-color: #B4DA55; }
+    .lines:hover:before, .lines:hover:after {
+      background-color: #B4DA55; }
 
 .mainMenu {
   position: relative;
@@ -670,6 +674,19 @@ blockquote {
     .menuActive .site-header,
     .menuActive .site-wrapper {
       right: 0; } }
+.menuActive .blocker {
+  opacity: 1;
+  z-index: 4; }
+
+.blocker {
+  background-color: rgba(250, 250, 250, 0.6);
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw; }
 
 .site-header {
   width: 100%;
@@ -891,7 +908,7 @@ ul.social-thumbs {
   background-color: #FAFAFA; }
   @media screen and (min-width: 667px) {
     .seperator-section {
-      height: 350px; } }
+      height: 300px; } }
   .seperator-section.picture {
     background-image: url("../img/bg-md-v2.jpg");
     background-position: center;
