@@ -21,12 +21,12 @@
 
         .info-box {
             text-align: center;
+            text-shadow: 1px 1px 0 $black;
 
             h1 {
                 font-weight: 800;
                 padding: 0;
                 font-size: rem(84);
-                text-shadow: 1px 1px 0 $black;
 
                 @include media($tablet) {
                     font-size: rem(125);
@@ -38,16 +38,11 @@
                 font-size: rem(18);
                 margin-top: $gutter;
                 line-height: 1.4;
-                text-shadow: 1px 1px 0 $black;
 
                 @include media($tablet) {
                     font-size: rem(22);
                 }
             }
         }
-    }
-
-    .scroll {
-        position: fixed;
     }
 }

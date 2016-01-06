@@ -38,7 +38,7 @@
 	    <meta property="twitter:description" content="YPersonal website and portfolio of Jamie De Rycke.">
 	    <meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
 	</head>
-	<body class="main" data-ng-app="portfolioApp" scroll="">
+	<body data-ng-app="portfolioApp" scroll="">
         <div data-ng-controller="SiteController" class="site-wrapper">
             <header class="site-header animate">
 				<div class="container">
@@ -82,12 +82,12 @@
                                 Hi there<em>.</em>
                             </h1>
                             <p>My name is Jamie, I create things with pixels and code. I occasionally take photographs<em>.</em></p>
+							<a href="#about" data-ng-click="scrollTo('about', $event)" title="Down to about me" class="scroll down" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Down arrow (Home)">
+								<span class="genericon chevron down animate"></span>
+							</a>
                         </div>
                     </div>
                 </div>
-				<a href="#about" data-ng-click="scrollTo('about', $event)" title="Down to about me" class="scroll down" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Down arrow (Home)">
-					<span class="genericon chevron down animate"></span>
-				</a>
             </section>
             <main class="wrapper">
                 <section id="about" class="page about">
@@ -198,58 +198,60 @@
                         </div>
                     </div>
                 </section>
-                <div class="seperator-section picture">
-                    <div class="container">
-                        <blockquote>
-                            <span class="font-effect-wallpaper">It is not our abilities that show what we truly are.</span>
-							<span class="font-effect-wallpaper">It is our choices.</span>
-                            <cite>Albus Dumbledore - Harry Potter and the Chamber of Secrets</cite>
-                        </blockquote>
-                    </div>
-                </div>
-                <footer id="footer" class="site-footer">
-                    <a href="#home" data-ng-click="scrollTo('home', $event)" class="scroll up" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
-                        <span class="genericon chevron up animate"></span>
-                    </a>
-                    <div id="social" class="container footer-container">
-                        <div class="footer-content">
-                            <small class="copyright">&copy; 2015 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
-                            <ul class="social-thumbs">
-                                <li>
-                                    <a class="genericon facebook" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon twitter" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon google-plus" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon linkedin" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon flickr" href="http://www.flickr.com/photos/jamiederycke/" title="Flickr" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Flickr">
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="genericon fivehundred" href="http://www.500px.com/jamiederycke/" title="500px" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="500px">
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </footer>
             </main>
+			<footer id="footer" class="site-footer">
+				<div id="social" class="container footer-container">
+					<div class="footer-content">
+						<small class="copyright">&copy; 2015 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
+						<ul class="social-thumbs">
+							<li>
+								<a class="genericon facebook" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
+
+								</a>
+							</li>
+							<li>
+								<a class="genericon twitter" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
+
+								</a>
+							</li>
+							<li>
+								<a class="genericon google-plus" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
+
+								</a>
+							</li>
+							<li>
+								<a class="genericon linkedin" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
+
+								</a>
+							</li>
+							<li>
+								<a class="genericon flickr" href="http://www.flickr.com/photos/jamiederycke/" title="Flickr" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Flickr">
+
+								</a>
+							</li>
+							<li>
+								<a class="genericon fivehundred" href="http://www.500px.com/jamiederycke/" title="500px" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="500px">
+
+								</a>
+							</li>
+							<li>
+								<a href="#home" data-ng-click="scrollTo('home', $event)" class="scroll up" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
+									<span class="genericon chevron up animate"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+			<div class="seperator-section picture">
+				<div class="container">
+					<blockquote>
+						<span class="font-effect-wallpaper">It is not our abilities that show what we truly are.</span>
+						<span class="font-effect-wallpaper">It is our choices.</span>
+						<cite>Albus Dumbledore - Harry Potter and the Chamber of Secrets</cite>
+					</blockquote>
+				</div>
+			</div>
         </div>
 
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

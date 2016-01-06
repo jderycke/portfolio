@@ -3,7 +3,7 @@
     display: table;
     background-color: $black;
     width: 100%;
-    height: 250px;
+    height: 42px;
 
     .footer-container {
         padding-bottom: 0;
@@ -26,13 +26,19 @@
     .copyright {
         font-size: rem(14);
         line-height: 2;
-        margin: 0;
+        margin: $gutter auto 0;
         vertical-align: middle;
         display: block;
         text-align: center;
         text-transform: uppercase;
         color: $white-tint1;
-        padding: 0 0 1rem 0;
+
+        @include media($tablet) {
+            margin: 0 auto;
+            line-height: 42px;
+            display: inline-block;
+            text-align: left;
+        }
 
         &:before {
             content: '';
@@ -42,18 +48,28 @@
 
 /* -- Social ---------------------------------------------------------------- */
 ul.social-thumbs {
-    margin: 0 auto;
+    margin: 0 auto $gutter;
     display: block;
-    width: 100%;
     text-align: center;
 
+    @include media($tablet) {
+        margin: 0 auto;
+        display: inline-block;
+        float: right;
+    };
+
     li {
-        margin: 0 $gutter $gutter 0;
+        margin: 0 10px 0;
         display: inline-block;
 
+        &:last-of-type {
+            margin: 0;
+        }
+
         a.genericon {
-            border: solid 4px $white-tint1;
-            border-radius: 50%;
+            line-height: 42px;
+            height: 42px;
+            width: 42px;
             font-size: rem(22);
             background-color: transparent;
             color: $white-tint1;
