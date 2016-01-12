@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 	    <meta name="google" content="notranslate">
-	    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+	    <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
 		<title>Jamie De Rycke / Personal website, portfolio and blog of a web monkey</title>
 		<meta name="author" content="Jamie De Rycke" />
@@ -74,11 +72,11 @@
 			        </div>
 				</div>
             </header>
-            <section id="home" class="page home seperator-section picture">
+            <section id="home" class="page home seperator-section">
 				<div class="container">
                 	<div class="home-container">
-						<div class="column whole no-gutters info-box">
-                            <h1 class="font-effect-wallpaper">
+						<div class="info-box">
+                            <h1 data-content="-webkit-background-clip: text">
                                 Hi there<em>.</em>
                             </h1>
                             <p>My name is Jamie, I create things with pixels and code. I occasionally take photographs<em>.</em></p>
@@ -93,11 +91,17 @@
                 <section id="about" class="page about">
                     <div class="container">
                         <div class="row">
-							<div class="two-thirds no-gutters info-box">
+							<div class="no-gutters info-box">
 								<h2>About me<em>.</em></h2>
-								<p>Hi, I'm, Jamie, this is my personal blog and portfolio. I am a multi-skilled web developer from North Wales, with a passion for innovative solutions and clean user experiences. I currently work for <a href="http://www.moneysupermarket.com" title="MoneySuperMarket.com website link" data-ga-category="Content links" data-ga-action="Click" data-ga-label="MSM link">MoneySuperMarket.com</a> as a web developer.</p>
+								<p>Hi, I'm, Jamie, this is my personal blog and portfolio. I am a multi-skilled web developer from North Wales, with a passion for innovative solutions and clean user experiences. I currently work for <a href="http://www.moneysupermarket.com" target="_blank" rel="nofollow" title="MoneySuperMarket.com website link" data-ga-category="Content links" data-ga-action="Click" data-ga-label="MSM link">MoneySuperMarket.com</a> as a web developer.</p>
 								<p>I'm inspired by clean, minimalistic design. Whether it be digital or physical, I believe design is all about solving problems in the simplest possible manner. I am fully proficient in HTML, CSS &amp; Javascript and not afraid to learn something new like SASS, Java or AngularJS. I have over 12 years of experience. I have a passion for pixel perfection, clean code, and semantics.</p>
 								<p>When not making pixelated things I like to take pretty pictures, such as the cloudy sunset in my hero image and a bit of hiking. I recently travelled to Tanazania to climb a small hill called Kilimanjaro (you may have hread of it) and recently to Morrocco's Atlas Mountains</a>.</p>
+							</div>
+							<div class="devices">
+								<span class="genericon phone"></span>
+								<span class="genericon tablet"></span>
+								<span class="genericon laptop"></span>
+								<span class="genericon desktop"></span>
 							</div>
 						</div>
                     </div>
@@ -140,8 +144,9 @@
 		                            </div>
 		                        </div>
                                 <p class="small-text">To see more of my photos, go to
-									<a href="http://www.500px.com/jamiederycke/" class="genericon fivehundred" title="See more of my photos at 500px" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" data-ga-label="500px">500px</a> or
-									<a href="http://www.flickr.com/photos/jamiederycke/" class="genericon flickr" title="See more of my photos at flickr" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" data-ga-label="flickr">flickr</a>.</p>
+									<a href="http://www.500px.com/jamiederycke/" title="See more of my photos at 500px" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" data-ga-label="500px">500px</a> or
+									<a href="http://www.flickr.com/photos/jamiederycke/" title="See more of my photos at flickr" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" data-ga-label="flickr">flickr</a>.
+								</p>
                             </div>
                         </div>
                     </div>
@@ -226,14 +231,12 @@
 
 								</a>
 							</li>
-							<li>
-								<a href="#home" data-ng-click="scrollTo('home', $event)" class="scroll up" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
-									<span class="genericon chevron up animate"></span>
-								</a>
-							</li>
 						</ul>
 					</div>
 				</div>
+				<a href="#home" data-ng-click="scrollTo('home', $event)" class="scroll up" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
+					<span class="genericon chevron up animate"></span>
+				</a>
 			</footer>
 			<div class="seperator-section picture">
 				<div class="container">

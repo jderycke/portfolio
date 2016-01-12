@@ -24,12 +24,11 @@ $navbar-height           :   75px;
 /* -- Grid Settings -------------------------------------------- */
 $gutter                 : 20px;
 
-$screen-xs              : 667px;
-$screen-sm              : 799px;
-$screen-md              : 1008px;
+$screen-xs              : 320px;
+$screen-sm              : 768px;
+$screen-md              : 992px;
 $screen-lg              : 1280px;
 
-
-$mobile: new-breakpoint(max-width $screen-xs);
-$tablet: new-breakpoint(min-width $screen-xs);
+$mobile: new-breakpoint(min-width $screen-xs);
+$tablet: new-breakpoint(min-width $screen-sm);
 $desktop: new-breakpoint(min-width $screen-md);

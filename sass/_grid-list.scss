@@ -19,7 +19,7 @@
             @include flex-basis(50%);
             border-right: solid 10px $white;
 
-            &:nth-child(3n) {
+            &:nth-child(2n) {
                 border-right: none;
             }
 
@@ -30,6 +30,14 @@
 
         @include media($desktop) {
             @include flex-basis(33.3%);
+
+            &:nth-child(2n) {
+                border-right: solid 10px $white;
+            }
+
+            &:nth-child(3n) {
+                border-right: none;
+            }
 
             &:nth-child(7n),
             &:nth-child(8n) {
