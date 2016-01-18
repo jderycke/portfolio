@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
-@import 'bourbon/bourbon';
-@import 'neat/neat';
+@import '../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import '../node_modules/neat/neat';
 @import 'mixins';
 @import 'variables';
 
