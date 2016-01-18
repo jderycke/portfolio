@@ -1,34 +1,45 @@
-$site-color             :   #B4DA55;
+$site-color: #b4da55;
 
-$white                  :   #FFFFFF;
-$white-tint1            :   #FAFAFA;
+$white: #ffffff;
+$white-tint1: #fafafa;
 
-$black                  :   #111111;
-$black-tint1            :   #222222;
+$black: #111111;
+$black-tint1: #222222;
 
-$grey                   :   #F2F2F2;
-$grey-tint1             :   #888888;
+$grey: #f2f2f2;
+$grey-tint1: #888888;
 
-$facebook-blue          :   #3B5998;
-$twitter-blue           :   #00ACED;
-$google-red             :   #D73D32;
-$linkedin-blue          :   #007BB6;
-$flickr-pink            :   #FF0084;
-$rss-orange             :   #FF6600;
-$pinterest-red          :   #cb2027;
-$fivehundred-grey       :   #b9c1c7;
-$wordpress-grey         :   #DDDDDD;
+$facebook-blue: #3b5998;
+$twitter-blue: #00aced;
+$google-red: #d73d32;
+$linkedin-blue: #007bb6;
+$flickr-pink: #ff0084;
+$rss-orange: #ff6600;
+$pinterest-red: #cb2027;
+$fivehundred-grey: #b9c1c7;
+$wordpress-blue: #21759b;
 
-$navbar-height           :   75px;
+$navbar-height: 75px;
 
-/* -- Grid Settings -------------------------------------------- */
-$gutter                 : 20px;
+// -- Grid Settings --------------------------------------------
+$gutter: 20px;
+$grid-desktop-columns: 12 !default;
+$grid-desktop-gutter: $gutter !default;
+$grid-desktop-margin: $gutter !default;
 
-$screen-xs              : 320px;
-$screen-sm              : 768px;
-$screen-md              : 992px;
-$screen-lg              : 1280px;
+$grid-phone-columns: 4 !default;
+$grid-phone-gutter: $gutter !default;
+$grid-phone-margin: $gutter !default;
+
+$grid-cell-default-columns: $grid-phone-columns !default;
+$grid-max-columns: $grid-desktop-columns !default;
+
+$screen-xs: 320px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1280px;
 
 $mobile: new-breakpoint(min-width $screen-xs);
 $tablet: new-breakpoint(min-width $screen-sm);
 $desktop: new-breakpoint(min-width $screen-md);
+$large-desktop: new-breakpoint(min-width $screen-lg);

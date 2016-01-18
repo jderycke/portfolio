@@ -1,51 +1,24 @@
-.items {
-    @include display(flex);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
-    @include justify-content(flex-start);
-    max-width: $screen-lg;
-    margin: 0 auto;
+.grid-items {
+    border-left: solid 10px $white;
+    border-right: solid 10px $white;
+}
 
+.items {
     .item {
         color: $black-tint1;
-        height: 240px;
         background-color: $grey;
         margin: 0;
         border-bottom: solid 10px $white;
+        border-right: solid 10px $white;
         vertical-align: middle;
-        @include flex-basis(100%);
 
         @include media($tablet) {
-            @include flex-basis(50%);
-            border-right: solid 10px $white;
-
-            &:nth-child(2n) {
-                border-right: none;
-            }
-
-            &:nth-child(9n) {
-                border-bottom: none;
-            }
-        }
-
-        @include media($desktop) {
-            @include flex-basis(33.3%);
-
-            &:nth-child(2n) {
-                border-right: solid 10px $white;
-            }
-
             &:nth-child(3n) {
-                border-right: none;
-            }
-
-            &:nth-child(7n),
-            &:nth-child(8n) {
-                border-bottom: none;
+                border-right: 0;
             }
         }
 
-        .item-link {
+        &-link {
             display: block;
             width: 100%;
             height: 100%;
@@ -59,12 +32,6 @@
                     opacity: 1;
                 }
             }
-
-            .content {
-                display: table;
-                width: 100%;
-                height: 100%;
-            }
         }
     }
 }
@@ -72,7 +39,7 @@
 .overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba($black, 0.6);
+    background-color: rgba($black, .6);
     display: table;
     opacity: 0;
     position: absolute;
@@ -81,7 +48,7 @@
     top: 0;
     left: 0;
 
-    .overlay-content {
+    &-content {
         color: $white-tint1;
         text-transform: uppercase;
         padding: $gutter;
@@ -89,25 +56,25 @@
         vertical-align: middle;
         line-height: 1.4;
         text-align: center;
+    }
 
-        .overlay-title {
-            font-size: rem(22);
-        }
+    &-title {
+        font-size: rem(22);
+    }
 
-        .overlay-subtitle {
-            font-size: rem(14);
-            text-transform: uppercase;
-        }
+    &-subtitle {
+        font-size: rem(14);
+        text-transform: uppercase;
+    }
 
-        .genericon {
-            margin-top: rem(10);
-            color: $white-tint1;
-            font-size: rem(32);
-            border: solid 4px $white-tint1;
-            border-radius: 50%;
-            height: 82px;
-            width: 82px;
-            line-height: 74px;
-        }
+    .genericon {
+        margin-top: rem(10);
+        color: $white-tint1;
+        font-size: rem(32);
+        border: solid 4px $white-tint1;
+        border-radius: 50%;
+        height: 82px;
+        width: 82px;
+        line-height: 74px;
     }
 }

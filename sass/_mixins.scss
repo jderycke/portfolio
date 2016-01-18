@@ -1,0 +1,13 @@
+
+// Mixins for width calculation.
+@mixin partial-size($size, $columns, $gutter) {
+    @include flex-basis(calc(#{(($size / $columns) * 100) + "%"}));
+}
+
+@mixin full-size($gutter) {
+    @include partial-size(1, 1, $gutter);
+}
+
+@mixin offset-size($size, $columns, $gutter) {
+    margin-left: calc(#{(($size / $columns) * 100) + "%"});
+}

@@ -1,23 +1,30 @@
 .work {
-    .item-link {
-        .image {
-            background-image: url('../img/blank.png');
-            background-color: $white-tint1;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+    .item {
+        display: block;
+        height: 240px;
 
-            &.web {
-                background-position: center top;
+        .item-link {
+            .image {
+                background-image: url('../img/blank.png');
+                background-color: $white-tint1;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                height: 100%;
+                width: 100%;
 
-                &:before {
-                    content: "";
+                &.web {
+                    background-position: center top;
+
+                    &:before {
+                        content: '';
+                    }
                 }
-            }
 
-            &.camera {
-                &:before {
-                    content: "";
+                &.camera {
+                    &:before {
+                        content: '';
+                    }
                 }
             }
         }

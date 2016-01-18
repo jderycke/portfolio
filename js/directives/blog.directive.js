@@ -26,8 +26,12 @@
 			        timeoutHandle = $timeout(
 						blogFeedSrvc.loadFeed().then(
 							function (data) {
-								$scope.feed = {
-									items: data.responseData.feed.entries
+                                var items = data.responseData.feed.entries;
+                                for(var i = 0; i < items.length; i++) {
+                                    items[i].publishedDate = new Date(items[i].publishedDate);;
+                                }
+                                $scope.feed = {
+									items: items
 								};
                                 $scope.waiting = false;
 							}

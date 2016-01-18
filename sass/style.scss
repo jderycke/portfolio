@@ -1,10 +1,11 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-@import "bourbon/bourbon";
-@import "neat/neat";
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'mixins';
 @import 'variables';
 
-@import 'layout-grid';
+@import 'grid';
 @import 'fonts';
 @import 'base';
 

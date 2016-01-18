@@ -49,15 +49,19 @@
     0% {
         @include transform(translateX(0) scale(1));
     }
+
     25% {
-        @include transform(translateX(-100px) scale(0.3));
+        @include transform(translateX(-100px) scale(.3));
     }
+    
     50% {
         @include transform(translateX(0) scale(1));
     }
+
     75% {
-        @include transform(translateX(100px) scale(0.3));
+        @include transform(translateX(100px) scale(.3));
     }
+
     100% {
         @include transform(translateX(0) scale(1));
     }

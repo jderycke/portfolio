@@ -29,6 +29,7 @@
     "grunt-jsonlint": "^1.0.4",
     "grunt-jsonmin": "^0.2.4",
     "grunt-karma": "^0.12.1",
+    "grunt-scss-lint": "^0.3.8",
     "jasmine-core": "^2.3.4",
     "jshint": "^2.5.5",
     "jshint-stylish": "^1.0.1",
@@ -47,5 +48,8 @@
     "package": "^1.0.1",
     "phantomjs": "^1.9.18",
     "time-grunt": "^1.0.0"
+  },
+  "dependencies": {
+    "bourbon": "^4.2.6"
   }
 }

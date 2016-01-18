@@ -3,6 +3,7 @@
 .temp
 
 bourbon
+neat
 dist
 
 node

@@ -1,74 +1,64 @@
 .home {
-    display: table;
     position: relative;
     z-index: 0;
     min-height: 100vh;
     height: 100vh;
 
-    .home-container {
-        display: table-cell;
-        vertical-align: middle;
-        height: 100%;
-        width: 100%;
-        max-width: $screen-lg;
+    .container {
+        position: fixed;
+        left: 0;
+        top: 30vh;
+        max-width: 100%;
 
         .info-box {
+            display: block;
+            margin: 0 auto;
             text-align: center;
-            position: fixed;
-            top: 25vh;
-            @include calc(width, "100% - 40px");
-            max-width: $screen-lg;
+            opacity: 0;
 
-            @include media($tablet) {
-                @include calc(width, "100% - 80px");
-                top: 30vh;
+            &.show {
+                opacity: 1;
             }
 
-            h1 {
-                font-weight: 800;
-                padding: 0;
-                font-size: 20vh;
-                font-weight: 800;
-                padding: 0;
-                background: -webkit-linear-gradient(transparent, transparent), url('../img/bg-md-v2.jpg');
-                background: -o-linear-gradient(transparent, transparent);
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-position: center;
-                background-size: cover;
+            .title {
+                font-weight: 900;
+                font-size: 32vw;
                 color: $white;
+                letter-spacing: -4px;
+                line-height: 1;
 
                 @include media($tablet) {
-                    font-size: 16vw;
-                    background-image: url('../img/bg-lg-v2.jpg');
+                    letter-spacing: -12px;
+                    font-size: 26vw;
                 }
 
-                &:after {
-                    color: transparent;
-                    content: attr(data-content);
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    speak: none;
-                    z-index: -1;
+                @include media($desktop) {
+                    font-size: 20vw;
+                }
+
+                &.cut-out {
+                    background-image: url('../img/bg-md-v2.jpg');
+                    background-position: center;
+                    background-size: cover;
+                    // scss-lint:disable VendorPrefix
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    // scss-lint:enable VendorPrefix
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    @include media($desktop) {
+                        background-image: url('../img/bg-lg-v2.jpg');
+                    }
+
+                    @include media($large-desktop) {
+                        background-image: url('../img/bg-lg-v2.jpg');
+                    }
                 }
             }
 
-            h1 {
-                //background: -webkit-linear-gradient(transparent, transparent), url(http://portfolio.queenofwhisks.com/demo/pattern/waves.gif);
-                //background: -o-linear-gradient(transparent, transparent);
-                //-webkit-background-clip: text;
-                //-webkit-text-fill-color: transparent;
-            }
-
-            p {
-                font-weight: 200;
+            .strapline {
                 font-size: rem(18);
-                margin-top: $gutter;
-                line-height: 1.4;
 
                 @include media($tablet) {
                     font-size: rem(22);

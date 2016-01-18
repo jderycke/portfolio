@@ -37,8 +37,10 @@
 
                         if(currentScroll >= homeHeight) {
                             angular.element('.scroll.up').addClass('show');
+                            angular.element('.home .info-box').removeClass('show');
                         } else {
                             angular.element('.scroll.up').removeClass('show');
+                            angular.element('.home .info-box').addClass('show');
                         }
                     });
                 }

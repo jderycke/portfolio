@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             },
             css: {
 				files: ['sass/*.scss', 'sass/*/*.scss'],
-				tasks: ['sass', 'combine_mq', 'cssmin'],
+				tasks: ['scsslint', 'sass', 'combine_mq', 'cssmin'],
                 options: {
                     livereload: true
                 }
@@ -75,6 +75,20 @@ module.exports = function (grunt) {
                 }
             }
 		},
+
+        scsslint: {
+            allFiles: [
+                ['sass/*.scss', 'sass/pages/*.scss'],
+            ],
+            options: {
+                bundleExec: false,
+                config: '.scss-lint.yml',
+                compact: true,
+                colorizeOutput: true,
+                reporterOutput: 'reports/scss-lint-report.xml',
+                maxBuffer: 8000*1024
+            }
+        },
 
 		sass: {
 			dist: {
@@ -122,7 +136,6 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    'dist/js/thirdparty/vendor.min.js': ['js/thirdparty/jquery-2.1.4.js', 'js/thirdparty/angular-1.5.0.js'],
                     'dist/js/portfolioApp.min.js': ['js/portfolioApp.js', 'js/services/*.js', 'js/directives/*.js', 'js/controllers/*.js']
                 }
             }
@@ -217,6 +230,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-dev-update');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
