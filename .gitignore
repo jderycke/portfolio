@@ -2,8 +2,8 @@
 .sass-cache
 .temp
 
-bourbon
-neat
+sass/bourbon
+sass/neat
 dist
 
 node
