@@ -109,7 +109,7 @@ module.exports = function (grunt) {
 
         cssmin: {
             dist: {
-                src: ['css/normalize.css', '.temp/css/style.css'],
+                src: ['node_modules/normalize.css/normalize.css', '.temp/css/style.css'],
                 dest: 'dist/css/site.common.min.css'
             }
         },
