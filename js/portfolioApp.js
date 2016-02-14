@@ -7,6 +7,7 @@
     angular.module('portfolioApp', [
         'portfolioApp.services',
         'portfolioApp.directives',
-		'portfolioApp.controllers'
+		'portfolioApp.controllers',
+        'duScroll'
     ]);
 }());

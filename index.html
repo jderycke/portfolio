@@ -9,12 +9,12 @@
 		<meta name="description" content="Personal website and portfolio of Jamie De Rycke" />
 		<meta name="keywords" content="Portfolio, Personal, Web Design, Web Development, valid xhtml, css development, css, html, C# development, mobile development, north wales, Jamie De Rycke" />
 
-		<link rel="stylesheet" media="screen" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,900">
+		<link rel="stylesheet" media="screen" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,900">
 		<link rel="stylesheet" media="screen" type="text/css" href="css/site.common.min.css" />
 
 		<!-- Add to homescreen for Chrome on Android -->
 	    <meta name="mobile-web-app-capable" content="yes">
-	    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+	    <link rel="icon" sizes="192x192" href="img/logo114x114.png">
 
 	    <!-- Add to homescreen for Safari on iOS -->
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/logo114x114.png" />
@@ -29,7 +29,7 @@
 	    <meta name="msapplication-TileImage" content="img/logo72x72.png">
 	    <meta name="msapplication-TileColor" content="#222222">
 
-		<link rel="shortcut icon" href="img/logo57x57.png" />
+		<link rel="shortcut icon" href="img/favicon.png" />
 
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:type" content="website" />
@@ -87,7 +87,7 @@
             	<div class="container">
 					<div class="row">
 						<div class="column column--12-col">
-							<div class="info-box show animate">
+							<div class="home-info-box info-box show animate">
 		                        <h1 class="title cut-out">
 									Hi there<em>.</em>
 		                        </h1>
@@ -174,14 +174,14 @@
 	                                    <a class="item-link" data-ng-href="{{entry.link}}" title="{{entry.title}}" data-ga-category="Blog links" data-ga-action="Click" data-ga-label="{{entry.title}}">
 											<div class="content">
 		                                        <header class="article-header">
-		                                            <span class="entry-time clock animate" data-ng-bind="entry.publishedDate | date:'EEEE, MMMM d, y'">Article Time</span>
+		                                            <span class="entry-time clock animate" data-ng-bind="entry.publishedDate | date:'MMMM d, y'">Article Time</span>
 		                                        </header>
 												<div class="article-content">
 													<h2 class="entry-title animate" data-ng-bind="entry.title">Article Title</h2>
 													<p class="entry-excerpt" data-ng-bind="entry.contentSnippet">Excerpt</p>
 												</div>
 												<footer class="article-footer">
-													<div class="">
+													<div class="content">
 	                                                    See the full post
 	                                                    <span class="genericon chevron right"></span>
 	                                                </div>
@@ -268,8 +268,8 @@
         </div>
 		<div class="blocker animate"></div>
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
         <script type="text/javascript" src="js/portfolioApp.min.js"></script>
 
 		<!-- Google Analytics -->

@@ -18,16 +18,18 @@
                     var sections = angular.element(document.getElementsByClassName('page'));
 
                     angular.element($window).bind('scroll', function () {
+
                         var currentScroll = this.pageYOffset,
                             currentSection,
                             pageId,
-                            homeHeight = angular.element('#home').height();
+                            homeHeight = angular.element(document.getElementById('home'))[0].offsetHeight;
 
                         angular.forEach(sections, function (section, index) {
-                            var divPosition = angular.element(section).offset().top;
+                            var divPosition = angular.element(section).prop('offsetTop');
 
                             if (divPosition - 1 < currentScroll) {
-                                currentSection = angular.element(section);
+                                var currentId = angular.element(section).prop('id');
+                                currentSection = angular.element(document.getElementById(currentId));
                             }
 
                             pageId = angular.element(currentSection).prop('id');
@@ -36,11 +38,11 @@
                         });
 
                         if(currentScroll >= homeHeight) {
-                            angular.element('.scroll.up').addClass('show');
-                            angular.element('.home .info-box').removeClass('show');
+                            angular.element(document.getElementsByClassName('scroll up')).addClass('show');
+                            angular.element(document.getElementsByClassName('home-info-box')).removeClass('show');
                         } else {
-                            angular.element('.scroll.up').removeClass('show');
-                            angular.element('.home .info-box').addClass('show');
+                            angular.element(document.getElementsByClassName('scroll up')).removeClass('show');
+                            angular.element(document.getElementsByClassName('home-info-box')).addClass('show');
                         }
                     });
                 }

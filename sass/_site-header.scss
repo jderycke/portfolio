@@ -53,10 +53,11 @@
             display: block;
             position: absolute;
             background-color: $white;
-            height: 10px;
-            width: 14px;
-            right: 5px;
-            bottom: 10px;
+            height: 12px;
+            width: 12px;
+            right: 8px;
+            bottom: 8px;
+            border-radius: 50%;
         }
 
         &.active {

@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             },
             css: {
 				files: ['sass/*.scss', 'sass/*/*.scss'],
-				tasks: ['scsslint', 'sass', 'combine_mq', 'cssmin'],
+				tasks: ['scsslint', 'sass', 'combine_mq', 'cssmin', 'copy'],
                 options: {
                     livereload: true
                 }
@@ -114,6 +114,15 @@ module.exports = function (grunt) {
             }
         },
 
+        copy: {
+            main: {
+                files: [
+                    {expand: true, flatten: true, src: ['sass/fonts'], dest: 'dist/css/'},
+                    {expand: true, flatten: true, src: ['sass/fonts/**'], dest: 'dist/css/fonts/', filter: 'isFile'},
+                ],
+            },
+        },
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -164,7 +173,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'img',
-                    src: ['**/*.{png,jpg,jpeg,gif}', '!_Original', '!_NotUsed'],
+                    src: ['**/*.{png,jpg,jpeg,gif}', '!_NotUsed', '!_Original'],
                     dest: 'dist/img/'
                 }]
             }
@@ -234,6 +243,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-jsonlint');
     grunt.loadNpmTasks('grunt-jsonmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
