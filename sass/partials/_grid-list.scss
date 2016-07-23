@@ -1,0 +1,94 @@
+.grid {
+    &__item {
+        color: $black-tint1;
+        background-color: $grey;
+        margin: 0;
+        vertical-align: middle;
+        height: 260px;
+        border: solid 1px $white;
+        display: block;
+
+        &--link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            position: relative;
+
+            &:hover {
+                @include filter(grayscale(100%));
+
+                .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &--image {
+            background-image: url('../img/blank.png');
+            background-color: $white-tint1;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+
+            &.web {
+                background-position: center top;
+
+                &::before {
+                    content: '';
+                }
+            }
+
+            &.camera {
+                &::before {
+                    content: '';
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            background-color: $white-tint1;
+        }
+    }
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .6);
+    display: table;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    color: $white-tint1;
+    top: 0;
+    left: 0;
+
+    &__content {
+        color: $white-tint1;
+        text-transform: uppercase;
+        padding: $gutter;
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 1.4;
+        text-align: center;
+
+        &--title {
+            font-size: rem(24);
+            font-weight: 300;
+        }
+    }
+
+    .genericon {
+        margin-top: rem(10);
+        color: $white-tint1;
+        font-size: rem(32);
+        border: solid 4px $white-tint1;
+        border-radius: 50%;
+        height: 82px;
+        width: 82px;
+        line-height: 74px;
+    }
+}

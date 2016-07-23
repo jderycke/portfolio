@@ -10,22 +10,22 @@
             "url": "https://500px.com/photo/124566131/hawarden-castle-2-by-jamie-de-rycke"
         },
         {
-            "id": 2,
-            "title": "Bet Hunter",
-            "description": "Bet Hunter, built site with design input",
+            "id": 7,
+            "title": "Lucinda Griffith Design",
+            "description": "'Transform your Home', website for Lucinda Griffith Design. built site with design input based on a existing template.",
             "category": "web",
             "tags": "UI | HTML | javascript | CSS",
-            "image_url": "img/portfolio/bethunter-home.png",
-            "url": "http://www.bet-hunter.mobi"
+            "image_url": "img/portfolio/lucindag-home.png",
+            "url": "http://www.lucindagriffithdesign.com"
         },
         {
             "id": 3,
-            "title": "'Shroom!'",
-            "description": "Taken during a wander Hawarden Park",
+            "title": "Splash!",
+            "description": "Experimenting with multiple remote flash guns and gel coverings to give different lighting effects",
             "category": "camera",
-            "tags": "autumn | castle | clouds | england | nature | photograph | outdoors | outside | park | sky | uk",
-            "image_url": "img/gallery/34.jpg",
-            "url": "https://500px.com/photo/124566137/-shroom-by-jamie-de-rycke"
+            "tags": "color | water | blue | abstract | orange | splash | indoor",
+            "image_url": "img/gallery/36.jpg",
+            "url": "https://500px.com/photo/142109593/splash-by-jamie-de-rycke"
         },
         {
             "id": 4,
@@ -56,12 +56,12 @@
         },
         {
             "id": 7,
-            "title": "Lucinda Griffith Design",
-            "description": "'Transform your Home', website for Lucinda Griffith Design. built site with design input based on a existing template.",
+            "title": "Bet Hunter",
+            "description": "Bet Hunter, built site with design input",
             "category": "web",
             "tags": "UI | HTML | javascript | CSS",
-            "image_url": "img/portfolio/lucindag-home.png",
-            "url": "http://www.lucindagriffithdesign.com"
+            "image_url": "img/portfolio/bethunter-home.png",
+            "url": "http://www.bet-hunter.mobi"
         },
         {
             "id": 8,

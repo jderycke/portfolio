@@ -5,18 +5,18 @@
 @import 'mixins';
 @import 'variables';
 
-@import 'grid';
-@import 'fonts';
-@import 'base';
+@import 'base/grid';
+@import 'base/fonts';
+@import 'base/base';
+@import 'base/typography';
 
-@import 'site-header';
-@import 'site-footer';
-@import 'page-seperator';
-@import 'loading';
-@import 'grid-list';
+@import 'partials/site-header';
+@import 'partials/site-footer';
+@import 'partials/page-seperator';
+@import 'partials/loading';
+@import 'partials/grid-list';
+@import 'partials/buttons';
 
 @import 'pages/home';
-@import 'pages/about';
-@import 'pages/work';
 @import 'pages/blog';
 @import 'pages/error';

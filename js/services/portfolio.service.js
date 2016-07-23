@@ -13,7 +13,7 @@
         function ($http, $q) {
             this.loadFeed = function () {
                 var deferred = $q.defer(),
-                    url = './js/data/portfolio.min.json';
+                    url = './js/data/portfolio.min.js';
 
                 $http.get(url, {headers: {'Content-Type': 'text/plain'}})
                     .success(function (response) {

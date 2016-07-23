@@ -13,23 +13,23 @@
 		<link rel="stylesheet" media="screen" type="text/css" href="css/site.common.min.css" />
 
 		<!-- Add to homescreen for Chrome on Android -->
-		<meta name="mobile-web-app-capable" content="yes">
-		<link rel="icon" sizes="192x192" href="images/android-desktop.png">
+	    <meta name="mobile-web-app-capable" content="yes">
+	    <link rel="icon" sizes="192x192" href="img/logo114x114.png">
 
-		<!-- Add to homescreen for Safari on iOS -->
+	    <!-- Add to homescreen for Safari on iOS -->
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/logo114x114.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/logo72x72.png" />
 		<link rel="apple-touch-icon-precomposed" href="img/logo57x57.png" />
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Jamie De Rycke / Personal website">
-		<link rel="apple-touch-icon-precomposed" href="img/logo72x72.png">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="apple-mobile-web-app-title" content="Jamie De Rycke / Personal website">
+	    <link rel="apple-touch-icon-precomposed" href="img/logo72x72.png">
 
-		<!-- Tile icon for Win8 (144x144 + tile color) -->
-		<meta name="msapplication-TileImage" content="img/logo72x72.png">
-		<meta name="msapplication-TileColor" content="#222222">
+	    <!-- Tile icon for Win8 (144x144 + tile color) -->
+	    <meta name="msapplication-TileImage" content="img/logo72x72.png">
+	    <meta name="msapplication-TileColor" content="#222222">
 
-		<link rel="shortcut icon" href="img/logo57x57.png" />
+		<link rel="shortcut icon" href="img/favicon.png" />
 
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:type" content="website" />
@@ -44,82 +44,70 @@
 		<meta property="twitter:domain" content="Jamie De Rycke / Micro blog of a web monkey" />
 		<meta property="twitter:creator" content="@jderycke" />
 		<meta property="twitter:title" content="Jamie De Rycke / Personal website, portfolio and blog of a web monkey">
-		<meta property="twitter:description" content="YPersonal website and portfolio of Jamie De Rycke.">
-		<meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
+	    <meta property="twitter:description" content="Personal website and portfolio of Jamie De Rycke.">
+	    <meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
 	</head>
-    <body id="error" data-ng-app="portfolioApp">
-        <div data-ng-controller="SiteController" class="site-wrapper">
-			<header class="site-header animate">
-				<div class="container">
-					<a href="/#home" class="link genericon logo" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
+    <body class="error-page" data-ng-app="portfolioApp">
+        <div data-ng-controller="SiteController" class="site-wrapper" id="top">
+			<header class="site-header">
+				<div class="site-header__content container">
+					<a href="/" class="link site-header__logo nav__menu__link--active" title="Return to homepage" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
 						<span class="srt">Jamie De Rycke - Web Developer, North Wales</span>
-						<span class="dot font-effect-wallpaper animate"></span>
+						<span class="site-header__logo__dot font-effect-wallpaper"></span>
 					</a>
 				</div>
             </header>
             <main class="wrapper">
-                <section class="page error seperator-section picture">
+                <section class="page error">
                     <div class="container">
-                        <div class="info-box">
-							<h1 class="title font-effect-wallpaper">
-								Toto, I've got a feeling we're not in Kansas anymore <em>!</em>
-                            </h1>
-                            <p class="strapline">Sorry, but the page you are looking for isn't here. No worries though, <a href="/" class="toggle-back" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home">click here</a> to return home<em>.</em></p>
-                        </div>
+						<div class="info-box show">
+							<div class="info-box__content">
+								<h1 class="title font-effect-wallpaper">
+									<span>Toto,</span>
+									<span>I've got a feeling we're not in</span>
+									<span>Kansas anymore!</span>
+	                            </h1>
+	                            <p class="strapline">The page you were looking for appears to have been moved, deleted or does not exsits.</p>
+								<p class="strapline">You can go <a href="javascript:history.back()" target="_self" title="go back">back</a> to where you were or you can try heading back <a href="/" target="_self"  class="toggle-back" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home">home</a>.</p>
+	                        </div>
+						</div>
 	                </div>
                 </section>
             </main>
 			<footer id="footer" class="site-footer">
-				<a href="#home" data-ng-click="scrollTo('home', $event)" class="scroll up" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
-					<span class="genericon chevron up animate"></span>
+				<a class="genericon btn__scroll btn__scroll--up chevron--up" href="#top" data-ng-click="scrollTo('home', $event)" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
+
 				</a>
-				<div id="social" class="container">
-					<div class="footer-content">
-						<small class="copyright">&copy; 2016 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
-						<ul class="social-thumbs">
-							<li>
-								<a class="genericon facebook" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
+				<div class="container site-footer__content" id="social">
+					<small class="site-footer__copyright">&copy; 2016 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
+					<ul class="site-footer__social">
+						<li class="site-footer__social-item">
+							<a class="genericon facebook font-effect-wallpaper" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
 
-								</a>
-							</li>
-							<li>
-								<a class="genericon twitter" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
+							</a>
+						</li>
+						<li class="site-footer__social-item">
+							<a class="genericon twitter font-effect-wallpaper" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
 
-								</a>
-							</li>
-							<li>
-								<a class="genericon google-plus" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
+							</a>
+						</li>
+						<li class="site-footer__social-item">
+							<a class="genericon google-plus font-effect-wallpaper" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
 
-								</a>
-							</li>
-							<li>
-								<a class="genericon linkedin" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
+							</a>
+						</li>
+						<li class="site-footer__social-item">
+							<a class="genericon linkedin font-effect-wallpaper" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
 
-								</a>
-							</li>
-							<li>
-								<a class="genericon flickr" href="http://www.flickr.com/photos/jamiederycke/" title="Flickr" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Flickr">
-
-								</a>
-							</li>
-							<li>
-								<a class="genericon fivehundred" href="http://500px.com/jamiederycke" title="500px" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="500px">
-
-								</a>
-							</li>
-							<li>
-								<a class="genericon wordpress" href="http://blog.jamiederycke.me.uk" title="Blog" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Blog">
-
-								</a>
-							</li>
-						</ul>
-					</div>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</footer>
         </div>
 		<div class="blocker animate"></div>
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
         <script type="text/javascript" src="js/portfolioApp.min.js"></script>
 

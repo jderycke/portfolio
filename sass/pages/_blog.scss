@@ -1,62 +1,63 @@
 .blog {
-    .item-link {
+    .grid__item--link {
         color: $black-tint1;
         height: 260px;
+    }
 
-        .content {
-            padding: $gutter;
+    .grid__item__content {
+        padding: $gutter;
+    }
+
+    .article {
+        &-header {
+            color: $grey-tint1;
         }
 
-        .article {
-            &-header {
-                color: $grey-tint1;
+        &-footer {
+            color: $site-color;
+            position: absolute;
+            bottom: 10px;
+            width: calc(100% - 40px);
+
+            .content {
+                padding: 0;
+                float: right;
             }
 
-            &-footer {
-                color: $site-color;
-                position: absolute;
-                bottom: 10px;
-                width: calc(100% - 40px);
+            .genericon {
+                line-height: 45px;
+                height: 45px;
+                width: 45px;
+            }
+        }
+    }
 
-                .content {
-                    padding: 0;
-                    float: right;
-                }
+    .entry {
+        &-title {
+            font-size: rem(24);
+            text-align: left;
+            font-weight: 300;
+        }
 
-                .genericon {
-                    line-height: 45px;
-                    height: 45px;
-                    width: 45px;
-                }
+        &-excerpt {
+            font-size: rem(14);
+            margin-bottom: 10px;
+        }
+
+        &-time {
+            &::before {
+                font-family: 'Genericons';
+                display: inline-block;
+                padding-right: 10px;
+                margin-bottom: 15px;
             }
         }
 
-        .entry {
-            &-title {
-                font-size: rem(24);
-                text-align: left;
-            }
-
-            &-excerpt {
-                font-size: rem(14);
-                margin-bottom: 10px;
-            }
-
-            &-time {
-                &:before {
-                    font-family: 'Genericons';
-                    display: inline-block;
-                    padding-right: 10px;
-                    margin-bottom: 15px;
-                }
-            }
-
-            &-comments {
-                &:before {
-                    font-family: 'Genericons';
-                    display: inline-block;
-                    padding: 0 10px 0 0;
-                }
+        &-comments {
+            &::before {
+                font-family: 'Genericons';
+                display: inline-block;
+                padding: 0 10px 0 0;
             }
         }
     }

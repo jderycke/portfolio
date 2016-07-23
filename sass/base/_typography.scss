@@ -1,0 +1,91 @@
+h1,
+h2,
+h3,
+h4 {
+    padding: 0;
+    margin: 0 0 rem(15);
+    line-height: 1;
+    font-family: $font-default;
+    font-weight: 900;
+    text-align: center;
+
+    &:before {
+        display: block;
+        content: ' ';
+        line-height: 0;
+    }
+
+    &:after {
+        display: block;
+        content: ' ';
+        line-height: 0;
+    }
+
+    em {
+        color: $site-color;
+        font-style: normal;
+    }
+}
+
+h1 {
+    font-size: rem(130);
+}
+
+h2 {
+    font-size: rem(52);
+}
+
+h3 {
+    font-size: rem(32);
+}
+
+h4 {
+    font-size: rem(22);
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    display: inline;
+}
+
+a {
+    @include transition(all .6s cubic-bezier(.7, .01, .3, 1));
+    color: $site-color;
+    text-decoration: underline;
+
+    &:hover {
+        color: $grey-tint1;
+        text-decoration: none;
+    }
+}
+
+p {
+    margin: 0 0 15px;
+    font-size: rem(18);
+    line-height: 1.8;
+}
+
+
+.font-effect-wallpaper {
+    // scss-lint:disable VendorPrefix
+    -webkit-mask: url('../img/wallpaper.png') top left;
+    -moz-mask: url('../img/wallpaper.png') top left;
+    // scss-lint:enable VendorPrefix
+    mask: url('../img/wallpaper.png') top left;
+}
+
+.text {
+    &--center {
+        text-align: center;
+    }
+
+    &--small {
+        margin-top: $gutter;
+        color: $grey-tint1;
+        font-size: rem(14);
+    }
+}

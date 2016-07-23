@@ -1,68 +1,101 @@
 .home {
-    position: relative;
     z-index: 0;
     min-height: 100vh;
     height: 100vh;
+    background-color: $black-tint1;
 
     .container {
         position: fixed;
         left: 0;
-        top: 30vh;
+        top: 0;
         max-width: 100%;
+    }
 
-        .info-box {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-            opacity: 0;
+    .main-content {
+        opacity: 0;
+    }
 
-            &.show {
-                opacity: 1;
+    &.active {
+        .main-content {
+            opacity: 1;
+        }
+    }
+
+    .info-box {
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+
+        &__content {
+            display: table-cell;
+            vertical-align: middle;
+            height: 100vh;
+        }
+
+        .title {
+            font-weight: 900;
+            font-size: rem(100);
+            line-height: rem(80);
+            color: $grey-tint1;
+            letter-spacing: -4px;
+            background-image: url('../img/bg-md-v3.jpg');
+            background-position: center;
+            background-size: 0;
+            // scss-lint:disable VendorPrefix
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: auto;
+            // scss-lint:enable VendorPrefix
+
+            @include media($desktop) {
+                background-image: url('../img/bg-md-v3.jpg');
             }
 
-            .title {
-                font-weight: 900;
-                font-size: 32vw;
-                color: $white;
-                letter-spacing: -4px;
-                line-height: 1;
+            @include media($large-desktop) {
+                background-image: url('../img/bg-md-v3.jpg');
+            }
+
+            &__line1 {
+                display: block;
+                font-size: rem(45);
+                line-height: rem(45);
 
                 @include media($tablet) {
-                    letter-spacing: -12px;
-                    font-size: 26vw;
+                    font-size: rem(55);
+                    line-height: rem(55);
                 }
 
                 @include media($desktop) {
-                    font-size: 20vw;
-                }
-
-                &.cut-out {
-                    background-image: url('../img/bg-md-v2.jpg');
-                    background-position: center;
-                    background-size: cover;
-                    // scss-lint:disable VendorPrefix
-                    -webkit-background-clip: text;
-                    -moz-background-clip: text;
-                    // scss-lint:enable VendorPrefix
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-
-                    @include media($desktop) {
-                        background-image: url('../img/bg-lg-v2.jpg');
-                    }
-
-                    @include media($large-desktop) {
-                        background-image: url('../img/bg-lg-v2.jpg');
-                    }
+                    font-size: rem(65);
+                    line-height: rem(65);
                 }
             }
 
-            .strapline {
-                font-size: rem(18);
+            &__line2 {
+                display: block;
+                font-size: rem(70);
+                line-height: rem(80);
 
                 @include media($tablet) {
-                    font-size: rem(22);
+                    font-size: rem(140);
+                    line-height: rem(160);
                 }
+
+                @include media($desktop) {
+                    font-size: rem(160);
+                    line-height: rem(180);
+                }
+            }
+        }
+
+        .strapline {
+            font-size: rem(18);
+            color: $white;
+            margin-bottom: rem(20);
+
+            @include media($tablet) {
+                font-size: rem(22);
+                margin-bottom: rem(30);
             }
         }
     }

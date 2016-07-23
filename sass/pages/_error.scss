@@ -1,58 +1,109 @@
-#error {
-    .site-wrapper {
-        margin-bottom: 0;
-    }
+.error-page {
 
     .site-header {
         background-color: transparent;
-
-        .logo {
-            &:hover {
-                .dot {
-                    background-color: $black-tint1;
-                }
-            }
-
-            .dot {
-                background-color: $site-color;
-            }
-        }
-    }
-
-    .site-footer {
-        position: absolute;
-        bottom: 0;
     }
 
     .error {
         background-image: url('../img/bg-error-md.jpg');
-        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: 0;
+        height: calc(100vh - 42px);
 
         @include media($tablet) {
             background-image: url('../img/bg-error-lg.jpg');
         }
 
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('../img/grid.png');
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($black, .2);
+            z-index: 0;
+        }
+
         .container {
-            display: table-cell;
-            vertical-align: middle;
+            position: fixed;
+            left: 0;
+            top: 0;
+            max-width: 100%;
+            z-index: 1;
+        }
 
-            .info-box {
-                text-align: center;
-                display: block;
-                margin: 0 auto;
-                max-width: $screen-lg;
+        .info-box {
+            display: table;
+            margin: 0 auto;
+            text-align: left;
 
-                .title {
-                    font-weight: 900;
+            @include media($desktop) {
+                max-width: 810px;
+            }
+
+            &__content {
+                display: table-cell;
+                vertical-align: middle;
+                height: 100vh;
+            }
+
+            .title {
+                font-size: rem(32);
+                text-shadow: 1px 1px 2px $black-tint1;
+                text-align: left;
+                color: $white;
+
+                @include media($tablet) {
                     font-size: rem(62);
                 }
 
-                .strapline {
-                    font-size: rem(18);
+                span {
+                    display: inline-block;
+                    text-align: left;
+                    background-color: $site-color;
+                    padding: 6px;
+                    margin-bottom: 1px;
+                }
+            }
 
-                    @include media($tablet) {
-                        font-size: rem(22);
-                    }
+            a {
+                color: $white-tint1;
+
+                &:hover {
+                    color: $black-tint1;
+                    text-decoration: none;
+                }
+            }
+
+            .strapline {
+                font-size: rem(18);
+                background-color: rgba($site-color, .8);
+                padding: 6px;
+                display: inline-block;
+                margin-bottom: 5px;
+                color: $white;
+
+                @include media($tablet) {
+                    font-size: rem(22);
                 }
             }
         }
