@@ -48,7 +48,7 @@
 	    <meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
 	</head>
     <body class="error-page" data-ng-app="portfolioApp">
-        <div data-ng-controller="SiteController" class="site-wrapper nav__menu__link--active" id="top">
+        <div data-ng-controller="SiteController" class="site-wrapper nav__menu__link--active">
 			<header class="site-header">
 				<div class="site-header__content container">
 					<a href="/" class="link site-header__logo nav__menu__link--active" title="Return to homepage" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
@@ -58,13 +58,17 @@
 				</div>
             </header>
             <main class="wrapper">
-                <section class="page error">
+                <section class="page error animate--fade-in">
                     <div class="container">
 						<div class="info-box">
-	                        <div class="info-box__content">
+	                        <div class="info-box__content animate--fade-in">
 								<h1 class="title font-effect-wallpaper">
-									<span>Houston,</span>
-									<span>We have a problem!</span>
+									<div class="line">
+										<span>Houston,</span>
+									</div>
+									<div class="line">
+										<span>We have a problem!</span>
+									</div>
 	                            </h1>
 	                            <p class="strapline">Something has gone technically wrong.</p>
 								<p class="strapline">But don't worry, our engineers will try and solve the problem with some gaffa tape, an air filter and the cover off the flight plan.</p>
@@ -74,29 +78,26 @@
 	                </div>
                 </section>
             </main>
-			<footer id="footer" class="site-footer">
-				<a class="genericon btn__scroll btn__scroll--up chevron--up" href="#top" data-ng-click="scrollTo('home', $event)" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
-
-				</a>
-				<div class="container site-footer__content" id="social">
+			<footer class="site-footer">
+				<div class="container site-footer__content">
 					<small class="site-footer__copyright">&copy; 2016 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
-					<ul class="site-footer__social">
-						<li class="site-footer__social-item">
+					<ul class="social">
+						<li class="social-item">
 							<a class="genericon facebook font-effect-wallpaper" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
 
 							</a>
 						</li>
-						<li class="site-footer__social-item">
+						<li class="social-item">
 							<a class="genericon twitter font-effect-wallpaper" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
 
 							</a>
 						</li>
-						<li class="site-footer__social-item">
+						<li class="social-item">
 							<a class="genericon google-plus font-effect-wallpaper" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
 
 							</a>
 						</li>
-						<li class="site-footer__social-item">
+						<li class="social-item">
 							<a class="genericon linkedin font-effect-wallpaper" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
 
 							</a>
@@ -107,7 +108,7 @@
         </div>
 		<div class="blocker"></div>
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
         <script type="text/javascript" src="js/portfolioApp.min.js"></script>
 

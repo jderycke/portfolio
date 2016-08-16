@@ -1,13 +1,6 @@
 .site-footer {
     width: 100%;
-    background-color: $black-tint1;
-
-    @include media($desktop) {
-        position: fixed;
-        height: 42px;
-        z-index: 5;
-        bottom: 0;
-    }
+    background-color: $white-tint1;
 
     &__content {
         z-index: 1;
@@ -18,7 +11,7 @@
     &__copyright {
         font-size: rem(14);
         line-height: 2;
-        margin: $gutter auto 0;
+        margin: $gutter auto rem(10);
         vertical-align: middle;
         display: block;
         text-align: center;
@@ -27,100 +20,13 @@
 
         @include media($desktop) {
             margin: 0 auto;
-            line-height: 42px;
+            line-height: rem(42);
             display: inline-block;
             text-align: left;
         }
 
         &:before {
             content: '';
-        }
-    }
-
-    &__social {
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-
-        @include media($desktop) {
-            display: inline-block;
-            float: right;
-        };
-
-        &-item {
-            margin: 0 10px 0 0;
-            display: inline-block;
-
-            &:last-of-type {
-                margin: 0;
-            }
-        }
-
-        .genericon {
-            line-height: 42px;
-            height: 42px;
-            width: 42px;
-            font-size: rem(22);
-            background-color: transparent;
-            color: $grey-tint1;
-
-            &.facebook {
-                &:hover {
-                    color: $facebook-blue;
-                }
-            }
-
-            &.twitter {
-                &:hover {
-                    color: $twitter-blue;
-                }
-            }
-
-            &.google-plus {
-                &:hover {
-                    color: $google-red;
-                }
-            }
-
-            &.linkedin {
-                &:hover {
-                    color: $linkedin-blue;
-                }
-            }
-
-            &.flickr {
-                &:hover {
-                    color: $flickr-pink;
-                }
-            }
-
-            &.pinterest {
-                &:hover {
-                    color: $pinterest-red;
-                }
-            }
-
-            &.fivehundred {
-                font-size: rem(28);
-
-                &:hover {
-                    color: $fivehundred-grey;
-                }
-            }
-
-            &.rss {
-                &:hover {
-                    color: $rss-orange;
-                }
-            }
-
-            &.wordpress {
-                font-size: rem(28);
-
-                &:hover {
-                    color: $wordpress-blue;
-                }
-            }
         }
     }
 }

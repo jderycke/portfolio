@@ -23,7 +23,7 @@
                         var currentScroll = this.pageYOffset,
                             currentSection,
                             pageId,
-                            homeHeight = angular.element(document.getElementById('home'))[0].offsetHeight;
+                            homeHeight = angular.element(document.getElementById('home'))[0].offsetHeight - 75;
 
                         angular.forEach(sections, function (section, index) {
                             var divPosition = angular.element(section).prop('offsetTop');
@@ -39,8 +39,8 @@
                                 pageId = angular.element(sections[0]).prop('id');
                             }
 
-                            angular.element(document.getElementsByClassName('nav__menu__link')).removeClass('nav__menu__link--active');
-                            angular.element(document.querySelectorAll('[href="#' + pageId + '"]')).addClass('nav__menu__link--active');
+                            angular.element(document.getElementsByTagName('a')).removeClass('nav__menu__link--active');
+                            angular.element(document.querySelectorAll('.nav__menu__link[href="#' + pageId + '"]')).addClass('nav__menu__link--active');
 
                             angular.element(document.getElementsByClassName('page')).removeClass('active');
                             angular.element(currentSection).addClass('active');

@@ -28,8 +28,8 @@
     padding-right: $gutter;
 
     @include media($tablet) {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: rem(40);
+        padding-right: rem(40);
     }
 }
 
@@ -48,7 +48,7 @@
 
 .column {
     position: relative;
-    min-height: 1px;
+    min-height: rem(1);
     @include flex(0 0 auto);
     @include full-size($gutter);
     @include flex-grow(1);

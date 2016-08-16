@@ -15,88 +15,23 @@
         opacity: 0;
     }
 
-    &.active {
-        .main-content {
-            opacity: 1;
+    .line {
+        @include media($tablet) {
+            font-size: rem(42);
         }
     }
 
-    .info-box {
-        display: table;
-        margin: 0 auto;
-        text-align: center;
+    .name {
+        font-size: rem(42);
 
-        &__content {
-            display: table-cell;
-            vertical-align: middle;
-            height: 100vh;
+        @include media($tablet) {
+            font-size: rem(82);
         }
+    }
 
-        .title {
-            font-weight: 900;
-            font-size: rem(100);
-            line-height: rem(80);
-            color: $grey-tint1;
-            letter-spacing: -4px;
-            background-image: url('../img/bg-md-v3.jpg');
-            background-position: center;
-            background-size: 0;
-            // scss-lint:disable VendorPrefix
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            -webkit-background-size: auto;
-            // scss-lint:enable VendorPrefix
-
-            @include media($desktop) {
-                background-image: url('../img/bg-md-v3.jpg');
-            }
-
-            @include media($large-desktop) {
-                background-image: url('../img/bg-md-v3.jpg');
-            }
-
-            &__line1 {
-                display: block;
-                font-size: rem(45);
-                line-height: rem(45);
-
-                @include media($tablet) {
-                    font-size: rem(55);
-                    line-height: rem(55);
-                }
-
-                @include media($desktop) {
-                    font-size: rem(65);
-                    line-height: rem(65);
-                }
-            }
-
-            &__line2 {
-                display: block;
-                font-size: rem(70);
-                line-height: rem(80);
-
-                @include media($tablet) {
-                    font-size: rem(140);
-                    line-height: rem(160);
-                }
-
-                @include media($desktop) {
-                    font-size: rem(160);
-                    line-height: rem(180);
-                }
-            }
-        }
-
-        .strapline {
-            font-size: rem(18);
-            color: $white;
-            margin-bottom: rem(20);
-
-            @include media($tablet) {
-                font-size: rem(22);
-                margin-bottom: rem(30);
-            }
+    &.active {
+        .main-content {
+            opacity: 1;
         }
     }
 }

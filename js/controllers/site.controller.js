@@ -18,7 +18,7 @@
                     angular.element($event.target).addClass('nav__menu__link--active');
                 }
 
-                $document.scrollToElementAnimated(angular.element(document.getElementById(target)), 0, 1400);
+                $document.scrollToElementAnimated(angular.element(document.getElementById(target)), 0, 800);
                 $event.preventDefault();
             };
 

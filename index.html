@@ -50,7 +50,7 @@
 	<body data-ng-app="portfolioApp" scroll="">
         <div data-ng-controller="SiteController" class="site-wrapper" id="top">
             <header class="site-header animate">
-				<div class="site-header__content container">
+				<div class="site-header__content container animate--fade-in">
 					<a href="#home" data-ng-click="scrollTo('home', $event)"  class="site-header__logo" title="Scroll to top of page" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
 						<span class="srt">Jamie De Rycke - Web Developer, North Wales</span>
 						<span class="site-header__logo__dot font-effect-wallpaper animate"></span>
@@ -62,7 +62,7 @@
 					    <div class="mainMenu">
 							<nav class="nav">
 			                    <ul class="nav__menu toggle-sidebars">
-									<li class="nav__menu__item show-on-mobile">
+									<li class="nav__menu__item">
 			                            <a href="#home" data-ng-click="scrollTo('home', $event)" title="Home" class="nav__menu__link nav__menu__link--active" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Scroll to Home">
 											<span class="nav__menu__text font-effect-wallpaper">Home</span>
 			                            </a>
@@ -88,20 +88,22 @@
 			        </div>
 				</div>
             </header>
-            <section id="home" class="page home active">
+            <section id="home" class="page home animate--fade-in seperator-section picture active">
             	<div class="container main-content animate">
 					<div class="row">
 						<div class="column column--12-col">
 							<div class="info-box">
 								<div class="info-box__content">
-			                        <h1 class="title">
-										<span class="title__line1">Jamie</span>
-										<span class="title__line2">De Rycke</span>
+			                        <h1 class="title font-effect-wallpaper">
+										<div class="line">
+											<span class="line">Hello, my name is</span>
+										</div>
+										<div class="line">
+											<span class="name">Jamie De Rycke</span>
+										</div>
 			                        </h1>
 			                        <p class="strapline">I create things with pixels and code.</p>
-									<a class="genericon btn__scroll chevron--down" href="#about" data-ng-click="scrollTo('about', $event)" title="Down to about me" class="scroll down" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Down arrow (Home)">
-
-									</a>
+									<a class="genericon btn__scroll btn__scroll--down chevron--down" href="#about" data-ng-click="scrollTo('about', $event)" title="Down to about me" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Down arrow (Home)"></a>
 								</div>
 		                    </div>
 						</div>
@@ -155,7 +157,7 @@
 	                    <div class="row">
 		            		<div class="column column--12-col grid-items">
 		                        <ul class="grid row">
-		                            <li class="grid__item column column--sm--2-col column--4-col no-gutters" data-ng-repeat="item in results | orderBy : id | limitTo : 9" data-ng-cloak>
+		                            <li class="grid__item column column--xs--2-col column--4-col no-gutters" data-ng-repeat="item in results | orderBy : id | limitTo : 9" data-ng-cloak>
 		                                <a class="grid__item--link" data-ng-href="{{item.url}}" title="{{item.title}}" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" data-ga-label="{{item.title}}">
 											<div data-ng-style="{'background-image': 'url(' + item.image_url + ')'}" class="content grid__item--image animate {{item.category}}" ></div>
 		                                    <article class="overlay animate">
@@ -174,12 +176,12 @@
 			            		<div class="column column--12-col">
 									<a class="btn btn--default" href="http://www.flickr.com/photos/jamiederycke/" title="See more at Flickr" target="_blank" data-ga-category="See More" data-ga-action="Click" data-ga-label="Flickr">
 										Flickr
-										<span class="genericon flickr  font-effect-wallpaper"></span>
+										<span class="genericon flickr"></span>
 									</a>
 
 									<a class="btn btn--default" href="http://500px.com/jamiederycke" title="See more at 500px" target="_blank" data-ga-category="See More" data-ga-action="Click" data-ga-label="500px">
 										500px
-										<span class="genericon fivehundred font-effect-wallpaper"></span>
+										<span class="genericon fivehundred"></span>
 									</a>
 								</div>
 							</div>
@@ -214,7 +216,7 @@
 	                    <div class="row">
 	                        <div class="column--12-col grid-items">
 	                            <div class="grid row">
-	                                <article class="grid__item column column--sm--2-col column--4-col no-gutters" data-ng-repeat="entry in feed.items | orderBy : datePublished | limitTo : 8" data-ng-cloak itemscope="" itemtype="http://schema.org/Article">
+	                                <article class="grid__item column column--xs--2-col column--4-col no-gutters" data-ng-repeat="entry in feed.items | orderBy : datePublished | limitTo : 8" data-ng-cloak itemscope="" itemtype="http://schema.org/Article">
 	                                    <a class="grid__item--link" data-ng-href="{{entry.link}}" title="{{entry.title}}" data-ga-category="Blog links" data-ga-action="Click" data-ga-label="{{entry.title}}">
 											<div class="grid__item__content">
 		                                        <header class="article-header">
@@ -247,7 +249,7 @@
 								<div class="column column--12-col">
 									<a href="http://blog.jamiederycke.me.uk" class="btn btn--default" title="See more blog posts" data-ga-category="See More" data-ga-action="Click" data-ga-label="Blog">
 										See more
-										<span class="genericon chevron--right font-effect-wallpaper"></span>
+										<span class="genericon chevron--right"></span>
 									</a>
 								</div>
 							</div>
@@ -272,29 +274,29 @@
 					</div>
 				</div>
             </main>
-			<footer id="footer" class="site-footer">
+			<footer id="footer" class="site-footer animate--fade-in">
 				<a class="genericon btn__scroll btn__scroll--up chevron--up" href="#top" data-ng-click="scrollTo('home', $event)" title="Back up to home" data-ga-category="Scroll arrows" data-ga-action="Click" data-ga-label="Up arrow (Footer)">
 
 				</a>
-				<div class="container site-footer__content" id="social" >
+				<div class="container site-footer__content">
 					<small class="site-footer__copyright">&copy; 2016 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
-					<ul class="site-footer__social">
-						<li class="site-footer__social-item">
+					<ul class="social">
+						<li class="social-item">
 							<a class="genericon facebook font-effect-wallpaper" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
 
 							</a>
 						</li>
-						<li class="site-footer__social-item">
+						<li class="social-item">
 							<a class="genericon twitter font-effect-wallpaper" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
 
 							</a>
 						</li>
-						<li class="site-footer__social-item">
+						<li class="social-item">
 							<a class="genericon google-plus font-effect-wallpaper" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
 
 							</a>
 						</li>
-						<li class="site-footer__social-item">
+						<li class="social-item">
 							<a class="genericon linkedin font-effect-wallpaper" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
 
 							</a>
@@ -305,7 +307,7 @@
         </div>
 		<div class="blocker animate" data-ga-category="Nav" data-ga-action="Click" data-ga-label="Close Burger Menu"></div>
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
         <script type="text/javascript" src="js/portfolioApp.min.js"></script>
 

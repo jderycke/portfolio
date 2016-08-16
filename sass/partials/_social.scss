@@ -1,0 +1,87 @@
+.social {
+    margin: 0 auto $gutter;
+    display: block;
+    text-align: center;
+
+    @include media($tablet) {
+        margin: 0 auto;
+        display: inline-block;
+        float: right;
+    };
+
+    &-item {
+        margin: 0 rem(10) 0 0;
+        display: inline-block;
+
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    .genericon {
+        line-height: rem(42);
+        height:rem(42);
+        width: rem(42);
+        font-size: rem(22);
+        background-color: transparent;
+        color: $grey-tint1;
+
+        &.facebook {
+            &:hover {
+                color: $facebook-blue;
+            }
+        }
+
+        &.twitter {
+            &:hover {
+                color: $twitter-blue;
+            }
+        }
+
+        &.google-plus {
+            &:hover {
+                color: $google-red;
+            }
+        }
+
+        &.linkedin {
+            &:hover {
+                color: $linkedin-blue;
+            }
+        }
+
+        &.flickr {
+            &:hover {
+                color: $flickr-pink;
+            }
+        }
+
+        &.pinterest {
+            &:hover {
+                color: $pinterest-red;
+            }
+        }
+
+        &.fivehundred {
+            font-size: rem(28);
+
+            &:hover {
+                color: $fivehundred-grey;
+            }
+        }
+
+        &.rss {
+            &:hover {
+                color: $rss-orange;
+            }
+        }
+
+        &.wordpress {
+            font-size: rem(28);
+
+            &:hover {
+                color: $wordpress-blue;
+            }
+        }
+    }
+}

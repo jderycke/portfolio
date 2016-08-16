@@ -1,7 +1,7 @@
 .blog {
     .grid__item--link {
         color: $black-tint1;
-        height: 260px;
+        height: rem(260);
     }
 
     .grid__item__content {
@@ -16,7 +16,7 @@
         &-footer {
             color: $site-color;
             position: absolute;
-            bottom: 10px;
+            bottom: rem(10);
             width: calc(100% - 40px);
 
             .content {
@@ -25,9 +25,9 @@
             }
 
             .genericon {
-                line-height: 45px;
-                height: 45px;
-                width: 45px;
+                line-height: rem(42);
+                height: rem(42);
+                width: rem(42);
             }
         }
     }
@@ -41,15 +41,15 @@
 
         &-excerpt {
             font-size: rem(14);
-            margin-bottom: 10px;
+            margin-bottom: rem(10);
         }
 
         &-time {
             &::before {
                 font-family: 'Genericons';
                 display: inline-block;
-                padding-right: 10px;
-                margin-bottom: 15px;
+                padding-right: rem(10);
+                margin-bottom: rem(15);
             }
         }
 
@@ -57,7 +57,7 @@
             &::before {
                 font-family: 'Genericons';
                 display: inline-block;
-                padding: 0 10px 0 0;
+                padding: 0 rem(10) 0 0;
             }
         }
     }

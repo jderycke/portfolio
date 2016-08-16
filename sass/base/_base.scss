@@ -50,8 +50,8 @@ blockquote {
     font-size: rem(18);
     line-height: 1.2;
     border-left: 4px solid $site-color;
-    padding: 0 0 0 20px;
-    margin: 15px 0 25px;
+    padding: 0 0 0 rem(20);
+    margin: rem(15) 0 rem(25);
     font-weight: 900;
     line-height: 1.4;
 
@@ -80,10 +80,6 @@ blockquote {
     position: relative;
     right: 0;
     transition: .6s right ease-in-out;
-
-    @include media($tablet) {
-        margin-bottom: 42px;
-    }
 }
 
 .page {
@@ -93,8 +89,8 @@ blockquote {
     background-color: $white;
     box-sizing: border-box;
     z-index: 1;
-    padding-top: 95px;
-    padding-bottom: 85px;
+    padding-top: rem(95);
+    padding-bottom: rem(75);
 }
 
 .slideContent {
@@ -102,8 +98,8 @@ blockquote {
     position: fixed;
     z-index: 3;
     top: 0;
-    right: -15rem;
-    width: 15rem;
+    right: rem(-300);
+    width: rem(300);
     height: 100%;
     background: $black-tint1;
 
@@ -111,29 +107,30 @@ blockquote {
         position: relative;
         right: auto;
         height: $navbar-height;
-        width: auto;
         display: inline-block;
         float: right;
+        width: rem(477);
         background-color: transparent;
     }
 }
 
 .burgerMenu {
     position: fixed;
-    top: 15px;
-    right: 20px;
+    top: rem(15);
+    right: rem(20);
     z-index: 4;
     background-color: transparent;
     outline: 0;
     margin: 0;
     padding: 0;
-    height: 42px;
-    width: 42px;
+    height: rem(42);
+    width: rem(42);
     transition: all .6s ease-in-out;
     transform: rotate(0);
     transform-origin: center center;
     -webkit-tap-highlight-color: rgba($black, 0);
     border: 0;
+    cursor: pointer;
     @include user-select (none);
 
     @include media($tablet) {
@@ -143,9 +140,9 @@ blockquote {
 
 .lines {
     display: block;
-    border-radius: 10px;
-    width: 42px;
-    height: 4px;
+    border-radius: rem(10);
+    width: rem(42);
+    height: rem(4);
     position: absolute;
     z-index: -1;
     transform: rotate(0);
@@ -153,13 +150,14 @@ blockquote {
     background-color: $white;
     right: 0;
     content: '';
+    cursor: pointer;
 
     &:before,
     &:after {
         display: block;
-        border-radius: 10px;
-        width: 42px;
-        height: 4px;
+        border-radius: rem(10);
+        width: rem(42);
+        height: rem(4);
         position: absolute;
         z-index: -1;
         transform: rotate(0);
@@ -170,11 +168,11 @@ blockquote {
     }
 
     &:before {
-        top: -12px;
+        top: rem(-12);
     }
 
     &:after {
-        bottom: -12px;
+        bottom: rem(-12);
     }
 
     &:hover {
@@ -198,7 +196,7 @@ blockquote {
 
 .menuActive {
     overflow: hidden;
-    
+
     .lines {
         background-color: transparent;
 
@@ -225,7 +223,7 @@ blockquote {
     .burgerMenu,
     .site-header,
     .site-wrapper {
-        right: 15rem;
+        right: rem(300);
 
         @include media($tablet) {
             right: 0;
@@ -235,6 +233,10 @@ blockquote {
     .blocker {
         opacity: 1;
         z-index: 4;
+    }
+
+    .site-header {
+        background-color: $black-tint1;
     }
 }
 
@@ -249,8 +251,16 @@ blockquote {
     width: 100vw;
 }
 
-.show-on-mobile {
-    @include media($tablet) {
-        display: none !important;
+@keyframes fadein {
+    0% {
+        opacity: 0;
     }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate--fade-in {
+    animation: fadein 3.4s;
 }

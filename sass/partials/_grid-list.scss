@@ -4,7 +4,7 @@
         background-color: $grey;
         margin: 0;
         vertical-align: middle;
-        height: 260px;
+        height: rem(260);
         border: solid 1px $white;
         display: block;
 
@@ -87,8 +87,8 @@
         font-size: rem(32);
         border: solid 4px $white-tint1;
         border-radius: 50%;
-        height: 82px;
-        width: 82px;
-        line-height: 74px;
+        height: rem(82);
+        width: rem(82);
+        line-height: rem(74);
     }
 }

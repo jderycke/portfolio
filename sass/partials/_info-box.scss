@@ -1,0 +1,60 @@
+.info-box {
+    display: table;
+    margin: 0 auto;
+    text-align: left;
+
+    @include media($desktop) {
+        max-width: rem(810);
+    }
+
+    &__content {
+        display: table-cell;
+        vertical-align: middle;
+        height: 100vh;
+    }
+
+    .title {
+        font-size: rem(32);
+        text-shadow: 1px 1px 2px rgba($black, .06);
+        text-align: left;
+        color: $white;
+
+        @include media($tablet) {
+            font-size: rem(62);
+        }
+    }
+
+    .line {
+        display: block;
+
+        span {
+            display: inline-block;
+            text-align: left;
+            background-color: $site-color;
+            padding: rem(6);
+            margin-bottom: rem(1);
+        }
+    }
+
+    a {
+        color: $white-tint1;
+
+        &:hover {
+            color: $black-tint1;
+            text-decoration: none;
+        }
+    }
+
+    .strapline {
+        font-size: rem(18);
+        background-color: rgba($site-color, .8);
+        padding: rem(6);
+        display: inline-block;
+        margin-bottom: rem(5);
+        color: $white;
+
+        @include media($tablet) {
+            font-size: rem(20);
+        }
+    }
+}

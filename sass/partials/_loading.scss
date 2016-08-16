@@ -4,7 +4,7 @@
     display: none;
     height: 100%;
     width: 100%;
-    min-height: 720px;
+    min-height: rem(720);
 }
 
 .waiting {
@@ -27,8 +27,8 @@
     text-align: center;
 
     .light {
-        width: 35px;
-        height: 35px;
+        width: rem(35);
+        height: rem(35);
         background-color: $site-color;
         border-radius: 50%;
         display: inline-block;
@@ -53,7 +53,7 @@
     25% {
         @include transform(translateX(-100px) scale(.3));
     }
-    
+
     50% {
         @include transform(translateX(0) scale(1));
     }

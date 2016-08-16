@@ -1,7 +1,7 @@
 .seperator-section {
     position: relative;
     margin: 0 auto;
-    height: 300px;
+    height: rem(300);
     z-index: 1;
     background-color: $white;
 
@@ -68,7 +68,7 @@
             border-left: 0;
             font-weight: 900;
             text-align: center;
-            text-shadow: 1px 1px 2px $black-tint1;
+            text-shadow: 1px 1px 2px rgba($black, .06);
 
             @include media($tablet) {
                 font-size: rem(38);
