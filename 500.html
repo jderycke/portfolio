@@ -10,24 +10,23 @@
 		<meta name="keywords" content="Portfolio, Personal, Web Design, Web Development, valid xhtml, css development, css, html, C# development, mobile development, north wales, Jamie De Rycke" />
 
 		<link rel="stylesheet" media="screen" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,900">
-		<link rel="stylesheet" media="screen" type="text/css" href="css/site.common.min.css" />
+		<link rel="stylesheet" media="screen" type="text/css" href="css/site.common.min.css?rel=1488643413573" />
 
 		<!-- Add to homescreen for Chrome on Android -->
 	    <meta name="mobile-web-app-capable" content="yes">
-	    <link rel="icon" sizes="192x192" href="img/logo114x114.png">
+	    <link rel="icon" sizes="192x192" href="img/favicon.png">
 
-	    <!-- Add to homescreen for Safari on iOS -->
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/logo114x114.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/logo72x72.png" />
-		<link rel="apple-touch-icon-precomposed" href="img/logo57x57.png" />
+		<!-- Add to homescreen for Safari on iOS -->
+		<link rel="apple-touch-icon" sizes="114x114" href="img/logo114x114.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="img/logo72x72.png" />
+		<link rel="apple-touch-icon" href="img/logo57x57.png" />
 	    <meta name="apple-mobile-web-app-capable" content="yes">
 	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 	    <meta name="apple-mobile-web-app-title" content="Jamie De Rycke / Personal website">
-	    <link rel="apple-touch-icon-precomposed" href="img/logo72x72.png">
 
 	    <!-- Tile icon for Win8 (144x144 + tile color) -->
 	    <meta name="msapplication-TileImage" content="img/logo72x72.png">
-	    <meta name="msapplication-TileColor" content="#222222">
+	    <meta name="msapplication-TileColor" content="#2b3133">
 
 		<link rel="shortcut icon" href="img/favicon.png" />
 
@@ -48,7 +47,7 @@
 	    <meta property="twitter:image" content="http://www.jamiederycke.me.uk/img/avatar-300x225.jpg">
 	</head>
     <body class="error-page" data-ng-app="portfolioApp">
-        <div data-ng-controller="SiteController" class="site-wrapper nav__menu__link--active">
+        <div data-ng-controller="siteController as sc" class="site-wrapper nav__menu__link--active">
 			<header class="site-header">
 				<div class="site-header__content container">
 					<a href="/" class="link site-header__logo nav__menu__link--active" title="Return to homepage" data-ga-category="Logo" data-ga-action="Click" data-ga-label="Logo">
@@ -58,21 +57,21 @@
 				</div>
             </header>
             <main class="wrapper">
-                <section class="page error animate--fade-in">
+                <section class="page page--no-padding error">
                     <div class="container">
 						<div class="info-box">
-	                        <div class="info-box__content animate--fade-in">
-								<h1 class="title font-effect-wallpaper">
-									<div class="line">
-										<span>Houston,</span>
+	                        <div class="info-box__content">
+								<h1 class="info-box__title">
+									<div class="info-box__line">
+										<span class="info-box__line__content">Houston,</span>
 									</div>
-									<div class="line">
-										<span>We have a problem!</span>
+									<div class="info-box__line">
+										<span class="info-box__line__content">We have a problem!</span>
 									</div>
 	                            </h1>
-	                            <p class="strapline">Something has gone technically wrong.</p>
-								<p class="strapline">But don't worry, our engineers will try and solve the problem with some gaffa tape, an air filter and the cover off the flight plan.</p>
-								<p class="strapline">You can go <a href="javascript:history.back()" target="_self" title="go back">back</a> to where you were or you can try heading back <a href="/" target="_self"  class="toggle-back" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home">home</a>.</p>
+	                            <p class="info-box__sub-title">Something has gone technically wrong.</p>
+								<p class="info-box__sub-title">But don't worry, our engineers will try and solve the problem with some gaffa tape, an air filter and the cover off the flight plan.</p>
+								<p class="info-box__sub-title">You can go <a href="javascript:history.back()" target="_self" title="go back" class="info-box__link">back</a> to where you were or you can try heading back <a href="/" target="_self" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home" class="info-box__link">home</a>.</p>
 	                        </div>
 						</div>
 	                </div>
@@ -80,25 +79,25 @@
             </main>
 			<footer class="site-footer">
 				<div class="container site-footer__content">
-					<small class="site-footer__copyright">&copy; 2016 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
+					<small class="site-footer__copyright">&copy; 2017 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
 					<ul class="social">
-						<li class="social-item">
-							<a class="genericon facebook font-effect-wallpaper" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
+						<li class="social__item">
+							<a class="genericon social--facebook" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook">
 
 							</a>
 						</li>
-						<li class="social-item">
-							<a class="genericon twitter font-effect-wallpaper" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
+						<li class="social__item">
+							<a class="genericon social--twitter" href="http://www.twitter.com/jderycke/" title="Twitter" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Twitter">
 
 							</a>
 						</li>
-						<li class="social-item">
-							<a class="genericon google-plus font-effect-wallpaper" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
+						<li class="social__item">
+							<a class="genericon social--google-plus" href="http://plus.google.com/u/0/113337118368975520999/posts/" title="Google+" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Google+">
 
 							</a>
 						</li>
-						<li class="social-item">
-							<a class="genericon linkedin font-effect-wallpaper" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
+						<li class="social__item">
+							<a class="genericon social--linkedin" href="http://uk.linkedin.com/in/jamiederycke/" title="LinkedIn" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="LinkedIn">
 
 							</a>
 						</li>
@@ -108,9 +107,8 @@
         </div>
 		<div class="blocker"></div>
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
-        <script type="text/javascript" src="js/portfolioApp.min.js"></script>
+		<script type="text/javascript" src="js/vendor.min.js?rel=1488643413572"></script>
+        <script type="text/javascript" src="js/portfolioApp.min.js?rel=1488643413573"></script>
 
 		<!-- Google Analytics -->
 		<script>
@@ -118,7 +116,7 @@
 			ga('create', 'UA-39364857-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-		<script async src='//www.google-analytics.com/analytics.js'></script>
+		<script async src="https://www.google-analytics.com/analytics.js"></script>
 		<!-- End Google Analytics -->
     </body>
 </html>

@@ -44,31 +44,64 @@ module.exports = function (grunt) {
                 }
             },
             css: {
-				files: ['sass/*.scss', 'sass/*/*.scss'],
-				tasks: ['scsslint', 'sass', 'combine_mq', 'cssmin', 'copy'],
+				files: [
+                    'sass/*.scss',
+                    'sass/*/*.scss'
+                ],
+				tasks: [
+                    'scsslint',
+                    'sass',
+                    'combine_mq',
+                    'cssmin',
+                    'copy',
+                    'cachebreaker'
+                ],
                 options: {
                     livereload: true
                 }
 			},
             scripts: {
-                files: ['js/*.js', 'js/*/*.js', 'js/data/*.json'],
-                tasks: ['jsonlint', 'jsonmin', 'uglify'],
+                files: [
+                    'js/*.js',
+                    'js/*/*.js',
+                    'js/data/*.json'
+                ],
+                tasks: [
+                    'jsonlint',
+                    'jsonmin',
+                    'uglify',
+                    'cachebreaker'
+                ],
                 options: {
                     spawn: false,
                     livereload: true
                 }
             },
             images: {
-                files: ['img/*.png', 'img/*.jpg', 'img/*.jpeg', 'img/*.gif', 'img/*.svg'],
-                tasks: ['imagemin'],
+                files: [
+                    'img/*.png',
+                    'img/*.jpg',
+                    'img/*.jpeg',
+                    'img/*.gif',
+                    'img/*.svg'
+                ],
+                tasks: [
+                    'imagemin',
+                    'cachebreaker'
+                ],
                 options: {
                     spawn: false,
                     livereload: true
                 }
             },
             html: {
-                files: ['*.html'],
-                tasks: ['htmlmin'],
+                files: [
+                    '*.html'
+                ],
+                tasks: [
+                    'htmlmin',
+                    'cachebreaker'
+                ],
                 options: {
                     spawn: false,
                     livereload: true
@@ -78,15 +111,21 @@ module.exports = function (grunt) {
 
         scsslint: {
             allFiles: [
-                ['sass/*.scss', 'sass/pages/*.scss'],
+                'sass/*.scss',
+                'sass/*/*.scss'
             ],
             options: {
                 bundleExec: false,
                 config: '.scss-lint.yml',
-                compact: true,
-                colorizeOutput: true,
                 reporterOutput: 'reports/scss-lint-report.xml',
-                maxBuffer: 8000*1024
+                colorizeOutput: true,
+                compact: false,
+                exclude: [
+                    'sass/bourbon/*.scss',
+                    'sass/bourbon/*/*.scss',
+                    'sass/neat/*.scss',
+                    'sass/neat/*/*.scss'
+                ]
             }
         },
 
@@ -141,11 +180,24 @@ module.exports = function (grunt) {
 
         uglify: {
             options: {
-                mangle: true
+                mangle: false
             },
             my_target: {
                 files: {
-                    'dist/js/portfolioApp.min.js': ['js/portfolioApp.js', 'js/services/*.js', 'js/directives/*.js', 'js/controllers/*.js']
+                    'dist/js/vendor.min.js': [
+                        'node_modules/angular/angular.js',
+                        'node_modules/angular-scroll/angular-scroll.js',
+                        'node_modules/angular-sanitize/angular-sanitize.js',
+                        'node_modules/es5-shim/es5-shim.js',
+                        'node_modules/es5-shim/es5-sham.js',
+                        'node_modules/json3/lib/json3.js'
+                    ],
+                    'dist/js/portfolioApp.min.js': [
+                        'js/services/*.js',
+                        'js/directives/*.js',
+                        'js/controllers/*.js',
+                        'js/portfolioApp.js'
+                    ]
                 }
             }
         },
@@ -193,6 +245,25 @@ module.exports = function (grunt) {
                     src: '*.html',
                     dest: 'dist/'
                 }]
+            }
+        },
+
+        cachebreaker: {
+            dev: {
+                options: {
+                    match: [
+                        'vendor.min.js',
+                        'portfolioApp.min.js',
+                        'site.common.min.css'
+                    ]
+                },
+                files: {
+                    src: [
+                        'index.html',
+                        '404.html',
+                        '500.html'
+                    ]
+                }
             }
         },
 
@@ -251,6 +322,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-combine-mq');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-cache-breaker');
 
     grunt.registerTask('serve', function () {
         grunt.task.run(['connect', 'watch']);

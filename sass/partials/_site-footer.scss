@@ -1,6 +1,7 @@
 .site-footer {
+    @include transition(all .6s ease);
     width: 100%;
-    background-color: $white-tint1;
+    background-color: $black-tint1;
 
     &__content {
         z-index: 1;
@@ -16,7 +17,7 @@
         display: block;
         text-align: center;
         text-transform: uppercase;
-        color: $grey-tint1;
+        color: $white;
 
         @include media($desktop) {
             margin: 0 auto;

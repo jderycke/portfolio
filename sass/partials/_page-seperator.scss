@@ -6,87 +6,63 @@
     background-color: $white;
 
     &.picture {
-        background-image: url('../img/bg-md-v3.jpg');
+        background-image: url('../img/bg-md-v4.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
 
         @include media($tablet) {
-            background-image: url('../img/bg-lg-v3.jpg');
-        }
-
-        &:before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('../img/grid.png');
-            z-index: 1;
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba($black, .2);
-            z-index: 0;
-        }
-
-        .container {
-            color: $white-tint1;
-
-            blockquote {
-                cite {
-                    color: $white-tint1;
-                }
-            }
+            background-image: url('../img/bg-lg-v4.jpg');
         }
     }
 
     .container {
+        @include display(flex);
+        @include justify-content(center);
+        @include align-items(center);
         z-index: 1;
-        display: table;
         height: 100%;
-        text-align: center;
         position: relative;
         width: 100%;
 
         blockquote {
-            display: table-cell;
             vertical-align: middle;
             font-size: rem(26);
             border-left: 0;
-            font-weight: 900;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba($black, .06);
+            display: inline-block;
+            text-align: left;
+            color: $white;
+            margin: 0;
+            padding: 0;
 
             @include media($tablet) {
-                font-size: rem(38);
+                font-size: rem(36);
+                line-height: rem(46);
+                text-align: left;
             }
 
             cite {
                 font-size: rem(16);
                 line-height: 1.2;
-                text-shadow: none;
-
-                &:after {
-                    content: '\2014 \2009';
-                }
-            }
-
-            span {
-                display: block;
+                font-weight: 300;
+                color: $white;
+                margin-top: rem(15);
             }
         }
+    }
+}
+
+.line {
+    display: block;
+    font-weight: 900;
+
+    &__content {
+        display: inline-block;
+        text-align: left;
+        background-color: rgba($site-color, .45);
+        padding: rem(6);
+        margin-bottom: rem(1);
     }
 }

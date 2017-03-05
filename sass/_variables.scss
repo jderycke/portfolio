@@ -3,11 +3,12 @@ $site-color: #c03c03;
 $white: #ffffff;
 $white-tint1: #fafafa;
 
-$black: #111111;
+$black: #4d4d4d;
 $black-tint1: #2b3133;
+$black-tint3: #545454;
 
-$grey: #f2f2f2;
-$grey-tint1: #888888;
+$grey: #f3f3f3;
+$grey-tint1: #888b8d;
 
 $facebook-blue: #3b5998;
 $twitter-blue: #00aced;
@@ -16,7 +17,7 @@ $linkedin-blue: #007bb6;
 $flickr-pink: #ff0084;
 $rss-orange: #ff6600;
 $pinterest-red: #cb2027;
-$fivehundred-grey: #b9c1c7;
+$fivehundred-blue: #0099e5;
 $wordpress-blue: #21759b;
 
 $navbar-height: rem(75);
@@ -39,7 +40,7 @@ $grid-max-columns: $grid-desktop-columns !default;
 $screen-xs: rem(320);
 $screen-sm: rem(768);
 $screen-md: rem(992);
-$screen-lg: rem(1280);
+$screen-lg: rem(1350);
 
 $mobile: new-breakpoint(min-width $screen-xs);
 $tablet: new-breakpoint(min-width $screen-sm);

@@ -1,15 +1,20 @@
 .site-header {
+    @include transition(all .6s ease);
     width: 100%;
     height: $navbar-height;
     position: fixed;
-    background-color: transparent;;
     z-index: 5;
     top: 0;
     right: 0;
-    transition: .6s all ease-in-out;
+    overflow: hidden;
 
     &__content {
         max-width: 100%;
+
+        @include media($tablet) {
+            padding-left: $gutter;
+            padding-right: $gutter;
+        }
     }
 
     &__logo {
@@ -49,6 +54,7 @@
         }
 
         &__dot {
+            @include transition(background-color .4s ease);
             display: block;
             position: absolute;
             background-color: $site-color;
@@ -62,78 +68,67 @@
 
     &--scrolled {
         background-color: $black-tint1;
-        box-shadow: 0 2px 4px -1px rgba($black, .06), 0 4px 5px 0 rgba($black, .06), 0 1px 10px 0 rgba($black, .08);
+        box-shadow: 0 2px 4px 0 rgba($black, .4);
     }
 }
 
 .nav {
-    padding-top: rem(75);
-    padding-bottom: rem(45);
+    width: 100%;
 
     @include media($tablet) {
         display: inline-block;
-        padding-top: 0;
-        padding-bottom: 0;
         float: right;
+        width: auto;
     }
 
     &__menu {
+        text-align: center;
+        width: 100%;
+
+        @include media($tablet) {
+            list-style: none;
+            overflow: hidden;
+            text-align: right;
+            float: right;
+        }
+
         &__item {
             display: block;
             position: relative;
+            margin-left: 0;
+            border-bottom: solid 1px $grey-tint1;
 
-            @include media($tablet) {
-                display: inline-block;
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                background-color: $grey-tint1;
-                height: rem(1);
-                width: 100%;
-                bottom: 0;
-                left: 0;
-
-                @include media($tablet) {
-                    height: rem(25);
-                    width: rem(2);
-                    right: rem(-2);
-                    bottom: rem(24);
-                    left: auto;
-                }
+            &:first-of-type {
+                border-top: solid 1px $grey-tint1;
             }
 
             &:last-of-type {
-                &:before {
-                    background-color: transparent;
-                }
+                border-bottom: none;
+            }
 
-                .nav__menu__link {
-                    padding: 0 0 0 rem(20);
-                }
+            @include media($tablet) {
+                display: inline-block;
+                margin-left: rem(35);
+                border-bottom: 0;
             }
         }
 
         &__link {
             display: block;
-            color: $white-tint1;
+            color: $white;
             text-decoration: none;
             line-height: $navbar-height;
-            padding: 0 rem(20);
             font-weight: 900;
-            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-
-            @include media($tablet) {
-                text-align: center;
-                font-size: rem(22);
-            }
+            position: relative;
+            text-align: center;
+            font-size: rem(22);
 
             &:hover {
-                color: $grey-tint1;
+                color: $white;
                 background-color: $black;
 
                 @include media($tablet) {
+                    color: $grey-tint1;
                     background-color: transparent;
                 }
             }
@@ -144,6 +139,7 @@
                 cursor: default;
 
                 @include media($tablet) {
+                    color: $site-color;
                     background-color: transparent;
                 }
 
@@ -154,7 +150,6 @@
         }
 
         &__text {
-            text-align: left;
             display: block;
             overflow: hidden;
             text-overflow: ellipsis;

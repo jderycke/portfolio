@@ -1,11 +1,8 @@
 .blog {
-    .grid__item--link {
-        color: $black-tint1;
-        height: rem(260);
-    }
-
     .grid__item__content {
         padding: $gutter;
+        display: table-cell;
+        vertical-align: middle;
     }
 
     .article {
@@ -35,8 +32,7 @@
     .entry {
         &-title {
             font-size: rem(24);
-            text-align: left;
-            font-weight: 300;
+            color: $grey-tint1;
         }
 
         &-excerpt {
@@ -45,11 +41,15 @@
         }
 
         &-time {
+            display: block;
+            margin-bottom: rem(15);
+            font-size: rem(16);
+
             &::before {
                 font-family: 'Genericons';
                 display: inline-block;
                 padding-right: rem(10);
-                margin-bottom: rem(15);
+                font-size: rem(14);
             }
         }
 

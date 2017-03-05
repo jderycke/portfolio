@@ -15,15 +15,15 @@ body {
 }
 
 body {
+    @include font-feature-settings('liga');
     font-family: $font-default;
     font-weight: 300;
-    color: $black-tint1;
-    background-color: $white-tint1;
+    color: $grey-tint1;
+    background-color: $white;
     position: relative;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @include font-feature-settings('liga');
 }
 
 img {
@@ -46,40 +46,9 @@ figure {
     }
 }
 
-blockquote {
-    font-size: rem(18);
-    line-height: 1.2;
-    border-left: 4px solid $site-color;
-    padding: 0 0 0 rem(20);
-    margin: rem(15) 0 rem(25);
-    font-weight: 900;
-    line-height: 1.4;
-
-    cite {
-        display: block;
-        font-size: rem(12);
-        font-style: normal;
-        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-        font-weight: 300;
-        line-height: 1;
-        margin-top: $gutter;
-        color: $grey-tint1;
-
-        &:before {
-            content: '\2014 \2009';
-        }
-    }
-}
-
-.animate {
-    @include transition(all .6s cubic-bezier(.7, .01, .3, 1));
-}
-
-
 .site-wrapper {
+    @include transition(all .6s ease);
     position: relative;
-    right: 0;
-    transition: .6s right ease-in-out;
 }
 
 .page {
@@ -91,30 +60,27 @@ blockquote {
     z-index: 1;
     padding-top: rem(95);
     padding-bottom: rem(75);
-}
 
-.slideContent {
-    transition: .6s right ease-in-out;
-    position: fixed;
-    z-index: 3;
-    top: 0;
-    right: rem(-300);
-    width: rem(300);
-    height: 100%;
-    background: $black-tint1;
+    &.active {
+        .parallax {
+            opacity: 1;
+        }
+    }
 
-    @include media($tablet) {
-        position: relative;
-        right: auto;
-        height: $navbar-height;
-        display: inline-block;
-        float: right;
-        width: rem(477);
-        background-color: transparent;
+    .parallax {
+        @include transition(all .4s ease);
+        opacity: 0;
+    }
+
+    &--no-padding {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
 .burgerMenu {
+    @include transition(all .6s ease);
+    @include user-select (none);
     position: fixed;
     top: rem(15);
     right: rem(20);
@@ -125,35 +91,18 @@ blockquote {
     padding: 0;
     height: rem(42);
     width: rem(42);
-    transition: all .6s ease-in-out;
     transform: rotate(0);
     transform-origin: center center;
     -webkit-tap-highlight-color: rgba($black, 0);
     border: 0;
     cursor: pointer;
-    @include user-select (none);
 
     @include media($tablet) {
         display: none;
     }
-}
 
-.lines {
-    display: block;
-    border-radius: rem(10);
-    width: rem(42);
-    height: rem(4);
-    position: absolute;
-    z-index: -1;
-    transform: rotate(0);
-    transition: all .2s ease-in-out;
-    background-color: $white;
-    right: 0;
-    content: '';
-    cursor: pointer;
-
-    &:before,
-    &:after {
+    &__lines {
+        @include transition(all .4s ease);
         display: block;
         border-radius: rem(10);
         width: rem(42);
@@ -161,47 +110,55 @@ blockquote {
         position: absolute;
         z-index: -1;
         transform: rotate(0);
-        transition: all .2s ease-in-out;
         background-color: $white;
         right: 0;
         content: '';
-    }
-
-    &:before {
-        top: rem(-12);
-    }
-
-    &:after {
-        bottom: rem(-12);
-    }
-
-    &:hover {
-        background-color: $site-color;
+        cursor: pointer;
 
         &:before,
         &:after {
-            background-color: $site-color;
+            @include transition(all .4s ease);
+            display: block;
+            border-radius: rem(10);
+            width: rem(42);
+            height: rem(4);
+            position: absolute;
+            z-index: -1;
+            transform: rotate(0);
+            background-color: $white;
+            right: 0;
+            content: '';
         }
-    }
-}
 
-.mainMenu {
-    position: relative;
-    padding-bottom: 2em;
+        &:before {
+            top: rem(-12);
+        }
 
-    @include media($tablet) {
-        padding-bottom: 0;
+        &:after {
+            bottom: rem(-12);
+        }
+
+        &:focus,
+        &:hover {
+            background-color: $white;
+
+            &:before,
+            &:after {
+                background-color: $white;
+            }
+        }
     }
 }
 
 .menuActive {
     overflow: hidden;
 
-    .lines {
+    .burgerMenu__lines {
         background-color: transparent;
 
         &:before,
         &:after {
+            background-color: $white;
             transform-origin: 50% 50%;
             top: 0;
             width: 3rem;
@@ -216,17 +173,18 @@ blockquote {
         }
     }
 
-    .slideContent {
-        right: 0;
-    }
+    .site-header {
+        background-color: $black-tint1;
+        box-shadow: 0 2px 4px 0 rgba($black, .4);
+        height: rem(382);
 
-    .burgerMenu,
-    .site-header,
-    .site-wrapper {
-        right: rem(300);
-
-        @include media($tablet) {
-            right: 0;
+        &--scrolled {
+            .burgerMenu__lines {
+                &:before,
+                &:after {
+                    background-color: $white;
+                }
+            }
         }
     }
 
@@ -235,13 +193,16 @@ blockquote {
         z-index: 4;
     }
 
-    .site-header {
-        background-color: $black-tint1;
+    .btn__scroll--up {
+        &.show {
+            opacity: 0;
+        }
     }
 }
 
 .blocker {
-    background-color: rgba($white-tint1, .6);
+    @include transition(all .6s ease);
+    background-color: rgba($black, .4);
     opacity: 0;
     z-index: -1;
     position: fixed;
@@ -261,6 +222,19 @@ blockquote {
     }
 }
 
-.animate--fade-in {
-    animation: fadein 3.4s;
+.animate {
+    @include transition(all .6s ease);
+
+    &--fade-in {
+        @include transition(all .6s ease);
+        animation: fadein 3.4s;
+    }
+}
+
+.align {
+    &--center {
+        display: table;
+        height: 100%;
+        vertical-align: middle;
+    }
 }

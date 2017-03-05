@@ -1,38 +1,67 @@
 .btn {
     text-align: center;
     text-decoration: none;
+    color: $white;
+    background-color: $black-tint3;
+    border: solid 2px $black-tint3;
+
+    &:hover {
+        background-color: $site-color;
+        border-color: $site-color;
+        color: $white;
+        outline: none;
+    }
 
     &--default {
-        display: block;
-        border-radius: rem(25);
-        border: 4px solid $grey-tint1;
-        padding: 0 rem(15);
-        font-size: rem(22);
+        display: inline-block;
+        margin: $gutter rem(15) 0;
+        border-radius: 25px;
+        padding: 0 rem(5) 0 rem(20);
+        font-size: rem(18);
         line-height: rem(42);
-        width: 100%;
-        font-weight: 900;
         text-align: left;
-        color: $grey-tint1;
-        margin: rem(20) auto 0;
-
-        &:hover {
-            background-color: $site-color;
-            border-color: $site-color;
-            color: $white-tint1;
-            outline: none;
-        }
+        margin: rem(20) rem(15) 0;
+        font-weight: 900;
 
         .genericon {
             height: rem(42);
             width: rem(42);
             line-height: rem(42);
             float: right;
+            margin-left: rem(5);
         }
+    }
 
-        @include media($tablet) {
-            display: inline-block;
-            width: auto;
-            margin: rem(45) rem(15) 0;
+    &--social {
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        font-size: rem(42);
+        line-height: rem(42);
+        width: rem(42);
+        height: rem(42);
+        margin: 0 rem(10);
+        text-decoration: none;
+
+        .genericon {
+            font-size: rem(22);
+            line-height: rem(36);
+            width: rem(42);
+            height: rem(42);
+        }
+    }
+
+    &--flickr {
+        &:hover {
+            background-color: $flickr-pink;
+            border-color: $flickr-pink;
+        }
+    }
+
+    &--fivehundred {
+        &:hover {
+            background-color: $fivehundred-blue;
+            border-color: $fivehundred-blue;
         }
     }
 
@@ -40,21 +69,14 @@
         display: block;
         cursor: pointer;
         text-align: center;
-        color: $white-tint1;
+        background-color: $grey;
+        color: $grey-tint1;
         font-size: rem(42);
         line-height: rem(42);
         width: rem(42);
         height: rem(42);
         margin: 0 auto;
         text-decoration: none;
-        font-weight: 300;
-        border-radius: 50%;
-        background-color: $black-tint1;
-
-        &:hover {
-            color: $white-tint1;
-            background-color: $site-color;
-        }
 
         &--up {
             opacity: 0;
@@ -63,17 +85,21 @@
             line-height: rem(36);
             bottom: $gutter;
             right: $gutter;
+            z-index: 5;
+            color: $white;
+            background-color: $black-tint1;
 
             @include media($tablet) {
                 bottom: rem(42);
-                right: rem(42);
+                right: rem(20);
             }
         }
 
         &--down {
             position: absolute;
-            background-color: transparent;;
-            bottom: rem(45);
+            background-color: rgba($site-color, .4);
+            color: $white;
+            bottom: rem(60);
             left: 50%;
             margin-left: rem(-21);
         }

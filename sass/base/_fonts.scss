@@ -1,4 +1,4 @@
-@include font-face('Genericons', 'fonts/icomoon', normal, normal);
+@include font-face('Genericons', 'fonts/icomoon', normal, normal, $file-formats: eot truetype woff svg);
 
 .genericon {
     text-decoration: none;
@@ -15,136 +15,257 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.fivehundred:before {
-    content: '\e905';
+.clock:before {
+    content: '\e8b5';
 }
 
-.laptop:before {
-    content: '\e001';
-}
-
-.desktop:before {
-    content: '\e002';
-}
-
-.tablet:before {
-    content: '\e003';
-}
-
-.phone:before {
-    content: '\e004';
-}
-
-.newspaper:before {
-    content: '\e009';
-}
-
-.camera:before {
-    content: '\e012';
-}
-
-.tools:before {
-    content: '\e033';
-}
-
-.profile:before {
-    content: '\e040';
-}
-
-.web:before {
-    content: '\e052';
-}
-
-.twitter:before {
-    content: '\f099';
-}
-
-.facebook:before {
-    content: '\f09a';
-}
-
-.feed-rss:before {
-    content: '\f09e';
-}
-
-.google-plus:before {
-    content: '\f0d5';
-}
-
-.envelope:before {
-    content: '\f0e0';
-}
-
-.linkedin:before {
-    content: '\f0e1';
-}
-
-.chevron {
+.arrow {
     &--left:before {
-        content: '\f104';
+        content: '\e5c4';
     }
 
     &--right:before {
-        content: '\f105';
-    }
-
-    &--up:before {
-        content: '\f106';
+        content: '\e5c8';
     }
 
     &--down:before {
-        content: '\f107';
+        content: '\e5db';
+    }
+
+    &--up:before {
+        content: '\e5d8';
     }
 }
 
-.html5:before {
-    content: '\f13b';
+.camera:before {
+    content: '\e412';
 }
 
-.skype:before {
-    content: '\f17e';
+.close:before {
+    content: '\e5cd';
 }
 
-.wordpress:before {
-    content: '\f19a';
+.tick:before {
+    content: '\e876';
 }
 
-.rebel:before {
-    content: '\f1d0';
+.chevron {
+    &--down:before {
+        content: '\e313';
+    }
+
+    &--left:before {
+        content: '\e314';
+    }
+
+    &--right:before {
+        content: '\e315';
+    }
+
+    &--up:before {
+        content: '\e316';
+    }
 }
 
-.empire:before {
-    content: '\f1d1';
+.mouse:before {
+    content: '\e323';
 }
 
-.git:before {
-    content: '\f1d3';
+.person:before {
+    content: '\e7fd';
 }
 
-.pinterest-p:before {
-    content: '\f231';
+.web:before {
+    content: '\e80b';
 }
 
-.commenting-o:before {
-    content: '\f27b';
+.emoji {
+    &--unhappy:before {
+        content: '\e811';
+    }
+
+    &--neutral:before {
+        content: '\e812';
+    }
+
+    &--happy:before {
+        content: '\e813';
+    }
+
+    &--very_unhappy:before {
+        content: '\e814';
+    }
+
+    &--very_satisfied:before {
+        content: '\e815';
+    }
+}
+
+.notes:before {
+    content: '\e8cd';
+}
+
+.mail:before {
+    content: '\f003';
 }
 
 .house:before {
-    content: '\e900';
+    content: '\f015';
 }
 
-.clock:before {
-    content: '\e901';
+.thumbs {
+    &--up:before {
+        content: '\f087';
+    }
+
+    &--down:before {
+        content: '\f088';
+    }
 }
 
-.bubble:before {
-    content: '\e902';
+.social {
+    &--twitter:before {
+        content: '\f099';
+    }
+
+    &--facebook:before {
+        content: '\f09a';
+    }
+
+    &--google-plus:before {
+        content: '\f0d5';
+    }
+
+    &--google:before {
+        content: '\f1a0';
+    }
+
+    &--linkedin:before {
+        content: '\f0e1';
+    }
+
+    &--instagram:before {
+        content: '\f16d';
+    }
+
+    &--fivehundred:before {
+        content: '\f26e';
+    }
+
+    &--rss:before {
+        content: '\ea9b';
+    }
+
+    &--youtube:before {
+        content: '\ea9d';
+    }
+
+    &--flickr:before {
+        content: '\eaa4';
+    }
+
+    &--dribbble:before {
+        content: '\eaa7';
+    }
+
+    &--github:before {
+        content: '\eab0';
+    }
+
+    &--wordpress:before {
+        content: '\eab4';
+    }
+
+    &--pinterest:before {
+        content: '\ead2';
+    }
 }
 
-.flickr:before {
-    content: '\e903';
+.os {
+    &--apple:before {
+        content: '\f179';
+    }
+
+    &--android:before {
+        content: '\f17b';
+    }
+
+    .windows:before {
+        content: '\eac1';
+    }
+
+    .windows8:before {
+        content: '\eac2';
+    }
+}
+
+.browser {
+    .chrome:before {
+        content: '\f268';
+    }
+
+    .firefox:before {
+        content: '\f269';
+    }
+
+    .internet-explorer:before {
+        content: '\f26b';
+    }
+
+    &--edge:before {
+        content: '\f282';
+    }
+
+    .opera:before {
+        content: '\eade';
+    }
+}
+
+.commenting:before {
+    content: '\f27b';
+}
+
+
+.pencil:before {
+    content: '\e906';
+}
+
+.tags:before {
+    content: '\e936';
+}
+
+.tv:before {
+    content: '\e95b';
+}
+
+.search:before {
+    content: '\e986';
+}
+
+.eye {
+    &--plus:before {
+        content: '\e9cf';
+    }
+
+    &--minus:before {
+        content: '\e9d0';
+    }
+}
+
+.star {
+    &--empty:before {
+        content: '\e9d7';
+    }
+
+    &--half:before {
+        content: '\e9d8';
+    }
+
+    &--full:before {
+        content: '\e9d9';
+    }
 }
 
 .html-five:before {
-    content: '\e904';
+    content: '\eae5';
 }

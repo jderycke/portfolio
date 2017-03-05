@@ -1,28 +1,32 @@
-/**
- * @ngdoc service
- * @name myprofile.services.service:msmChallengeSrvc
- *
- * @description
- * This service has been created to wrap service calls relating to the Challenge Page.
- *
- **/
-
-(function (services) {
+(function () {
     'use strict';
-    services.service('blogFeedSrvc', ['$http', '$q',
-        function ($http, $q) {
-            this.loadFeed = function () {
-                var deferred = $q.defer(),
-                    url = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=JSON_CALLBACK&num=9&q=' + encodeURIComponent('http://blog.jamiederycke.me.uk/feed/');
 
-                $http.jsonp(url)
-                    .success(function (response) {
-                        deferred.resolve(response);
-                    })
-                    .error(function () {
-                        deferred.reject();
-                    });
-                return deferred.promise;
-            };
-        }]);
-}(angular.module('portfolioApp.services')));
+    function blogFeedSrvc($http, $sce, $log) {
+        function loadFeed(successHandler) {
+            var url = 'http://blog.jamiederycke.me.uk/feed/json';
+            $sce.trustAsResourceUrl(url);
+
+            /*$http.jsonp(url, {jsonpCallbackParam: 'callback'}).then(function (response) {
+                successHandler(response.data);
+            }, function (response) {
+                $log.error(response);
+            });*/
+
+            $http.jsonp(url, {headers: {'Content-Type': 'text/plain'}, cache: true}).then(function(response) {
+                successHandler(response.data);
+              }, function (response) {
+                  $log.error(response);
+              });
+        }
+
+        return {
+            loadFeed: loadFeed
+
+        };
+    }
+
+    angular
+        .module('portfolioApp.services')
+        .factory('blogFeedSrvc', blogFeedSrvc);
+
+})();

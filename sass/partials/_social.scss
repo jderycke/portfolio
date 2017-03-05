@@ -3,13 +3,27 @@
     display: block;
     text-align: center;
 
-    @include media($tablet) {
+    @include media($desktop) {
         margin: 0 auto;
         display: inline-block;
+        text-align: right;
         float: right;
-    };
+    }
 
-    &-item {
+    &--alt {
+        margin: 0 auto;
+        position: relative;
+        text-align: left;
+        float: none;
+
+        @include media($desktop) {
+            margin: 0 0 0 10px;
+            float: none;
+            position: absolute;
+        }
+    }
+
+    &__item {
         margin: 0 rem(10) 0 0;
         display: inline-block;
 
@@ -24,63 +38,74 @@
         width: rem(42);
         font-size: rem(22);
         background-color: transparent;
-        color: $grey-tint1;
+        color: $white;
 
-        &.facebook {
+        &--alt {
+            line-height: rem(44);
+            height:rem(44);
+            width: rem(44);
+            background-color: rgba($site-color, .45);
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        &.social--facebook {
             &:hover {
-                color: $facebook-blue;
+                background-color: $facebook-blue;
             }
         }
 
-        &.twitter {
+        &.social--twitter {
             &:hover {
-                color: $twitter-blue;
+                background-color: $twitter-blue;
             }
         }
 
-        &.google-plus {
+        &.social--google-plus {
             &:hover {
-                color: $google-red;
+                background-color: $google-red;
             }
         }
 
-        &.linkedin {
+        &.social--linkedin {
             &:hover {
-                color: $linkedin-blue;
+                background-color: $linkedin-blue;
             }
         }
 
-        &.flickr {
+        &.social--flickr {
             &:hover {
-                color: $flickr-pink;
+                background-color: $flickr-pink;
             }
         }
 
-        &.pinterest {
+        &.social--pinterest {
             &:hover {
-                color: $pinterest-red;
+                background-color: $pinterest-red;
             }
         }
 
-        &.fivehundred {
+        &.social--fivehundred {
             font-size: rem(28);
 
             &:hover {
-                color: $fivehundred-grey;
+                background-color: $fivehundred-blue;
             }
         }
 
-        &.rss {
+        &.social--rss {
             &:hover {
-                color: $rss-orange;
+                background-color: $rss-orange;
             }
         }
 
-        &.wordpress {
+        &.social--wordpress {
             font-size: rem(28);
 
             &:hover {
-                color: $wordpress-blue;
+                background-color: $wordpress-blue;
             }
         }
     }

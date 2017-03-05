@@ -11,25 +11,25 @@
     position: relative;
     content: '';
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
+        @include clearfix();
         display: table;
         content: '';
         line-height: 0;
-        @include clearfix();
     }
 }
 
 .container {
     @include outer-container;
     width: 100vw;
-    max-width: $screen-lg;
-    padding-left: $gutter;
-    padding-right: $gutter;
+    max-width: 1280px;
+    padding-left: 10px;
+    padding-right: 10px;
 
-    @include media($tablet) {
-        padding-left: rem(40);
-        padding-right: rem(40);
+    @include media($screen-sm) {
+        padding-right: $gutter;
+        padding-left: $gutter;
     }
 }
 
@@ -40,24 +40,43 @@
     @include flex(0 1 auto);
     @include flex-direction(row);
     @include flex-wrap(wrap);
-
-    &--alt {
-        background-color: $white-tint1;
-    }
 }
 
 .column {
-    position: relative;
-    min-height: rem(1);
     @include flex(0 0 auto);
     @include full-size($gutter);
     @include flex-grow(1);
+    position: relative;
+    min-height: rem(1);
     padding-left: 0;
     padding-right: 0;
 
-    @include media($tablet) {
+    @include media($screen-sm) {
         padding-right: $gutter;
         padding-left: $gutter;
+    }
+
+    @include media($screen-sm) {
+        // Define partial sizes for columnNumber < totalColumns.
+        @for $i from 1 through ($grid-desktop-columns - 1) {
+            &--#{$i}-col {
+                @include partial-size($i, $grid-desktop-columns, $grid-desktop-gutter);
+            }
+        }
+
+        // Define 100% for everything else.
+        @for $i from $grid-desktop-columns through $grid-desktop-columns {
+            &--#{$i}-col {
+                @include full-size($grid-desktop-gutter);
+            }
+        }
+
+        // Define valid tablet offsets.
+        @for $i from 1 through ($grid-desktop-columns - 1) {
+            &--#{$i}-offset {
+                @include offset-size($i, $grid-desktop-columns, $grid-desktop-gutter);
+            }
+        }
     }
 
     &:first-of-type {
@@ -75,6 +94,7 @@
         @include flex(0 1 auto);
         @include flex-direction(row);
         @include flex-wrap(wrap);
+        margin: 0 auto;
     }
 
     &.no-gutters {
@@ -100,29 +120,6 @@
     @for $i from $grid-phone-columns through $grid-phone-columns {
         &--xs-#{$i}-col {
             @include full-size($grid-phone-gutter);
-        }
-    }
-
-    @include media($tablet) {
-        // Define partial sizes for columnNumber < totalColumns.
-        @for $i from 1 through ($grid-desktop-columns - 1) {
-            &--#{$i}-col {
-                @include partial-size($i, $grid-desktop-columns, $grid-desktop-gutter);
-            }
-        }
-
-        // Define 100% for everything else.
-        @for $i from $grid-desktop-columns through $grid-desktop-columns {
-            &--#{$i}-col {
-                @include full-size($grid-desktop-gutter);
-            }
-        }
-
-        // Define valid tablet offsets.
-        @for $i from 1 through ($grid-desktop-columns - 1) {
-            &--#{$i}-offset {
-                @include offset-size($i, $grid-desktop-columns, $grid-desktop-gutter);
-            }
         }
     }
 }

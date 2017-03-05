@@ -4,22 +4,10 @@ h3,
 h4 {
     padding: 0;
     margin: 0 0 rem(15);
-    line-height: 1;
+    color: $black-tint3;
     font-family: $font-default;
-    font-weight: 900;
+    font-weight: 400;
     text-align: center;
-
-    &:before {
-        display: block;
-        content: ' ';
-        line-height: 0;
-    }
-
-    &:after {
-        display: block;
-        content: ' ';
-        line-height: 0;
-    }
 
     em {
         color: $site-color;
@@ -29,14 +17,18 @@ h4 {
 
 h1 {
     font-size: rem(130);
+    font-weight: 800;
 }
 
 h2 {
-    font-size: rem(52);
+    font-size: rem(48);
+    line-height: rem(58);
+    font-weight: 800;
 }
 
 h3 {
-    font-size: rem(32);
+    font-size: rem(36);
+    line-height: rem(46);
 }
 
 h4 {
@@ -53,7 +45,7 @@ ol {
 }
 
 a {
-    @include transition(all .6s cubic-bezier(.7, .01, .3, 1));
+    @include transition(all .6s ease-in-out);
     color: $site-color;
     text-decoration: underline;
 
@@ -69,6 +61,27 @@ p {
     line-height: 1.8;
 }
 
+
+blockquote {
+    font-size: rem(18);
+    line-height: 1.2;
+    border-left: 4px solid $site-color;
+    padding: 0 0 0 rem(20);
+    margin: rem(15) 0 rem(25);
+    font-weight: 900;
+    line-height: 1.4;
+
+    cite {
+        display: block;
+        font-size: rem(12);
+        font-style: normal;
+        font-family: $font-default;
+        font-weight: 300;
+        line-height: 1;
+        margin-top: $gutter;
+        color: $grey-tint1;
+    }
+}
 
 .font-effect-wallpaper {
     // scss-lint:disable VendorPrefix

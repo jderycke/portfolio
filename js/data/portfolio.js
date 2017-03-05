@@ -38,12 +38,12 @@
         },
         {
             "id": 5,
-            "title": "Reflection",
-            "description": "Reflection through glass of an exhibit at the British Musuem",
+            "title": "Camp above the clouds",
+            "description": "Barranco camp on Kilimanjaro, last one before summit camp",
             "category": "camera",
             "tags": "abstract | art | indoor | musuem | sculpture",
-            "image_url": "img/gallery/31.jpg",
-            "url": "https://500px.com/photo/119678177/reflection-by-jamie-de-ryckee"
+            "image_url": "img/gallery/8.jpg",
+            "url": "https://500px.com/photo/69997017/camp-above-the-clouds-by-jamie-de-rycke"
         },
         {
             "id": 6,
@@ -65,12 +65,12 @@
         },
         {
             "id": 8,
-            "title": "Peeking Ben",
-            "description": "Big Ben from the top of The Mall, ondon",
+            "title": "City at night",
+            "description": "",
             "category": "camera",
             "tags": "abstract | architecture | building | city | day | england | light | london | night | street | uk",
-            "image_url": "img/gallery/32.jpg",
-            "url": "https://500px.com/photo/119631417/peeking-ben-by-jamie-de-rycke"
+            "image_url": "img/gallery/40.jpg",
+            "url": "https://500px.com/photo/175449793/city-at-night-by-jamie-de-rycke"
         },
         {
             "id": 9,
