@@ -1,39 +1,63 @@
 .loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 4rem 0;
+    height: 100%;
+    width: 100%;
+    min-height: rem(420);
+
     &__container {
-        @include justify-content(center);
-        @include align-items(center);
-        margin: 0 auto;
-        padding: 4rem 0;
-        display: none;
-        height: 100%;
-        width: 100%;
-        min-height: rem(420);
+        position: relative;
+
+        > div:first-of-type {
+            @include pacman-design();
+            animation: rotate_pacman_half_up .5s 0s infinite;
+            position: relative;
+            left: -30px;
+            z-index: 1;
+        }
+
+        > div:nth-child(2) {
+            @include pacman-design();
+            animation: rotate_pacman_half_down .5s 0s infinite;
+            margin-top: -2 * $size;
+            position: relative;
+            left: -30px;
+            z-index: 1;
+        }
     }
 
-    &__ring {
-        margin: 0 auto;
-        height: 100%;
-        width: 100%;
-        position: relative;
+    &__dot {
+        @include balls();
+        width: rem(10);
+        height: rem(10);
+        position: absolute;
+        transform: translate(0, -$size / 4);
+        top: 25px;
+        left: 70px;
+
+        &:nth-child(1n) {
+            animation: pacman_balls 1s -.66s infinite linear;
+        }
+
+        &:nth-child(2n) {
+            animation: pacman_balls 1s -.33s infinite linear;
+        }
+
+        &:nth-child(3n) {
+            animation: pacman_balls 1s 0s infinite linear;
+        }
+    }
+
+    &__text {
+        display: block;
         text-align: center;
-
-        &__light {
-            @include animation(motion 3s ease infinite);
-            width: rem(35);
-            height: rem(35);
-            background-color: $site-color;
-            border-radius: rem(4);
-            display: inline-block;
-        }
-
-        &__text {
-            display: block;
-            text-align: center;
-            margin-top: rem(30);
-            color: $grey-tint1;
-            width: 100%;
-            font-size: rem(18);
-        }
+        margin-top: rem(30);
+        color: $grey-tint1;
+        width: 100%;
+        font-size: rem(18);
     }
 
     &__content {
@@ -42,33 +66,11 @@
 }
 
 .waiting {
-    .loading__container {
-        @include display(flex);
+    .loading {
+        display: flex;
     }
 
     .loading__content {
         display: none;
-    }
-}
-
-@include keyframes(motion) {
-    0% {
-        @include transform(translateX(0) scale(1));
-    }
-
-    25% {
-        @include transform(translateX(-100px) scale(.3));
-    }
-
-    50% {
-        @include transform(translateX(0) scale(1));
-    }
-
-    75% {
-        @include transform(translateX(100px) scale(.3));
-    }
-
-    100% {
-        @include transform(translateX(0) scale(1));
     }
 }

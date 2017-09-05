@@ -1,14 +1,15 @@
-$site-color: #c03c03;
+$site-color: #b4da55;
 
 $white: #ffffff;
 $white-tint1: #fafafa;
 
-$black: #4d4d4d;
-$black-tint1: #2b3133;
-$black-tint3: #545454;
+$black: #1e252b;
+$black-tint1: #4d4d4d;
+$black-tint2: #545454;
 
 $grey: #f3f3f3;
 $grey-tint1: #888b8d;
+$grey-tint2: #c6cacc;
 
 $facebook-blue: #3b5998;
 $twitter-blue: #00aced;
@@ -19,10 +20,15 @@ $rss-orange: #ff6600;
 $pinterest-red: #cb2027;
 $fivehundred-blue: #0099e5;
 $wordpress-blue: #21759b;
+$youtube-red: #cc181e;
 
-$navbar-height: rem(75);
+$size: rem(25);
 
-$font-default: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$font-family-default: 'Fira Sans', 'Helvetica', 'Arial', sans-serif;
+$font-family-headings: 'Fira Sans', 'Helvetica', 'Arial', sans-serif;
+$font-family-genericons: 'Genericons', 'Helvetica', 'Arial', sans-serif;
+$font-weight-normal: 300;
+$font-weight-bold: 800;
 
 // -- Grid Settings --------------------------------------------
 $gutter: rem(20);
@@ -40,9 +46,7 @@ $grid-max-columns: $grid-desktop-columns !default;
 $screen-xs: rem(320);
 $screen-sm: rem(768);
 $screen-md: rem(992);
-$screen-lg: rem(1350);
+$screen-lg: rem(1280);
+$screen-xlg: rem(1281);
 
-$mobile: new-breakpoint(min-width $screen-xs);
-$tablet: new-breakpoint(min-width $screen-sm);
-$desktop: new-breakpoint(min-width $screen-md);
-$large-desktop: new-breakpoint(min-width $screen-lg);
+$large: new-breakpoint(min-width $screen-sm max-width $screen-lg $grid-desktop-columns);

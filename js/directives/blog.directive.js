@@ -18,7 +18,11 @@
                         angular.forEach(response, function(entry) {
                             entry.publishedDate = new Date(entry.date);
                             if (entry.thumbnail) {
-                                entry.thumbnail = entry.thumbnail.split(',')[0].replace('500w', '');
+                                if (entry.thumbnail.split(',').length > 1) {
+                                    entry.thumbnail = entry.thumbnail.split(',')[0].replace('500w', '').replace('1000w', '').replace('806w', '').replace('2546w', '').trim();
+                                } else {
+                                    entry.thumbnail = entry.thumbnail.trim();
+                                }
                             }
                         });
                         $scope.feed = {

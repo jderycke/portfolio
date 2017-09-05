@@ -1,11 +1,15 @@
 .btn {
     text-align: center;
     text-decoration: none;
-    color: $white;
-    background-color: $black-tint3;
-    border: solid 2px $black-tint3;
+    background-color: transparent;
+    color: $black-tint2;
+    border: solid 2px $black-tint2;
+    font-weight: $font-weight-bold;
+    border-radius: 4px;
+    font-size: rem(18);
 
     &:hover {
+        text-decoration: none;
         background-color: $site-color;
         border-color: $site-color;
         color: $white;
@@ -14,14 +18,9 @@
 
     &--default {
         display: inline-block;
-        margin: $gutter rem(15) 0;
-        border-radius: 25px;
-        padding: 0 rem(5) 0 rem(20);
-        font-size: rem(18);
-        line-height: rem(42);
         text-align: left;
-        margin: rem(20) rem(15) 0;
-        font-weight: 900;
+        padding: 0 rem(5) 0 rem(20);
+        line-height: rem(42);
 
         .genericon {
             height: rem(42);
@@ -40,12 +39,12 @@
         line-height: rem(42);
         width: rem(42);
         height: rem(42);
-        margin: 0 rem(10);
+        margin-left: rem(20);
         text-decoration: none;
 
         .genericon {
             font-size: rem(22);
-            line-height: rem(36);
+            line-height: rem(32);
             width: rem(42);
             height: rem(42);
         }
@@ -69,8 +68,8 @@
         display: block;
         cursor: pointer;
         text-align: center;
-        background-color: $grey;
-        color: $grey-tint1;
+        background-color: $black;
+        color: $white;
         font-size: rem(42);
         line-height: rem(42);
         width: rem(42);
@@ -78,34 +77,43 @@
         margin: 0 auto;
         text-decoration: none;
 
+        &:hover {
+            text-decoration: none;
+            background-color: $site-color;
+            color: $white;
+        }
+
         &--up {
             opacity: 0;
+            display: none;
             position: fixed;
             z-index: 1;
             line-height: rem(36);
-            bottom: $gutter;
-            right: $gutter;
-            z-index: 5;
-            color: $white;
-            background-color: $black-tint1;
+            bottom: rem(62);
+            right: rem(10);
 
-            @include media($tablet) {
-                bottom: rem(42);
-                right: rem(20);
+            @include media($screen-sm) {
+                right: $gutter;
+                bottom: rem(40);
             }
         }
 
         &--down {
             position: absolute;
-            background-color: rgba($site-color, .4);
-            color: $white;
-            bottom: rem(60);
-            left: 50%;
-            margin-left: rem(-21);
+            background-color: rgba($site-color, .45);
+            bottom: rem(112);
+            right: rem(10);
+            z-index: 2;
+
+            @include media($screen-sm) {
+                right: $gutter;
+                bottom: rem(40);
+            }
         }
 
         &.show {
             opacity: 1;
+            display: block;
         }
     }
 }

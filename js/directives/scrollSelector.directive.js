@@ -40,10 +40,12 @@
                         angular.element(document.getElementsByClassName('home')).removeClass('active');
                         angular.element(document.getElementsByClassName('btn__scroll--up')).addClass('show');
                         angular.element(document.getElementsByClassName('site-header')).addClass('site-header--scrolled');
+                        angular.element(document.getElementsByClassName('nav')).addClass('nav--scrolled');
                     } else {
                         angular.element(document.getElementsByClassName('home')).addClass('active');
                         angular.element(document.getElementsByClassName('btn__scroll--up')).removeClass('show');
                         angular.element(document.getElementsByClassName('site-header')).removeClass('site-header--scrolled');
+                        angular.element(document.getElementsByClassName('nav')).removeClass('nav--scrolled');
                     }
                 });
 
@@ -53,7 +55,7 @@
             }
         };
     };
-    
+
     angular
         .module('portfolioApp.directives')
         .directive('scroll', scroll);

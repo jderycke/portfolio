@@ -9,15 +9,15 @@ body {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
-    @include font-feature-settings('liga');
-    font-family: $font-default;
-    font-weight: 300;
+    font-feature-settings: 'liga';
+    font-family: $font-family-default;
+    font-weight: $font-weight-normal;
     color: $grey-tint1;
     background-color: $white;
     position: relative;
@@ -42,12 +42,12 @@ figure {
     figcaption {
         color: $white-tint1;
         padding: $gutter;
-        background-color: rgba($black, .6);
+        background-color: rgba($black-tint1, .6);
     }
 }
 
 .site-wrapper {
-    @include transition(all .6s ease);
+    transition: all .5s ease-in-out;
     position: relative;
 }
 
@@ -58,7 +58,7 @@ figure {
     background-color: $white;
     box-sizing: border-box;
     z-index: 1;
-    padding-top: rem(95);
+    padding-top: rem(45);
     padding-bottom: rem(75);
 
     &.active {
@@ -68,7 +68,7 @@ figure {
     }
 
     .parallax {
-        @include transition(all .4s ease);
+        transition: all .4s ease-in-out;
         opacity: 0;
     }
 
@@ -78,163 +78,28 @@ figure {
     }
 }
 
-.burgerMenu {
-    @include transition(all .6s ease);
-    @include user-select (none);
-    position: fixed;
-    top: rem(15);
-    right: rem(20);
-    z-index: 4;
-    background-color: transparent;
-    outline: 0;
-    margin: 0;
-    padding: 0;
-    height: rem(42);
-    width: rem(42);
-    transform: rotate(0);
-    transform-origin: center center;
-    -webkit-tap-highlight-color: rgba($black, 0);
-    border: 0;
-    cursor: pointer;
-
-    @include media($tablet) {
-        display: none;
-    }
-
-    &__lines {
-        @include transition(all .4s ease);
-        display: block;
-        border-radius: rem(10);
-        width: rem(42);
-        height: rem(4);
-        position: absolute;
-        z-index: -1;
-        transform: rotate(0);
-        background-color: $white;
-        right: 0;
-        content: '';
-        cursor: pointer;
-
-        &:before,
-        &:after {
-            @include transition(all .4s ease);
-            display: block;
-            border-radius: rem(10);
-            width: rem(42);
-            height: rem(4);
-            position: absolute;
-            z-index: -1;
-            transform: rotate(0);
-            background-color: $white;
-            right: 0;
-            content: '';
-        }
-
-        &:before {
-            top: rem(-12);
-        }
-
-        &:after {
-            bottom: rem(-12);
-        }
-
-        &:focus,
-        &:hover {
-            background-color: $white;
-
-            &:before,
-            &:after {
-                background-color: $white;
-            }
-        }
-    }
-}
-
-.menuActive {
-    overflow: hidden;
-
-    .burgerMenu__lines {
-        background-color: transparent;
-
-        &:before,
-        &:after {
-            background-color: $white;
-            transform-origin: 50% 50%;
-            top: 0;
-            width: 3rem;
-        }
-
-        &:before {
-            transform: rotate3d(0, 0, 1, 45deg);
-        }
-
-        &:after {
-            transform: rotate3d(0, 0, 1, -45deg);
-        }
-    }
-
-    .site-header {
-        background-color: $black-tint1;
-        box-shadow: 0 2px 4px 0 rgba($black, .4);
-        height: rem(382);
-
-        &--scrolled {
-            .burgerMenu__lines {
-                &:before,
-                &:after {
-                    background-color: $white;
-                }
-            }
-        }
-    }
-
-    .blocker {
-        opacity: 1;
-        z-index: 4;
-    }
-
-    .btn__scroll--up {
-        &.show {
-            opacity: 0;
-        }
-    }
-}
-
-.blocker {
-    @include transition(all .6s ease);
-    background-color: rgba($black, .4);
-    opacity: 0;
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100vw;
-}
-
-@keyframes fadein {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.animate {
-    @include transition(all .6s ease);
-
-    &--fade-in {
-        @include transition(all .6s ease);
-        animation: fadein 3.4s;
-    }
-}
-
 .align {
+    &--top {
+        display: table;
+        height: 100%;
+        vertical-align: top;
+    }
+
     &--center {
         display: table;
         height: 100%;
         vertical-align: middle;
+    }
+
+    &--bottom {
+        display: table;
+        height: 100%;
+        vertical-align: bottom;
+    }
+}
+
+.margin {
+    &--top {
+        margin-top: $gutter;
     }
 }

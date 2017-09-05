@@ -3,9 +3,7 @@
   "description": "Frontend assets for portfolio",
   "version": "1.0.0",
   "dependencies": {
-    "angular-sanitize": "^1.6.2",
-    "grunt-contrib-htmlmin": "^2.1.0",
-    "karma": "^1.4.0"
+    "angular-sanitize": "^1.6.2"
   },
   "devDependencies": {
     "angular": "^1.6.2",
@@ -13,9 +11,9 @@
     "bourbon": "^4.2.7",
     "bower": "^1.8.0",
     "es5-shim": "^4.5.9",
-    "eslint": "^3.14.0",
+    "eslint": "^4.3.0",
     "eslint-config-angular": "^0.5.0",
-    "eslint-plugin-angular": "^1.6.1",
+    "eslint-plugin-angular": "^3.0.0",
     "eslint-plugin-jasmine": "^2.2.0",
     "grunt": "^1.0.1",
     "grunt-cache-breaker": "^2.0.1",
@@ -23,12 +21,12 @@
     "grunt-combine-mq": "^0.9.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-htmlmin": "^2.1.0",
-    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-dev-update": "^2.0.0",
     "grunt-jslint": "^1.1.14",
@@ -53,7 +51,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "load-grunt-tasks": "^3.5.2",
     "neat": "^1.2.2",
-    "normalize.css": "^5.0.0",
+    "normalize.css": "^7.0.0",
     "package": "^1.0.1",
     "phantomjs2": "^2.2.0",
     "time-grunt": "^1.4.0"

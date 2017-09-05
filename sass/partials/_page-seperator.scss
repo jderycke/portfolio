@@ -12,15 +12,48 @@
         background-size: cover;
         background-attachment: fixed;
 
-        @include media($tablet) {
+        @include media($screen-sm) {
             background-image: url('../img/bg-lg-v4.jpg');
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('../img/grid.png');
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($black, .45);
+            z-index: 0;
+        }
+    }
+
+    &.error {
+        background-image: url('../img/bg-error-md.jpg');
+
+        @include media($screen-sm) {
+            background-image: url('../img/bg-error-lg.jpg');
         }
     }
 
     .container {
-        @include display(flex);
-        @include justify-content(center);
-        @include align-items(center);
+        display: flex;
+        align-items: center;
         z-index: 1;
         height: 100%;
         position: relative;
@@ -30,14 +63,14 @@
             vertical-align: middle;
             font-size: rem(26);
             border-left: 0;
-            text-align: center;
             display: inline-block;
             text-align: left;
             color: $white;
             margin: 0;
             padding: 0;
+            border-right: 0;
 
-            @include media($tablet) {
+            @include media($screen-sm) {
                 font-size: rem(36);
                 line-height: rem(46);
                 text-align: left;
@@ -46,7 +79,7 @@
             cite {
                 font-size: rem(16);
                 line-height: 1.2;
-                font-weight: 300;
+                font-weight: $font-weight-normal;
                 color: $white;
                 margin-top: rem(15);
             }
@@ -56,7 +89,7 @@
 
 .line {
     display: block;
-    font-weight: 900;
+    font-weight: $font-weight-bold;
 
     &__content {
         display: inline-block;

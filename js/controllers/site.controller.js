@@ -14,16 +14,16 @@
         };
 
         $scope.toggleMenu = function ($event) {
-            angular.element(angular.element(document.getElementsByTagName('body'))).toggleClass('menuActive');
+            angular.element(angular.element(document.getElementsByTagName('body'))).toggleClass('menu-active');
             $event.preventDefault();
         };
 
         angular.element(document.getElementsByClassName('blocker')).on('click', function () {
-            angular.element(angular.element(document.getElementsByTagName('body'))).removeClass('menuActive');
+            angular.element(angular.element(document.getElementsByTagName('body'))).removeClass('menu-active');
         });
 
         angular.element(document.getElementsByClassName('nav__menu__link')).on('click', function () {
-            angular.element(angular.element(document.getElementsByTagName('body'))).removeClass('menuActive');
+            angular.element(angular.element(document.getElementsByTagName('body'))).removeClass('menu-active');
         });
 
         angular.element(document.querySelectorAll('[data-ga-category]')).on('click', function () {

@@ -1,35 +1,32 @@
 .grid {
+    display: -ms-grid;
+    -ms-grid-columns: 50%;
+    -ms-grid-rows: auto 1fr auto;
+    display: grid;
+    grid-gap: rem(10);
+    grid-template-columns: repeat(1, 1fr);
+
+    @include media($screen-sm) {
+        grid-gap: rem(20);
+        -ms-grid-columns: 100%;
+        -ms-grid-rows: auto 1fr auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media($screen-md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     &__item {
         background-color: $grey;
-        margin-bottom: $gutter;
         vertical-align: middle;
         display: block;
-        text-align: center;
-        box-shadow: 0 2px 4px 0 rgba($black, .4);
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        -ms-grid-column-align: center;
 
-        @include media($tablet) {
-            @include flex-basis(48%);
-            margin-right: $gutter;
-
-            &:nth-child(2n) {
-                margin-right: 0;
-            }
-
-            &:last-of-type {
-                margin-right: 0;
-            }
-        }
-
-        @include media($desktop) {
-            @include flex-basis(32%);
-
-            &:nth-child(2n) {
-                margin-right: $gutter;
-            }
-
-            &:nth-child(3n) {
-                margin-right: 0;
-            }
+        &:nth-child(odd) {
+            background-color: $white-tint1;
         }
 
         &--link {
@@ -41,7 +38,7 @@
             color: $grey-tint1;
 
             &:hover {
-                @include filter(grayscale(100%));
+                text-decoration: none;
 
                 .overlay {
                     opacity: 1;
@@ -50,7 +47,6 @@
         }
 
         &--image {
-            @include transition(all .6s ease-in-out);
             background-image: url('../img/blank.png');
             background-color: $white-tint1;
             background-repeat: no-repeat;
@@ -74,50 +70,54 @@
             }
         }
 
-        &:nth-child(odd) {
-            background-color: $white-tint1;
+        &__content {
+            padding: $gutter rem(10) rem(40);
+            display: table-cell;
+            vertical-align: middle;
+
+            @include media($screen-sm) {
+                padding: $gutter $gutter rem(40);
+            }
         }
     }
 }
 
 .overlay {
-    @include justify-content(center);
-    @include align-items(center);
-    @include display(flex);
-    @include transition(all .6s ease-in-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-in-out;
     width: 100%;
     height: 100%;
-    background-color: rgba($black, .6);
+    background-color: rgba($site-color, .7);
     opacity: 0;
     position: absolute;
     text-align: center;
-    color: $white-tint1;
     top: 0;
     left: 0;
 
     &__content {
-        color: $white-tint1;
         text-transform: uppercase;
         padding: $gutter;
         width: 100%;
         vertical-align: middle;
-        line-height: 1.4;
         text-align: center;
 
         &--title {
-            font-size: rem(24);
-            font-weight: 900;
-            color: $white-tint1;
+            font-size: rem(20);
+            line-height: rem(24);
+            font-weight: $font-weight-bold;
+            text-align: center;
         }
     }
 
     .genericon {
-        color: $white-tint1;
-        font-size: rem(42);
-        border: solid 4px $white-tint1;
+        font-size: rem(32);
+        border: solid 4px $black-tint2;
         border-radius: 50%;
-        height: rem(82);
-        width: rem(82);
-        line-height: rem(74);
+        color: $black-tint2;
+        height: rem(62);
+        width: rem(62);
+        line-height: rem(54);
     }
 }

@@ -53,6 +53,7 @@ module.exports = function (grunt) {
                     'sass',
                     'combine_mq',
                     'cssmin',
+                    'imagemin',
                     'copy',
                     'cachebreaker'
                 ],

@@ -6,19 +6,19 @@
 @import 'mixins';
 @import 'variables';
 
-@import 'base/grid';
 @import 'base/fonts';
 @import 'base/base';
 @import 'base/typography';
+@import 'base/animations';
 
-@import 'partials/site-header';
-@import 'partials/site-footer';
+@import 'layout/grid';
+@import 'layout/site-header';
+@import 'layout/site-footer';
+
 @import 'partials/page-seperator';
 @import 'partials/loading';
+@import 'partials/grid-card';
 @import 'partials/grid-list';
 @import 'partials/info-box';
 @import 'partials/buttons';
 @import 'partials/social';
-
-@import 'pages/blog';
-@import 'pages/error';
