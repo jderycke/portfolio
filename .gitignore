@@ -1,6 +1,7 @@
 .git
 .sass-cache
 .temp
+.idea
 
 sass/bourbon
 sass/neat
@@ -11,3 +12,4 @@ node_modules
 reports
 
 npm-debug.log
+package-lock.json
