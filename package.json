@@ -1,8 +1,8 @@
 {
-  "name": "demo",
+  "name": "Portfolio",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "jamiederycke <jamiederycke@moneysupermarket.com>",
+  "author": "jamiederycke <jamiederycke@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
