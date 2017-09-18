@@ -1,0 +1,25 @@
+.site-footer {
+    transition: all .5s ease-in-out;
+    width: 100%;
+    background-color: $white;
+    margin-bottom: rem(42);
+
+    @include media($screen-sm) {
+        margin-bottom: 0;
+    }
+
+    &__copyright {
+        font-size: rem(14);
+        line-height: 2;
+        margin: $gutter auto rem(10);
+        vertical-align: middle;
+        display: block;
+        text-align: left;
+        text-transform: uppercase;
+        color: $black;
+
+        &::before {
+            content: '';
+        }
+    }
+}

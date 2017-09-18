@@ -1,0 +1,105 @@
+html,
+body {
+    font-size: 100%;
+}
+
+::selection {
+    background: $site-color;
+    color: $white-tint1;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-feature-settings: 'liga';
+    font-family: $font-family-default;
+    font-weight: $font-weight-normal;
+    color: $grey-tint1;
+    background-color: $white;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+
+    figcaption {
+        color: $white-tint1;
+        padding: $gutter;
+        background-color: rgba($black-tint1, .6);
+    }
+}
+
+.site-wrapper {
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+
+.page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: $white;
+    box-sizing: border-box;
+    z-index: 1;
+    padding-top: rem(40);
+    padding-bottom: $gutter;
+
+    &.active {
+        .parallax {
+            opacity: 1;
+        }
+    }
+
+    .parallax {
+        transition: all .4s ease-in-out;
+        opacity: 0;
+    }
+
+    &--no-padding {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.align {
+    &--top {
+        display: table;
+        height: 100%;
+        vertical-align: top;
+    }
+
+    &--center {
+        display: table;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    &--bottom {
+        display: table;
+        height: 100%;
+        vertical-align: bottom;
+    }
+}
+
+.margin {
+    &--top {
+        margin-top: $gutter;
+    }
+}

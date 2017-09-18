@@ -1,0 +1,129 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.container,
+.row,
+.column {
+    box-sizing: border-box;
+    position: relative;
+    content: '';
+
+    &::before,
+    &::after {
+        display: table;
+        content: '';
+        line-height: 0;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: rem(1280);
+    padding-left: rem(10);
+    padding-right: rem(10);
+
+    @include media($large) {
+        padding-right: rem(140);
+        padding-left: $gutter;
+    }
+
+    @include media($screen-xlg) {
+        padding-right: $gutter;
+        padding-left: $gutter;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    align-items: stretch;
+    min-width: 0;
+    justify-content: center;
+}
+
+.column {
+    @include full-size($gutter);
+    flex-grow: 1;
+    position: relative;
+    min-height: rem(1);
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media($screen-sm) {
+        padding-right: $gutter;
+        padding-left: $gutter;
+    }
+
+    @include media($screen-sm) {
+        // Define partial sizes for columnNumber < totalColumns.
+        @for $i from 1 through ($grid-desktop-columns - 1) {
+            &--#{$i}-col {
+                @include partial-size($i, $grid-desktop-columns, $grid-desktop-gutter);
+            }
+        }
+
+        // Define 100% for everything else.
+        @for $i from $grid-desktop-columns through $grid-desktop-columns {
+            &--#{$i}-col {
+                @include full-size($grid-desktop-gutter);
+            }
+        }
+
+        // Define valid tablet offsets.
+        @for $i from 1 through ($grid-desktop-columns - 1) {
+            &--#{$i}-offset {
+                @include offset-size($i, $grid-desktop-columns, $grid-desktop-gutter);
+            }
+        }
+    }
+
+    &:first-of-type {
+        padding-left: 0;
+    }
+
+    &:last-of-type {
+        padding-right: 0;
+    }
+
+    &--flex-wrap {
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &.no-gutters {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    // Define order override classes.
+    @for $i from 1 through $grid-max-columns {
+        &--order-#{$i} {
+            order: $i;
+        }
+    }
+
+    // Define partial sizes for columnNumber < totalColumns.
+    @for $i from 1 through ($grid-phone-columns - 1) {
+        &--xs-#{$i}-col {
+            @include partial-size($i, $grid-phone-columns, $grid-phone-gutter);
+        }
+    }
+
+    // Define 100% for everything else.
+    @for $i from $grid-phone-columns through $grid-phone-columns {
+        &--xs-#{$i}-col {
+            @include full-size($grid-phone-gutter);
+        }
+    }
+}

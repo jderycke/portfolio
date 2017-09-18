@@ -1,0 +1,43 @@
+// Mixins for width calculation.
+@mixin partial-size($size, $columns, $gutter) {
+    flex-basis: #{(($size / $columns) * 100) + "%"};
+    max-width: #{(($size / $columns) * 100) + "%"};
+}
+
+@mixin full-size($gutter) {
+    @include partial-size(1, 1, $gutter);
+}
+
+@mixin offset-size($size, $columns, $gutter) {
+    margin-left: #{(($size / $columns) * 100) + "%"};
+}
+
+@mixin pacman-design() {
+    width: 0;
+    height: 0;
+    border-right: $size solid transparent;
+    border-top: $size solid $site-color;
+    border-left: $size solid $site-color;
+    border-bottom: $size solid $site-color;
+    border-radius: $size;
+}
+
+@mixin ball-placement($n:3, $start:0) {
+    @for $i from $start through $n {
+        > div:nth-child(#{$i + 2}) {
+            animation: pacman_balls 1s delay(.33s, $n, $i) infinite linear;
+        }
+    }
+}
+
+@mixin global-animation() {
+    animation-fill-mode: both;
+}
+
+@mixin balls() {
+    background-color: $black-tint1;
+    width: $size;
+    height: $size;
+    border-radius: 100%;
+    margin: 0 auto;
+}

@@ -1,0 +1,58 @@
+.info-box {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+
+    &__content {
+        vertical-align: middle;
+    }
+
+    &__title {
+        font-size: rem(26);
+        text-align: left;
+        color: $white;
+
+        @include media($screen-sm) {
+            font-size: rem(42);
+        }
+
+        &--large {
+            font-size: rem(38);
+
+            @include media($screen-sm) {
+                font-size: rem(62);
+            }
+        }
+    }
+
+    &__line {
+        display: block;
+        font-weight: $font-weight-normal;
+
+        &__content {
+            display: inline-block;
+            text-align: left;
+            background-color: rgba($site-color, .45);
+            padding: rem(6);
+            margin-bottom: rem(1);
+        }
+    }
+
+    &__link {
+        color: $white-tint1;
+
+        &:hover {
+            color: $black;
+            text-decoration: none;
+        }
+    }
+
+    &__sub-title {
+        font-size: rem(18);
+        background-color: rgba($site-color, .45);
+        padding: rem(6);
+        display: inline-block;
+        color: $white;
+    }
+}

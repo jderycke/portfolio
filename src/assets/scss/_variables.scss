@@ -1,0 +1,52 @@
+$site-color: #b4da55;
+
+$white: #ffffff;
+$white-tint1: #fafafa;
+
+$black: #1e252b;
+$black-tint1: #4d4d4d;
+$black-tint2: #545454;
+
+$grey: #f3f3f3;
+$grey-tint1: #888b8d;
+$grey-tint2: #c6cacc;
+
+$facebook-blue: #3b5998;
+$twitter-blue: #00aced;
+$google-red: #d73d32;
+$linkedin-blue: #007bb6;
+$flickr-pink: #ff0084;
+$rss-orange: #ff6600;
+$pinterest-red: #cb2027;
+$fivehundred-blue: #0099e5;
+$wordpress-blue: #21759b;
+$youtube-red: #cc181e;
+
+$size: rem(25);
+
+$font-family-default: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
+$font-family-headings: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+$font-family-genericons: 'Genericons', 'Helvetica', 'Arial', sans-serif;
+$font-weight-normal: 300;
+$font-weight-bold: 700;
+
+// -- Grid Settings --------------------------------------------
+$gutter: rem(20);
+$grid-desktop-columns: 12 !default;
+$grid-desktop-gutter: $gutter !default;
+$grid-desktop-margin: $gutter !default;
+
+$grid-phone-columns: 4 !default;
+$grid-phone-gutter: $gutter !default;
+$grid-phone-margin: $gutter !default;
+
+$grid-cell-default-columns: $grid-phone-columns !default;
+$grid-max-columns: $grid-desktop-columns !default;
+
+$screen-xs: rem(320);
+$screen-sm: rem(768);
+$screen-md: rem(992);
+$screen-lg: rem(1280);
+$screen-xlg: rem(1281);
+
+$large: new-breakpoint(min-width $screen-sm max-width $screen-lg $grid-desktop-columns);
