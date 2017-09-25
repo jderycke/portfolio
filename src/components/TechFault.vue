@@ -1,15 +1,15 @@
 <template>
-    <section class="page page--no-padding error seperator-section picture active">
-        <div class="container main-content parallax">
+    <section class="page page--no-padding error separator-section picture active full-height">
+        <div class="container main-content">
             <div class="column column--12-col">
                 <div class="info-box">
                     <div class="info-box__content animate--fade-in">
                         <h1 class="info-box__title">
                             <div class="info-box__line">
-                                <span class="info-box__line__content">Houston,</span>
+                                <span class="info-box__line__content font-effect-wallpaper">Houston,</span>
                             </div>
                             <div class="info-box__line">
-                                <span class="info-box__line__content">We have a problem!</span>
+                                <span class="info-box__line__content font-effect-wallpaper">We have a problem!</span>
                             </div>
                         </h1>
                         <p class="info-box__sub-title">Something has gone technically wrong.</p>

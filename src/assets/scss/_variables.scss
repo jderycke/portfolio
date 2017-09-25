@@ -3,9 +3,8 @@ $site-color: #b4da55;
 $white: #ffffff;
 $white-tint1: #fafafa;
 
-$black: #1e252b;
-$black-tint1: #4d4d4d;
-$black-tint2: #545454;
+$black: #12151b;
+$black-tint1: #1e252b;
 
 $grey: #f3f3f3;
 $grey-tint1: #888b8d;
@@ -48,5 +47,3 @@ $screen-sm: rem(768);
 $screen-md: rem(992);
 $screen-lg: rem(1280);
 $screen-xlg: rem(1281);
-
-$large: new-breakpoint(min-width $screen-sm max-width $screen-lg $grid-desktop-columns);

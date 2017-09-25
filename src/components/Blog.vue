@@ -1,10 +1,10 @@
 <template>
     <div>
-        <section id="blog" class="page blog" v-bind:class="{ waiting: items && !items.length && errors && !errors.length }">
+        <section class="page" v-bind:class="{ waiting: items && !items.length && errors && !errors.length }">
             <div class="main-content">
                 <div class="row">
                     <div class="container">
-                        <h2>Blog<em>.</em></h2>
+                        <h1 class="h2">Blog<em>.</em></h1>
                         <div class="loading__content" v-if="items && items.length">
                             <div class="grid">
                                 <article class="grid__item article" v-for="item in items" itemscope="" itemtype="http://schema.org/Article">
@@ -13,18 +13,18 @@
                                         <div :class="{'align--center': !item.thumbnail}">
                                             <div class="grid__item__content">
                                                 <header class="article__header">
-                                                    <h1 class="article__header__title">{{item.title}}</h1>
+                                                    <h1 class="article__header__title" v-html="item.title"></h1>
                                                     <ul class="article__meta">
                                                         <li class="article__meta__item">
                                                             <span itemprop="author" itemscope itemptype="http://schema.org/Person">by {{item.author}}</span>
                                                         </li>
                                                         <li class="article__meta__item">
-                                                            <time :datetime="item.date" itemprop="datePublished">{{item.date}}</time>
+                                                            <time :datetime="item.date" itemprop="datePublished">{{item.date | formatDate}}</time>
                                                         </li>
                                                     </ul>
                                                 </header>
                                                 <div class="article__content entry">
-                                                    <p>{{item.excerpt}}</p>
+                                                    <p v-html="item.excerpt"></p>
                                                 </div>
                                                 <footer class="article__footer cf">
                                                     <div class="article__footer__content">
@@ -36,7 +36,7 @@
                                         <div class="overlay">
                                             <div class="overlay__content">
                                                 <h2 class="overlay__content--title">Read Blog post</h2>
-                                                <span class="genericon notes"></span>
+                                                <span class="fa fa-comments"></span>
                                             </div>
                                         </div>
                                     </a>
@@ -45,7 +45,7 @@
                             <div class="column column--12-col no-gutters text--right margin--top">
                                 <a href="http://blog.jamiederycke.me.uk" class="btn btn--default" title="See more blog posts" data-ga-category="See More" data-ga-action="Click" data-ga-label="Blog">
                                     See more
-                                    <span class="genericon chevron--right"></span>
+                                    <span class="fa fa-chevron-right"></span>
                                 </a>
                             </div>
                         </div>
@@ -68,14 +68,14 @@
                 </div>
             </div>
         </section>
-        <div class="seperator-section picture">
+        <div class="separator-section picture">
             <div class="container">
                 <blockquote>
                     <span class="line">
-                        <span class="line__content">It is not our abilities that show what we truly are.</span>
+                        <span class="line__content font-effect-wallpaper">It is not our abilities that show what we truly are.</span>
                     </span>
                     <span class="line">
-                        <span class="line__content">It is our choices.</span>
+                        <span class="line__content font-effect-wallpaper">It is our choices.</span>
                     </span>
                     <cite class="line">
                         <span class="line__content">Professor Albus Percival Wulfric Brian Dumbledore</span>
@@ -87,8 +87,6 @@
 </template>
 
 <script>
-import fetchJsonp from 'fetch-Jsonp'
-
 export default {
   data: () => ({
     items: [],
@@ -97,27 +95,16 @@ export default {
   created () {
     const url = 'http://blog.jamiederycke.me.uk/feed/json'
 
-    fetchJsonp(url)
-      .then(response => {
+    this.$http.jsonp(url)
+      .then((response) => {
         return response.json()
       })
-      .then(function (json) {
-        this.items = json
+      .then((data) => {
+        this.items = data
       })
-      .catch(e => {
-        this.errors.push(e)
+      .catch((err) => {
+        this.errors.push(err)
       })
-
-    /* this.items = fetchJsonp(url, {
-      timeout: 10000
-    })
-      .then(function (response) {
-        return response.json()
-      }).then(function (json) {
-        return json
-      }).catch(function (ex) {
-        console.log(ex)
-      }) */
   }
 }
 </script>

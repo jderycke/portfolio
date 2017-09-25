@@ -1,7 +1,7 @@
-.seperator-section {
+.separator-section {
     position: relative;
     margin: 0 auto;
-    height: rem(300);
+    height: rem(220);
     z-index: 1;
     background-color: $white;
 
@@ -51,6 +51,10 @@
         }
     }
 
+    &.full-height {
+        min-height: calc(100vh - 42px);
+    }
+
     .container {
         display: flex;
         align-items: center;
@@ -69,16 +73,19 @@
             margin: 0;
             padding: 0;
             border-right: 0;
+            font-family: $font-family-headings;
+            font-weight: $font-weight-bold;
 
             @include media($screen-sm) {
-                font-size: rem(36);
-                line-height: rem(46);
+                font-size: rem(34);
+                line-height: rem(44);
                 text-align: left;
             }
 
             cite {
                 font-size: rem(16);
-                line-height: 1.2;
+                line-height: rem(20);
+                font-family: $font-family-headings;
                 font-weight: $font-weight-normal;
                 color: $white;
                 margin-top: rem(15);
@@ -89,13 +96,11 @@
 
 .line {
     display: block;
-    font-weight: $font-weight-normal;
+    font-family: $font-family-headings;
+    font-weight: $font-weight-bold;
 
     &__content {
         display: inline-block;
         text-align: left;
-        background-color: rgba($site-color, .45);
-        padding: rem(6);
-        margin-bottom: rem(1);
     }
 }

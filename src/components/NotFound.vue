@@ -1,18 +1,18 @@
 <template>
-    <section class="page page--no-padding error seperator-section picture active">
-        <div class="container main-content parallax">
+    <section class="page page--no-padding error separator-section picture full-height">
+        <div class="container main-content">
             <div class="column column--12-col">
                 <div class="info-box">
                     <div class="info-box__content animate--fade-in">
                         <h1 class="info-box__title">
                             <div class="info-box__line">
-                                <span class="info-box__line__content">Toto,</span>
+                                <span class="info-box__line__content font-effect-wallpaper">Toto,</span>
                             </div>
                             <div class="info-box__line">
-                                <span class="info-box__line__content">I've got a feeling we're not in</span>
+                                <span class="info-box__line__content font-effect-wallpaper">I've got a feeling we're not in</span>
                             </div>
                             <div class="info-box__line">
-                                <span class="info-box__line__content">Kansas anymore!</span>
+                                <span class="info-box__line__content font-effect-wallpaper">Kansas anymore!</span>
                             </div>
                         </h1>
                         <p class="info-box__sub-title">The page you were looking for appears to have been melted by water, been moved, been deleted or no simply longer exsits.</p>

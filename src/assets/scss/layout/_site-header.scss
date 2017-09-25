@@ -12,13 +12,6 @@
         width: rem(120);
     }
 
-    &__container {
-        max-width: 100%;
-        height: 100%;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
     &__logo {
         height: rem(55);
         width: rem(55);
@@ -41,10 +34,6 @@
             background-position: center;
             width: rem(55);
             height: rem(55);
-            // scss-lint:disable VendorPrefix
-            -webkit-mask: url('/static/img/wallpaper.png') top left;
-            -moz-mask: url('/static/img/wallpaper.png') top left;
-            // scss-lint:enable VendorPrefix
             mask: url('/static/img/wallpaper.png') top left;
 
             @include media($screen-sm) {
@@ -103,16 +92,15 @@
 
     &__menu {
         text-align: center;
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include media($screen-sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         &__item {
-            display: inline-block;
-            width: 25%;
-
-            @include media($screen-sm) {
-                display: block;
-                width: 100%;
-            }
+            display: block;
         }
 
         &__link {
@@ -120,6 +108,7 @@
             color: $white;
             text-decoration: none;
             line-height: rem(42);
+            font-family: $font-family-headings;
             font-weight: $font-weight-bold;
             position: relative;
             text-align: center;
@@ -131,22 +120,18 @@
             }
 
             &:hover {
-                color: $grey-tint1;
-                background-color: $black-tint1;
+                color: $black-tint1;
+                background-color: $site-color;
             }
 
             &--active {
-                color: $site-color;
-                background-color: $black-tint1;
+                color: $black;
+                background-color: $site-color;
                 cursor: default;
 
-                @include media($screen-sm) {
-                    color: $site-color;
-                    background-color: transparent;
-                }
-
                 &:hover {
-                    color: $site-color;
+                    color: $black;
+                    background-color: $site-color;
                 }
             }
         }

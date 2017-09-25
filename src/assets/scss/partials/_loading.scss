@@ -6,7 +6,6 @@
     padding: 4rem 0;
     height: 100%;
     width: 100%;
-    min-height: rem(420);
 
     &__container {
         position: relative;
@@ -55,7 +54,7 @@
         display: block;
         text-align: center;
         margin-top: rem(30);
-        color: $grey-tint1;
+        color: white-tint1;
         width: 100%;
         font-size: rem(18);
     }

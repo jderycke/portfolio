@@ -1,15 +1,14 @@
 .article {
-    border-bottom: solid 1px $grey-tint2;
-
     &__header {
-        color: $grey-tint1;
+        color: $white-tint1;
 
         &__title {
             font-size: rem(22);
-            color: $grey-tint1;
-            line-height: 1.4;
+            color: $white-tint1;
+            line-height: rem(32);
             margin: 0 auto rem(15);
-            font-weight: $font-weight-normal;
+            font-family: $font-family-headings;
+            font-weight: $font-weight-bold;
             text-align: left;
         }
     }

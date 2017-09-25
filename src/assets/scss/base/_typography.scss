@@ -1,12 +1,15 @@
 h1,
+.h1,
 h2,
+.h2,
 h3,
-h4 {
+.h3,
+h4,
+.h4 {
     padding: 0;
     margin: 0 0 rem(15);
-    color: $black-tint2;
     font-family: $font-family-headings;
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-bold;
 
     em {
         color: $site-color;
@@ -14,21 +17,25 @@ h4 {
     }
 }
 
-h1 {
+h1,
+.h1 {
     font-size: rem(130);
 }
 
-h2 {
-    font-size: rem(48);
-    line-height: rem(58);
+h2,
+.h2 {
+    font-size: rem(42);
+    line-height: rem(52);
 }
 
-h3 {
+h3,
+.h3 {
     font-size: rem(36);
     line-height: rem(46);
 }
 
-h4 {
+h4,
+.h4 {
     font-size: rem(22);
 }
 
@@ -53,8 +60,8 @@ a {
 
 p {
     margin: 0 0 rem(15);
-    font-size: rem(18);
-    line-height: 1.8;
+    font-size: rem(16);
+    line-height: rem(22);
 }
 
 blockquote {
@@ -78,10 +85,6 @@ blockquote {
 }
 
 .font-effect-wallpaper {
-    // scss-lint:disable VendorPrefix
-    -webkit-mask: url('/static/img/wallpaper.png') top left;
-    -moz-mask: url('/static/img/wallpaper.png') top left;
-    // scss-lint:enable VendorPrefix
     mask: url('/static/img/wallpaper.png') top left;
 }
 

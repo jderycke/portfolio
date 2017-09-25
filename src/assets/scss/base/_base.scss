@@ -18,8 +18,8 @@ body {
     font-feature-settings: 'liga';
     font-family: $font-family-default;
     font-weight: $font-weight-normal;
-    color: $grey-tint1;
-    background-color: $white;
+    color: $white;
+    background-color: $black-tint1;
     position: relative;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -53,23 +53,15 @@ figure {
 
 .page {
     position: relative;
-    min-height: 100vh;
     width: 100%;
-    background-color: $white;
     box-sizing: border-box;
     z-index: 1;
-    padding-top: rem(40);
+    padding-top: rem(65);
     padding-bottom: $gutter;
+    min-height: calc(100vh - 120px);
 
-    &.active {
-        .parallax {
-            opacity: 1;
-        }
-    }
-
-    .parallax {
-        transition: all .4s ease-in-out;
-        opacity: 0;
+    @include media($screen-sm) {
+        padding-top: $gutter;
     }
 
     &--no-padding {

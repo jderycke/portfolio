@@ -1,15 +1,10 @@
 .grid {
-    display: -ms-grid;
-    -ms-grid-columns: 50%;
-    -ms-grid-rows: auto 1fr auto;
     display: grid;
     grid-gap: rem(10);
     grid-template-columns: repeat(1, 1fr);
 
     @include media($screen-sm) {
         grid-gap: rem(20);
-        -ms-grid-columns: 100%;
-        -ms-grid-rows: auto 1fr auto;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -18,16 +13,9 @@
     }
 
     &__item {
-        background-color: $grey;
+        background-color: $black;
         vertical-align: middle;
         display: block;
-        -ms-grid-column: 1;
-        -ms-grid-row: 1;
-        -ms-grid-column-align: center;
-
-        &:nth-child(odd) {
-            background-color: $white-tint1;
-        }
 
         &--link {
             display: block;
@@ -47,7 +35,7 @@
         }
 
         &--image {
-            background-image: url('/img/blank.png');
+            background-image: url('/static/img/blank.png');
             background-color: $white-tint1;
             background-repeat: no-repeat;
             background-position: center center;
@@ -102,22 +90,24 @@
         width: 100%;
         vertical-align: middle;
         text-align: center;
+        color: $black-tint1;
 
         &--title {
             font-size: rem(20);
             line-height: rem(24);
+            font-family: $font-family-headings;
             font-weight: $font-weight-bold;
             text-align: center;
         }
     }
 
-    .genericon {
-        font-size: rem(32);
-        border: solid 4px $black-tint2;
+    .fa {
+        font-size: rem(42);
+        height: rem(72);
+        width: rem(72);
+        line-height: rem(64);
+        border: solid 4px $black-tint1;
+        color: $black-tint1;
         border-radius: 50%;
-        color: $black-tint2;
-        height: rem(62);
-        width: rem(62);
-        line-height: rem(54);
     }
 }
