@@ -24,11 +24,11 @@
                                                     </ul>
                                                 </header>
                                                 <div class="article__content entry">
-                                                    <p v-html="item.excerpt"></p>
+
                                                 </div>
                                                 <footer class="article__footer cf">
                                                     <div class="article__footer__content">
-                                                        Read more
+
                                                     </div>
                                                 </footer>
                                             </div>
@@ -41,12 +41,6 @@
                                         </div>
                                     </a>
                                 </article>
-                            </div>
-                            <div class="column column--12-col no-gutters text--right margin--top">
-                                <a href="http://blog.jamiederycke.me.uk" class="btn btn--default" title="See more blog posts" data-ga-category="See More" data-ga-action="Click" data-ga-label="Blog">
-                                    See more
-                                    <span class="fa fa-chevron-right"></span>
-                                </a>
                             </div>
                         </div>
                         <div class="loading">

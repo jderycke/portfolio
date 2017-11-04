@@ -2,21 +2,30 @@
     "items": [
         {
             "id": 1,
-            "title": "Sleepy snail",
-            "description": "",
+            "title": "Camp above the clouds",
+            "description": "Barranco camp on Kilimanjaro, last one before summit camp",
             "category": "fa-camera",
-            "tags": "nature | animals | green | outside",
-            "image_url": "/static/img/gallery/41.jpg",
-            "url": "https://500px.com/photo/206704051/sleepy-snail-by-jamie-de-rycke"
+            "tags": "abstract | art | indoor | musuem | sculpture",
+            "image_url": "/static/img/gallery/8.jpg",
+            "url": "https://500px.com/photo/69997017/camp-above-the-clouds-by-jamie-de-rycke"
         },
         {
             "id": 2,
-            "title": "Lucinda Griffith Design",
-            "description": "'Transform your Home', website for Lucinda Griffith Design. built site with design input based on a existing template.",
-            "category": "fa-globe",
-            "tags": "UI | HTML | javascript | CSS",
-            "image_url": "/static/img/portfolio/lucindag-home.png",
-            "url": "http://www.lucindagriffithdesign.com"
+            "title": "Mountain Summit (Kilimanjaro)",
+            "description": "Taken at the summit of Kilimanjaro looking back down the path up. Altered in LightRoom",
+            "category": "fa-camera",
+            "tags": "ice | kilimanjaro | landscape | clouds | snow | mountain | outdoor | outdoors | outside",
+            "image_url": "/static/img/gallery/2.jpg",
+            "url": "http://500px.com/photo/64405295/mountain-aummit-(kilimanjaro)-by-jamie-de-rycke"
+        },
+        {
+            "id": 3,
+            "title": "Machu Picchu HDR",
+            "description": "",
+            "category": "fa-camera",
+            "tags": "sky | hdr | mountains | outdoor | architecture",
+            "image_url": "/static/img/gallery/44.jpg",
+            "url": "https://500px.com/photo/233467877/machu-pichu-hdr-by-jamie-de-rycke"
         },
         {
             "id": 3,
@@ -29,21 +38,21 @@
         },
         {
             "id": 4,
-            "title": "Mountain Summit (Kilimanjaro)",
-            "description": "Taken at the summit of Kilimanjaro looking back down the path up. Altered in LightRoom",
-            "category": "fa-camera",
-            "tags": "ice | kilimanjaro | landscape | clouds | snow | mountain | outdoor | outdoors | outside",
-            "image_url": "/static/img/gallery/2.jpg",
-            "url": "http://500px.com/photo/64405295/mountain-aummit-(kilimanjaro)-by-jamie-de-rycke"
+            "title": "Lucinda Griffith Design",
+            "description": "'Transform your Home', website for Lucinda Griffith Design. built site with design input based on a existing template.",
+            "category": "fa-globe",
+            "tags": "UI | HTML | javascript | CSS",
+            "image_url": "/static/img/portfolio/lucindag-home.png",
+            "url": "http://www.lucindagriffithdesign.com"
         },
         {
             "id": 5,
-            "title": "Camp above the clouds",
-            "description": "Barranco camp on Kilimanjaro, last one before summit camp",
+            "title": "Sleepy snail",
+            "description": "",
             "category": "fa-camera",
-            "tags": "abstract | art | indoor | musuem | sculpture",
-            "image_url": "/static/img/gallery/8.jpg",
-            "url": "https://500px.com/photo/69997017/camp-above-the-clouds-by-jamie-de-rycke"
+            "tags": "nature | animals | green | outside",
+            "image_url": "/static/img/gallery/41.jpg",
+            "url": "https://500px.com/photo/206704051/sleepy-snail-by-jamie-de-rycke"
         },
         {
             "id": 6,
@@ -62,15 +71,6 @@
             "tags": "UI | HTML | javascript | CSS",
             "image_url": "/static/img/portfolio/msmgroupcharitychallenge.png",
             "url": "https://msmgroupcharitychallenge.com"
-        },
-        {
-            "id": 8,
-            "title": "City at night",
-            "description": "",
-            "category": "fa-camera",
-            "tags": "abstract | architecture | building | city | day | england | light | london | night | street | uk",
-            "image_url": "/static/img/gallery/40.jpg",
-            "url": "https://500px.com/photo/175449793/city-at-night-by-jamie-de-rycke"
         },
         {
             "id": 9,

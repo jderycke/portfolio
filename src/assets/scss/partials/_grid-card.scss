@@ -1,10 +1,10 @@
 .article {
     &__header {
-        color: $white-tint1;
+        color: $black-tint1;
 
         &__title {
             font-size: rem(22);
-            color: $white-tint1;
+            color: $black-tint1;
             line-height: rem(32);
             margin: 0 auto rem(15);
             font-family: $font-family-headings;
@@ -15,10 +15,10 @@
 
     &__content {
         margin: rem(10) auto;
-        font-size: rem(14);
+        font-size: rem(16);
 
         p {
-            font-size: rem(14);
+            font-size: rem(16);
             margin-bottom: rem(10);
         }
     }
