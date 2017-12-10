@@ -62,7 +62,7 @@
                 </div>
             </div>
         </section>
-        <div class="separator-section picture">
+        <div class="separator-section">
             <div class="container">
                 <blockquote>
                     <span class="line">

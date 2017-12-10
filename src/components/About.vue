@@ -8,12 +8,12 @@
                             <h1 class="h2">About me<em>.</em></h1>
                         </div>
                         <div class="column--flex-wrap">
-                            <div class="column column--8-col">
+                            <div class="column column--6-col">
                                 <p>Hello, My name is Jamie De Rycke and I am a multi-skilled web developer from North Wales.</p>
                                 <p>I'm inspired by clean, minimalistic design. Whether it be digital or physical, I believe design is all about solving problems in the simplest possible manner. I am fully proficient in HTML, CSS &amp; Javascript and not afraid to learn something new like SASS, Java or AngularJS. I have over 12 years of experience. I have a passion for pixel perfection, clean code, and semantics.</p>
                                 <p>I currently work for <a href="http://www.moneysupermarket.com" target="_blank" rel="nofollow noopener" title="MoneySuperMarket.com website link" data-ga-category="Content links" data-ga-action="Click" data-ga-label="MSM link">MoneySuperMarket.com</a> as a front end developer.</p>
                             </div>
-                            <div class="column column--4-col">
+                            <div class="column column--6-col">
 
                             </div>
                         </div>
@@ -21,7 +21,7 @@
                 </div>
             </div>
        </section>
-        <div class="separator-section picture">
+        <div class="separator-section">
             <div class="container">
                 <blockquote>
                     <span class="line">

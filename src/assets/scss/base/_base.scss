@@ -19,7 +19,7 @@ body {
     font-family: $font-family-default;
     font-weight: $font-weight-normal;
     color: $black-tint1;
-    background-color: $white;
+    background-color: $white-tint1;
     position: relative;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -58,11 +58,7 @@ figure {
     z-index: 1;
     padding-top: rem(65);
     padding-bottom: $gutter;
-    min-height: calc(100vh - 120px);
-
-    @include media($screen-sm) {
-        padding-top: $gutter;
-    }
+    min-height: calc(100vh - 262px);
 
     &--no-padding {
         padding-top: 0;

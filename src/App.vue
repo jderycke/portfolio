@@ -3,9 +3,9 @@
       <nav class="nav">
           <ul class="nav__menu toggle-sidebars">
               <li class="nav__menu__item">
-                  <router-link class="nav__menu__link" :to="{ name: 'Home' }" exact active-class="nav__menu__link--active">
-                      <span class="nav__menu__icon fa fa-home"></span>
-                      <span class="nav__menu__text">Home</span>
+                  <router-link class="site-header__logo display" :to="{ name: 'Home' }" exact active-class="site-header__logo">
+                      <span class="srt">Jamie De Rycke - Web Developer, North Wales</span>
+                      <span class="site-header__logo__dot font-effect-wallpaper"></span>
                   </router-link>
               </li>
               <li class="nav__menu__item">

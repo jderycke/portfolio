@@ -3,7 +3,8 @@
     margin: 0 auto;
     height: rem(220);
     z-index: 1;
-    background-color: $white-tint1;
+    background-color: $white;
+    box-shadow: 0 0 rem(4) rgba($black, .1);
 
     &.picture {
         background-image: url('/static/img/bg-md-v4.jpg');
@@ -69,7 +70,7 @@
             border-left: 0;
             display: inline-block;
             text-align: left;
-            color: $white;
+            color: $grey-tint1;
             margin: 0;
             padding: 0;
             border-right: 0;
@@ -87,7 +88,7 @@
                 line-height: rem(20);
                 font-family: $font-family-headings;
                 font-weight: $font-weight-normal;
-                color: $white;
+                color: $grey-tint1;
                 margin-top: rem(15);
             }
         }
