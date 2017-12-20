@@ -10,7 +10,7 @@
                                 <article class="grid__item article" v-for="item in items" itemscope="" itemtype="http://schema.org/Article">
                                     <a class="grid__item--link" :href="item.permalink" :title="item.title" data-ga-category="Blog links" data-ga-action="Click" :data-ga-label="item.title">
                                         <img class="entry__image" v-if="item.thumbnail" :src="item.thumbnail.split(' ')[0]" :alt="item.title" />
-                                        <div :class="{'align--center': !item.thumbnail}">
+                                        <div :class="{'align--middle': !item.thumbnail}">
                                             <div class="grid__item__content">
                                                 <header class="article__header">
                                                     <h1 class="article__header__title" v-html="item.title"></h1>
@@ -36,7 +36,7 @@
                                         <div class="overlay">
                                             <div class="overlay__content">
                                                 <h2 class="overlay__content--title">Read Blog post</h2>
-                                                <span class="fa fa-comments"></span>
+                                                <span class="far fa-comments"></span>
                                             </div>
                                         </div>
                                     </a>
@@ -63,7 +63,7 @@
             </div>
         </section>
         <div class="separator-section">
-            <div class="container">
+            <div class="container separator-section__container">
                 <blockquote>
                     <span class="line">
                         <span class="line__content font-effect-wallpaper">It is not our abilities that show what we truly are.</span>
@@ -71,9 +71,7 @@
                     <span class="line">
                         <span class="line__content font-effect-wallpaper">It is our choices.</span>
                     </span>
-                    <cite class="line">
-                        <span class="line__content">Professor Albus Percival Wulfric Brian Dumbledore</span>
-                    </cite>
+                    <cite>Professor Albus Percival Wulfric Brian Dumbledore</cite>
                 </blockquote>
             </div>
         </div>
@@ -102,7 +100,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

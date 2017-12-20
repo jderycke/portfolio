@@ -40,14 +40,12 @@
             </div>
         </section>
         <div class="separator-section">
-            <div class="container">
+            <div class="container separator-section__container">
                 <blockquote>
                     <span class="line">
                         <span class="line__content font-effect-wallpaper">Creativity is contagious, pass it on.</span>
                     </span>
-                    <cite class="line">
-                        <span class="line__content">Albert Enstein</span>
-                    </cite>
+                    <cite>Albert Enstein</cite>
                 </blockquote>
             </div>
         </div>
@@ -76,7 +74,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

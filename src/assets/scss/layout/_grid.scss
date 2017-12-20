@@ -27,8 +27,19 @@
     padding-right: rem(10);
 
     @include media($screen-sm) {
-        padding-right: rem(140);
-        padding-left: $gutter;
+        padding-left: rem(120);
+        padding-right: $gutter;
+    }
+
+    &__custom {
+        padding-left: 0;
+        padding-right: 0;
+        min-height: rem(360);
+
+        @include media($screen-sm) {
+            padding-left: rem(120);
+            padding-right: 0;
+        }
     }
 }
 
@@ -46,7 +57,6 @@
     @include full-size($gutter);
     flex-grow: 1;
     position: relative;
-    min-height: rem(1);
     padding-left: 0;
     padding-right: 0;
 

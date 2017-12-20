@@ -1,76 +1,30 @@
 .separator-section {
     position: relative;
     margin: 0 auto;
-    height: rem(220);
-    z-index: 1;
-    background-color: $white;
-    box-shadow: 0 0 rem(4) rgba($black, .1);
+    height: rem(180);
+    background-color: $black;
+    border-top: solid 2px $grey;
 
-    &.picture {
-        background-image: url('/static/img/bg-md-v4.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-
-        @include media($screen-sm) {
-            background-image: url('/static/img/bg-lg-v4.jpg');
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('/static/img/grid.png');
-            z-index: 1;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba($black, .45);
-            z-index: 0;
-        }
-    }
-
-    &.error {
-        background-image: url('/static/img/bg-error-md.jpg');
-
-        @include media($screen-sm) {
-            background-image: url('/static/img/bg-error-lg.jpg');
-        }
-    }
-
-    &.full-height {
-        min-height: calc(100vh - 42px);
-    }
-
-    .container {
+    &__container {
         display: flex;
+        position: relative;
         align-items: center;
         z-index: 1;
         height: 100%;
-        position: relative;
         width: 100%;
+
+        @include media($screen-sm) {
+            padding-left: $gutter;
+        }
 
         blockquote {
             vertical-align: middle;
-            font-size: rem(26);
+            font-size: rem(20);
+            line-height: rem(30);
             border-left: 0;
             display: inline-block;
             text-align: left;
-            color: $grey-tint1;
+            color: $site-color;
             margin: 0;
             padding: 0;
             border-right: 0;
@@ -78,20 +32,47 @@
             font-weight: $font-weight-bold;
 
             @include media($screen-sm) {
-                font-size: rem(34);
-                line-height: rem(44);
+                font-size: rem(28);
+                line-height: rem(38);
                 text-align: left;
             }
-
-            cite {
-                font-size: rem(16);
-                line-height: rem(20);
-                font-family: $font-family-headings;
-                font-weight: $font-weight-normal;
-                color: $grey-tint1;
-                margin-top: rem(15);
-            }
         }
+    }
+
+    &__picture {
+        background-image: url('/static/img/bg-md-v3.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        @include media($screen-sm) {
+            background-image: url('/static/img/bg-lg-v3.jpg');
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: calc(100vh - 42px);
+            width: 100vw;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($black, .6);
+        }
+    }
+
+    &__error {
+        background-image: url('/static/img/bg-error-md.jpg');
+
+        @include media($screen-sm) {
+            background-image: url('/static/img/bg-error-lg.jpg');
+        }
+    }
+
+    &__full-height {
+        min-height: calc(100vh - 42px);
     }
 }
 

@@ -30,13 +30,14 @@ h2,
 
 h3,
 .h3 {
-    font-size: rem(36);
-    line-height: rem(46);
+    font-size: rem(32);
+    line-height: rem(42);
 }
 
 h4,
 .h4 {
     font-size: rem(22);
+    line-height: rem(32);
 }
 
 ul,
@@ -48,7 +49,7 @@ ol {
 }
 
 a {
-    transition: all .5s ease-in-out;
+    transition: all .4s ease-in-out;
     color: $site-color;
     text-decoration: underline;
 
@@ -65,21 +66,24 @@ p {
 }
 
 blockquote {
-    font-size: rem(18);
+    font-size: rem(32);
+    line-height: rem(38);
+    letter-spacing: -0.6px;
     border-left: 4px solid $site-color;
-    padding: 0 0 0 rem(20);
-    margin: rem(15) 0 rem(25);
-    font-weight: $font-weight-normal;
-    line-height: 1.4;
+    padding: rem(15) 0 rem(15) rem(15);
+    margin: rem(15) rem(30) rem(15) -20%;
+    max-width: 55%;
+    float: left;
+    font-weight: $font-weight-bold;
 
     cite {
         display: block;
-        font-size: rem(12);
+        font-size: rem(14);
+        line-height: rem(24);
         font-style: normal;
         font-family: $font-family-default;
         font-weight: $font-weight-normal;
-        line-height: 1;
-        margin-top: $gutter;
+        margin-top: rem(10);
         color: $grey-tint1;
     }
 }

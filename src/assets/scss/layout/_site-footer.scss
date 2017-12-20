@@ -1,6 +1,6 @@
 .site-footer {
     width: 100%;
-    background-color: $black;
+    background-color: $white-tint1;
     margin-bottom: rem(42);
 
     @include media($screen-sm) {
@@ -13,11 +13,12 @@
 
         @include media($screen-sm) {
             grid-template-columns: repeat(5, 1fr);
+            padding-left: $gutter;
         }
     }
 
     &__copyright {
-        color: $grey;
+        color: $black;
         font-size: rem(14);
         line-height: rem(22);
         margin: rem(10) auto;

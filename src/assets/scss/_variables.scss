@@ -20,14 +20,18 @@ $pinterest-red: #cb2027;
 $fivehundred-blue: #0099e5;
 $wordpress-blue: #21759b;
 $youtube-red: #cc181e;
+$twitch-purple: #4b367c;
+$tumblr-green: #56bc8a;
+$vimeo-green: #7fc400;
 
 $size: rem(25);
 
 $font-family-default: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
 $font-family-headings: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
-$font-family-genericons: 'Genericons', 'Helvetica', 'Arial', sans-serif;
+$font-family-font-awesome: 'FontAwesome';
 $font-weight-normal: 300;
 $font-weight-bold: 700;
+$font-weight-font-awesome: 400;
 
 // -- Grid Settings --------------------------------------------
 $gutter: rem(20);
@@ -42,8 +46,7 @@ $grid-phone-margin: $gutter !default;
 $grid-cell-default-columns: $grid-phone-columns !default;
 $grid-max-columns: $grid-desktop-columns !default;
 
-$screen-xs: rem(320);
-$screen-sm: rem(768);
-$screen-md: rem(992);
+$screen-xs: rem(480);
+$screen-sm: rem(736);
+$screen-md: rem(980);
 $screen-lg: rem(1280);
-$screen-xlg: rem(1281);

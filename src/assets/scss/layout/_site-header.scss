@@ -1,17 +1,18 @@
 .site-header {
-    height: rem(55);
+    height: rem(57);
     position: fixed;
     z-index: 2;
     top: 0;
-    right: 0;
+    left: 0;
     width: 100%;
     background-color: $white;
-    box-shadow: 0 rem(2) rem(10) rgba($black, .16);
+    border-bottom: solid 2px $grey;
 
     @include media($screen-sm) {
         height: 100%;
-        width: rem(120);
-        box-shadow: rem(-4) rem(0) rem(10) rgba($black, .16);
+        width: rem(100);
+        border-bottom: 0;
+        background-color: transparent;
     }
 
     &__logo {
@@ -24,8 +25,9 @@
 
         @include media($screen-sm) {
             display: none;
-            height: rem(120);
-            width: rem(120);
+            height: rem(100);
+            width: rem(100);
+            background-color: transparent;
         }
 
         &::before {
@@ -41,8 +43,8 @@
 
             @include media($screen-sm) {
                 background-size: rem(75);
-                height: rem(120);
-                width: rem(120);
+                height: rem(100);
+                width: rem(100);
             }
         }
 
@@ -59,17 +61,17 @@
             display: block;
             position: absolute;
             background-color: $site-color;
-            height: rem(8);
-            width: rem(8);
-            right: rem(8);
+            height: rem(6);
+            width: rem(6);
+            right: rem(4);
             bottom: rem(8);
             border-radius: 50%;
 
             @include media($screen-sm) {
-                height: rem(12);
-                width: rem(12);
-                right: rem(25);
-                bottom: rem(30);
+                height: rem(10);
+                width: rem(10);
+                right: rem(18);
+                bottom: rem(20);
             }
         }
 
@@ -86,14 +88,14 @@
 .nav {
     width: 100%;
     z-index: 5;
-    right: 0;
+    left: 0;
     bottom: 0;
     position: fixed;
     background-color: $white;
-    border-top: 1px solid $grey;
+    border-top: solid 2px $grey;
 
     @include media($screen-sm) {
-        width: rem(120);
+        width: rem(100);
         bottom: initial;
         border-top: 0;
     }
@@ -128,15 +130,15 @@
             font-weight: $font-weight-bold;
             position: relative;
             text-align: center;
-            font-size: rem(16);
+            font-size: rem(14);
             width: 100%;
 
             @include media($screen-sm) {
-                line-height: rem(120);
+                line-height: rem(100);
             }
 
             &:hover {
-                color: $white;
+                color: $black-tint1;
                 background-color: $site-color;
             }
 
@@ -152,9 +154,9 @@
         }
 
         &__icon {
-            font-size: rem(42);
+            font-size: rem(32);
             position: absolute;
-            top: rem(20);
+            top: rem(15);
             left: 0;
             width: 100%;
             display: none;
@@ -178,7 +180,7 @@
                 white-space: nowrap;
                 text-transform: uppercase;
                 position: relative;
-                bottom: rem(-25);
+                bottom: rem(-20);
                 left: 0;
                 width: 100%;
             }

@@ -1,0 +1,35 @@
+.table {
+    display: block;
+    width: 100%;
+
+    &__item {
+        display: block;
+        border-bottom: solid 1px $grey;
+    }
+
+    &__link {
+        padding: rem(10) 0;
+        display: block;
+        text-decoration: none;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+            .table__title {
+                color: $site-color;
+            }
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: rem(16);
+        color: $black;
+    }
+
+    &__small {
+        display: block;
+        font-size: rem(14);
+        color: $grey-tint1;
+        margin-top: 5px;
+    }
+}
