@@ -54,7 +54,7 @@
                             </li>
                         </ul>
                         <div class="btn__wrapper">
-                            <a href="/blog/" class="btn btn--default fas fa-chevron-right">
+                            <a href="/blog/" class="btn btn--default">
                                 <span class="btn__text">See more</span>
                             </a>
                         </div>

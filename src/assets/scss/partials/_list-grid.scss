@@ -44,20 +44,6 @@
             background-size: cover;
             height: rem(260);
             width: 100%;
-
-            &.web {
-                background-position: center top;
-
-                &::before {
-                    content: '';
-                }
-            }
-
-            &.camera {
-                &::before {
-                    content: '';
-                }
-            }
         }
 
         &__content {
@@ -103,9 +89,8 @@
         }
     }
 
-    .fa,
-    .fas,
-    .far {
+    &__icon {
+        display: block;
         font-size: rem(42);
         height: rem(72);
         width: rem(72);
@@ -113,5 +98,29 @@
         border: solid 4px $black-tint1;
         color: $black-tint1;
         border-radius: 50%;
+        font-family: $font-family-fa;
+        font-weight: $font-weight-fa-bold;
+        text-align: center;
+        margin: 0 auto;
+
+        &--web {
+            &::before {
+                content: fa-content($fa-var-globe);
+            }
+        }
+
+        &--camera {
+            &::before {
+                content: fa-content($fa-var-camera);
+            }
+        }
+
+        &--blog {
+            font-weight: $font-weight-fa-normal;
+
+            &::before {
+                content: fa-content($fa-var-comments);
+            }
+        }
     }
 }

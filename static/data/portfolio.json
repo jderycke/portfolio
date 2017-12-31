@@ -4,7 +4,7 @@
             "id": 1,
             "title": "Camp above the clouds",
             "description": "Barranco camp on Kilimanjaro, last one before summit camp",
-            "category": "fa-camera",
+            "category": "camera",
             "tags": "abstract | art | indoor | musuem | sculpture",
             "image_url": "/static/img/gallery/8.jpg",
             "url": "https://500px.com/photo/69997017/camp-above-the-clouds-by-jamie-de-rycke"
@@ -13,7 +13,7 @@
             "id": 2,
             "title": "Mountain Summit (Kilimanjaro)",
             "description": "Taken at the summit of Kilimanjaro looking back down the path up. Altered in LightRoom",
-            "category": "fa-camera",
+            "category": "camera",
             "tags": "ice | kilimanjaro | landscape | clouds | snow | mountain | outdoor | outdoors | outside",
             "image_url": "/static/img/gallery/2.jpg",
             "url": "http://500px.com/photo/64405295/mountain-aummit-(kilimanjaro)-by-jamie-de-rycke"
@@ -22,25 +22,25 @@
             "id": 3,
             "title": "Machu Picchu HDR",
             "description": "",
-            "category": "fa-camera",
+            "category": "camera",
             "tags": "sky | hdr | mountains | outdoor | architecture",
             "image_url": "/static/img/gallery/44.jpg",
             "url": "https://500px.com/photo/233467877/machu-pichu-hdr-by-jamie-de-rycke"
         },
         {
             "id": 3,
-            "title": "St James Lake",
-            "description": "St James Lake, St James Park London. Horse Guards Parade and London Eye at sunset",
-            "category": "fa-camera",
-            "tags": "city | sunset | cityscape | london | skyline | embankment | waterfront | high-rise | capital",
-            "image_url": "/static/img/gallery/42.jpg",
-            "url": "https://500px.com/photo/224062429/st-james-lake-by-jamie-de-rycke"
+            "title": "Low key fruit",
+            "description": "Taken for a monthly challenge project, the subject being low key. I've previously done an apple in high key so......",
+            "category": "camera",
+            "tags": "light beam | abstract | luminescence | light | luminosity | dark | fruit | red | apple | low key",
+            "image_url": "/static/img/gallery/46.jpg",
+            "url": "https://500px.com/photo/239535789/low-key-fruit-by-jamie-de-rycke"
         },
         {
             "id": 4,
             "title": "Lucinda Griffith Design",
             "description": "'Transform your Home', website for Lucinda Griffith Design. built site with design input based on a existing template.",
-            "category": "fa-globe",
+            "category": "web",
             "tags": "UI | HTML | javascript | CSS",
             "image_url": "/static/img/portfolio/lucindag-home.png",
             "url": "http://www.lucindagriffithdesign.com"
@@ -49,7 +49,7 @@
             "id": 5,
             "title": "Sleepy snail",
             "description": "",
-            "category": "fa-camera",
+            "category": "camera",
             "tags": "nature | animals | green | outside",
             "image_url": "/static/img/gallery/41.jpg",
             "url": "https://500px.com/photo/206704051/sleepy-snail-by-jamie-de-rycke"
@@ -58,7 +58,7 @@
             "id": 6,
             "title": "Toubkal Summit",
             "description": "Taken during a charity trek through the Atlas Mountains in Morocco to summit the 4 highest peaks in Northern Africa",
-            "category": "fa-camera",
+            "category": "camera",
             "tags": "",
             "image_url": "/static/img/gallery/30.jpg",
             "url": "https://500px.com/photo/111960121/toubkal-summit-by-jamie-de-rycke"
@@ -67,19 +67,19 @@
             "id": 7,
             "title": "Moneysupermarket Group Charity Challenge",
             "description": "built site and designed ing Wordpress",
-            "category": "fa-globe",
+            "category": "web",
             "tags": "UI | HTML | javascript | CSS",
             "image_url": "/static/img/portfolio/msmgroupcharitychallenge.png",
             "url": "https://msmgroupcharitychallenge.com"
         },
         {
             "id": 9,
-            "title": "Grating",
-            "description": "Abstract cheese grater",
-            "category": "fa-camera",
-            "tags": "blue | green | abstract | indoor | bokah",
-            "image_url": "/static/img/gallery/43.jpg",
-            "url": "https://500px.com/photo/211260837/grating-by-jamie-de-rycke"
+            "title": "White rose",
+            "description": "White rose, taken for a rule of thirds monthly challenge",
+            "category": "camera",
+            "tags": "floral | flower | indoor | white | dark | still life",
+            "image_url": "/static/img/gallery/45.jpg",
+            "url": "https://500px.com/photo/235790443/white-rose-by-jamie-de-rycke"
         }
     ]
 }

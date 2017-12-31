@@ -155,18 +155,57 @@
 
         &__icon {
             font-size: rem(32);
-            position: absolute;
-            top: rem(15);
-            left: 0;
-            width: 100%;
             display: none;
+            position: relative;
+            font-family: $font-family-fa;
+            font-weight: $font-weight-fa-bold;
 
             @include media($screen-sm) {
-                display: inline-block;
+                display: block;
+                position: absolute;
+                top: -20px;
+            }
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: rem(100);
+                width: rem(100);
+            }
+
+            &--home {
+                &:before {
+                    content: fa-content($fa-var-home);
+                }
+            }
+
+            &--about {
+                font-weight: $font-weight-normal;
+
+                &:before {
+                    content: fa-content($fa-var-user);
+                }
+            }
+
+            &--work {
+                &:before {
+                    content: fa-content($fa-var-pencil-alt);
+                }
+            }
+
+            &--blog {
+                font-weight: $font-weight-normal;
+
+                &:before {
+                    content: fa-content($fa-var-comments);
+                }
             }
         }
 
         &__text {
+            position: relative;
             display: block;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -174,12 +213,6 @@
             text-transform: uppercase;
 
             @include media($screen-sm) {
-                display: block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                text-transform: uppercase;
-                position: relative;
                 bottom: rem(-20);
                 left: 0;
                 width: 100%;

@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import Hello from '@/components/Hello'
+import Work from '@/components/Work'
 
-describe('Hello.vue', () => {
+describe('Work.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(Hello)
+    const Constructor = Vue.extend(Work)
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelector('.hello h1').textContent)
-      .to.equal('Welcome to Your Vue.js App')
+    .to.equal('Welcome to Your Vue.js App')
   })
 })

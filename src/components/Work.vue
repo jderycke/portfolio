@@ -13,7 +13,7 @@
                                         <article class="overlay">
                                             <div class="overlay__content">
                                                 <h3 class="overlay__content--title">{{item.title}}</h3>
-                                                <span class="fa" :class="item.category"></span>
+                                                <span class="overlay__icon" :class="'overlay__icon--' + item.category"></span>
                                             </div>
                                         </article>
                                     </a>

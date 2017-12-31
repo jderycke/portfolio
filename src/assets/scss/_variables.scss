@@ -28,10 +28,12 @@ $size: rem(25);
 
 $font-family-default: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
 $font-family-headings: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
-$font-family-font-awesome: 'FontAwesome';
+$font-family-fa: 'FontAwesome';
+$font-family-fa-brands: 'FontAwesomeBrands';
 $font-weight-normal: 300;
 $font-weight-bold: 700;
-$font-weight-font-awesome: 400;
+$font-weight-fa-normal: 400;
+$font-weight-fa-bold: 900;
 
 // -- Grid Settings --------------------------------------------
 $gutter: rem(20);

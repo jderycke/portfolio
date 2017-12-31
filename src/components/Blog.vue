@@ -36,7 +36,7 @@
                                         <div class="overlay">
                                             <div class="overlay__content">
                                                 <h2 class="overlay__content--title">Read Blog post</h2>
-                                                <span class="far fa-comments"></span>
+                                                <span class="overlay__icon overlay__icon--blog"></span>
                                             </div>
                                         </div>
                                     </a>
