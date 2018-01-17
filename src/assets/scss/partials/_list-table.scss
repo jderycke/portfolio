@@ -4,7 +4,7 @@
 
     &__item {
         display: block;
-        border-bottom: solid 1px $grey;
+        border-bottom: solid 1px $black-tint1;
     }
 
     &__link {
@@ -24,7 +24,7 @@
         display: block;
         font-size: rem(18);
         line-height: rem(18);
-        color: $black;
+        color: $white;
     }
 
     &__small {

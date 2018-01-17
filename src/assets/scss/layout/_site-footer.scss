@@ -1,6 +1,7 @@
 .site-footer {
     width: 100%;
-    background-color: $white-tint1;
+    border-top: solid 2px $black-tint1;
+    background-color: $black;
     margin-bottom: rem(42);
 
     @include media($screen-sm) {
@@ -18,7 +19,7 @@
     }
 
     &__copyright {
-        color: $black;
+        color: $grey-tint1;
         font-size: rem(16);
         line-height: rem(26);
         margin: rem(10) auto;
@@ -32,10 +33,6 @@
             text-align: left;
             margin: 0;
             line-height: rem(42);
-        }
-
-        &::before {
-            content: '';
         }
     }
 }

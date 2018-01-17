@@ -40,6 +40,10 @@ export default new Router({
       path: '/500/',
       name: '500',
       component: TechFault
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
   ],
   mode: 'history',

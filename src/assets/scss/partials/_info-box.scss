@@ -12,7 +12,6 @@
     &__title {
         font-size: rem(22);
         line-height: rem(32);
-        color: $black;
 
         &--large {
             font-size: rem(32);
@@ -22,10 +21,6 @@
                 font-size: rem(42);
                 line-height: rem(52);
             }
-        }
-
-        &--white {
-            color: $white;
         }
     }
 
@@ -44,10 +39,5 @@
         font-weight: $font-weight-normal;
         font-size: rem(16);
         display: inline-block;
-        color: $black;
-
-        &--white {
-            color: $white;
-        }
     }
 }

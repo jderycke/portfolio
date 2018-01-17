@@ -43,7 +43,7 @@
                 <div class="row height__two-third box__padding">
 
                 </div>
-                <div class="row background__image background__image--about height__third">
+                <div class="row background__image background__image--about height__third border__top">
                     <div class="column">
                         <div class="display--table height__full">
                             <div class="align--bottom display--table-cell box__padding">

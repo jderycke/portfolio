@@ -3,7 +3,7 @@
     margin: 0 auto;
     height: rem(180);
     background-color: $black;
-    border-top: solid 2px $grey;
+    border-top: solid 2px $black-tint1;
 
     &__container {
         display: flex;
@@ -30,6 +30,7 @@
             border-right: 0;
             font-family: $font-family-headings;
             font-weight: $font-weight-bold;
+            max-width: 100%;
 
             @include media($screen-sm) {
                 font-size: rem(28);

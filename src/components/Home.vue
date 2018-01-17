@@ -13,7 +13,7 @@
                                                 <span class="info-box__line__content">Hello, my name is</span>
                                             </span>
                                             <span class="info-box__line">
-                                                <span class="info-box__title--large info-box__line__content">Jamie De Rycke</span>
+                                                <span class="info-box__title--large info-box__line__content">Jamie De Rycke<em>.</em></span>
                                             </span>
                                         </h1>
                                         <p class="info-box__sub-title">I create things with pixels and code.</p>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row background__image height__third">
+                <div class="row background__image height__third border__top">
                     <div class="column">
                         <div class="display--table height__full">
                             <div class="align--bottom display--table-cell box__padding">
