@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     background-color: $black;
-    border-bottom: solid 2px $black-tint1;
+    border-bottom: solid 2px $black-tint2;
 
     @include media($screen-sm) {
         height: 100%;
@@ -92,7 +92,7 @@
     bottom: 0;
     position: fixed;
     background-color: $black;
-    border-top: solid 2px $black-tint1;
+    border-top: solid 2px $black-tint2;
 
     @include media($screen-sm) {
         width: rem(100);
@@ -138,18 +138,15 @@
             }
 
             &:hover {
-                color: $black-tint1;
-                background-color: $site-color;
+              color: $site-color;
             }
 
             &--active {
-                background-color: $site-color;
-                color: $black-tint1;
+                color: $site-color;
                 cursor: default;
 
                 &:hover {
-                    background-color: $site-color;
-                    color: $black-tint1;
+                    color: $site-color;
                 }
             }
         }

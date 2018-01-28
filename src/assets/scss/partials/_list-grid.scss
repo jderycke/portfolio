@@ -12,7 +12,7 @@
     }
 
     &__item {
-        background-color: $black;
+        background-color: $black-tint1;
         vertical-align: middle;
         display: block;
 
@@ -23,7 +23,7 @@
             text-decoration: none;
             position: relative;
             color: $white;
-            border: solid 2px $black-tint1;
+            border: solid 2px $black-tint2;
             overflow: hidden;
 
             &:hover {
@@ -38,7 +38,7 @@
 
         &--image {
             background-image: url('/static/img/blank.png');
-            background-color: $black-tint1;
+            background-color: $black-tint2;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -78,7 +78,7 @@
         width: 100%;
         vertical-align: middle;
         text-align: center;
-        color: $black-tint1;
+        color: $black-tint2;
 
         &--title {
             font-size: rem(20);
@@ -95,8 +95,8 @@
         height: rem(72);
         width: rem(72);
         line-height: rem(64);
-        border: solid 4px $black-tint1;
-        color: $black-tint1;
+        border: solid 4px $black-tint2;
+        color: $black-tint2;
         border-radius: 50%;
         font-family: $font-family-fa;
         font-weight: $font-weight-fa-bold;

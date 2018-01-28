@@ -42,7 +42,7 @@ figure {
     figcaption {
         color: $white;
         padding: $gutter;
-        background-color: rgba($black-tint1, .6);
+        background-color: rgba($black-tint2, .6);
     }
 }
 
@@ -121,17 +121,16 @@ figure {
 
     &--block-cell-mobile {
         display: block;
-        text-align: center;
 
         @include media($screen-sm) {
             display: table-cell;
-            text-align: left;
         }
     }
 }
 
 .background {
     &__image {
+        background-color: $black-tint1;
         background-image: url('/static/img/bg-md-v3.jpg');
         background-position: center;
         background-repeat: no-repeat;
@@ -160,7 +159,7 @@ figure {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba($black, .6);
+            background-color: rgba($black, .2);
         }
     }
 }
@@ -168,12 +167,12 @@ figure {
 .border {
     &__right {
         @include media($screen-sm) {
-            border-right: solid 2px $black-tint1;
+            border-right: solid 2px $black-tint2;
         }
     }
 
     &__top {
-        border-top: solid 2px $black-tint1;
+        border-top: solid 2px $black-tint2;
     }
 }
 
@@ -182,15 +181,9 @@ figure {
         height: 100%;
     }
 
-    &__two-third {
+    &__half {
         @include media($screen-sm) {
-            height: 55%;
-        }
-    }
-
-    &__third {
-        @include media($screen-sm) {
-            height: 45%;
+            height: 50%;
         }
     }
 

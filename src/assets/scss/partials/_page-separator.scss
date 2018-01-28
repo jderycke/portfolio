@@ -2,8 +2,8 @@
     position: relative;
     margin: 0 auto;
     height: rem(180);
-    background-color: $black;
-    border-top: solid 2px $black-tint1;
+    background-color: $black-tint1;
+    border-top: solid 2px $black-tint2;
 
     &__container {
         display: flex;
@@ -60,7 +60,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba($black, .6);
+            background-color: rgba($black, .2);
         }
     }
 
