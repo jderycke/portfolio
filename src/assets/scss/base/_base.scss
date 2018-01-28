@@ -160,7 +160,7 @@ figure {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba($black, .6);
+            background-color: rgba($black, .4);
         }
     }
 }
@@ -182,15 +182,9 @@ figure {
         height: 100%;
     }
 
-    &__two-third {
+    &__half {
         @include media($screen-sm) {
-            height: 55%;
-        }
-    }
-
-    &__third {
-        @include media($screen-sm) {
-            height: 45%;
+            height: 50%;
         }
     }
 

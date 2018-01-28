@@ -1,7 +1,7 @@
 <template>
     <section id="about" class="page page--no-padding">
         <div class="column--flex-wrap">
-            <div class="column column--9-col no-gutters border__right">
+            <div class="column column--10-col no-gutters border__right">
                 <div class="row row__home">
                     <div class="container container__custom">
                         <div class="column--flex-wrap height__full">
@@ -39,11 +39,11 @@
                     </div>
                 </div>
             </div>
-            <div class="column column--3-col no-gutters height__screen">
-                <div class="row height__two-third box__padding">
+            <div class="column column--2-col no-gutters height__screen">
+                <div class="row height__half box__padding">
 
                 </div>
-                <div class="row background__image background__image--about height__third border__top">
+                <div class="row background__image background__image--about height__half border__top">
                     <div class="column">
                         <div class="display--table height__full">
                             <div class="align--bottom display--table-cell box__padding">

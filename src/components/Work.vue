@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="page" v-bind:class="{ waiting: items && !items.length && errors && !errors.length }">
+        <section class="page" v-bind:class="{ waiting: items && !items.length }">
             <div class="main-content">
                 <div class="row">
                     <div class="container">
@@ -30,11 +30,9 @@
                                 <span class="loading__text">loading...</span>
                             </div>
                         </div>
-                        <ul v-if="errors && errors.length">
-                            <li v-for="error of errors">
-                                {{error.message}}
-                            </li>
-                        </ul>
+                        <div v-if="!items && !items.length">
+                            Something has gone wrong
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,24 +51,11 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    items: [],
-    errors: []
-  }),
-  created () {
-    const url = '/static/data/portfolio.json'
+import db from '../firebase.js'
 
-    this.$http.get(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.items = data.items
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
+export default {
+  firebase: {
+    items: db.ref('items').limitToLast(9)
   }
 }
 </script>
