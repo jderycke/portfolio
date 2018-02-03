@@ -121,11 +121,9 @@ figure {
 
     &--block-cell-mobile {
         display: block;
-        text-align: center;
 
         @include media($screen-sm) {
             display: table-cell;
-            text-align: left;
         }
     }
 }
@@ -168,12 +166,20 @@ figure {
 .border {
     &__right {
         @include media($screen-sm) {
-            border-right: solid 2px $black-tint1;
+            border-right: solid 2px $grey;
         }
     }
 
     &__top {
-        border-top: solid 2px $black-tint1;
+        border-top: solid 2px $grey;
+
+        &--mobile {
+            border-top: solid 2px $grey;
+
+            @include media($screen-sm) {
+                border-top: 0;
+            }
+        }
     }
 }
 

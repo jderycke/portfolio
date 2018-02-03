@@ -65,12 +65,12 @@
         },
         {
             "id": 7,
-            "title": "Moneysupermarket Group Charity Challenge",
-            "description": "built site and designed ing Wordpress",
-            "category": "web",
-            "tags": "UI | HTML | javascript | CSS",
-            "image_url": "/static/img/portfolio/msmgroupcharitychallenge.png",
-            "url": "https://msmgroupcharitychallenge.com"
+            "title": "High key fruit",
+            "description": "Taken for a monthly challenge project, the subject being high key.",
+            "category": "camera",
+            "tags": "floral | flower | indoor | white | high-key | still life",
+            "image_url": "/static/img/gallery/47.jpg",
+            "url": "https://www.flickr.com/photos/jamiederycke/34900103214/"
         },
         {
             "id": 9,

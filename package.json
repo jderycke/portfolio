@@ -19,6 +19,7 @@
     "postcss": "^6.0.14",
     "stylelint": "^8.4.0",
     "vue": "^2.5.2",
+    "vue-clazy-load": "^0.3.0",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5"
   },

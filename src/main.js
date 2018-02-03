@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import VueFire from 'vueFire'
 import VueResource from 'vue-resource'
+import VueClazyLoad from 'vue-clazy-load'
 import App from './App'
 import router from './router'
 import moment from 'moment'
@@ -11,6 +12,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueFire)
 Vue.use(VueResource)
+Vue.use(VueClazyLoad)
 
 /* eslint-disable no-new */
 new Vue({

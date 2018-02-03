@@ -1,6 +1,11 @@
 {
-    "name": "Jamie De Rycke Portfolio",
-    "short_name": "JDRBlog",
+    "name": "Jamie De Rycke portfolio",
+    "short_name": "JDR",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1e252b",
+    "theme_color": "#1e252b",
+    "description" : "Personal website and portfolio of Jamie De Rycke",
     "icons": [
         {
             "src": "/static/img/logo114x114.png",
@@ -12,9 +17,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#1e252b",
-    "theme_color": "#1e252b"
+    ]
 }

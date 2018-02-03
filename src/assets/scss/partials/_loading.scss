@@ -1,4 +1,4 @@
-.loading {
+.polling {
     display: none;
     align-items: center;
     justify-content: center;
@@ -65,11 +65,16 @@
 }
 
 .waiting {
-    .loading {
+    .polling {
         display: flex;
     }
 
-    .loading__content {
+    .polling__content {
         display: none;
     }
+}
+
+.preloader {
+    background-color: $black-tint1;
+    display: block;
 }

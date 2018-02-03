@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="column column--4-col background__image">
+                            <div class="column column--4-col background__image border__top--mobile">
                                 <div class="display--table height__full">
                                     <div class="align--bottom display--table-cell">
 
@@ -63,24 +63,8 @@
 
 <script>
 export default {
-  data: () => ({
-    items: [],
-    work: [],
-    errors: []
-  }),
   created () {
-    const url = 'http://blog.jamiederycke.me.uk/feed/json'
 
-    this.$http.jsonp(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.items = data
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
   }
 }
 </script>
