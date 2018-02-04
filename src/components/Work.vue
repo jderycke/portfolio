@@ -7,14 +7,13 @@
                         <h1 class="h2">Featured work<em>.</em></h1>
                         <div class="polling__content" v-if="items && items.length">
                             <ul class="grid">
-                                <li class="grid__item" v-for="item in items">
+                                <li class="grid__item" v-for="item in items" v-bind:key="item.id">
                                     <a class="grid__item--link" :href="item.url" :title="item.title" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" :data-ga-label="item.title" rel="noopener">
-                                        <clazy-load :src="item.image_url">
-                                            <img :src="item.image_url" :alt="item.title" slot="image" />
-                                            <div class="preloader" slot="placeholder">
-                                                <img src="/static/img/blank.png" alt="" />
-                                            </div>
-                                        </clazy-load>
+                                        <amp-img width="500" height="281" layout="responsive" :src="item.image.url" :alt="item.title">
+                                            <amp-img fallback width="500" height="281" :alt="item.title" :src="item.image.fallback_url">
+                                                <div fallback></div>
+                                            </amp-img>
+                                        </amp-img>
                                         <article class="overlay">
                                             <div class="overlay__content">
                                                 <h3 class="overlay__content--title">{{item.title}}</h3>
@@ -45,9 +44,7 @@
         <div class="separator-section">
             <div class="container separator-section__container">
                 <blockquote>
-                    <span class="line">
-                        <span class="line__content font-effect-wallpaper">Creativity is contagious, pass it on.</span>
-                    </span>
+                    <span class="line">Creativity is contagious, pass it on.</span>
                     <cite>Albert Enstein</cite>
                 </blockquote>
             </div>
@@ -56,11 +53,25 @@
 </template>
 
 <script>
-import db from '../firebase.js'
-
 export default {
-  firebase: {
-    items: db.ref('items').limitToLast(9)
+  name: 'work',
+  data: () => ({
+    items: [],
+    errors: []
+  }),
+  created () {
+    const url = '/static/data/portfolio.json'
+
+    this.$http.get(url)
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        this.items = data.portfolio
+      })
+      .catch((err) => {
+        this.errors.push(err)
+      })
   }
 }
 </script>

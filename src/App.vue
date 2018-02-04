@@ -21,7 +21,7 @@
                   </router-link>
               </li>
               <li class="nav__menu__item">
-                  <router-link class="nav__menu__link" :to="{ name: 'Blog' }" exact active-class="nav__menu__link--active">
+                  <router-link class="nav__menu__link" :to="{ name: 'Blog' }" active-class="nav__menu__link--active">
                       <span class="nav__menu__icon nav__menu__icon--blog"></span>
                       <span class="nav__menu__text">Blog</span>
                   </router-link>

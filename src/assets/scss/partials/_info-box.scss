@@ -1,43 +1,81 @@
 .info-box {
-    display: table;
-    align-items: center;
+    position: relative;
     margin: 0 auto;
-    height: calc(100vh - 42px);
 
-    &__content {
-        display: table-cell;;
-        vertical-align: middle;
+    @include media($screen-md) {
+        display: grid;
+        justify-content: start;
+        align-items: center;
+    }
+
+    &__text {
+        display: block;
+        float: left;
+        margin: rem(20) 0;
+        z-index: 2;
+
+        @include media($screen-md) {
+            margin: rem(20);
+        }
     }
 
     &__title {
-        font-size: rem(22);
-        line-height: rem(32);
+        font-family: $font-family-headings;
+        font-weight: $font-weight-thin;
+        font-size: rem(26);
+        margin-bottom: 0;
 
         &--large {
             font-size: rem(32);
-            line-height: rem(42);
 
             @include media($screen-sm) {
-                font-size: rem(42);
-                line-height: rem(52);
+                font-size: rem(62);
             }
         }
     }
 
-    &__line {
-        display: block;
-        font-family: $font-family-headings;
-        font-weight: $font-weight-bold;
+    &__sub-title {
+        font-family: $font-family-default;
+        font-weight: $font-weight-light;
+        font-size: rem(16);
+        display: inline-block;
+        margin-bottom: 1px;
 
-        &__content {
-            display: inline-block;
+        &:first-of-type {
+            margin-top: rem(15);
         }
     }
 
-    &__sub-title {
-        font-family: $font-family-headings;
-        font-weight: $font-weight-normal;
-        font-size: rem(16);
+    &__line {
+        background-color: $site-color;
+        color: $white;
         display: inline-block;
+        margin-bottom: 1px;
+        padding: rem(5) rem(10);
+        clear: both;
+        float: left;
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: underline;
+    }
+
+    &__img {
+        clear: both;
+        filter: grayscale(100%);
+
+        @include media($screen-md) {
+            clear: none;
+            position: absolute;
+            right: 0;
+            width: 100%;
+        }
+    }
+
+    &__quote {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }

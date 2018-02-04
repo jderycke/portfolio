@@ -1,24 +1,29 @@
 <template>
-    <section class="page page--no-padding separator-section separator-section__picture full separator-section__full-height separator-section__error">
-        <div class="container main-content">
-            <div class="column--flex-wrap">
-                <div class="column column--12-col">
-                    <div class="info-box">
-                        <div class="info-box__content animate--fade-in">
-                            <h1 class="info-box__title info-box__title--white">
-                                <div class="info-box__line info-box__title--large">
-                                    <span class="info-box__line__content font-effect-wallpaper">Toto,</span>
-                                </div>
-                                <div class="info-box__line">
-                                    <span class="info-box__line__content font-effect-wallpaper">I've got a feeling we're not in Kansas anymore!</span>
-                                </div>
-                            </h1>
-                            <p class="info-box__sub-title info-box__sub-title--white">The page you were looking for appears to have been melted by water, moved, deleted or no simply longer exsits.</p>
-                            <p class="info-box__sub-title info-box__sub-title--white">You can go <a href="javascript:history.back()" target="_self" title="go back" class="info-box__link">back</a> to where you were or you can try heading back <a href="/" target="_self" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home"class="info-box__link">home</a>.</p>
-                        </div>
-                    </div>
+    <section class="page page--no-padding separator-section separator-section__picture separator-section__picture--error">
+        <div class="container">
+            <div class="info-box height__full">
+                <div class="info-box__text">
+                    <h1 class="info-box__title">
+                        <span class="info-box__line info-box__title--large">Toto,</span>
+                        <span class="info-box__line">I've got a feeling we're not in Kansas anymore!</span>
+                    </h1>
+                    <p class="info-box__line info-box__sub-title">The page you were looking for appears to have been melted by water,</p>
+                    <p class="info-box__line info-box__sub-title">moved, deleted or no simply longer exists.</p>
+                    <p class="info-box__line info-box__sub-title">You can go <a href="javascript:history.back()" target="_self" title="go back" class="info-box__link">back</a> to where you were or you can try heading back <a href="/" target="_self" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home"class="info-box__link">home</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 </template>
+
+<script>
+export default {
+  name: 'notFound'
+}
+</script>
+
+
+
+
+
+

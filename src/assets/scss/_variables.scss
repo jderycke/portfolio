@@ -1,13 +1,13 @@
-$site-color: #bad455;
+$site-color: #C03C03;
 
-$white: #fafafa;
+$white: #ffffff;
 
 $black: #12151b;
-$black-tint1: #121212;
-$black-tint2: #4a4a4a;
+$black-tint1: #1a1a1a;
 
 $grey: #f3f3f3;
-$grey-tint1: #888b8d;
+$grey-tint1: #727272;
+$grey-tint2: #D0D7DE;
 
 $facebook-blue: #3b5998;
 $twitter-blue: #00aced;
@@ -18,21 +18,30 @@ $rss-orange: #ff6600;
 $pinterest-red: #cb2027;
 $fivehundred-blue: #0099e5;
 $wordpress-blue: #21759b;
-$youtube-red: #cc181e;
-$twitch-purple: #4b367c;
-$tumblr-green: #56bc8a;
-$vimeo-green: #7fc400;
-
 $size: rem(25);
 
-$font-family-default: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
-$font-family-headings: 'Montserrat', 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
-$font-family-fa: 'FontAwesome';
-$font-family-fa-brands: 'FontAwesomeBrands';
-$font-weight-normal: 300;
-$font-weight-bold: 700;
+$font-family-default: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$font-family-headings: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$font-family-fa: 'Icomoon';
+$font-family-fa-brands: 'Icomoon';
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
 $font-weight-fa-normal: 400;
-$font-weight-fa-bold: 900;
+
+$icon-home: "\f015";
+$icon-camera: "\f030";
+$icon-pencil: "\f040";
+$icon-chevron-right: "\f054";
+$icon-twitter: "\f099";
+$icon-facebook: "\f09a";
+$icon-globe: "\f0ac";
+$icon-google: "\f0d5";
+$icon-linkedin: "\f0e1";
+$icon-comments: "\f0e6";
+$icon-flickr: "\f16e";
+$icon-500px: "\f26e";
+$icon-user: "\f2c0";
 
 // -- Grid Settings --------------------------------------------
 $gutter: rem(20);

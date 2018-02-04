@@ -9,7 +9,7 @@ h4,
     padding: 0;
     margin: 0 0 rem(15);
     font-family: $font-family-headings;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-thin;
 
     em {
         color: $site-color;
@@ -74,7 +74,7 @@ blockquote {
     margin: rem(15) rem(30) rem(15) -20%;
     max-width: 55%;
     float: left;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-light;
 
     cite {
         display: block;
@@ -82,9 +82,24 @@ blockquote {
         line-height: rem(26);
         font-style: normal;
         font-family: $font-family-default;
-        font-weight: $font-weight-normal;
+        font-weight: $font-weight-regular;
         margin-top: rem(10);
-        color: $grey-tint1;
+        color: $grey;
+    }
+}
+
+figure {
+    position: relative;
+    margin-bottom: rem(15)
+
+    figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $site-color;
+        color: $white;
+        display: inline-block;
+        padding: rem(5) rem(15);
     }
 }
 

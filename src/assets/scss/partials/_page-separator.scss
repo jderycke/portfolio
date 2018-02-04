@@ -1,15 +1,14 @@
 .separator-section {
     position: relative;
     margin: 0 auto;
-    height: rem(180);
-    background-color: $black;
-    border-top: solid 2px $grey;
+    height: rem(140);
+    background-color: $grey;
+    border-top: solid 2px $grey-tint2;
 
     &__container {
         display: flex;
         position: relative;
         align-items: center;
-        z-index: 1;
         height: 100%;
         width: 100%;
 
@@ -29,13 +28,17 @@
             padding: 0;
             border-right: 0;
             font-family: $font-family-headings;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-regular;
             max-width: 100%;
 
             @include media($screen-sm) {
-                font-size: rem(28);
-                line-height: rem(38);
+                font-size: rem(22);
+                line-height: rem(32);
                 text-align: left;
+            }
+
+            cite {
+                color: $black-tint1;
             }
         }
     }
@@ -46,6 +49,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        border-top: 0;
 
         @include media($screen-sm) {
             background-image: url('/static/img/bg-lg-v3.jpg');
@@ -60,31 +64,22 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba($black, .4);
+            background-color: rgba($black, .25);
         }
-    }
 
-    &__error {
-        background-image: url('/static/img/bg-error-md.jpg');
+        &--error {
+            background-image: url('/static/img/bg-error-md.jpg');
 
-        @include media($screen-sm) {
-            background-image: url('/static/img/bg-error-lg.jpg');
+            @include media($screen-sm) {
+                background-image: url('/static/img/bg-error-lg.jpg');
+            }
         }
-    }
-
-    &__full-height {
-        min-height: calc(100vh - 44px);
-        border-top: 0;
     }
 }
 
 .line {
     display: block;
     font-family: $font-family-headings;
-    font-weight: $font-weight-bold;
-
-    &__content {
-        display: inline-block;
-        text-align: left;
-    }
+    font-weight: $font-weight-regular;
+    text-align: left;
 }

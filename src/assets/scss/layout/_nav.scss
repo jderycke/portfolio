@@ -1,0 +1,138 @@
+.nav {
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: $grey;
+    border-top: solid 2px $black;
+
+    @include media($screen-sm) {
+        width: rem(100);
+        bottom: initial;
+        border-top: 0;
+        box-shadow: 0 0 40px 0 rgba($black, .2);
+    }
+
+    &__menu {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include media($screen-sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__item {
+            display: block;
+
+            &:first-of-type {
+                display: none;
+
+                @include media($screen-sm) {
+                    display: block;
+                }
+            }
+        }
+
+        &__link {
+            display: block;
+            color: $black;
+            text-decoration: none;
+            line-height: rem(42);
+            font-family: $font-family-headings;
+            font-weight: $font-weight-regular;
+            position: relative;
+            text-align: center;
+            font-size: rem(14);
+            width: 100%;
+
+            @include media($screen-sm) {
+                line-height: rem(100);
+            }
+
+            &:hover {
+                color: $white;
+                background-color: $site-color;
+            }
+
+            &--active {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background-color: $site-color;
+                    bottom: rem(4);
+                    height: rem(2);
+                    width: calc(100% - 20px);
+                    left: rem(10);
+
+                    @include media($screen-sm) {
+                        bottom: rem(12);
+                    }
+                }
+            }
+        }
+
+        &__icon {
+            font-size: rem(32);
+            display: none;
+            position: relative;
+            font-family: $font-family-fa;
+            font-weight: $font-weight-fa-normal;
+
+            @include media($screen-sm) {
+                display: block;
+                position: absolute;
+                top: -20px;
+            }
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: rem(100);
+                width: rem(100);
+            }
+
+            &--home {
+                &:before {
+                    content: $icon-home;
+                }
+            }
+
+            &--about {
+                &:before {
+                    content: $icon-user;
+                }
+            }
+
+            &--work {
+                &:before {
+                    content: $icon-pencil;
+                }
+            }
+
+            &--blog {
+                &:before {
+                    content: $icon-comments;
+                }
+            }
+        }
+
+        &__text {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-transform: uppercase;
+
+            @include media($screen-sm) {
+                bottom: rem(-20);
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,14 +1,14 @@
 .article {
     &__header {
-        color: $grey-tint1;
+        color: $black;
 
         &__title {
             font-size: rem(22);
-            color: $white;
+            color: $black-tint1;
             line-height: rem(32);
             margin: 0 auto rem(15);
             font-family: $font-family-headings;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-regular;
             text-align: left;
         }
     }
@@ -16,6 +16,7 @@
     &__content {
         margin: rem(10) auto;
         font-size: rem(16);
+        white-space: pre-line;
 
         p {
             font-size: rem(16);
@@ -43,6 +44,10 @@
         font-size: rem(14);
         line-height: rem(20);
 
+        &--page {
+            margin: 0 auto rem(15);
+        }
+
         &__item {
             display: inline-block;
             margin-right: rem(15);
@@ -69,5 +74,38 @@
                 }
             }
         }
-	}
+	  }
+}
+
+.post {
+    background-color: $white;
+    transform: translate3d(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 42px);
+    overflow-y: scroll;
+    z-index: 1;
+    padding-left: rem(10);
+    padding-right: rem(10);
+
+    @include media($screen-sm) {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    }
+
+    &-enter-active {
+      transition: all 375ms cb(out) 225ms
+    }
+
+    &-leave-active {
+      transition: all 300ms cb(in)
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
 }

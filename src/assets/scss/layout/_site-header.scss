@@ -5,14 +5,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $black;
-    border-bottom: solid 2px $grey;
-;
+    background-color: $white;
+    box-shadow: 0 0 40px 0 rgba($black, .2);
 
     @include media($screen-sm) {
         height: 100%;
         width: rem(100);
-        border-bottom: 0;
+        box-shadow: none;
         background-color: transparent;
     }
 
@@ -22,19 +21,17 @@
         display: block;
         margin: 0 auto;
         position: relative;
-        background-color: $black;
 
         @include media($screen-sm) {
             display: none;
             height: rem(100);
             width: rem(100);
-            background-color: transparent;
         }
 
         &::before {
             content: '';
             display: block;
-            background-image: url('/static/img/logo114x114.png');
+            background-image: url('/static/img/logo114x114-alt.png');
             background-repeat: no-repeat;
             background-size: rem(55);
             background-position: center;
@@ -79,144 +76,12 @@
         &:hover {
             background-color: $site-color;
 
-            .site-header__logo__dot {
-                background-color: $black;
-            }
-        }
-    }
-}
-
-.nav {
-    width: 100%;
-    z-index: 5;
-    left: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: $white;
-    border-top: solid 2px $grey;
-
-    @include media($screen-sm) {
-        width: rem(100);
-        bottom: initial;
-        background-color: $black;
-        border-top: 0;
-    }
-
-    &__menu {
-        text-align: center;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-
-        @include media($screen-sm) {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        &__item {
-            display: block;
-
-            &:first-of-type {
-                display: none;
-
-                @include media($screen-sm) {
-                    display: block;
-                }
-            }
-        }
-
-        &__link {
-            display: block;
-            color: $black;
-            text-decoration: none;
-            line-height: rem(42);
-            font-family: $font-family-headings;
-            font-weight: $font-weight-bold;
-            position: relative;
-            text-align: center;
-            font-size: rem(14);
-            width: 100%;
-
-            @include media($screen-sm) {
-                color: $white;
-            }
-
-            @include media($screen-sm) {
-                line-height: rem(100);
-            }
-
-            &:hover {
-                color: $black-tint1;
-                background-color: $site-color;
-            }
-
-            &--active {
-                color: $site-color;
-                cursor: default;
-            }
-        }
-
-        &__icon {
-            font-size: rem(32);
-            display: none;
-            position: relative;
-            font-family: $font-family-fa;
-            font-weight: $font-weight-fa-bold;
-
-            @include media($screen-sm) {
-                display: block;
-                position: absolute;
-                top: -20px;
-            }
-
             &:before {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: rem(100);
-                width: rem(100);
+                background-image: url('/static/img/logo114x114.png');
             }
 
-            &--home {
-                &:before {
-                    content: fa-content($fa-var-home);
-                }
-            }
-
-            &--about {
-                font-weight: $font-weight-normal;
-
-                &:before {
-                    content: fa-content($fa-var-user);
-                }
-            }
-
-            &--work {
-                &:before {
-                    content: fa-content($fa-var-pencil-alt);
-                }
-            }
-
-            &--blog {
-                font-weight: $font-weight-normal;
-
-                &:before {
-                    content: fa-content($fa-var-comments);
-                }
-            }
-        }
-
-        &__text {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            text-transform: uppercase;
-
-            @include media($screen-sm) {
-                bottom: rem(-20);
-                left: 0;
-                width: 100%;
+            .site-header__logo__dot {
+                background-color: $white;
             }
         }
     }

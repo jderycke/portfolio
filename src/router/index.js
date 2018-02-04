@@ -32,6 +32,18 @@ export default new Router({
       component: Blog
     },
     {
+      path: '/blog/author/:author/',
+      name: 'author',
+      props: true,
+      component: Blog
+    },
+    {
+      path: '/blog/post/:post/',
+      name: 'post',
+      props: true,
+      component: Blog
+    },
+    {
       path: '/404/',
       name: '404',
       component: NotFound
