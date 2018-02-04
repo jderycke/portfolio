@@ -10,12 +10,9 @@
                                 <article class="grid__item article" v-for="item in items" itemscope="" itemtype="http://schema.org/Article">
                                     <a class="grid__item--link" :href="item.permalink" :title="item.title" data-ga-category="Blog links" data-ga-action="Click" :data-ga-label="item.title">
                                         <div v-if="item.thumbnail">
-                                            <clazy-load :src="item.thumbnail.split(' ')[0]">
-                                                <img :src="item.thumbnail.split(' ')[0]" :alt="item.title" class="entry__image" slot="image" />
-                                                <div class="preloader" slot="placeholder">
-                                                    <img src="/static/img/blank.png" class="entry__image" alt="" />
-                                                </div>
-                                            </clazy-load>
+                                            <amp-img width="500" height="281" layout="responsive" :src="item.thumbnail.split(' ')[0]" :alt="item.title">
+                                                <div fallback>offline</div>
+                                            </amp-img>
                                         </div>
 
                                         <div :class="{'align--middle': !item.thumbnail}">

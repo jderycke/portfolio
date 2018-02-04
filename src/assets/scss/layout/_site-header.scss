@@ -149,8 +149,8 @@
             }
 
             &--active {
-                color: $site-color;
-                cursor: default;
+                color: $black-tint1;
+                background-color: $site-color;
             }
         }
 
