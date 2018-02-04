@@ -2,8 +2,8 @@
     position: relative;
     margin: 0 auto;
     height: rem(180);
-    background-color: $black-tint1;
-    border-top: solid 2px $black-tint2;
+    background-color: $black;
+    border-top: solid 2px $grey;
 
     &__container {
         display: flex;
@@ -60,7 +60,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba($black, .2);
+            background-color: rgba($black, .4);
         }
     }
 
@@ -73,7 +73,8 @@
     }
 
     &__full-height {
-        min-height: calc(100vh - 42px);
+        min-height: calc(100vh - 44px);
+        border-top: 0;
     }
 }
 

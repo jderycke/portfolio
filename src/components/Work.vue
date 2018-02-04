@@ -1,15 +1,20 @@
 <template>
     <div>
-        <section class="page" v-bind:class="{ waiting: items && !items.length && errors && !errors.length }">
+        <section class="page" v-bind:class="{ waiting: items && !items.length }">
             <div class="main-content">
                 <div class="row">
                     <div class="container">
                         <h1 class="h2">Featured work<em>.</em></h1>
-                        <div class="loading__content" v-if="items && items.length">
+                        <div class="polling__content" v-if="items && items.length">
                             <ul class="grid">
                                 <li class="grid__item" v-for="item in items">
                                     <a class="grid__item--link" :href="item.url" :title="item.title" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" :data-ga-label="item.title" rel="noopener">
-                                        <div class="grid__item--image" :style="{ 'background-image': 'url(' + item.image_url + ')' }"></div>
+                                        <clazy-load :src="item.image_url">
+                                            <img :src="item.image_url" :alt="item.title" slot="image" />
+                                            <div class="preloader" slot="placeholder">
+                                                <img src="/static/img/blank.png" alt="" />
+                                            </div>
+                                        </clazy-load>
                                         <article class="overlay">
                                             <div class="overlay__content">
                                                 <h3 class="overlay__content--title">{{item.title}}</h3>
@@ -20,21 +25,19 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="loading">
-                            <div class="loading__container">
-                                <div class="loading__half--up"></div>
-                                <div class="loading__half--down"></div>
-                                <div class="loading__dot"></div>
-                                <div class="loading__dot"></div>
-                                <div class="loading__dot"></div>
-                                <span class="loading__text">loading...</span>
+                        <div class="polling">
+                            <div class="polling__container">
+                                <div class="polling__half--up"></div>
+                                <div class="polling__half--down"></div>
+                                <div class="polling__dot"></div>
+                                <div class="polling__dot"></div>
+                                <div class="polling__dot"></div>
+                                <span class="polling__text">Loading...</span>
                             </div>
                         </div>
-                        <ul v-if="errors && errors.length">
-                            <li v-for="error of errors">
-                                {{error.message}}
-                            </li>
-                        </ul>
+                        <div v-if="!items && !items.length">
+                            Something has gone wrong
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,24 +56,11 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    items: [],
-    errors: []
-  }),
-  created () {
-    const url = '/static/data/portfolio.json'
+import db from '../firebase.js'
 
-    this.$http.get(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.items = data.items
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
+export default {
+  firebase: {
+    items: db.ref('items').limitToLast(9)
   }
 }
 </script>

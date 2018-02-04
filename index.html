@@ -5,17 +5,16 @@
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
         <title>Jamie De Rycke / Personal website, portfolio and blog of a web monkey</title>
-        <meta name="amp-experiments-opt-in" content="">
         <meta name="author" content="Jamie De Rycke" />
         <meta name="description" content="Personal website and portfolio of Jamie De Rycke" />
         <meta name="keywords" content="Portfolio, Personal, Web Design, Web Development, valid xhtml, css development, css, html, C# development, mobile development, north wales, Jamie De Rycke" />
         <meta name="theme-color" content="#1e252b">
-
-        <!-- Add to homescreen for Chrome on Android -->
         <meta name="mobile-web-app-capable" content="yes">
-        <link rel="icon" sizes="192x192" href="/static/img/favicon.png">
 
-        <!-- Add to homescreen for Safari on iOS -->
+        <link rel="canonical" href="http://www.jamiederycke.me.uk/">
+        <link rel="shortcut icon" sizes="192x192" href="/static/img/favicon.png">
+        <link rel="manifest" href="/static/manifest.json">
+
         <link rel="apple-touch-icon" sizes="114x114" href="/static/img/logo114x114.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/static/img/logo72x72.png" />
         <link rel="apple-touch-icon" href="/static/img/logo57x57.png" />
@@ -23,12 +22,8 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="Jamie De Rycke / Personal website">
 
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
         <meta name="msapplication-TileImage" content="/static/img/logo72x72.png">
         <meta name="msapplication-TileColor" content="#1e252b">
-
-        <link rel="shortcut icon" href="img/favicon.png" />
-        <link rel="canonical" href="http://www.jamiederycke.me.uk/">
 
         <meta property="og:locale" content="en-GB" />
         <meta property="og:type" content="website" />
@@ -47,6 +42,13 @@
         <meta property="twitter:image" content="http://www.jamiederycke.me.uk//static/img/avatar-300x225.jpg">
 
         <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
+        <style amp-custom>
+
+        </style>
+
         <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     </head>
     <body>
@@ -63,7 +65,7 @@
 
         <footer id="footer" class="site-footer">
             <div class="site-footer__container container">
-                <small class="site-footer__copyright">&copy; 2017 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
+                <small class="site-footer__copyright">&copy; 2018 Jamie De Rycke. All Rights Reserved. Handcrafted pixels &amp; Code.</small>
                 <ul class="social">
                     <li class="social__item">
                         <a class="social__link social--facebook" href="http://www.facebook.com/jamie.derycke/" title="Facebook" target="_blank" data-ga-category="Social links" data-ga-action="Click" data-ga-label="Facebook" rel="noopener">
@@ -102,13 +104,22 @@
         <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
         <!-- built files will be auto injected -->
 
-        <!-- Google Analytics -->
-        <script>
-			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-			ga('create', 'UA-39364857-1', 'auto');
-			ga('send', 'pageview');
-		</script>
-        <script async src="https://www.google-analytics.com/analytics.js"></script>
-        <!-- End Google Analytics -->
+        <amp-analytics type="googleanalytics" id="analytics-ga-visibility">
+            <script type="application/json">
+                {
+                    "vars": {
+                        "account": "UA-39364857-1"
+                    },
+                    "triggers": {
+                        "trackPageview": {
+                        "on": "visible",
+                        "request": "pageview"
+                    }
+                }
+            }
+          </script>
+        </amp-analytics>
+
+        <amp-install-serviceworker src="/static/service-worker.js" layout="nodisplay"></amp-install-serviceworker>
     </body>
 </html>

@@ -5,11 +5,19 @@
                 <div class="row">
                     <div class="container">
                         <h1 class="h2">Blog<em>.</em></h1>
-                        <div class="loading__content" v-if="items && items.length">
+                        <div class="polling__content" v-if="items && items.length">
                             <div class="grid">
                                 <article class="grid__item article" v-for="item in items" itemscope="" itemtype="http://schema.org/Article">
                                     <a class="grid__item--link" :href="item.permalink" :title="item.title" data-ga-category="Blog links" data-ga-action="Click" :data-ga-label="item.title">
-                                        <img class="entry__image" v-if="item.thumbnail" :src="item.thumbnail.split(' ')[0]" :alt="item.title" />
+                                        <div v-if="item.thumbnail">
+                                            <clazy-load :src="item.thumbnail.split(' ')[0]">
+                                                <img :src="item.thumbnail.split(' ')[0]" :alt="item.title" class="entry__image" slot="image" />
+                                                <div class="preloader" slot="placeholder">
+                                                    <img src="/static/img/blank.png" class="entry__image" alt="" />
+                                                </div>
+                                            </clazy-load>
+                                        </div>
+
                                         <div :class="{'align--middle': !item.thumbnail}">
                                             <div class="grid__item__content">
                                                 <header class="article__header">
@@ -43,14 +51,14 @@
                                 </article>
                             </div>
                         </div>
-                        <div class="loading">
-                            <div class="loading__container">
-                                <div class="loading__half--up"></div>
-                                <div class="loading__half--down"></div>
-                                <div class="loading__dot"></div>
-                                <div class="loading__dot"></div>
-                                <div class="loading__dot"></div>
-                                <span class="loading__text">loading...</span>
+                        <div class="polling">
+                            <div class="polling__container">
+                                <div class="polling__half--up"></div>
+                                <div class="polling__half--down"></div>
+                                <div class="polling__dot"></div>
+                                <div class="polling__dot"></div>
+                                <div class="polling__dot"></div>
+                                <span class="polling__text">loading...</span>
                             </div>
                         </div>
                         <ul v-if="errors && errors.length">
