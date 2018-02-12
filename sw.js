@@ -19,12 +19,8 @@ importScripts('workbox-sw.prod.v2.1.2.js');
  */
 const fileManifest = [
   {
-    "url": "404.html",
-    "revision": "0a27a4163254fc8fce870c8cc3a3f94f"
-  },
-  {
     "url": "/index.html",
-    "revision": "819a2f9caf4b1f08808410f87c2fbbe0"
+    "revision": "bb78a8947ac6ce0c966a4d16d6fb774f"
   },
   {
     "url": "static/img/avatar-300x225.jpg",
@@ -295,12 +291,24 @@ const fileManifest = [
     "revision": "e4537d828bcd43e0367bc4969978ff2b"
   },
   {
+    "url": "static/img/webp/avatar-300x225.webp",
+    "revision": "11e07189d01fac6686b685ea4e726450"
+  },
+  {
+    "url": "static/img/webp/avatar.webp",
+    "revision": "11e07189d01fac6686b685ea4e726450"
+  },
+  {
     "url": "static/img/webp/bg-error-lg.webp",
     "revision": "3157f58daf47ce8d7e4ab1884dae6efe"
   },
   {
     "url": "static/img/webp/bg-error-md.webp",
     "revision": "598b1e9614aa863ba240c2b72567a471"
+  },
+  {
+    "url": "static/img/webp/bg-lg-about.webp",
+    "revision": "0e1afc13e399dcd87a142e78501da3e1"
   },
   {
     "url": "static/img/webp/bg-lg-v2.webp",
@@ -311,10 +319,6 @@ const fileManifest = [
     "revision": "67dd0c9df093fee5f64654bf50241788"
   },
   {
-    "url": "static/img/webp/bg-lg-v4.webp",
-    "revision": "289730150b86bc6239427b27300f36c3"
-  },
-  {
     "url": "static/img/webp/bg-md-v2.webp",
     "revision": "2c4b615b1704724620ce62176cf7e242"
   },
@@ -323,20 +327,248 @@ const fileManifest = [
     "revision": "11c5ca1734fe8596cfd3c6a4a4c93491"
   },
   {
-    "url": "static/img/webp/bg-md-v4.webp",
-    "revision": "cfe830311c0f2484c8119eedc995968c"
-  },
-  {
     "url": "static/img/webp/bg-md.webp",
     "revision": "4446bce607df6216e2fed895a0a5ada1"
   },
   {
-    "url": "static/js/app.307800b8053806016e9c.js",
-    "revision": "7dfe6823adcf4cf031b09bdc2fffc1a2"
+    "url": "static/img/webp/favicon.webp",
+    "revision": "ff381fa0d9644a3e41c16c7f0655cc77"
   },
   {
-    "url": "static/js/manifest.5709ce0512d9d9bb0d76.js",
-    "revision": "1b916bff71062d7f323a7faa04d8cff8"
+    "url": "static/img/webp/gallery/1.webp",
+    "revision": "7f97007a305746f39ffba8d9007c356f"
+  },
+  {
+    "url": "static/img/webp/gallery/11.webp",
+    "revision": "046ae89f61e9c59fb24ae852ba6cd6e5"
+  },
+  {
+    "url": "static/img/webp/gallery/12.webp",
+    "revision": "b58b9ca38ea0da9a3d7d795673ba96ca"
+  },
+  {
+    "url": "static/img/webp/gallery/13.webp",
+    "revision": "b4150ff434402d6fa9a0b4f13d93df3c"
+  },
+  {
+    "url": "static/img/webp/gallery/14.webp",
+    "revision": "b178b84778348500c01b22d9679edaf9"
+  },
+  {
+    "url": "static/img/webp/gallery/16.webp",
+    "revision": "59d774f18726c4b723d0f3e7a802dbb9"
+  },
+  {
+    "url": "static/img/webp/gallery/17.webp",
+    "revision": "7baa0d10189912a13c704996cc0844d9"
+  },
+  {
+    "url": "static/img/webp/gallery/18.webp",
+    "revision": "c2d87ed585be412aa53bc295a52e3917"
+  },
+  {
+    "url": "static/img/webp/gallery/19.webp",
+    "revision": "3de94b30616443f77e78bfe5d7f79a2b"
+  },
+  {
+    "url": "static/img/webp/gallery/2.webp",
+    "revision": "9320cb9f368bc7f5fdad486f9cfd206f"
+  },
+  {
+    "url": "static/img/webp/gallery/20.webp",
+    "revision": "8cd5edd1f39eb27c9fac45763647adab"
+  },
+  {
+    "url": "static/img/webp/gallery/21.webp",
+    "revision": "0be6ceb4a66ab76ee0cd34fe6b0566f8"
+  },
+  {
+    "url": "static/img/webp/gallery/22.webp",
+    "revision": "eea6a68eff8bb9b0f7ce2d89e665a5a2"
+  },
+  {
+    "url": "static/img/webp/gallery/23.webp",
+    "revision": "8ada88fdd32370c4138ed9d807cddd39"
+  },
+  {
+    "url": "static/img/webp/gallery/24.webp",
+    "revision": "e1d52ca6c25ea971689cea7bb1c7ede9"
+  },
+  {
+    "url": "static/img/webp/gallery/25.webp",
+    "revision": "efed9359d23d654d1e498b840aaaf19c"
+  },
+  {
+    "url": "static/img/webp/gallery/26.webp",
+    "revision": "7b8bfa195448a6d53977c50a12a32289"
+  },
+  {
+    "url": "static/img/webp/gallery/27.webp",
+    "revision": "c7b0f9a5df8abd720fb9675aa0e1d716"
+  },
+  {
+    "url": "static/img/webp/gallery/28.webp",
+    "revision": "ad0e6043ea621a33fab0d3c4cc07b2fd"
+  },
+  {
+    "url": "static/img/webp/gallery/29.webp",
+    "revision": "d51bb239870a1e2930c58221913593e3"
+  },
+  {
+    "url": "static/img/webp/gallery/3.webp",
+    "revision": "7d4cf184e8eb92592eccd5ea2498e385"
+  },
+  {
+    "url": "static/img/webp/gallery/30.webp",
+    "revision": "75d3d5767c84ce5253eab80db599f9ce"
+  },
+  {
+    "url": "static/img/webp/gallery/31.webp",
+    "revision": "95579fe6755d6dafd54dbf379962bc22"
+  },
+  {
+    "url": "static/img/webp/gallery/32.webp",
+    "revision": "aef9930538bdb4fa669e4829b960415b"
+  },
+  {
+    "url": "static/img/webp/gallery/33.webp",
+    "revision": "c88224122e6137c3027a7a0a573910f5"
+  },
+  {
+    "url": "static/img/webp/gallery/34.webp",
+    "revision": "e6b9b91b7e604dc55c10f0079ed54c95"
+  },
+  {
+    "url": "static/img/webp/gallery/35.webp",
+    "revision": "48eddcccfc62c3f39fa3caeaaa5a7d48"
+  },
+  {
+    "url": "static/img/webp/gallery/36.webp",
+    "revision": "2fded85a3c561a934249048962a992ad"
+  },
+  {
+    "url": "static/img/webp/gallery/37.webp",
+    "revision": "051daeb13db4ff13b8e3eb88894487c4"
+  },
+  {
+    "url": "static/img/webp/gallery/38.webp",
+    "revision": "f76895f355f8089fc2c4556059b27985"
+  },
+  {
+    "url": "static/img/webp/gallery/39.webp",
+    "revision": "c271be4e693cc37e6145bb0ec454aee9"
+  },
+  {
+    "url": "static/img/webp/gallery/4.webp",
+    "revision": "e6c92eb6624b935060ab2f6f60d59b45"
+  },
+  {
+    "url": "static/img/webp/gallery/40.webp",
+    "revision": "c0d28e340317728c53f6af4f3086d92f"
+  },
+  {
+    "url": "static/img/webp/gallery/41.webp",
+    "revision": "8eac158d9f2f5fe2cf40b301ad2f5660"
+  },
+  {
+    "url": "static/img/webp/gallery/42.webp",
+    "revision": "991ad065f3a89fbce72615589b1dc95a"
+  },
+  {
+    "url": "static/img/webp/gallery/43.webp",
+    "revision": "27e74aef8ba1428d4668d7446abcf89a"
+  },
+  {
+    "url": "static/img/webp/gallery/44.webp",
+    "revision": "0f22ed4a5012bdf264f4c631049970f3"
+  },
+  {
+    "url": "static/img/webp/gallery/45.webp",
+    "revision": "0cff76b9b45ccfbbdcb9839c57d45867"
+  },
+  {
+    "url": "static/img/webp/gallery/46.webp",
+    "revision": "48e3da793951f4a3e2e1be9732b5d398"
+  },
+  {
+    "url": "static/img/webp/gallery/47.webp",
+    "revision": "e76a1e19d5ec3bb590cf633907e65367"
+  },
+  {
+    "url": "static/img/webp/gallery/5.webp",
+    "revision": "706cae8228efe30461fae1e7e7d75223"
+  },
+  {
+    "url": "static/img/webp/gallery/6.webp",
+    "revision": "1d44bf39931faa8eebdffb8146d70723"
+  },
+  {
+    "url": "static/img/webp/gallery/7.webp",
+    "revision": "9d3efbeef648f667a2f3d50a76f1edfe"
+  },
+  {
+    "url": "static/img/webp/gallery/8.webp",
+    "revision": "5051a0b8cbbb644566080f0e5e25d796"
+  },
+  {
+    "url": "static/img/webp/gallery/9.webp",
+    "revision": "102eaddf3513d105b7ead03cde8d487d"
+  },
+  {
+    "url": "static/img/webp/logo114x114-alt.webp",
+    "revision": "44ceda3d16ac8cae3774e0fd899b5bf4"
+  },
+  {
+    "url": "static/img/webp/logo114x114.webp",
+    "revision": "ad46beb22a5b71dcf85a4f4174b1c2c4"
+  },
+  {
+    "url": "static/img/webp/logo42x42.webp",
+    "revision": "4ebc0cc57d9dfc8e552e2a315d23f22e"
+  },
+  {
+    "url": "static/img/webp/logo57x57-alt.webp",
+    "revision": "dabfe1a021a3ceb0fe290f2edc0f393f"
+  },
+  {
+    "url": "static/img/webp/logo57x57.webp",
+    "revision": "b7d9bb08e84569a3592aa84ad629f152"
+  },
+  {
+    "url": "static/img/webp/logo62x62.webp",
+    "revision": "a2403b9c72ce514c577aa3ac0467ce57"
+  },
+  {
+    "url": "static/img/webp/logo72x72-alt.webp",
+    "revision": "6b756dffcb6d00d2b77f17fbf3afe7c4"
+  },
+  {
+    "url": "static/img/webp/logo72x72.webp",
+    "revision": "f7a8908fbb335e8127bd37b87b304176"
+  },
+  {
+    "url": "static/img/webp/portfolio/bethunter-home.webp",
+    "revision": "aa5b4511c47f181be499fb72a3cc5745"
+  },
+  {
+    "url": "static/img/webp/portfolio/lucindag-home.webp",
+    "revision": "b242c9a309dc8cf1acfa70b2eb69848b"
+  },
+  {
+    "url": "static/img/webp/portfolio/msmgroupcharitychallenge.webp",
+    "revision": "56ecf6aeac3c9eae03c3e45444ea6635"
+  },
+  {
+    "url": "static/img/webp/wallpaper.webp",
+    "revision": "7cfd610cbb60267f991c389f482c6102"
+  },
+  {
+    "url": "static/js/app.3f582a1a022feeb04f29.js",
+    "revision": "a28d776f82c6211111b5d53a9d62d410"
+  },
+  {
+    "url": "static/js/manifest.38973d44de7a81b7b3f1.js",
+    "revision": "7ffabaa814e1d19881c88e4b0140f90a"
   },
   {
     "url": "static/js/vendor.166b38dfd0cb03413c0c.js",

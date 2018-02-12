@@ -17,9 +17,11 @@
     "firebase": "^4.9.0",
     "moment": "^2.20.1",
     "postcss": "^6.0.14",
+    "scrollto-with-animation": "^4.5.2",
     "stylelint": "^8.4.0",
     "vue": "^2.5.2",
     "vue-clazy-load": "^0.3.0",
+    "vue-disqus": "^2.0.4",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5"
   },

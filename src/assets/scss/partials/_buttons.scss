@@ -1,6 +1,6 @@
 .btn {
     transition: all .6s ease-in-out;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-regular;
     padding: 0 rem(45) 0 rem(15);
     margin: 0 auto;
     background-color: $site-color;
@@ -32,21 +32,21 @@
         padding: 0 rem(45) 0 rem(15);
         line-height: rem(42);
         font-family: $font-family-fa;
-        font-weight: $font-weight-fa-bold;
+        font-weight: $font-weight-fa-normal;
 
         &:before {
             display: block;
             position: absolute;
             right: rem(15);
             font-size: rem(16);
-            content: fa-content($fa-var-chevron-right);
+            content: $icon-chevron-right;
         }
     }
 
     &__text {
         line-height: rem(42);
         font-family: $font-family-default;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-regular;
     }
 
     &__wrapper {

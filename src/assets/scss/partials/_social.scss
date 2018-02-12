@@ -24,7 +24,7 @@
         text-align: center;
         text-decoration: none;
         font-family: $font-family-fa-brands;
-        font-weight: $font-weight-normal;
+        font-weight: $font-weight-fa-normal;
 
         &:hover {
             color: $white;
@@ -34,13 +34,13 @@
         &__text {
             display: none;
             font-family: $font-family-default;
-            font-weight: $font-weight-fa-normal;
+            font-weight: $font-weight-regular;
         }
     }
 
     &--facebook {
         &:before {
-            content: fa-content($fa-var-facebook-f);
+            content: $icon-facebook;
         }
 
         &:hover {
@@ -51,7 +51,7 @@
 
     &--twitter {
         &:before {
-            content: fa-content($fa-var-twitter);
+            content: $icon-twitter;
         }
 
         &:hover {
@@ -62,7 +62,7 @@
 
     &--google-plus {
         &:before {
-            content: fa-content($fa-var-google-plus-g);
+            content: $icon-google;
         }
 
         &:hover {
@@ -73,7 +73,7 @@
 
     &--linkedin {
         &:before {
-            content: fa-content($fa-var-linkedin-in);
+            content: $icon-linkedin;
         }
 
         &:hover {
@@ -84,7 +84,7 @@
 
     &--flickr {
         &:before {
-            content: fa-content($fa-var-flickr);
+            content: $icon-flickr;
         }
 
         &:hover {
@@ -93,54 +93,16 @@
         }
     }
 
-    &--pinterest {
-        &:before {
-            content: fa-content($fa-var-pinterest);
-        }
-
-        &:hover {
-            color: $white;
-            background-color: $pinterest-red;
-        }
-    }
-
     &--fivehundred {
         font-size: rem(28);
 
         &:before {
-            content: fa-content($fa-var-500px);
+            content: $icon-500px;
         }
 
         &:hover {
             color: $white;
             background-color: $fivehundred-blue;
-        }
-    }
-
-    &--rss {
-        font-family: $font-family-fa;
-        font-weight: $font-weight-fa-bold;
-
-        &:before {
-            content: fa-content($fa-var-rss);
-        }
-
-        &:hover {
-            color: $white;
-            background-color: $rss-orange;
-        }
-    }
-
-    &--wordpress {
-        font-size: rem(28);
-
-        &:before {
-            content: fa-content($fa-var-wordpress);
-        }
-
-        &:hover {
-            color: $white;
-            background-color: $wordpress-blue;
         }
     }
 }

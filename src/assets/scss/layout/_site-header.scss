@@ -5,9 +5,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $black;
+    background-color: $white;
     border-bottom: solid 2px $grey;
-;
 
     @include media($screen-sm) {
         height: 100%;
@@ -22,19 +21,17 @@
         display: block;
         margin: 0 auto;
         position: relative;
-        background-color: $black;
 
         @include media($screen-sm) {
             display: none;
             height: rem(100);
             width: rem(100);
-            background-color: transparent;
         }
 
         &::before {
             content: '';
             display: block;
-            background-image: url('/static/img/logo114x114.png');
+            background-image: url('/static/img/logo114x114-alt.png');
             background-repeat: no-repeat;
             background-size: rem(55);
             background-position: center;
@@ -80,7 +77,7 @@
             background-color: $site-color;
 
             .site-header__logo__dot {
-                background-color: $black;
+                background-color: $white;
             }
         }
     }
@@ -92,13 +89,13 @@
     left: 0;
     bottom: 0;
     position: fixed;
-    background-color: $white;
-    border-top: solid 2px $grey;
+    background-color: $grey;
+    border-top: solid 2px $black;
 
     @include media($screen-sm) {
         width: rem(100);
         bottom: initial;
-        background-color: $black;
+        background-color: $white;
         border-top: 0;
     }
 
@@ -129,28 +126,35 @@
             text-decoration: none;
             line-height: rem(42);
             font-family: $font-family-headings;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-regular;
             position: relative;
             text-align: center;
             font-size: rem(14);
             width: 100%;
 
             @include media($screen-sm) {
-                color: $white;
-            }
-
-            @include media($screen-sm) {
                 line-height: rem(100);
             }
 
             &:hover {
-                color: $black-tint1;
+                color: $white;
                 background-color: $site-color;
             }
 
             &--active {
-                color: $black-tint1;
-                background-color: $site-color;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background-color: $site-color;
+                    bottom: rem(4);
+                    height: rem(2);
+                    width: calc(100% - 20px);
+                    left: rem(10);
+
+                    @include media($screen-sm) {
+                        bottom: rem(12);
+                    }
+                }
             }
         }
 
@@ -159,7 +163,7 @@
             display: none;
             position: relative;
             font-family: $font-family-fa;
-            font-weight: $font-weight-fa-bold;
+            font-weight: $font-weight-fa-normal;
 
             @include media($screen-sm) {
                 display: block;
@@ -178,29 +182,25 @@
 
             &--home {
                 &:before {
-                    content: fa-content($fa-var-home);
+                    content: $icon-home;
                 }
             }
 
             &--about {
-                font-weight: $font-weight-normal;
-
                 &:before {
-                    content: fa-content($fa-var-user);
+                    content: $icon-user;
                 }
             }
 
             &--work {
                 &:before {
-                    content: fa-content($fa-var-pencil-alt);
+                    content: $icon-pencil;
                 }
             }
 
             &--blog {
-                font-weight: $font-weight-normal;
-
                 &:before {
-                    content: fa-content($fa-var-comments);
+                    content: $icon-comments;
                 }
             }
         }

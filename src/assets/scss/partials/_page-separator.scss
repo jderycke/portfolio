@@ -2,14 +2,13 @@
     position: relative;
     margin: 0 auto;
     height: rem(180);
-    background-color: $black;
+    background-color: $site-color;
     border-top: solid 2px $grey;
 
     &__container {
         display: flex;
         position: relative;
         align-items: center;
-        z-index: 1;
         height: 100%;
         width: 100%;
 
@@ -24,12 +23,12 @@
             border-left: 0;
             display: inline-block;
             text-align: left;
-            color: $site-color;
+            color: $white;
             margin: 0;
             padding: 0;
             border-right: 0;
             font-family: $font-family-headings;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-light;
             max-width: 100%;
 
             @include media($screen-sm) {
@@ -79,9 +78,9 @@
 }
 
 .line {
-    display: block;
+    display: inline-block;
     font-family: $font-family-headings;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-regular;
 
     &__content {
         display: inline-block;

@@ -12,7 +12,7 @@
     }
 
     &__item {
-        background-color: $black-tint1;
+        background-color: $white;
         vertical-align: middle;
         display: block;
 
@@ -23,7 +23,7 @@
             text-decoration: none;
             position: relative;
             color: $white;
-            border: solid 2px $black-tint2;
+            box-shadow: 0 3px 20px 0 rgba($black, .075);
             overflow: hidden;
 
             &:hover {
@@ -34,10 +34,21 @@
                     opacity: 1;
                 }
             }
+
+            &:before {
+                content: '';
+                background-color: $site-color;
+                left: 0;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+            }
         }
 
         &--image {
-            background-color: $black-tint2;
+            background-color: $grey;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -77,13 +88,13 @@
         width: 100%;
         vertical-align: middle;
         text-align: center;
-        color: $black-tint2;
+        color: $white;
 
         &--title {
             font-size: rem(20);
             line-height: rem(24);
             font-family: $font-family-headings;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-regular;
             text-align: center;
         }
     }
@@ -94,23 +105,23 @@
         height: rem(72);
         width: rem(72);
         line-height: rem(64);
-        border: solid 4px $black-tint2;
-        color: $black-tint2;
+        border: solid 4px $white;
+        color: $white;
         border-radius: 50%;
         font-family: $font-family-fa;
-        font-weight: $font-weight-fa-bold;
+        font-weight: $font-weight-fa-normal;
         text-align: center;
         margin: 0 auto;
 
         &--web {
             &::before {
-                content: fa-content($fa-var-globe);
+                content: $icon-globe;
             }
         }
 
         &--camera {
             &::before {
-                content: fa-content($fa-var-camera);
+                content: $icon-camera;
             }
         }
 
@@ -118,7 +129,7 @@
             font-weight: $font-weight-fa-normal;
 
             &::before {
-                content: fa-content($fa-var-comments);
+                content: $icon-comments;
             }
         }
     }

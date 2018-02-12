@@ -1,3 +1,31 @@
-@include font-face('Montserrat', '/static/fonts/Montserrat/Montserrat-Bold', 700, normal, ttf);
-@include font-face('Ubuntu', '/static/fonts/Ubuntu/Ubuntu-Light', 300, normal, ttf);
-@include font-face('Ubuntu', '/static/fonts/Ubuntu/Ubuntu-Bold', 700, normal, ttf);
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto/Roboto-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto/Roboto-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('/static/fonts/Icomoon/icomoon.eot?cvqdir');
+    src: url('/static/fonts/Icomoon/icomoon.eot?cvqdir#iefix') format('embedded-opentype'),
+        url('/static/fonts/Icomoon/icomoon.ttf?cvqdir') format('truetype'),
+        url('/static/fonts/Icomoon/icomoon.woff?cvqdir') format('woff'),
+        url('/static/fonts/Icomoon/icomoon.svg?cvqdir#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -9,8 +9,8 @@
                             <ul class="grid">
                                 <li class="grid__item" v-for="item in items">
                                     <a class="grid__item--link" :href="item.url" :title="item.title" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" :data-ga-label="item.title" rel="noopener">
-                                        <amp-img width="500" height="281" layout="responsive" :src="item.image_url" :alt="item.title">
-                                            <div fallback>offline</div>
+                                        <amp-img width="500" height="281" layout="responsive" :src="item.image.url" :alt="item.title">
+                                            <amp-img fallback width="500" height="281" :alt="item.title" :src="item.image.fallback_url" />
                                         </amp-img>
                                         <article class="overlay">
                                             <div class="overlay__content">
@@ -57,7 +57,7 @@ import db from '../firebase.js'
 
 export default {
   firebase: {
-    items: db.ref('items').limitToLast(9)
+    items: db.ref('portfolio').limitToLast(9)
   }
 }
 </script>

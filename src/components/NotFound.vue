@@ -4,7 +4,7 @@
             <div class="column--flex-wrap">
                 <div class="column column--12-col">
                     <div class="info-box">
-                        <div class="info-box__content animate--fade-in">
+                        <div class="info-box__content">
                             <h1 class="info-box__title info-box__title--white">
                                 <div class="info-box__line info-box__title--large">
                                     <span class="info-box__line__content font-effect-wallpaper">Toto,</span>

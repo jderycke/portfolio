@@ -1,12 +1,13 @@
 {
-    "items": [
+    "portfolio": [
         {
             "id": 1,
             "title": "Camp above the clouds",
             "description": "Barranco camp on Kilimanjaro, last one before summit camp",
             "category": "camera",
             "tags": "abstract | art | indoor | musuem | sculpture",
-            "image_url": "/static/img/gallery/8.jpg",
+            "image_url": "/static/img/webp/gallery/8.webp",
+            "fallback_image_url": "/static/img/gallery/8.jpg",
             "url": "https://500px.com/photo/69997017/camp-above-the-clouds-by-jamie-de-rycke"
         },
         {
@@ -15,7 +16,8 @@
             "description": "Taken at the summit of Kilimanjaro looking back down the path up. Altered in LightRoom",
             "category": "camera",
             "tags": "ice | kilimanjaro | landscape | clouds | snow | mountain | outdoor | outdoors | outside",
-            "image_url": "/static/img/gallery/2.jpg",
+            "image_url": "/static/img/webp/gallery/2.webp",
+            "fallback_image_url": "/static/img/gallery/2.jpg",
             "url": "http://500px.com/photo/64405295/mountain-aummit-(kilimanjaro)-by-jamie-de-rycke"
         },
         {
@@ -24,7 +26,8 @@
             "description": "",
             "category": "camera",
             "tags": "sky | hdr | mountains | outdoor | architecture",
-            "image_url": "/static/img/gallery/44.jpg",
+            "image_url": "/static/img/webp/gallery/44.webp",
+            "fallback_image_url": "/static/img/gallery/44.jpg",
             "url": "https://500px.com/photo/233467877/machu-pichu-hdr-by-jamie-de-rycke"
         },
         {
@@ -33,7 +36,8 @@
             "description": "Taken for a monthly challenge project, the subject being low key. I've previously done an apple in high key so......",
             "category": "camera",
             "tags": "light beam | abstract | luminescence | light | luminosity | dark | fruit | red | apple | low key",
-            "image_url": "/static/img/gallery/46.jpg",
+            "image_url": "/static/img/webp/gallery/46.webp",
+            "fallback_image_url": "/static/img/gallery/46.jpg",
             "url": "https://500px.com/photo/239535789/low-key-fruit-by-jamie-de-rycke"
         },
         {
@@ -42,7 +46,8 @@
             "description": "'Transform your Home', website for Lucinda Griffith Design. built site with design input based on a existing template.",
             "category": "web",
             "tags": "UI | HTML | javascript | CSS",
-            "image_url": "/static/img/portfolio/lucindag-home.png",
+            "image_url": "/static/img/webp/portfolio/lucindag-home.webp",
+            "fallback_image_url": "/static/img/portfolio/lucindag-home.png",
             "url": "http://www.lucindagriffithdesign.com"
         },
         {
@@ -51,7 +56,8 @@
             "description": "",
             "category": "camera",
             "tags": "nature | animals | green | outside",
-            "image_url": "/static/img/gallery/41.jpg",
+            "image_url": "/static/img/webp/gallery/41.webp",
+            "fallback_image_url": "/static/img/gallery/41.jpg",
             "url": "https://500px.com/photo/206704051/sleepy-snail-by-jamie-de-rycke"
         },
         {
@@ -60,7 +66,8 @@
             "description": "Taken during a charity trek through the Atlas Mountains in Morocco to summit the 4 highest peaks in Northern Africa",
             "category": "camera",
             "tags": "",
-            "image_url": "/static/img/gallery/30.jpg",
+            "image_url": "/static/img/webp/gallery/30.webp",
+            "fallback_image_url": "/static/img/gallery/30.jpg",
             "url": "https://500px.com/photo/111960121/toubkal-summit-by-jamie-de-rycke"
         },
         {
@@ -69,7 +76,8 @@
             "description": "Taken for a monthly challenge project, the subject being high key.",
             "category": "camera",
             "tags": "floral | flower | indoor | white | high-key | still life",
-            "image_url": "/static/img/gallery/47.jpg",
+            "image_url": "/static/img/webp/gallery/47.webp",
+            "fallback_image_url": "/static/img/gallery/47.jpg",
             "url": "https://www.flickr.com/photos/jamiederycke/34900103214/"
         },
         {
@@ -78,7 +86,8 @@
             "description": "White rose, taken for a rule of thirds monthly challenge",
             "category": "camera",
             "tags": "floral | flower | indoor | white | dark | still life",
-            "image_url": "/static/img/gallery/45.jpg",
+            "image_url": "/static/img/webp/gallery/45.webp",
+            "fallback_image_url": "/static/img/gallery/45.jpg",
             "url": "https://500px.com/photo/235790443/white-rose-by-jamie-de-rycke"
         }
     ]

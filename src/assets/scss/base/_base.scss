@@ -17,9 +17,9 @@ body {
 body {
     font-feature-settings: 'liga';
     font-family: $font-family-default;
-    font-weight: $font-weight-normal;
-    color: $white;
-    background-color: $black;
+    font-weight: $font-weight-light;
+    color: $black;
+    background-color: $white;
     position: relative;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -61,7 +61,7 @@ figure {
     min-height: calc(100vh - 222px);
 
     @include media($screen-sm) {
-        padding-top: rem(48);
+        padding-top: rem(38);
     }
 
     &--no-padding {
@@ -135,7 +135,7 @@ figure {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-        min-height: rem(180);
+        min-height: rem(276);
 
         @include media($screen-sm) {
             background-image: url('/static/img/bg-lg-v3.jpg');
@@ -214,7 +214,11 @@ figure {
 
 .box {
     &__padding {
-        padding: rem(20) rem(10);
+        padding: 0 rem(10);
+
+        @include media($screen-sm) {
+            padding: rem(20) rem(10);
+        }
     }
 }
 
