@@ -31,6 +31,10 @@
 
         &__content {
             display: inline-block;
+
+            &--white {
+                color: $white;
+            }
         }
     }
 
@@ -39,5 +43,9 @@
         font-weight: $font-weight-light;
         font-size: rem(16);
         display: inline-block;
+
+        &--white {
+            color: $white;
+        }
     }
 }

@@ -42,9 +42,7 @@
         <div class="separator-section">
             <div class="container separator-section__container">
                 <blockquote>
-                    <span class="line">
-                        <span class="line__content font-effect-wallpaper">Creativity is contagious, pass it on.</span>
-                    </span>
+                    <span class="line font-effect-wallpaper">Creativity is contagious, pass it on.</span>
                     <cite>Albert Enstein</cite>
                 </blockquote>
             </div>

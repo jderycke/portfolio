@@ -33,9 +33,7 @@
                 <div class="row separator-section">
                     <div class="container separator-section__container">
                         <blockquote>
-                            <span class="line">
-                                <span class="line__content font-effect-wallpaper">If you can dream it, you can do it.</span>
-                            </span>
+                            <span class="line font-effect-wallpaper">If you can dream it, you can do it.</span>
                             <cite>Walt Disney</cite>
                         </blockquote>
                     </div>

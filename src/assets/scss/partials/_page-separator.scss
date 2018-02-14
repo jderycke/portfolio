@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 auto;
     height: rem(180);
-    background-color: $site-color;
+    background-color: $grey-tint2;
     border-top: solid 2px $grey;
 
     &__container {
@@ -23,7 +23,7 @@
             border-left: 0;
             display: inline-block;
             text-align: left;
-            color: $white;
+            color: $site-color;
             margin: 0;
             padding: 0;
             border-right: 0;
@@ -35,6 +35,10 @@
                 font-size: rem(28);
                 line-height: rem(38);
                 text-align: left;
+            }
+
+            cite {
+                color: $black-tint1;
             }
         }
     }
@@ -78,12 +82,8 @@
 }
 
 .line {
-    display: inline-block;
+    display: block;
     font-family: $font-family-headings;
     font-weight: $font-weight-regular;
-
-    &__content {
-        display: inline-block;
-        text-align: left;
-    }
+    text-align: left;
 }

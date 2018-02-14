@@ -14,12 +14,8 @@
         <div class="separator-section">
             <div class="container separator-section__container">
                 <blockquote>
-                    <span class="line">
-                        <span class="line__content font-effect-wallpaper">It is not our abilities that show who we truly are.</span>
-                    </span>
-                    <span class="line">
-                        <span class="line__content font-effect-wallpaper">It is our choices.</span>
-                    </span>
+                    <span class="line font-effect-wallpaper">It is not our abilities that show who we truly are.</span>
+                    <span class="line font-effect-wallpaper">It is our choices.</span>
                     <cite>Professor Albus Percival Wulfric Brian Dumbledore</cite>
                 </blockquote>
             </div>

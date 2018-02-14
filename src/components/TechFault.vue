@@ -7,10 +7,10 @@
                         <div class="info-box__content">
                             <h1 class="info-box__title info-box__title--white">
                                 <div class="info-box__line  info-box__title--large">
-                                    <span class="info-box__line__content font-effect-wallpaper">Houston,</span>
+                                    <span class="info-box__line__content info-box__line__content--white">Houston,</span>
                                 </div>
                                 <div class="info-box__line">
-                                    <span class="info-box__line__content font-effect-wallpaper">We have a problem!</span>
+                                    <span class="info-box__line__content info-box__line__content--white">We have a problem!</span>
                                 </div>
                             </h1>
                             <p class="info-box__sub-title info-box__sub-title--white">Something has gone technically wrong.</p>

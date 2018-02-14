@@ -7,10 +7,10 @@
                         <div class="info-box__content">
                             <h1 class="info-box__title info-box__title--white">
                                 <div class="info-box__line info-box__title--large">
-                                    <span class="info-box__line__content font-effect-wallpaper">Toto,</span>
+                                    <span class="info-box__line__content info-box__line__content--white">Toto,</span>
                                 </div>
                                 <div class="info-box__line">
-                                    <span class="info-box__line__content font-effect-wallpaper">I've got a feeling we're not in Kansas anymore!</span>
+                                    <span class="info-box__line__content info-box__line__content--white">I've got a feeling we're not in Kansas anymore!</span>
                                 </div>
                             </h1>
                             <p class="info-box__sub-title info-box__sub-title--white">The page you were looking for appears to have been melted by water, moved, deleted or no simply longer exsits.</p>
