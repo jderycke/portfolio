@@ -58,15 +58,10 @@ figure {
     z-index: 1;
     padding-top: rem(65);
     padding-bottom: $gutter;
-    min-height: calc(100vh - 222px);
+    min-height: calc(100vh - 184px);
 
     @include media($screen-sm) {
         padding-top: rem(38);
-    }
-
-    &--no-padding {
-        padding-top: 0;
-        padding-bottom: 0;
     }
 }
 
@@ -82,35 +77,9 @@ figure {
         height: 100%;
         vertical-align: middle;
     }
-
-    &--bottom {
-        display: table;
-        height: 100%;
-        vertical-align: bottom;
-    }
 }
 
 .display {
-    &--table {
-        display: table;
-    }
-
-    &--table-cell {
-        display: table-cell;
-    }
-
-    &--inline {
-        display: inline-block;
-    }
-
-    &--block {
-        display: block;
-    }
-
-    &--none {
-        display: none;
-    }
-
     &--block-mobile {
         display: block;
 
@@ -128,106 +97,10 @@ figure {
     }
 }
 
-.background {
-    &__image {
-        background-image: url('/static/img/bg-md-v3.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        min-height: rem(276);
-
-        @include media($screen-sm) {
-            background-image: url('/static/img/bg-lg-v3.jpg');
-        }
-
-        &--about {
-            background-image: url('/static/img/bg-md-v2.jpg');
-
-            @include media($screen-sm) {
-                background-image: url('/static/img/bg-lg-v2.jpg');
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba($black, .4);
-        }
-    }
-}
-
-.border {
-    &__right {
-        @include media($screen-sm) {
-            border-right: solid 2px $grey;
-        }
-    }
-
-    &__top {
-        border-top: solid 2px $grey;
-
-        &--mobile {
-            border-top: solid 2px $grey;
-
-            @include media($screen-sm) {
-                border-top: 0;
-            }
-        }
-    }
-}
-
 .height {
     &__full {
-        height: 100%;
-    }
-
-    &__half {
         @include media($screen-sm) {
-            height: 50%;
-        }
-    }
-
-    &__screen {
-        @include media($screen-sm) {
-            height: calc(100vh - 42px);
-        }
-    }
-}
-
-.row {
-    &__home {
-        padding-top: rem(65);
-
-        @include media($screen-sm) {
-            padding-top: 0;
-            height: calc(100% - 180px);
-        }
-    }
-}
-
-.box {
-    &__padding {
-        padding: 0 rem(10);
-
-        @include media($screen-sm) {
-            padding: rem(20) rem(10);
-        }
-    }
-}
-
-.mobile {
-    &__padding {
-        padding: rem(60) rem(10);
-
-        @include media($screen-sm) {
-            padding: 0;
+            height: calc(100vh - 282px);
         }
     }
 }

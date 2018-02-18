@@ -1,24 +1,37 @@
 <template>
-    <section class="page page--no-padding separator-section separator-section__picture full separator-section__full-height separator-section__error">
-        <div class="container main-content">
-            <div class="column--flex-wrap">
-                <div class="column column--12-col">
-                    <div class="info-box">
-                        <div class="info-box__content">
-                            <h1 class="info-box__title info-box__title--white">
-                                <div class="info-box__line info-box__title--large">
-                                    <span class="info-box__line__content info-box__line__content--white">Toto,</span>
-                                </div>
-                                <div class="info-box__line">
-                                    <span class="info-box__line__content info-box__line__content--white">I've got a feeling we're not in Kansas anymore!</span>
-                                </div>
-                            </h1>
-                            <p class="info-box__sub-title info-box__sub-title--white">The page you were looking for appears to have been melted by water, moved, deleted or no simply longer exsits.</p>
-                            <p class="info-box__sub-title info-box__sub-title--white">You can go <a href="javascript:history.back()" target="_self" title="go back" class="info-box__link">back</a> to where you were or you can try heading back <a href="/" target="_self" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home"class="info-box__link">home</a>.</p>
+    <div>
+        <section class="page page--no-padding">
+            <div class="container">
+                <div class="column--flex-wrap height__full">
+                    <div class="column column--6-col">
+                        <amp-img width="800" height="532" layout="responsive" src="/static/img/WebP/bg-error-md.webp" alt="Page not found!" class="info-box__img">
+                            <amp-img fallback width="800" height="532" src="/static/img/bg-error-md.jpg" alt="Page not found!">
+                                <div fallback></div>
+                            </amp-img>
+                        </amp-img>
+                    </div>
+                    <div class="column column--6-col">
+                        <div class="display--block-mobile height__full mobile__padding">
+                            <div class="align--middle display--block-cell-mobile">
+                                <h1 class="info-box__title">
+                                    <span class="info-box__line info-box__title--large">Toto,</span>
+                                    <span class="info-box__line">I've got a feeling we're not in Kansas anymore!</span>
+                                </h1>
+                                <p class="info-box__sub-title">The page you were looking for appears to have been melted by water, moved, deleted or no simply longer exists.</p>
+                                <p class="info-box__sub-title">You can go <a href="javascript:history.back()" target="_self" title="go back" class="info-box__link">back</a> to where you were or you can try heading back <a href="/" target="_self" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home"class="info-box__link">home</a>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <div class="row separator-section">
+            <div class="container separator-section__container">
+                <blockquote>
+                    <span class="line">If you can dream it, you can do it.</span>
+                    <cite>Walt Disney</cite>
+                </blockquote>
+            </div>
         </div>
-    </section>
+    </div>
 </template>

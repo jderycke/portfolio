@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section id="about" class="page">
+        <section class="page">
             <div class="column--flex-wrap">
                 <div class="container">
                     <div class="column column--6-col column--3-offset">
@@ -15,8 +15,8 @@
         <div class="row separator-section">
             <div class="container separator-section__container">
                 <blockquote>
-                    <span class="line font-effect-wallpaper">Sometimes life hits you in the head with a brick.</span>
-                    <span class="line font-effect-wallpaper">Don't lose faith.</span>
+                    <span class="line">Sometimes life hits you in the head with a brick.</span>
+                    <span class="line">Don't lose faith.</span>
                     <cite>Steve Jobs</cite>
                 </blockquote>
             </div>

@@ -8,7 +8,9 @@
 
                     <figure v-if="item.image.url">
                         <amp-img width="500" height="281" layout="responsive" :src="item.image.url" :alt="item.image.caption">
-                            <amp-img fallback width="500" height="281" :alt="item.image.caption" :src="item.image.fallback_url" />
+                            <amp-img fallback width="500" height="281" :alt="item.image.caption" :src="item.image.fallback_url">
+                                <div fallback></div>
+                            </amp-img>
                         </amp-img>
                     </figure>
 

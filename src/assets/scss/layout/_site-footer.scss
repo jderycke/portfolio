@@ -1,6 +1,6 @@
 .site-footer {
     width: 100%;
-    border-top: solid 2px $grey;
+    border-top: solid 2px $grey-tint2;
     background-color: $white;
     margin-bottom: rem(42);
 
@@ -19,7 +19,7 @@
     }
 
     &__copyright {
-        color: #727272;
+        color: $grey-tint1;
         font-size: rem(16);
         line-height: rem(26);
         margin: rem(10) auto;

@@ -10,30 +10,16 @@
     }
 
     &__title {
-        font-size: rem(32);
-        line-height: rem(42);
+        font-size: rem(22);
+        line-height: rem(32);
 
         &--large {
-            font-size: rem(42);
-            line-height: rem(52);
+            font-size: rem(32);
+            line-height: rem(42);
 
             @include media($screen-sm) {
-                font-size: rem(62);
-                line-height: rem(72);
-            }
-        }
-    }
-
-    &__line {
-        display: block;
-        font-family: $font-family-headings;
-        font-weight: $font-weight-thin;
-
-        &__content {
-            display: inline-block;
-
-            &--white {
-                color: $white;
+                font-size: rem(52);
+                line-height: rem(62);
             }
         }
     }
@@ -43,9 +29,24 @@
         font-weight: $font-weight-light;
         font-size: rem(16);
         display: inline-block;
+    }
 
-        &--white {
-            color: $white;
+    &__line {
+        display: block;
+        font-family: $font-family-headings;
+        font-weight: $font-weight-thin;
+    }
+
+    &__img {
+        border-top: solid 2px $site-color;
+        box-shadow: 0 3px 20px 0 rgba($black, .2);
+        margin-bottom: rem(20);
+
+        @include media($screen-sm) {
+            position: absolute;
+            top: calc(50% - 266px);
+            left: 0;
+            width: 750px;
         }
     }
 }

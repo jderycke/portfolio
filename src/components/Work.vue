@@ -10,7 +10,9 @@
                                 <li class="grid__item" v-for="item in items">
                                     <a class="grid__item--link" :href="item.url" :title="item.title" target="_blank" data-ga-category="Portfolio" data-ga-action="Click" :data-ga-label="item.title" rel="noopener">
                                         <amp-img width="500" height="281" layout="responsive" :src="item.image.url" :alt="item.title">
-                                            <amp-img fallback width="500" height="281" :alt="item.title" :src="item.image.fallback_url" />
+                                            <amp-img fallback width="500" height="281" :alt="item.title" :src="item.image.fallback_url">
+                                                <div fallback></div>
+                                            </amp-img>
                                         </amp-img>
                                         <article class="overlay">
                                             <div class="overlay__content">
@@ -42,7 +44,7 @@
         <div class="separator-section">
             <div class="container separator-section__container">
                 <blockquote>
-                    <span class="line font-effect-wallpaper">Creativity is contagious, pass it on.</span>
+                    <span class="line">Creativity is contagious, pass it on.</span>
                     <cite>Albert Enstein</cite>
                 </blockquote>
             </div>
