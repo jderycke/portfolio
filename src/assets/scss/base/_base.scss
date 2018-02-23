@@ -62,7 +62,13 @@ figure {
 
     @include media($screen-sm) {
         padding-top: rem(38);
+
+        &--no-padding {
+            padding-top: 0
+        }
     }
+
+
 }
 
 .align {
@@ -79,28 +85,10 @@ figure {
     }
 }
 
-.display {
-    &--block-mobile {
-        display: block;
-
-        @include media($screen-sm) {
-            display: table;
-        }
-    }
-
-    &--block-cell-mobile {
-        display: block;
-
-        @include media($screen-sm) {
-            display: table-cell;
-        }
-    }
-}
-
 .height {
     &__full {
         @include media($screen-sm) {
-            height: calc(100vh - 282px);
+            height: calc(100vh - 204px);
         }
     }
 }

@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const SWPrecacheWebPackPlugin = require('sw-precache-webpack-plugin')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -122,10 +122,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
-    new SWPrecacheWebPackPlugin({
+    new SWPrecacheWebpackPlugin({
       cacheId: 'jdr-portfolio',
       filename: '/sw.js',
-      staticFileGlobs: ['**/static/**/*{js,html,css}'],
+      staticFileGlobs: ['**/portfolio/static/**/*.{js,html,css}'],
       minify: true,
       stripPrefix: '/'
     })

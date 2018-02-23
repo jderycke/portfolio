@@ -1,25 +1,44 @@
 .info-box {
-    display: table;
-    align-items: center;
+    position: relative;
     margin: 0 auto;
-    height: calc(100vh - 42px);
 
-    &__content {
-        display: table-cell;;
-        vertical-align: middle;
+    @include media($screen-md) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        display: block;
+        float: left;
+        margin: rem(20) auto;
+
+        @include media($screen-sm) {
+            float: none;
+            margin: 0 auto;
+        }
+
+        @include media($screen-md) {
+            z-index: 2;
+            position: absolute;
+            left: 0;
+        }
+
+        @include media($screen-lg) {
+            left: rem(55);
+        }
     }
 
     &__title {
-        font-size: rem(22);
-        line-height: rem(32);
+        font-family: $font-family-headings;
+        font-weight: $font-weight-thin;
+        font-size: rem(26);
 
         &--large {
             font-size: rem(32);
-            line-height: rem(42);
 
             @include media($screen-sm) {
-                font-size: rem(52);
-                line-height: rem(62);
+                font-size: rem(62);
             }
         }
     }
@@ -29,24 +48,45 @@
         font-weight: $font-weight-light;
         font-size: rem(16);
         display: inline-block;
+        margin-bottom: 1px;
+
+        &:first-of-type {
+            margin-top: rem(15);
+        }
     }
 
     &__line {
-        display: block;
-        font-family: $font-family-headings;
-        font-weight: $font-weight-thin;
+        background-color: $site-color;
+        color: $white;
+        display: inline-block;
+        margin-bottom: 1px;
+        padding: rem(5) rem(10);
+        clear: both;
+        float: left;
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: underline;
     }
 
     &__img {
         border-top: solid 2px $site-color;
         box-shadow: 0 3px 20px 0 rgba($black, .2);
-        margin-bottom: rem(20);
+        min-width: rem(355);
+        display: block;
+        clear: both;
 
         @include media($screen-sm) {
+            clear: none;
             position: absolute;
-            top: calc(50% - 266px);
-            left: 0;
-            width: 750px;
+            min-width: rem(550);
+            right: 0;
+        }
+
+        @include media($screen-lg) {
+            min-width: rem(650);
+            right: rem(55);
         }
     }
 }

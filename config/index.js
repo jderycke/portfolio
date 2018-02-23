@@ -5,6 +5,35 @@
 const path = require('path')
 
 module.exports = {
+  build: {
+    index: path.resolve(__dirname, '../dist/index.html'),
+
+    // Paths
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+
+    /**
+     * Source Maps
+     */
+
+    productionSourceMap: false,
+    // https://webpack.js.org/configuration/devtool/#production
+    devtool: '#source-map',
+
+    // Gzip off by default as many popular static hosts such as
+    // Surge or Netlify already gzip all static assets for you.
+    // Before setting to `true`, make sure to:
+    // npm install --save-dev compression-webpack-plugin
+    productionGzip: false,
+    productionGzipExtensions: ['js', 'css'],
+
+    // Run the build command with an extra argument to
+    // View the bundle analyzer report after build finishes:
+    // `npm run build --report`
+    // Set to `true` or `false` to always turn it on or off
+    bundleAnalyzerReport: process.env.npm_config_report
+  },
   dev: {
 
     // Paths
@@ -13,7 +42,7 @@ module.exports = {
     proxyTable: {},
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '192.168.1.88', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
@@ -46,36 +75,5 @@ module.exports = {
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
     cssSourceMap: false,
-  },
-
-  build: {
-    // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
-
-    // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-
-    /**
-     * Source Maps
-     */
-
-    productionSourceMap: true,
-    // https://webpack.js.org/configuration/devtool/#production
-    devtool: '#source-map',
-
-    // Gzip off by default as many popular static hosts such as
-    // Surge or Netlify already gzip all static assets for you.
-    // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
-    productionGzip: true,
-    productionGzipExtensions: ['js', 'css'],
-
-    // Run the build command with an extra argument to
-    // View the bundle analyzer report after build finishes:
-    // `npm run build --report`
-    // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
   }
 }
