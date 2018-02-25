@@ -42,6 +42,43 @@
             }
         }
     }
+
+    &__picture {
+        background-image: url('/static/img/bg-md-v3.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        @include media($screen-sm) {
+            background-image: url('/static/img/bg-lg-v3.jpg');
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: calc(100vh - 42px);
+            width: 100vw;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba($black, .4);
+        }
+    }
+
+    &__error {
+        background-image: url('/static/img/bg-error-md.jpg');
+
+        @include media($screen-sm) {
+            background-image: url('/static/img/bg-error-lg.jpg');
+        }
+    }
+
+    &__full-height {
+        min-height: calc(100vh - 44px);
+        border-top: 0;
+    }
 }
 
 .line {

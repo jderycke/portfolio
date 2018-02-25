@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const workboxPlugin = require('workbox-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 const env = process.env.NODE_ENV === 'testing'
@@ -121,6 +122,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
+
+    new workboxPlugin({
+      globDirectory: 'dist',
+      globPatterns: ['**/*.{html,js,jpg,png,webp}'],
+      swDest: 'dist/sw.js',
+      clientsClaim: true,
+      skipWaiting: true
+    }),
 
     new SWPrecacheWebpackPlugin({
       cacheId: 'jdr-portfolio',

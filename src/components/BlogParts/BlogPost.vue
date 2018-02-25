@@ -1,49 +1,44 @@
 <template>
-      <div class="column--flex-wrap post page" v-if="post" >
-          <article class="article column--6-col column--3-offset">
-              <header class="article__header">
-                  <h1 class="h2">{{ title }}</h1>
+    <div class="column--flex-wrap post page" v-if="post" >
+        <article class="article column--6-col column--3-offset">
+            <header class="article__header">
+                <h1 class="h2">{{ title }}</h1>
 
-                  <ul class="article__meta article__meta--page">
-                      <li class="article__meta__item">
-                          By
-                          <router-link class="post__author"
-                              :to="`/blog/author/${kebabify(author)}/`">{{ author }}</router-link>
-                      </li>
-                      <li class="article__meta__item">
-                          <time :datetime="published">{{published | formatDate}}</time>
-                      </li>
-                  </ul>
-              </header>
+                <ul class="article__meta article__meta--page">
+                    <li class="article__meta__item">
+                        By
+                        <router-link class="post__author"
+                            :to="`/blog/author/${kebabify(author)}/`">{{ author }}</router-link>
+                    </li>
+                    <li class="article__meta__item">
+                        <time :datetime="published">{{published | formatDate}}</time>
+                    </li>
+                </ul>
+            </header>
 
-              <figure v-if="image_url">
-                  <amp-img width="500" height="281" layout="responsive" :src="image_url" :alt="image_caption">
-                      <amp-img fallback width="500" height="281" :alt="image_caption" :src="fallback_image_url" />
-                  </amp-img>
-                  <figcaption>{{image_caption}}</figcaption>
-              </figure>
+            <figure v-if="image_url">
+                <amp-img width="500" height="281" layout="responsive" :src="image_url" :alt="image_caption">
+                    <amp-img fallback width="500" height="281" :alt="image_caption" :src="fallback_image_url" />
+                </amp-img>
+                <figcaption>{{image_caption}}</figcaption>
+            </figure>
 
-              <section class="article__content" v-html="content"></section>
+            <section class="article__content" v-html="content"></section>
 
-              <footer class="article__footer">
-                  <vue-disqus v-if="commentsReady" shortname="vue-blog-demo"
-                    :key="post" :identifier="post" :url="`https://vue-blog-demo.netlify.com/read/${post}`"/>
-              </footer>
-          </article>
-      </div>
+            <footer class="article__footer">
+                <vue-disqus v-if="commentsReady" shortname="vue-blog-demo"
+                  :key="post" :identifier="post" :url="`https://vue-blog-demo.netlify.com/read/${post}`"/>
+            </footer>
+        </article>
+    </div>
 </template>
 
 <script>
-import VueDisqus from 'vue-disqus/VueDisqus'
 import { kebabify } from '../../helpers'
-import db from '../../firebase.js'
 
 export default {
   name: 'blog-post',
   resource: 'BlogPost',
-  components: {
-    VueDisqus
-  },
   props: {
     post: String
   },
@@ -57,7 +52,8 @@ export default {
     image_url: '',
     fallback_image_url: '',
     image_caption: '',
-    commentsReady: false
+    commentsReady: false,
+    errors: []
   }),
 
   watch: {
@@ -76,22 +72,29 @@ export default {
       }, 1000)
     },
     buildPost: function (postId) {
-      var data = {}
+      const url = '/static/data/portfolio.json'
 
-      db.ref('blog').orderByChild('id').startAt(postId).limitToFirst(1).on('child_added', function (snapshot) {
-        data = snapshot.val()
-      })
-
-      if (data) {
-        this.title = data.title
-        this.author = data.meta.author
-        this.content = data.content
-        this.published = data.meta.published
-        this.description = data.meta.description
-        this.image_url = data.image.url
-        this.fallback_image_url = data.image.fallback_url
-        this.image_caption = data.image.caption
-      }
+      this.$http.get(url)
+        .then((response) => {
+          return response.json()
+        })
+        .then((data) => {
+          for (var i = 0; i < data.blog.length; i++) {
+            if (data.blog[i].id === postId) {
+              this.title = data.blog[i].title
+              this.author = data.blog[i].meta.author
+              this.content = data.blog[i].content
+              this.published = data.blog[i].meta.published
+              this.description = data.blog[i].meta.description
+              this.image_url = data.blog[i].image.url
+              this.fallback_image_url = data.blog[i].image.fallback_url
+              this.image_caption = data.blog[i].image.caption
+            }
+          }
+        })
+        .catch((err) => {
+          this.errors.push(err)
+        })
     }
   },
 

@@ -42,12 +42,6 @@
         "key" : "Cache-Control",
         "value" : "max-age=604800"
       } ]
-    }, {
-      "source" : "404.html",
-      "headers" : [ {
-        "key" : "Cache-Control",
-        "value" : "max-age=300"
-      } ]
     } ],
     "cleanUrls": true,
     "trailingSlash": false

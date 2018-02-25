@@ -1,10 +1,9 @@
 <template>
     <div class="polling__content" v-if="items && items.length">
         <div class="grid">
-            <article v-for="item in items" class="grid__item article">
+            <article v-for="item in items" class="grid__item article" v-bind:key="item.id">
                 <router-link class="grid__item--link"
-                    :to="`/blog/post/${item.id}/`"
-                    @click.native="scrollTo(0, 220, 560)">
+                    :to="`/blog/post/${item.id}/`">
 
                     <figure v-if="item.image.url">
                         <amp-img width="500" height="281" layout="responsive" :src="item.image.url" :alt="item.image.caption">
@@ -63,13 +62,9 @@
 </template>
 
 <script>
-import { scrollTo } from '../../helpers'
-import db from '../../firebase.js'
-
 export default {
   name: 'blog-feed',
   resource: 'BlogFeed',
-
   props: {
     filters: {
       type: Object,
@@ -77,16 +72,28 @@ export default {
     }
   },
 
-  firebase: {
-    items: db.ref('blog')
+  data: () => ({
+    items: [],
+    errors: []
+  }),
+
+  created () {
+    const url = '/static/data/portfolio.json'
+
+    this.$http.get(url)
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        this.items = data.blog
+      })
+      .catch((err) => {
+        this.errors.push(err)
+      })
   },
 
   computed: {
     reading () { return this.filters.post }
-  },
-
-  methods: {
-    scrollTo
   }
 }
 </script>
