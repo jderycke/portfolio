@@ -3,29 +3,19 @@
     margin: 0 auto;
 
     @include media($screen-md) {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        justify-content: start;
         align-items: center;
     }
 
     &__text {
         display: block;
         float: left;
-        margin: rem(20) auto;
-
-        @include media($screen-sm) {
-            float: none;
-            margin: 0 auto;
-        }
+        margin: rem(20) 0;
+        z-index: 2;
 
         @include media($screen-md) {
-            z-index: 2;
-            position: absolute;
-            left: 0;
-        }
-
-        @include media($screen-lg) {
-            left: rem(55);
+            margin: rem(20);
         }
     }
 
@@ -33,6 +23,7 @@
         font-family: $font-family-headings;
         font-weight: $font-weight-thin;
         font-size: rem(26);
+        margin-bottom: 0;
 
         &--large {
             font-size: rem(32);
@@ -71,22 +62,20 @@
     }
 
     &__img {
-        border-top: solid 2px $site-color;
-        box-shadow: 0 3px 20px 0 rgba($black, .2);
-        min-width: rem(355);
-        display: block;
         clear: both;
 
-        @include media($screen-sm) {
+        @include media($screen-md) {
             clear: none;
             position: absolute;
-            min-width: rem(550);
             right: 0;
+            width: 100%;
+            filter: grayscale(100%);
         }
+    }
 
-        @include media($screen-lg) {
-            min-width: rem(650);
-            right: rem(55);
-        }
+    &__quote {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }

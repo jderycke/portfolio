@@ -49,6 +49,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        border-top: 0;
 
         @include media($screen-sm) {
             background-image: url('/static/img/bg-lg-v3.jpg');
@@ -63,21 +64,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba($black, .4);
+            background-color: rgba($black, .25);
         }
-    }
 
-    &__error {
-        background-image: url('/static/img/bg-error-md.jpg');
+        &--error {
+            background-image: url('/static/img/bg-error-md.jpg');
 
-        @include media($screen-sm) {
-            background-image: url('/static/img/bg-error-lg.jpg');
+            @include media($screen-sm) {
+                background-image: url('/static/img/bg-error-lg.jpg');
+            }
         }
-    }
-
-    &__full-height {
-        min-height: calc(100vh - 44px);
-        border-top: 0;
     }
 }
 

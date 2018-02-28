@@ -3,7 +3,7 @@
         <section class="page">
             <div class="column--flex-wrap">
                 <div class="container">
-                    <div class="column column--6-col column--3-offset">
+                    <div class="column column--8-col column--2-offset">
                         <h1 class="h2">About me<em>.</em></h1>
                         <p>Hello, My name is Jamie De Rycke and I am a multi-skilled web developer from North Wales.</p>
                         <p>I'm inspired by clean, minimalistic design. Whether it be digital or physical, I believe design is all about solving problems in the simplest possible manner. I am fully proficient in HTML, CSS &amp; Javascript and not afraid to learn something new like SASS, Java, AngularJS or Vue.js. I have over 12 years of experience. I have a passion for pixel perfection, clean code, and semantics.</p>
@@ -23,3 +23,11 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  name: 'about'
+}
+</script>
+
+

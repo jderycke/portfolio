@@ -1,7 +1,7 @@
 .site-footer {
     width: 100%;
     border-top: solid 2px $grey-tint2;
-    background-color: $white;
+    background-color: $grey;
     margin-bottom: rem(42);
 
     @include media($screen-sm) {
@@ -19,7 +19,7 @@
     }
 
     &__copyright {
-        color: $grey-tint1;
+        color: $black-tint1;
         font-size: rem(16);
         line-height: rem(26);
         margin: rem(10) auto;

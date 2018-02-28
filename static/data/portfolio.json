@@ -5,7 +5,7 @@
     "image" : {
       "caption" : "Machu Pichu, Peru",
       "fallback_url" : "/static/img/gallery/44.jpg",
-      "url" : "/static/img/WebP/gallery/44.webp"
+      "url" : "/static/img/webp/gallery/44.webp"
     },
     "meta" : {
       "author" : "Jamie De Rycke",
@@ -20,7 +20,7 @@
     "image" : {
       "caption" : "Moneysupermarket Group Charity Challenge website",
       "fallback_url" : "/static/img/portfolio/msmgroupcharitychallenge.png",
-      "url" : "/static/img/WebP/portfolio/msmgroupcharitychallenge.webp"
+      "url" : "/static/img/webp/portfolio/msmgroupcharitychallenge.webp"
     },
     "meta" : {
       "author" : "Jamie De Rycke",
@@ -80,7 +80,7 @@
     "image" : {
       "caption" : "Summit of Mt Toubkal - High Atlas Mountains, Morroco",
       "fallback_url" : "/static/img/gallery/30.jpg",
-      "url" : "/static/img/WebP/gallery/30.webp"
+      "url" : "/static/img/webp/gallery/30.webp"
     },
     "meta" : {
       "author" : "Jamie De Rycke",
@@ -110,7 +110,7 @@
     "image" : {
       "caption" : "World Elephant Day pic",
       "fallback_url" : "/static/img/gallery/5.jp",
-      "url" : "/static/img/WebP/gallery/5.webp"
+      "url" : "/static/img/webp/gallery/5.webp"
     },
     "meta" : {
       "author" : "Jamie De Rycke",
@@ -125,7 +125,7 @@
     "image" : {
       "caption" : "Summit of Kilimanjaro",
       "fallback_url" : "/static/img/gallery/2.jpg",
-      "url" : "/static/img/WebP/gallery/2.webp"
+      "url" : "/static/img/webp/gallery/2.webp"
     },
     "meta" : {
       "author" : "Jamie De Rycke",
@@ -141,7 +141,7 @@
     "id" : 0,
     "image" : {
       "fallback_url" : "/static/img/gallery/8.jpg",
-      "url" : "/static/img/WebP/gallery/8.webp"
+      "url" : "/static/img/webp/gallery/8.webp"
     },
     "tags" : "abstract | art | indoor | musuem | sculpture",
     "title" : "Camp above the clouds",
@@ -152,7 +152,7 @@
     "id" : 1,
     "image" : {
       "fallback_url" : "/static/img/gallery/2.jpg",
-      "url" : "/static/img/WebP/gallery/2.webp"
+      "url" : "/static/img/webp/gallery/2.webp"
     },
     "tags" : "ice | kilimanjaro | landscape | clouds | snow | mountain | outdoor | outdoors | outside",
     "title" : "Mountain Summit (Kilimanjaro)",
@@ -163,7 +163,7 @@
     "id" : 2,
     "image" : {
       "fallback_url" : "/static/img/gallery/44.jpg",
-      "url" : "/static/img/WebP/gallery/44.webp"
+      "url" : "/static/img/webp/gallery/44.webp"
     },
     "tags" : "sky | hdr | mountains | outdoor | architecture",
     "title" : "Machu Picchu HDR",
@@ -174,7 +174,7 @@
     "id" : 3,
     "image" : {
       "fallback_url" : "/static/img/gallery/46.jpg",
-      "url" : "/static/img/WebP/gallery/46.webp"
+      "url" : "/static/img/webp/gallery/46.webp"
     },
     "tags" : "light beam | abstract | luminescence | light | luminosity | dark | fruit | red | apple | low key",
     "title" : "Low key fruit",
@@ -185,7 +185,7 @@
     "id" : 4,
     "image" : {
       "fallback_url" : "/static/img/portfolio/lucindag-home.png",
-      "url" : "/static/img/WebP/portfolio/lucindag-home.webp"
+      "url" : "/static/img/webp/portfolio/lucindag-home.webp"
     },
     "tags" : "UI | HTML | javascript | CSS",
     "title" : "Lucinda Griffith Design",
@@ -196,7 +196,7 @@
     "id" : 5,
     "image" : {
       "fallback_url" : "/static/img/gallery/41.jpg",
-      "url" : "/static/img/WebP/gallery/41.webp"
+      "url" : "/static/img/webp/gallery/41.webp"
     },
     "tags" : "nature | animals | green | outside",
     "title" : "Sleepy snail",
@@ -207,7 +207,7 @@
     "id" : 6,
     "image" : {
       "fallback_url" : "/static/img/gallery/30.jpg",
-      "url" : "/static/img/WebP/gallery/30.webp"
+      "url" : "/static/img/webp/gallery/30.webp"
     },
     "tags" : "",
     "title" : "Toubkal Summit",
@@ -218,7 +218,7 @@
     "id" : 7,
     "image" : {
       "fallback_url" : "/static/img/gallery/47.jpg",
-      "url" : "/static/img/WebP/gallery/47.webp"
+      "url" : "/static/img/webp/gallery/47.webp"
     },
     "tags" : "floral | flower | indoor | white | high-key | still life",
     "title" : "High key fruit",
@@ -229,10 +229,44 @@
     "id" : 8,
     "image" : {
       "fallback_url" : "/static/img/gallery/45.jpg",
-      "url" : "/static/img/WebP/gallery/45.webp"
+      "url" : "/static/img/webp/gallery/45.webp"
     },
     "tags" : "floral | flower | indoor | white | dark | still life",
     "title" : "White rose",
     "url" : "https://500px.com/photo/235790443/white-rose-by-jamie-de-rycke"
-  } ]
+  } ],
+  "featured" : [ {
+    "category" : "camera",
+    "description" : "Taken during a charity trek through the Atlas Mountains in Morocco to summit the 4 highest peaks in Northern Africa",
+    "id" : 6,
+    "image" : {
+      "fallback_url" : "/static/img/gallery/30.jpg",
+      "url" : "/static/img/webp/gallery/30.webp"
+    },
+    "tags" : "",
+    "title" : "Toubkal Summit",
+    "url" : "https://500px.com/photo/111960121/toubkal-summit-by-jamie-de-rycke"
+    }, {
+    "category" : "camera",
+    "description" : "Barranco camp on Kilimanjaro, last one before summit camp",
+    "id" : 0,
+    "image" : {
+      "fallback_url" : "/static/img/gallery/8.jpg",
+      "url" : "/static/img/webp/gallery/8.webp"
+    },
+    "tags" : "abstract | art | indoor | musuem | sculpture",
+    "title" : "Camp above the clouds",
+    "url" : "https://500px.com/photo/69997017/camp-above-the-clouds-by-jamie-de-rycke"
+  }, {
+    "category" : "camera",
+    "description" : "",
+    "id" : 2,
+    "image" : {
+      "fallback_url" : "/static/img/gallery/44.jpg",
+      "url" : "/static/img/webp/gallery/44.webp"
+    },
+    "tags" : "sky | hdr | mountains | outdoor | architecture",
+    "title" : "Machu Picchu HDR",
+    "url" : "https://500px.com/photo/233467877/machu-pichu-hdr-by-jamie-de-rycke"
+  }]
 }

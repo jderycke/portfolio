@@ -1,5 +1,5 @@
 <template>
-    <section class="page page--no-padding">
+    <section class="page page--no-padding separator-section separator-section__picture separator-section__picture--error">
         <div class="container">
             <div class="info-box height__full">
                 <div class="info-box__text">
@@ -12,17 +12,16 @@
                     <p class="info-box__line info-box__sub-title">gaffa tape, an air filter and the cover off the flight plan.</p>
                     <p class="info-box__line info-box__sub-title">You can go <a href="javascript:history.back()" target="_self" title="go back" class="info-box__link">back</a> to where you were or you can try heading back <a href="/" target="_self" title="Return to jamiederycke.co.uk" data-ga-category="Error" data-ga-action="Click" data-ga-label="Return home" class="info-box__link">home</a>.</p>
                 </div>
-                <div class="info-box__img">
-                    <amp-img width="800" height="532" layout="responsive" src="/static/img/WebP/bg-error-md.webp" alt="Error: 500 - Tech fault">
-                        <amp-img fallback width="800" height="532" src="/static/img/bg-error-md.jpg" alt="Home">
-                            <div fallback></div>
-                        </amp-img>
-                    </amp-img>
-                </div>
             </div>
         </div>
     </section>
 </template>
+
+<script>
+export default {
+  name: 'techFault'
+}
+</script>
 
 
 

@@ -1,6 +1,5 @@
 .wrapper {
     margin: 0 auto;
-    width: 100%;
     position: relative;
 }
 
@@ -27,19 +26,8 @@
     padding-right: rem(10);
 
     @include media($screen-sm) {
-        padding-left: rem(120);
+        padding-left: rem(130);
         padding-right: $gutter;
-    }
-
-    &__custom {
-        padding-left: 0;
-        padding-right: 0;
-        min-height: rem(360);
-
-        @include media($screen-sm) {
-            padding-left: rem(120);
-            padding-right: 0;
-        }
     }
 }
 

@@ -58,17 +58,16 @@ figure {
     z-index: 1;
     padding-top: rem(65);
     padding-bottom: $gutter;
-    min-height: calc(100vh - 184px);
+    min-height: calc(100vh - 44px);
 
     @include media($screen-sm) {
         padding-top: rem(38);
 
         &--no-padding {
-            padding-top: 0
+            padding-top: 0;
+            padding-bottom: 0;
         }
     }
-
-
 }
 
 .align {
@@ -88,7 +87,7 @@ figure {
 .height {
     &__full {
         @include media($screen-sm) {
-            height: calc(100vh - 204px);
+            height: calc(100vh - 44px);
         }
     }
 }
