@@ -238,7 +238,7 @@
   "featured" : [ {
     "category" : "camera",
     "description" : "Taken during a charity trek through the Atlas Mountains in Morocco to summit the 4 highest peaks in Northern Africa",
-    "id" : 6,
+    "id" : 1,
     "image" : {
       "fallback_url" : "/static/img/gallery/30.jpg",
       "url" : "/static/img/webp/gallery/30.webp"
@@ -249,7 +249,7 @@
     }, {
     "category" : "camera",
     "description" : "White rose, taken for a rule of thirds monthly challenge",
-    "id" : 8,
+    "id" : 2,
     "image" : {
       "fallback_url" : "/static/img/gallery/42.jpg",
       "url" : "/static/img/webp/gallery/42.webp"
@@ -260,7 +260,7 @@
   }, {
     "category" : "camera",
     "description" : "",
-    "id" : 2,
+    "id" : 3,
     "image" : {
       "fallback_url" : "/static/img/gallery/44.jpg",
       "url" : "/static/img/webp/gallery/44.webp"
@@ -268,5 +268,26 @@
     "tags" : "sky | hdr | mountains | outdoor | architecture",
     "title" : "Machu Picchu HDR",
     "url" : "https://500px.com/photo/233467877/machu-pichu-hdr-by-jamie-de-rycke"
+  }],
+  "quotes" : [ {
+    "line1" : "If you can dream it, you can do it.",
+    "line2" : "",
+    "id" : 1,
+    "cite" : "Walt Disney"
+  }, {
+    "line1" : "Sometimes life hits you in the head with a brick.",
+    "line2" : "Don't lose faith.",
+    "id" : 2,
+    "cite" : "Steve Jobs"
+  }, {
+    "line1" : "Creativity is contagious, pass it on.",
+    "line2" : "",
+    "id" : 3,
+    "cite" : "Albert Enstein"
+  }, {
+    "line1" : "It is not our abilities that show who we truly are.",
+    "line2" : "It is our choices.",
+    "id" : 4,
+    "cite" : "Professor Albus Percival Wulfric Brian Dumbledore"
   }]
 }
