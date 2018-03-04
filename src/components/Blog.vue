@@ -1,26 +1,15 @@
 <template>
-    <div :class="{ 'blog--reading': this.post }">
-        <section class="page">
-            <div class="main-content">
-                <div class="row">
-                    <div class="container">
-                        <h1 class="h2">Blog<em>.</em></h1>
-                          <blog-feed :filters="filters" />
-                          <blog-post :post="post" />
-                    </div>
+    <section class="page" :class="{ 'blog--reading': this.post }">
+        <div class="main-content">
+            <div class="row">
+                <div class="container">
+                    <h1>Blog<em>.</em></h1>
+                    <blog-feed :filters="filters" />
+                    <blog-post :post="post" />
                 </div>
             </div>
-        </section>
-        <div class="separator-section">
-            <div class="container separator-section__container">
-                <blockquote>
-                    <span class="line">It is not our abilities that show who we truly are.</span>
-                    <span class="line">It is our choices.</span>
-                    <cite>Professor Albus Percival Wulfric Brian Dumbledore</cite>
-                </blockquote>
-            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>

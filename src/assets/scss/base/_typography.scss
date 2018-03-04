@@ -1,13 +1,12 @@
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3,
-h4,
-.h4 {
+h4 {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0;
-    margin: 0 0 rem(15);
+    margin: 0 auto rem(15);
     font-family: $font-family-headings;
     font-weight: $font-weight-thin;
 
@@ -17,25 +16,21 @@ h4,
     }
 }
 
-h1,
-.h1 {
-    font-size: rem(130);
+h1 {
+    font-size: rem(62);
 }
 
-h2,
-.h2 {
+h2 {
     font-size: rem(42);
     line-height: rem(52);
 }
 
-h3,
-.h3 {
+h3 {
     font-size: rem(32);
     line-height: rem(42);
 }
 
-h4,
-.h4 {
+h4 {
     font-size: rem(22);
     line-height: rem(32);
 }
@@ -66,25 +61,56 @@ p {
 }
 
 blockquote {
-    font-size: rem(32);
-    line-height: rem(38);
-    letter-spacing: -0.6px;
-    border-left: 4px solid $site-color;
-    padding: rem(15) 0 rem(15) rem(15);
-    margin: rem(15) rem(30) rem(15) -20%;
-    max-width: 55%;
-    float: left;
+    position: relative;
+    font-family: $font-family-default;
     font-weight: $font-weight-light;
+    font-size: rem(24);
+    line-height: rem(34);
+    padding: 0 rem(35);
+    margin: 0 auto;
+
+    &:before {
+        color: $site-color;
+        font-weight: $font-weight-regular;
+        position: absolute;
+        font-size: rem(82);
+        top: rem(20);
+        left: 0;
+        content: "\201C";
+    }
+
+    &:after {
+        color: $site-color;
+        font-weight: $font-weight-regular;
+        position: absolute;
+        float: right;
+        font-size: rem(82);
+        right: 0;
+        bottom: rem(-25);
+        content: "\201D";
+    }
+
+    .line {
+        display: block;
+        letter-spacing: -2px;
+        font-weight: $font-weight-light;
+    }
+
+    footer {
+        margin-top: rem(10);
+        text-align: right;
+    }
 
     cite {
-        display: block;
+        font-weight: $font-weight-bold;
+        font-style: normal;
         font-size: rem(16);
         line-height: rem(26);
-        font-style: normal;
-        font-family: $font-family-default;
-        font-weight: $font-weight-regular;
-        margin-top: rem(10);
-        color: $grey;
+        color: $grey-tint1;
+
+        &:before {
+            content: "\2013";
+        }
     }
 }
 

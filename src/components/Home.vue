@@ -18,15 +18,22 @@
                         </amp-img>
                     </li>
                 </ul>
-                <p class="info-box__quote">If you can dream it, you can do it.<span>Walt Disney</span></p>
+
+                <quote />
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import Quote from './HomeParts/Quote'
+
 export default {
   name: 'home',
+  components: {
+    Quote
+  },
+  resource: 'Home',
   data: () => ({
     items: [],
     errors: []

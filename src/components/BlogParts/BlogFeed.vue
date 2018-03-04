@@ -38,7 +38,7 @@
                     </div>
                     <div class="overlay">
                         <div class="overlay__content">
-                            <h2 class="overlay__content--title">Read blog post</h2>
+                            <h1 class="overlay__content--title">Read blog post</h1>
                             <span class="overlay__icon overlay__icon--blog"></span>
                         </div>
                     </div>

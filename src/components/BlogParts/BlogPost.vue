@@ -2,7 +2,7 @@
     <div class="column--flex-wrap post page" v-if="post" >
         <article class="article column--6-col column--3-offset">
             <header class="article__header">
-                <h1 class="h2">{{ title }}</h1>
+                <h1>{{ title }}</h1>
 
                 <ul class="article__meta article__meta--page">
                     <li class="article__meta__item">

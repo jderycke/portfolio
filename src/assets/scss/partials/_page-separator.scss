@@ -37,6 +37,12 @@
                 text-align: left;
             }
 
+            .line {
+                display: block;
+                font-family: $font-family-headings;
+                font-weight: $font-weight-regular;
+            }
+
             cite {
                 color: $black-tint1;
             }
@@ -75,11 +81,4 @@
             }
         }
     }
-}
-
-.line {
-    display: block;
-    font-family: $font-family-headings;
-    font-weight: $font-weight-regular;
-    text-align: left;
 }
