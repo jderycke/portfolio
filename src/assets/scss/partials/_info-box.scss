@@ -63,13 +63,13 @@
 
     &__img {
         clear: both;
+        filter: grayscale(100%);
 
         @include media($screen-md) {
             clear: none;
             position: absolute;
             right: 0;
             width: 100%;
-            filter: grayscale(100%);
         }
     }
 
