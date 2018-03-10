@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'quote',
   resource: 'Quote',
@@ -17,20 +19,16 @@ export default {
     errors: []
   }),
 
-  created () {
+  async created () {
     const url = '/static/data/portfolio.json'
 
-    this.$http.get(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.quotes = data.quotes
-        this.quote = data.quotes[Math.floor(Math.random() * data.quotes.length)]
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
+    try {
+      const response = await axios.get(url)
+      this.quotes = response.data.quotes
+      this.quote = response.data.quotes[Math.floor(Math.random() * response.data.quotes.length)]
+    } catch (err) {
+      this.errors.push(err)
+    }
   }
 }
 </script>

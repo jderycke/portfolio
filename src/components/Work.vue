@@ -43,25 +43,23 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'work',
   data: () => ({
     items: [],
     errors: []
   }),
-  created () {
+  async created () {
     const url = '/static/data/portfolio.json'
 
-    this.$http.get(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.items = data.portfolio
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
+    try {
+      const response = await axios.get(url)
+      this.items = response.data.portfolio
+    } catch (err) {
+      this.errors.push(err)
+    }
   }
 }
 </script>

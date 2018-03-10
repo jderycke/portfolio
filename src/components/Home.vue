@@ -9,16 +9,7 @@
                     </h1>
                     <p class="info-box__line info-box__sub-title">I create things with pixels and code.</p>
                 </div>
-                <ul class="grid info-box__img">
-                    <li class="grid__item" v-for="item in items" v-bind:key="item.id">
-                        <amp-img width="500" height="281" layout="responsive" :src="item.image.url" :alt="item.title">
-                            <amp-img fallback width="500" height="281" :alt="item.title" :src="item.image.fallback_url">
-                                <div fallback></div>
-                            </amp-img>
-                        </amp-img>
-                    </li>
-                </ul>
-
+                <featured />
                 <quote />
             </div>
         </div>
@@ -26,31 +17,14 @@
 </template>
 
 <script>
+import Featured from './HomeParts/Featured'
 import Quote from './HomeParts/Quote'
 
 export default {
   name: 'home',
   components: {
+    Featured,
     Quote
-  },
-  resource: 'Home',
-  data: () => ({
-    items: [],
-    errors: []
-  }),
-  created () {
-    const url = '/static/data/portfolio.json'
-
-    this.$http.get(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.items = data.featured
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
     <div class="column--flex-wrap post page" v-if="post" >
-        <article class="article column--6-col column--3-offset">
+        <article class="article column--8-col column--2-offset">
             <header class="article__header">
-                <h1>{{ title }}</h1>
+                <h2>{{ title }}</h2>
 
                 <ul class="article__meta article__meta--page">
                     <li class="article__meta__item">
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { kebabify } from '../../helpers'
 
 export default {
@@ -74,21 +75,19 @@ export default {
     buildPost: function (postId) {
       const url = '/static/data/portfolio.json'
 
-      this.$http.get(url)
-        .then((response) => {
-          return response.json()
-        })
-        .then((data) => {
-          for (var i = 0; i < data.blog.length; i++) {
-            if (data.blog[i].id === postId) {
-              this.title = data.blog[i].title
-              this.author = data.blog[i].meta.author
-              this.content = data.blog[i].content
-              this.published = data.blog[i].meta.published
-              this.description = data.blog[i].meta.description
-              this.image_url = data.blog[i].image.url
-              this.fallback_image_url = data.blog[i].image.fallback_url
-              this.image_caption = data.blog[i].image.caption
+      axios.get(url)
+        .then(response => {
+          for (var i = 0; i < response.data.blog.length; i++) {
+            if (response.data.blog[i].id === postId) {
+              var item = response.data.blog[i]
+              this.title = item.title
+              this.author = item.meta.author
+              this.content = item.content
+              this.published = item.meta.published
+              this.description = item.meta.description
+              this.image_url = item.image.url
+              this.fallback_image_url = item.image.fallback_url
+              this.image_caption = item.image.caption
             }
           }
         })

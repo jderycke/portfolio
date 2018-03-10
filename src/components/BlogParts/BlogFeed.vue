@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'blog-feed',
   resource: 'BlogFeed',
@@ -77,19 +79,15 @@ export default {
     errors: []
   }),
 
-  created () {
+  async created () {
     const url = '/static/data/portfolio.json'
 
-    this.$http.get(url)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.items = data.blog
-      })
-      .catch((err) => {
-        this.errors.push(err)
-      })
+    try {
+      const response = await axios.get(url)
+      this.items = response.data.blog
+    } catch (err) {
+      this.errors.push(err)
+    }
   },
 
   computed: {
